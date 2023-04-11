@@ -1767,39 +1767,76 @@ pre code {
 can download R packages with the install.packages() function</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaW5zdGFsbC5wYWNrYWdlcyhcInJldGljdWxhdGVcIilcbmBgYCJ9 -->
-<pre class="r"><code>install.packages(&quot;reticulate&quot;)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>You only need to install packages once, but you need to mount those
-packages with the library() function each time you open R.</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShyZXRpY3VsYXRlKVxuYGBgIn0= -->
-<pre class="r"><code>library(reticulate)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>Python libraries are stored and managed in a few different libraries
-and their dependencies are not regulated as strictly as R libraries are
-in CRAN. It’s easier to publish a python package but it can also be more
-cumbersome for users because you need to manage dependencies yourself.
-You can download python packages using both R and Python code</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucHlfaW5zdGFsbChcInBhbmRhc1wiKVxuYGBgIn0= -->
-<pre class="r"><code>py_install(&quot;pandas&quot;)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-</div>
-<div id="load-packages-and-change-settings" class="section level1">
-<h1>Load packages and change settings</h1>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxub3B0aW9ucyhqYXZhLnBhcmFtZXRlcnMgPSBcIi1YbXg1R1wiKVxuXG5saWJyYXJ5KHI1cilcbmxpYnJhcnkoc2YpXG5saWJyYXJ5KGRhdGEudGFibGUpXG5saWJyYXJ5KGdncGxvdDIpXG5saWJyYXJ5KGludGVycClcbmxpYnJhcnkoZHBseXIpXG5saWJyYXJ5KG9zbWRhdGEpXG5saWJyYXJ5KGdndGhlbWVzKVxubGlicmFyeShzZilcbmxpYnJhcnkoZGF0YS50YWJsZSlcbmxpYnJhcnkoZ2dwbG90MilcbmxpYnJhcnkoYWtpbWEpXG5saWJyYXJ5KGRwbHlyKVxubGlicmFyeShyYXN0ZXIpXG5saWJyYXJ5KG9zbWRhdGEpXG5saWJyYXJ5KG1hcHZpZXcpXG5saWJyYXJ5KGNvd3Bsb3QpXG5gYGAifQ== -->
-<pre class="r"><code>options(java.parameters = &quot;-Xmx5G&quot;)
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuaW5zdGFsbC5wYWNrYWdlcyhcXHJldGljdWxhdGVcXClcbmBgYFxuYGBgIn0= -->
+<pre class="r"><code>```r
+install.packages(\reticulate\)</code></pre>
+<pre><code>
+&lt;!-- rnb-source-end --&gt;
+
+&lt;!-- rnb-chunk-end --&gt;
+
+
+&lt;!-- rnb-text-begin --&gt;
+
+You only need to install packages once, but you need to mount those packages with the library() function each time you open R. 
+
+
+&lt;!-- rnb-text-end --&gt;
+
+
+&lt;!-- rnb-chunk-begin --&gt;
+
+
+&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxubGlicmFyeShyZXRpY3VsYXRlKVxuYGBgXG5gYGAifQ== --&gt;
+
+```r
+```r
+library(reticulate)</code></pre>
+<pre><code>
+&lt;!-- rnb-source-end --&gt;
+
+&lt;!-- rnb-chunk-end --&gt;
+
+
+&lt;!-- rnb-text-begin --&gt;
+
+
+Python libraries are stored and managed in a few different libraries and their dependencies are not regulated as strictly as R libraries are in CRAN. It&#39;s easier to publish a python package but it can also be more cumbersome for users because you need to manage dependencies yourself. You can download python packages using both R and Python code
+
+&lt;!-- rnb-text-end --&gt;
+
+
+&lt;!-- rnb-chunk-begin --&gt;
+
+
+&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxucHlfaW5zdGFsbChcXHBhbmRhc1xcKVxuYGBgXG5gYGAifQ== --&gt;
+
+```r
+```r
+py_install(\pandas\)</code></pre>
+<pre><code>
+&lt;!-- rnb-source-end --&gt;
+
+&lt;!-- rnb-chunk-end --&gt;
+
+
+&lt;!-- rnb-text-begin --&gt;
+
+
+
+# Load packages and change settings
+
+&lt;!-- rnb-text-end --&gt;
+
+
+&lt;!-- rnb-chunk-begin --&gt;
+
+
+&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxub3B0aW9ucyhqYXZhLnBhcmFtZXRlcnMgPSBcXC1YbXg1R1xcKVxuXG5saWJyYXJ5KHI1cilcbmxpYnJhcnkoc2YpXG5saWJyYXJ5KGRhdGEudGFibGUpXG5saWJyYXJ5KGdncGxvdDIpXG5saWJyYXJ5KGludGVycClcbmxpYnJhcnkoZHBseXIpXG5saWJyYXJ5KG9zbWRhdGEpXG5saWJyYXJ5KGdndGhlbWVzKVxubGlicmFyeShzZilcbmxpYnJhcnkoZGF0YS50YWJsZSlcbmxpYnJhcnkoZ2dwbG90MilcbmxpYnJhcnkoYWtpbWEpXG5saWJyYXJ5KGRwbHlyKVxubGlicmFyeShyYXN0ZXIpXG5saWJyYXJ5KG9zbWRhdGEpXG5saWJyYXJ5KG1hcHZpZXcpXG5saWJyYXJ5KGNvd3Bsb3QpXG5gYGBcbmBgYCJ9 --&gt;
+
+```r
+```r
+options(java.parameters = \-Xmx5G\)
 
 library(r5r)
 library(sf)
@@ -1818,14 +1855,28 @@ library(raster)
 library(osmdata)
 library(mapview)
 library(cowplot)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgcHl0aG9uXG5pbXBvcnQgc3lzXG5zeXMuYXJndi5hcHBlbmQoW1wiLS1tYXgtbWVtb3J5XCIsIFwiNUdcIl0pXG5cbmltcG9ydCBwYW5kYXMgYXMgcGRcbmltcG9ydCBnZW9wYW5kYXNcbmltcG9ydCBtYXRwbG90bGliLnB5cGxvdCBhcyBwbHRcbmltcG9ydCBudW1weSBhcyBucFxuaW1wb3J0IHBsb3RuaW5lXG5pbXBvcnQgY29udGV4dGlseSBhcyBjeFxuaW1wb3J0IHI1cHlcbmBgYCJ9 -->
-<pre class="python"><code>import sys
-sys.argv.append([&quot;--max-memory&quot;, &quot;5G&quot;])
+<pre><code>
+&lt;!-- rnb-source-end --&gt;
+
+&lt;!-- rnb-chunk-end --&gt;
+
+
+&lt;!-- rnb-text-begin --&gt;
+
+
+
+&lt;!-- rnb-text-end --&gt;
+
+
+&lt;!-- rnb-chunk-begin --&gt;
+
+
+&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgcHl0aG9uXG5gYGBweXRob25cbmltcG9ydCBzeXNcbnN5cy5hcmd2LmFwcGVuZChbXFwtLW1heC1tZW1vcnlcXCwgXFw1R1xcXSlcblxuaW1wb3J0IHBhbmRhcyBhcyBwZFxuaW1wb3J0IGdlb3BhbmRhc1xuaW1wb3J0IG1hdHBsb3RsaWIucHlwbG90IGFzIHBsdFxuaW1wb3J0IG51bXB5IGFzIG5wXG5pbXBvcnQgcGxvdG5pbmVcbmltcG9ydCBjb250ZXh0aWx5IGFzIGN4XG5pbXBvcnQgcjVweVxuYGBgXG5gYGAifQ== --&gt;
+
+```python
+```python
+import sys
+sys.argv.append([\--max-memory\, \5G\])
 
 import pandas as pd
 import geopandas
@@ -1834,14 +1885,32 @@ import numpy as np
 import plotnine
 import contextily as cx
 import r5py</code></pre>
+<pre><code>
+&lt;!-- rnb-source-end --&gt;
+
+&lt;!-- rnb-chunk-end --&gt;
+
+
+&lt;!-- rnb-text-begin --&gt;
+
+
+# Load saved data
+
+&lt;!-- rnb-text-end --&gt;
+
+
+&lt;!-- rnb-chunk-begin --&gt;
+
+
+&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxub2JqZWN0cygpXG5cbmBgYCJ9 --&gt;
+
+```r
+objects()
+</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-</div>
-<div id="load-saved-data" class="section level1">
-<h1>Load saved data</h1>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiaXJpc1wiXG4ifQ== -->
+<pre><code>[1] &quot;iris&quot;</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
@@ -1851,6 +1920,36 @@ import r5py</code></pre>
 </div>
 <div id="save-data" class="section level1">
 <h1>Save data</h1>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2F2ZShpcmlzLCBmaWxlPWhlcmUoXCIyIFIgYW5kIFB5IGJpbGluZ3VhbGlzbVwiLCBcImRhdGFcIiwgXCJpcmlzX2V4YW1wbGVfZGF0YS5yZGF0YVwiKSlcblxud3JpdGUuY3N2KGlyaXMsIGZpbGU9aGVyZShcIjIgUiBhbmQgUHkgYmlsaW5ndWFsaXNtXCIsIFwiZGF0YVwiLCBcImlyaXNfZXhhbXBsZV9kYXRhLmNzdlwiKSlcbmBgYCJ9 -->
+<pre class="r"><code>save(iris, file=here(&quot;2 R and Py bilingualism&quot;, &quot;data&quot;, &quot;iris_example_data.rdata&quot;))
+
+write.csv(iris, file=here(&quot;2 R and Py bilingualism&quot;, &quot;data&quot;, &quot;iris_example_data.csv&quot;))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShzaGlueSlcbnh5IDwtIGMoNzg0LDQ3OSkgI291dHB1dCBvZiBnckRldmljZXM6OmRldi5zaXplKFwicHhcIilcbnVybCA8LSBcImh0dHBzOi8vd3d3LnlvdXR1YmUuY29tL3dhdGNoP3Y9Vk8xYlFvNFBYVjRcIiAjY29weSB5dCBsaW5rIGhlcmVcbnVybCA8LSBnc3ViKFwid2F0Y2hcXFxcP3Y9XCIsXCJlbWJlZC9cIix1cmwpXG51aSA8LSBmbHVpZFBhZ2UoXG4gIEhUTUwocGFzdGUwKCc8aWZyYW1lIHdpZHRoPVwiJyx4eVsxXSwnXCIgaGVpZ2h0PVwiJyx4eVsyXSwnXCIgc3JjPVwiJyx1cmwsJ1wiIGZyYW1lYm9yZGVyPVwiMFwiPjxcL2lmcmFtZT4nKSlcbilcbnNlcnZlciA8LSBmdW5jdGlvbihpbnB1dCwgb3V0cHV0LCBzZXNzaW9uKSB7XG59XG5cbnJ1bkdhZGdldChzaGlueUFwcCh1aSwgc2VydmVyLG9wdGlvbnM9YyhcImxhdW5jaC5icm93c2VyXCI9RkFMU0UsXCJwb3J0XCI9MTExMSkpLHBvcnQ9MTExMSx2aWV3ZXIgPSBwYW5lVmlld2VyKCkpXG5gYGAifQ== -->
+<pre class="r"><code>library(shiny)
+xy &lt;- c(784,479) #output of grDevices::dev.size(&quot;px&quot;)
+url &lt;- &quot;https://www.youtube.com/watch?v=VO1bQo4PXV4&quot; #copy yt link here
+url &lt;- gsub(&quot;watch\\?v=&quot;,&quot;embed/&quot;,url)
+ui &lt;- fluidPage(
+  HTML(paste0(&#39;&lt;iframe width=&quot;&#39;,xy[1],&#39;&quot; height=&quot;&#39;,xy[2],&#39;&quot; src=&quot;&#39;,url,&#39;&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;&#39;))
+)
+server &lt;- function(input, output, session) {
+}
+
+runGadget(shinyApp(ui, server,options=c(&quot;launch.browser&quot;=FALSE,&quot;port&quot;=1111)),port=1111,viewer = paneViewer())</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 </div>
 <div id="retrieve-data-from-an-api" class="section level1">
 <h1>Retrieve data from an API</h1>
@@ -1859,34 +1958,55 @@ import r5py</code></pre>
 <h1>Import datasets</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZXh0ZW50KGdiYilcblxuYGBgIn0= -->
-<pre class="r"><code>extent(gbb)
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuZXh0ZW50KGdiYilcblxuYGBgXG5gYGAifQ== -->
+<pre class="r"><code>```r
+extent(gbb)
 </code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiY2xhc3MgICAgICA6IEV4dGVudCBcbnhtaW4gICAgICAgOiAtMTA1LjAwMTUgXG54bWF4ICAgICAgIDogLTEwNC45NzgxIFxueW1pbiAgICAgICA6IDM5Ljg0NDM1IFxueW1heCAgICAgICA6IDM5Ljk3NDQxIFxuIn0= -->
-<pre><code>class      : Extent 
-xmin       : -105.0015 
-xmax       : -104.9781 
-ymin       : 39.84435 
-ymax       : 39.97441 </code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZXh0ZW50KGdiYilbMl1cblxuYGBgIn0= -->
-<pre class="r"><code>extent(gbb)[2]
+<pre><code>
+&lt;!-- rnb-source-end --&gt;
+
+&lt;!-- rnb-output-begin eyJkYXRhIjoiY2xhc3MgICAgICA6IEV4dGVudCBcbnhtaW4gICAgICAgOiAtMTA1LjAwMTUgXG54bWF4ICAgICAgIDogLTEwNC45NzgxIFxueW1pbiAgICAgICA6IDM5Ljg0NDM1IFxueW1heCAgICAgICA6IDM5Ljk3NDQxIFxuIn0= --&gt;
 </code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIC0xMDQuOTc4MVxuIn0= -->
-<pre><code>[1] -104.9781</code></pre>
+<p>class : Extent xmin : -105.0015 xmax : -104.9781 ymin : 39.84435 ymax
+: 39.97441</p>
+<pre><code>
+
+
+&lt;!-- rnb-output-end --&gt;
+
+&lt;!-- rnb-chunk-end --&gt;
+
+
+&lt;!-- rnb-text-begin --&gt;
+
+
+
+
+&lt;!-- rnb-text-end --&gt;
+
+
+&lt;!-- rnb-chunk-begin --&gt;
+
+
+&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuZXh0ZW50KGdiYilbMl1cblxuYGBgXG5gYGAifQ== --&gt;
+
+```r
+```r
+extent(gbb)[2]
+</code></pre>
+<pre><code>
+&lt;!-- rnb-source-end --&gt;
+
+&lt;!-- rnb-output-begin eyJkYXRhIjoiWzFdIC0xMDQuOTc4MVxuIn0= --&gt;
+</code></pre>
+<p>[1] -104.9781 ```</p>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKIyBJbnN0YWxsIHBhY2thZ2VzClIgbGlicmFyaWVzIGFyZSBzdG9yZWQgYW5kIG1hbmFnZWQgaW4gYSByZXBvc2l0b3J5IGNhbGxlZCBDUkFOLiBZb3UgY2FuIGRvd25sb2FkIFIgcGFja2FnZXMgd2l0aCB0aGUgaW5zdGFsbC5wYWNrYWdlcygpIGZ1bmN0aW9uCgpgYGB7cn0KaW5zdGFsbC5wYWNrYWdlcygicmV0aWN1bGF0ZSIpCmBgYApZb3Ugb25seSBuZWVkIHRvIGluc3RhbGwgcGFja2FnZXMgb25jZSwgYnV0IHlvdSBuZWVkIHRvIG1vdW50IHRob3NlIHBhY2thZ2VzIHdpdGggdGhlIGxpYnJhcnkoKSBmdW5jdGlvbiBlYWNoIHRpbWUgeW91IG9wZW4gUi4gCgpgYGB7cn0KbGlicmFyeShyZXRpY3VsYXRlKQpgYGAKClB5dGhvbiBsaWJyYXJpZXMgYXJlIHN0b3JlZCBhbmQgbWFuYWdlZCBpbiBhIGZldyBkaWZmZXJlbnQgbGlicmFyaWVzIGFuZCB0aGVpciBkZXBlbmRlbmNpZXMgYXJlIG5vdCByZWd1bGF0ZWQgYXMgc3RyaWN0bHkgYXMgUiBsaWJyYXJpZXMgYXJlIGluIENSQU4uIEl0J3MgZWFzaWVyIHRvIHB1Ymxpc2ggYSBweXRob24gcGFja2FnZSBidXQgaXQgY2FuIGFsc28gYmUgbW9yZSBjdW1iZXJzb21lIGZvciB1c2VycyBiZWNhdXNlIHlvdSBuZWVkIHRvIG1hbmFnZSBkZXBlbmRlbmNpZXMgeW91cnNlbGYuIFlvdSBjYW4gZG93bmxvYWQgcHl0aG9uIHBhY2thZ2VzIHVzaW5nIGJvdGggUiBhbmQgUHl0aG9uIGNvZGUKYGBge3J9CnB5X2luc3RhbGwoInBhbmRhcyIpCmBgYAoKCiMgTG9hZCBwYWNrYWdlcyBhbmQgY2hhbmdlIHNldHRpbmdzCmBgYHtyfQpvcHRpb25zKGphdmEucGFyYW1ldGVycyA9ICItWG14NUciKQoKbGlicmFyeShyNXIpCmxpYnJhcnkoc2YpCmxpYnJhcnkoZGF0YS50YWJsZSkKbGlicmFyeShnZ3Bsb3QyKQpsaWJyYXJ5KGludGVycCkKbGlicmFyeShkcGx5cikKbGlicmFyeShvc21kYXRhKQpsaWJyYXJ5KGdndGhlbWVzKQpsaWJyYXJ5KHNmKQpsaWJyYXJ5KGRhdGEudGFibGUpCmxpYnJhcnkoZ2dwbG90MikKbGlicmFyeShha2ltYSkKbGlicmFyeShkcGx5cikKbGlicmFyeShyYXN0ZXIpCmxpYnJhcnkob3NtZGF0YSkKbGlicmFyeShtYXB2aWV3KQpsaWJyYXJ5KGNvd3Bsb3QpCmBgYAoKYGBge3B5dGhvbn0KaW1wb3J0IHN5cwpzeXMuYXJndi5hcHBlbmQoWyItLW1heC1tZW1vcnkiLCAiNUciXSkKCmltcG9ydCBwYW5kYXMgYXMgcGQKaW1wb3J0IGdlb3BhbmRhcwppbXBvcnQgbWF0cGxvdGxpYi5weXBsb3QgYXMgcGx0CmltcG9ydCBudW1weSBhcyBucAppbXBvcnQgcGxvdG5pbmUKaW1wb3J0IGNvbnRleHRpbHkgYXMgY3gKaW1wb3J0IHI1cHkKYGBgCgojIExvYWQgc2F2ZWQgZGF0YQpgYGB7cn0KCmBgYAoKYGBge3B5dGhvbn0KCmBgYAoKIyBTYXZlIGRhdGEKCgojIFJldHJpZXZlIGRhdGEgZnJvbSBhbiBBUEkKCgoKIyBJbXBvcnQgZGF0YXNldHMKYGBge3IsIHdhcm5pbmc9RkFMU0UsIG1lc3NhZ2U9RkFMU0V9CmdiYiA8LSBnZXRiYigiQm91bGRlciwgQ29sb3JhZG8iKQpnYmJbMSwxXSA8LSBnYmJbMSwxXSArIDAuMwpnYmJbMSwyXSA8LSBnYmJbMSwyXSArIDAuMgpnYmJbMiwxXSA8LSBnYmJbMiwxXSAtIDAuMTIKZ2JiWzIsMl0gPC0gZ2JiWzIsMl0gLSAwLjEyCiBleHQgPC0gYXMoZXh0ZW50KGdiYikgLCAiU3BhdGlhbFBvbHlnb25zIikKCgogICNjbGFzcyhleHQpCiAgI3Byb2plY3Rpb24oZXh0KSA8LSBwcm9qZWN0aW9uKFBzMSkKICBjcnMoZXh0KSA8LSAiRVBTRzo0MzI2IgogIGggPC0gc3BzYW1wbGUoZXh0LCB0eXBlID0gImhleGFnb25hbCIsIGNlbGxzaXplID0gMC4wMDUpCiAgICAjIGNvbnZlcnQgY2VudGVyIHBvaW50cyB0byBoZXhhZ29ucwogICAgZyA8LSBIZXhQb2ludHMyU3BhdGlhbFBvbHlnb25zKGgsIGR4ID0gMC4wMDUpCiAgICBnIDwtIHN0X2FzX3NmKGcpCiAgcGxvdChnLCBsd2Q9MC4xKQogICNwb2ludHMocHRzJG5hbWUueCwgY29sPSJibHVlIiwgY2V4PTEwKQogIGhleF9wb2x5cyA8LSBjYmluZChzZXEoMSwgbGVuZ3RoKGckZ2VvbWV0cnkpKSwgZykKICBjb2xuYW1lcyhoZXhfcG9seXMpIDwtIGMoImlkX3BvbHlnb25zIiwgImdlb21ldHJ5IikgIyBjaGFuZ2UgY29sbmFtZXMKCgpgYGAKCgpgYGB7ciwgY2FjaGU9VFJVRSwgd2FybmluZz1GQUxTRSwgbWVzc2FnZT1GQUxTRX0KYmJfc2YgPC0gZ2V0YmIoIkJvdWxkZXIsIENvbG9yYWRvIiwgZm9ybWF0X291dCA9ICJzZl9wb2x5Z29uIikKc3RfY3JvcChiYl9zZiRtdWx0aXBvbHlnb25bMixdLCB4bWluID0gZXh0ZW50KGdiYilbMV0sIHltaW4gPSBleHRlbnQoZ2JiKVszXSwgeG1heCA9IGV4dGVudChnYmIpWzJdLCB5bWF4ID0gZXh0ZW50KGdiYilbNF0pCmdncGxvdChkYXRhPWJiX3NmJG11bHRpcG9seWdvbikgKyBnZW9tX3NmKGZpbGw9b3VyX2JlaWdlLCBjb2xvcj1vdXJfcHVycGxlKSArIHRoZW1lX3R1ZnRlKCkKYGBgCgoKCg==</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKIyBJbnN0YWxsIHBhY2thZ2VzClIgbGlicmFyaWVzIGFyZSBzdG9yZWQgYW5kIG1hbmFnZWQgaW4gYSByZXBvc2l0b3J5IGNhbGxlZCBDUkFOLiBZb3UgY2FuIGRvd25sb2FkIFIgcGFja2FnZXMgd2l0aCB0aGUgaW5zdGFsbC5wYWNrYWdlcygpIGZ1bmN0aW9uCgpgYGB7cn0KaW5zdGFsbC5wYWNrYWdlcygicmV0aWN1bGF0ZSIpCmBgYApZb3Ugb25seSBuZWVkIHRvIGluc3RhbGwgcGFja2FnZXMgb25jZSwgYnV0IHlvdSBuZWVkIHRvIG1vdW50IHRob3NlIHBhY2thZ2VzIHdpdGggdGhlIGxpYnJhcnkoKSBmdW5jdGlvbiBlYWNoIHRpbWUgeW91IG9wZW4gUi4gCgpgYGB7cn0KbGlicmFyeShyZXRpY3VsYXRlKQpgYGAKClB5dGhvbiBsaWJyYXJpZXMgYXJlIHN0b3JlZCBhbmQgbWFuYWdlZCBpbiBhIGZldyBkaWZmZXJlbnQgbGlicmFyaWVzIGFuZCB0aGVpciBkZXBlbmRlbmNpZXMgYXJlIG5vdCByZWd1bGF0ZWQgYXMgc3RyaWN0bHkgYXMgUiBsaWJyYXJpZXMgYXJlIGluIENSQU4uIEl0J3MgZWFzaWVyIHRvIHB1Ymxpc2ggYSBweXRob24gcGFja2FnZSBidXQgaXQgY2FuIGFsc28gYmUgbW9yZSBjdW1iZXJzb21lIGZvciB1c2VycyBiZWNhdXNlIHlvdSBuZWVkIHRvIG1hbmFnZSBkZXBlbmRlbmNpZXMgeW91cnNlbGYuIFlvdSBjYW4gZG93bmxvYWQgcHl0aG9uIHBhY2thZ2VzIHVzaW5nIGJvdGggUiBhbmQgUHl0aG9uIGNvZGUKYGBge3J9CnB5X2luc3RhbGwoInBhbmRhcyIpCmBgYAoKCiMgTG9hZCBwYWNrYWdlcyBhbmQgY2hhbmdlIHNldHRpbmdzCmBgYHtyfQpvcHRpb25zKGphdmEucGFyYW1ldGVycyA9ICItWG14NUciKQoKbGlicmFyeShyNXIpCmxpYnJhcnkoc2YpCmxpYnJhcnkoZGF0YS50YWJsZSkKbGlicmFyeShnZ3Bsb3QyKQpsaWJyYXJ5KGludGVycCkKbGlicmFyeShkcGx5cikKbGlicmFyeShvc21kYXRhKQpsaWJyYXJ5KGdndGhlbWVzKQpsaWJyYXJ5KHNmKQpsaWJyYXJ5KGRhdGEudGFibGUpCmxpYnJhcnkoZ2dwbG90MikKbGlicmFyeShha2ltYSkKbGlicmFyeShkcGx5cikKbGlicmFyeShyYXN0ZXIpCmxpYnJhcnkob3NtZGF0YSkKbGlicmFyeShtYXB2aWV3KQpsaWJyYXJ5KGNvd3Bsb3QpCmxpYnJhcnkoaGVyZSkKYGBgCgpgYGB7cHl0aG9ufQppbXBvcnQgc3lzCnN5cy5hcmd2LmFwcGVuZChbIi0tbWF4LW1lbW9yeSIsICI1RyJdKQoKaW1wb3J0IHBhbmRhcyBhcyBwZAppbXBvcnQgZ2VvcGFuZGFzCmltcG9ydCBtYXRwbG90bGliLnB5cGxvdCBhcyBwbHQKaW1wb3J0IG51bXB5IGFzIG5wCmltcG9ydCBwbG90bmluZQppbXBvcnQgY29udGV4dGlseSBhcyBjeAppbXBvcnQgcjVweQpgYGAKCiMgTG9hZCBzYXZlZCBkYXRhCmBgYHtyfQpkYXRhKCJpcmlzIikKCmxvYWQoZmlsZT1oZXJlKCIyIFIgYW5kIFB5IGJpbGluZ3VhbGlzbSIsICJkYXRhIiwgImlyaXNfZXhhbXBsZV9kYXRhLnJkYXRhIikpCm9iamVjdHMoKQpgYGAKCmBgYHtweXRob259CgpgYGAKCiMgU2F2ZSBkYXRhCmBgYHtyfQpzYXZlKGlyaXMsIGZpbGU9aGVyZSgiMiBSIGFuZCBQeSBiaWxpbmd1YWxpc20iLCAiZGF0YSIsICJpcmlzX2V4YW1wbGVfZGF0YS5yZGF0YSIpKQoKd3JpdGUuY3N2KGlyaXMsIGZpbGU9aGVyZSgiMiBSIGFuZCBQeSBiaWxpbmd1YWxpc20iLCAiZGF0YSIsICJpcmlzX2V4YW1wbGVfZGF0YS5jc3YiKSkKYGBgCgpgYGB7cHl0aG9ufQoKYGBgCgoKYGBge3J9CmxpYnJhcnkoc2hpbnkpCnh5IDwtIGMoNzg0LDQ3OSkgI291dHB1dCBvZiBnckRldmljZXM6OmRldi5zaXplKCJweCIpCnVybCA8LSAiaHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1WTzFiUW80UFhWNCIgI2NvcHkgeXQgbGluayBoZXJlCnVybCA8LSBnc3ViKCJ3YXRjaFxcP3Y9IiwiZW1iZWQvIix1cmwpCnVpIDwtIGZsdWlkUGFnZSgKICBIVE1MKHBhc3RlMCgnPGlmcmFtZSB3aWR0aD0iJyx4eVsxXSwnIiBoZWlnaHQ9IicseHlbMl0sJyIgc3JjPSInLHVybCwnIiBmcmFtZWJvcmRlcj0iMCI+PC9pZnJhbWU+JykpCikKc2VydmVyIDwtIGZ1bmN0aW9uKGlucHV0LCBvdXRwdXQsIHNlc3Npb24pIHsKfQoKcnVuR2FkZ2V0KHNoaW55QXBwKHVpLCBzZXJ2ZXIsb3B0aW9ucz1jKCJsYXVuY2guYnJvd3NlciI9RkFMU0UsInBvcnQiPTExMTEpKSxwb3J0PTExMTEsdmlld2VyID0gcGFuZVZpZXdlcigpKQpgYGAKCgoKCiMgUmV0cmlldmUgZGF0YSBmcm9tIGFuIEFQSQoKCgojIEltcG9ydCBkYXRhc2V0cwpgYGB7ciwgd2FybmluZz1GQUxTRSwgbWVzc2FnZT1GQUxTRX0KZ2JiIDwtIGdldGJiKCJCb3VsZGVyLCBDb2xvcmFkbyIpCmdiYlsxLDFdIDwtIGdiYlsxLDFdICsgMC4zCmdiYlsxLDJdIDwtIGdiYlsxLDJdICsgMC4yCmdiYlsyLDFdIDwtIGdiYlsyLDFdIC0gMC4xMgpnYmJbMiwyXSA8LSBnYmJbMiwyXSAtIDAuMTIKIGV4dCA8LSBhcyhleHRlbnQoZ2JiKSAsICJTcGF0aWFsUG9seWdvbnMiKQoKCiAgI2NsYXNzKGV4dCkKICAjcHJvamVjdGlvbihleHQpIDwtIHByb2plY3Rpb24oUHMxKQogIGNycyhleHQpIDwtICJFUFNHOjQzMjYiCiAgaCA8LSBzcHNhbXBsZShleHQsIHR5cGUgPSAiaGV4YWdvbmFsIiwgY2VsbHNpemUgPSAwLjAwNSkKICAgICMgY29udmVydCBjZW50ZXIgcG9pbnRzIHRvIGhleGFnb25zCiAgICBnIDwtIEhleFBvaW50czJTcGF0aWFsUG9seWdvbnMoaCwgZHggPSAwLjAwNSkKICAgIGcgPC0gc3RfYXNfc2YoZykKICBwbG90KGcsIGx3ZD0wLjEpCiAgI3BvaW50cyhwdHMkbmFtZS54LCBjb2w9ImJsdWUiLCBjZXg9MTApCiAgaGV4X3BvbHlzIDwtIGNiaW5kKHNlcSgxLCBsZW5ndGgoZyRnZW9tZXRyeSkpLCBnKQogIGNvbG5hbWVzKGhleF9wb2x5cykgPC0gYygiaWRfcG9seWdvbnMiLCAiZ2VvbWV0cnkiKSAjIGNoYW5nZSBjb2xuYW1lcwoKCmBgYAoKCmBgYHtyLCBjYWNoZT1UUlVFLCB3YXJuaW5nPUZBTFNFLCBtZXNzYWdlPUZBTFNFfQpiYl9zZiA8LSBnZXRiYigiQm91bGRlciwgQ29sb3JhZG8iLCBmb3JtYXRfb3V0ID0gInNmX3BvbHlnb24iKQpzdF9jcm9wKGJiX3NmJG11bHRpcG9seWdvblsyLF0sIHhtaW4gPSBleHRlbnQoZ2JiKVsxXSwgeW1pbiA9IGV4dGVudChnYmIpWzNdLCB4bWF4ID0gZXh0ZW50KGdiYilbMl0sIHltYXggPSBleHRlbnQoZ2JiKVs0XSkKZ2dwbG90KGRhdGE9YmJfc2YkbXVsdGlwb2x5Z29uKSArIGdlb21fc2YoZmlsbD1vdXJfYmVpZ2UsIGNvbG9yPW91cl9wdXJwbGUpICsgdGhlbWVfdHVmdGUoKQpgYGAKCgoK</div>
 
 
 

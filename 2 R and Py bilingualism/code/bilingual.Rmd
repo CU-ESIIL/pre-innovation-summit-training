@@ -42,6 +42,7 @@ library(raster)
 library(osmdata)
 library(mapview)
 library(cowplot)
+library(here)
 ```
 
 ```{python}
@@ -59,7 +60,10 @@ import r5py
 
 # Load saved data
 ```{r}
+data("iris")
 
+load(file=here("2 R and Py bilingualism", "data", "iris_example_data.rdata"))
+objects()
 ```
 
 ```{python}
@@ -67,6 +71,32 @@ import r5py
 ```
 
 # Save data
+```{r}
+save(iris, file=here("2 R and Py bilingualism", "data", "iris_example_data.rdata"))
+
+write.csv(iris, file=here("2 R and Py bilingualism", "data", "iris_example_data.csv"))
+```
+
+```{python}
+
+```
+
+
+```{r}
+library(shiny)
+xy <- c(784,479) #output of grDevices::dev.size("px")
+url <- "https://www.youtube.com/watch?v=VO1bQo4PXV4" #copy yt link here
+url <- gsub("watch\\?v=","embed/",url)
+ui <- fluidPage(
+  HTML(paste0('<iframe width="',xy[1],'" height="',xy[2],'" src="',url,'" frameborder="0"></iframe>'))
+)
+server <- function(input, output, session) {
+}
+
+runGadget(shinyApp(ui, server,options=c("launch.browser"=FALSE,"port"=1111)),port=1111,viewer = paneViewer())
+```
+
+
 
 
 # Retrieve data from an API
