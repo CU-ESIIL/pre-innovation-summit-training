@@ -1,0 +1,109 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+# Install packages
+R libraries are stored and managed in a repository called CRAN. You can download R packages with the install.packages() function
+
+```{r}
+install.packages("reticulate")
+```
+You only need to install packages once, but you need to mount those packages with the library() function each time you open R. 
+
+```{r}
+library(reticulate)
+```
+
+Python libraries are stored and managed in a few different libraries and their dependencies are not regulated as strictly as R libraries are in CRAN. It's easier to publish a python package but it can also be more cumbersome for users because you need to manage dependencies yourself. You can download python packages using both R and Python code
+```{r}
+py_install("pandas")
+```
+
+
+# Load packages and change settings
+```{r}
+options(java.parameters = "-Xmx5G")
+
+library(r5r)
+library(sf)
+library(data.table)
+library(ggplot2)
+library(interp)
+library(dplyr)
+library(osmdata)
+library(ggthemes)
+library(sf)
+library(data.table)
+library(ggplot2)
+library(akima)
+library(dplyr)
+library(raster)
+library(osmdata)
+library(mapview)
+library(cowplot)
+```
+
+```{python}
+import sys
+sys.argv.append(["--max-memory", "5G"])
+
+import pandas as pd
+import geopandas
+import matplotlib.pyplot as plt
+import numpy as np
+import plotnine
+import contextily as cx
+import r5py
+```
+
+# Load saved data
+```{r}
+
+```
+
+```{python}
+
+```
+
+# Save data
+
+
+# Retrieve data from an API
+
+
+
+# Import datasets
+```{r, warning=FALSE, message=FALSE}
+gbb <- getbb("Boulder, Colorado")
+gbb[1,1] <- gbb[1,1] + 0.3
+gbb[1,2] <- gbb[1,2] + 0.2
+gbb[2,1] <- gbb[2,1] - 0.12
+gbb[2,2] <- gbb[2,2] - 0.12
+ ext <- as(extent(gbb) , "SpatialPolygons")
+
+
+  #class(ext)
+  #projection(ext) <- projection(Ps1)
+  crs(ext) <- "EPSG:4326"
+  h <- spsample(ext, type = "hexagonal", cellsize = 0.005)
+    # convert center points to hexagons
+    g <- HexPoints2SpatialPolygons(h, dx = 0.005)
+    g <- st_as_sf(g)
+  plot(g, lwd=0.1)
+  #points(pts$name.x, col="blue", cex=10)
+  hex_polys <- cbind(seq(1, length(g$geometry)), g)
+  colnames(hex_polys) <- c("id_polygons", "geometry") # change colnames
+
+
+```
+
+
+```{r, cache=TRUE, warning=FALSE, message=FALSE}
+bb_sf <- getbb("Boulder, Colorado", format_out = "sf_polygon")
+st_crop(bb_sf$multipolygon[2,], xmin = extent(gbb)[1], ymin = extent(gbb)[3], xmax = extent(gbb)[2], ymax = extent(gbb)[4])
+ggplot(data=bb_sf$multipolygon) + geom_sf(fill=our_beige, color=our_purple) + theme_tufte()
+```
+
+
+
