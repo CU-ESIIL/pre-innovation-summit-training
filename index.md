@@ -12,13 +12,31 @@ Welcome to the Environmental Data Science Innovation & Inclusion Lab (<a href="h
 
 ## Agenda
 
-Each session will run from 12pm - 2pm MT and will meet virtually over Zoom.
+Each session will run from **12pm - 2pm MT** and will meet _virtually_ over **Zoom**.
 
-### Day 0 (Wednesday May, 17) - _Collaborating with Other People Using Cloud Computing_
+### Day 0 (Wednesday May, 17)
+> ***Collaborating with Other People Using Cloud Computing***
+> * **Instructors:** Culler, Swetnam, Tuff, Verleye, Know Innovation Team, CyVerse Team
+>   * Team introductions
+>   * Navigating the Constellation of Cyberinfrastructure (Swetnam & CyVerse Team, Tuff, Verleye)
+>     * CyVerse Discovery Environment
+>     * JetStream2
+>   * Navigating KIStorm (Know Innovation Team)
+>   * GitHub for Collaboration (Culler, Tuff, Verleye)
 
-### Day 1 (Thursday May, 18) - _R and Python Bilingualism: How to Talk to Everybody_
+### Day 1 (Thursday May, 18)
+> _R and Python Bilingualism: How to Talk to Everybody_
+> * **Instructors:** Culler, Quarderer(?), Sanovia(?), Tuff
+>   * Libraries for Doing Earth Data Science :books:
+>   * How do things change over time? (Time-series data applications) :chart_with_upwards_trend:
+>   * Let's make a map! (Vector & Raster spatial data applications) 🗺️
 
-### Day 2 (Friday May, 19) - _Tools for Keeping Your Science Open and Reproducible_
+### Day 2 (Friday May, 19)
+> _Tools for Keeping Your Science Open and Reproducible_
+> * **Instructors:** Culler, Swetnam & CyVerse Team, Tuff
+>   * <a href="https://foss.cyverse.org/01_intro_open_sci/" target="_blank">Introduction to Open Science</a>
+>   * <a href="https://foss.cyverse.org/04_documentation_communication/" target="_blank">Documentation & Communication</a>
+>   * <a href="https://foss.cyverse.org/06_reproducibility_i/" target="_blank">Repeatability and Reproducibility</a>
 
 ***
 
