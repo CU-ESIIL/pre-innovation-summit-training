@@ -27,8 +27,8 @@ Each session will run from **12pm - 2pm MT** and will meet _virtually_ over **Zo
 ### Day 1 (Thursday May, 18)
 > _R and Python Bilingualism: How to Talk to Everybody_
 > * **Instructors:** Culler, Quarderer(?), Sanovia(?), Tuff
->   * Libraries for Doing Earth Data Science :books:
->   * How do things change over time? (Time-series data applications) :chart_with_upwards_trend:
+>   * Libraries for Doing Earth Data Science 📚
+>   * How do things change over time? (Time-series data applications) 📈
 >   * Let's make a map! (Vector & Raster spatial data applications) 🗺️
 
 ### Day 2 (Friday May, 19)
@@ -52,9 +52,9 @@ Each session will run from **12pm - 2pm MT** and will meet _virtually_ over **Zo
   
 <img style="float: right;" src="https://www.software.ac.uk/sites/default/files/The%20Carpentries.jpg" width="100" height="100">
 
-* **Use welcoming and inclusive language**
-* **Be respectful of different viewpoints and experiences**
-* **Gracefully accept constructive criticism**
-* **Focus on what is best for the community** 
-* **Show courtesy and respect towards other community members**
+* Use welcoming and inclusive language
+* Be respectful of different viewpoints and experiences
+* Gracefully accept constructive criticism
+* Focus on what is best for the community
+* Show courtesy and respect towards other community members
 
