@@ -19,10 +19,13 @@ Each session will run from **12pm - 2pm MT** and will meet _virtually_ over **Zo
 > * **Instructors:** Culler, Swetnam, Tuff, Verleye, Know Innovation Team, CyVerse Team
 >   * Team introductions
 >   * Navigating the Constellation of Cyberinfrastructure (Swetnam & CyVerse Team, Tuff, Verleye)
->     * CyVerse Discovery Environment
->     * JetStream2
->   * Navigating KIStorm (Know Innovation Team)
->   * GitHub for Collaboration (Culler, Tuff, Verleye)
+>     * CyVerse Discovery Environment ✨
+>     * JetStream2 🚀
+>   * Navigating KIStorm (Know Innovation Team) ⚡
+>   * GitHub for Collaboration (Culler, Tuff, Verleye) <img src="https://user-images.githubusercontent.com/16786791/231537692-fa9feee7-9f48-4b1c-b1cd-7c73fa81e102.png"  width="20" height="20">
+
+
+
 
 ### Day 1 (Thursday May, 18)
 > _R and Python Bilingualism: How to Talk to Everybody_
@@ -42,9 +45,14 @@ Each session will run from **12pm - 2pm MT** and will meet _virtually_ over **Zo
 
 ## Important links:
 **Zoom:**
+
 **GitHub repository:**
+
 **KIStorm:**
+
 **Slack:** 
+
+**CyVerse:**
 
 *** 
 
