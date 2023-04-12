@@ -28,14 +28,14 @@ Each session will run from **12pm - 2pm MT** and will meet _virtually_ over **Zo
 
 
 ### Day 1 (Thursday May, 18)
-> _R and Python Bilingualism: How to Talk to Everybody_
+> ***R and Python Bilingualism: How to Talk to Everybody***
 > * **Instructors:** Culler, Quarderer(?), Sanovia(?), Tuff
 >   * Libraries for Doing Earth Data Science 📚
 >   * How do things change over time? (Time-series data applications) 📈
 >   * Let's make a map! (Vector & Raster spatial data applications) 🗺️
 
 ### Day 2 (Friday May, 19)
-> _Tools for Keeping Your Science Open and Reproducible_
+> ***Tools for Keeping Your Science Open and Reproducible***
 > * **Instructors:** Culler, Swetnam & CyVerse Team, Tuff
 >   * <a href="https://foss.cyverse.org/01_intro_open_sci/" target="_blank">Introduction to Open Science</a>
 >   * <a href="https://foss.cyverse.org/04_documentation_communication/" target="_blank">Documentation & Communication</a>
