@@ -1,4 +1,4 @@
-<img align="right" width="1000" height="120" src="https://raw.githubusercontent.com/CU-ESIIL/pre-innovation-summit-training/main/pre-summit-training-header.png">
+<img align="right" width="1000" height="100" src="https://raw.githubusercontent.com/CU-ESIIL/pre-innovation-summit-training/main/pre-summit-training-header.png">
 
 ## Get Ready to Innovate: Virtual Technical Training for Collaboration in Environmental Data Science
 
