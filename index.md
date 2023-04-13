@@ -19,10 +19,10 @@ Each session will run from **12pm - 2pm MT** and will meet _virtually_ over **Zo
 > * **Instructors:** Culler, Swetnam, Tuff, Verleye, Know Innovation Team, CyVerse Team
 >   * Team introductions
 >   * Navigating the Constellation of Cyberinfrastructure (Swetnam & CyVerse Team, Tuff, Verleye)
->     * CyVerse Discovery Environment ✨
->     * JetStream2 🚀
+>     * <a href="https://de.cyverse.org/" target="_blank">**CyVerse Discovery Environment**</a> ✨
+>     * <a href="https://jetstream-cloud.org/" target="_blank">**JetStream2**</a> 🚀
 >   * Navigating KIStorm (Know Innovation Team) ⚡
->   * GitHub for Collaboration (Culler, Tuff, Verleye) 🤝
+>   * <a href="https://github.com/" target="_blank">**GitHub**</a> for Collaboration (Culler, Tuff, Verleye) 🤝
 
 
 
@@ -32,14 +32,23 @@ Each session will run from **12pm - 2pm MT** and will meet _virtually_ over **Zo
 > * **Instructors:** Culler, Quarderer(?), Sanovia(?), Tuff
 >   * Libraries for Doing Earth Data Science 📚
 >   * How do things change over time? (Time-series data applications) 📈
+>     * <a href="https://www.earthdatascience.org/courses/earth-analytics/time-series-data/date-class-in-r/" target="_blank">**Time Series Data in R**</a>
+>     * <a href="https://www.earthdatascience.org/courses/use-data-open-source-python/use-time-series-data-in-python/" target="_blank">**Time Series Data in Python**</a>
 >   * Let's make a map! (Vector & Raster spatial data applications) 🗺️
+>     * <a href="https://www.earthdatascience.org/courses/earth-analytics/spatial-data-r/" target="_blank">**Spatial Data in R**</a>
+>     * <a href="https://www.earthdatascience.org/courses/use-data-open-source-python/intro-vector-data-python/" target="_blank">**Introduction to Vector Data in Python**</a>
+>     * <a href="" target="_blank">**Introduction to Raster Data in Python**</a>
+
+
 
 ### Day 2 (Friday May, 19)
-> ***Tools for Keeping Your Science Open and Reproducible***
+> ***Tools for Keeping Your Science Open and Reproducible*** 
+> 
+> (borrowed from the _CyVerse Foundational Open Science Skills 2023_ open online course)
 > * **Instructors:** Culler, Swetnam & CyVerse Team, Tuff
->   * <a href="https://foss.cyverse.org/01_intro_open_sci/" target="_blank">Introduction to Open Science</a>
->   * <a href="https://foss.cyverse.org/04_documentation_communication/" target="_blank">Documentation & Communication</a>
->   * <a href="https://foss.cyverse.org/06_reproducibility_i/" target="_blank">Repeatability and Reproducibility</a>
+>   * <a href="https://foss.cyverse.org/01_intro_open_sci/" target="_blank">**Introduction to Open Science**</a>
+>   * <a href="https://foss.cyverse.org/04_documentation_communication/" target="_blank">**Documentation & Communication**</a>
+>   * <a href="https://foss.cyverse.org/06_reproducibility_i/" target="_blank">**Repeatability and Reproducibility**</a>
 
 ***
 
