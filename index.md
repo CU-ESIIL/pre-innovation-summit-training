@@ -35,7 +35,7 @@ Welcome to the Environmental Data Science Innovation & Inclusion Lab (<a href="h
 
 ***
 
-<img style="float: right;" src="https://esiil.org/sites/default/files/inline-images/tyson%20headshot.png" width="125">
+<img style="float: right;" src="https://esiil.org/sites/default/files/inline-images/tyson%20headshot.png" height="125">
 
 ### **Tyson Swetnam**
 
