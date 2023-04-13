@@ -18,6 +18,7 @@ library(reticulate)
 Python libraries are stored and managed in a few different libraries and their dependencies are not regulated as strictly as R libraries are in CRAN. It's easier to publish a python package but it can also be more cumbersome for users because you need to manage dependencies yourself. You can download python packages using both R and Python code
 ```{r}
 py_install("pandas")
+py_install("turtle")
 ```
 
 
@@ -56,6 +57,7 @@ import numpy as np
 import plotnine
 import contextily as cx
 import r5py
+import seaborn as sns
 ```
 
 # Load saved data
@@ -82,6 +84,29 @@ write.csv(iris, file=here("2 R and Py bilingualism", "data", "iris_example_data.
 ```
 
 
+
+
+```{python}
+plt.clf()
+sns.countplot(x='Species', data=r.iris)
+plt.show()
+```
+
+
+```{r}
+df <- datasets::AirPassengers
+#converting Time-Series object into an R Dataframe 
+#Thx: https://stackoverflow.com/questions/5331901/transforming-a-time-series-into-a-data-frame-and-back
+df1 <- data.frame(tapply(df, list(year = floor(time(df)), month = month.abb[cycle(df)]), c))
+df1 <- df1[month.abb]
+#building a heatmap using seaborn 
+#please note the function r_to_py() that converts R object into a python 
+
+```
+
+
+
+
 ```{r}
 library(shiny)
 xy <- c(784,479) #output of grDevices::dev.size("px")
@@ -104,36 +129,8 @@ runGadget(shinyApp(ui, server,options=c("launch.browser"=FALSE,"port"=1111)),por
 
 
 # Import datasets
-```{r, warning=FALSE, message=FALSE}
-gbb <- getbb("Boulder, Colorado")
-gbb[1,1] <- gbb[1,1] + 0.3
-gbb[1,2] <- gbb[1,2] + 0.2
-gbb[2,1] <- gbb[2,1] - 0.12
-gbb[2,2] <- gbb[2,2] - 0.12
- ext <- as(extent(gbb) , "SpatialPolygons")
 
 
-  #class(ext)
-  #projection(ext) <- projection(Ps1)
-  crs(ext) <- "EPSG:4326"
-  h <- spsample(ext, type = "hexagonal", cellsize = 0.005)
-    # convert center points to hexagons
-    g <- HexPoints2SpatialPolygons(h, dx = 0.005)
-    g <- st_as_sf(g)
-  plot(g, lwd=0.1)
-  #points(pts$name.x, col="blue", cex=10)
-  hex_polys <- cbind(seq(1, length(g$geometry)), g)
-  colnames(hex_polys) <- c("id_polygons", "geometry") # change colnames
-
-
-```
-
-
-```{r, cache=TRUE, warning=FALSE, message=FALSE}
-bb_sf <- getbb("Boulder, Colorado", format_out = "sf_polygon")
-st_crop(bb_sf$multipolygon[2,], xmin = extent(gbb)[1], ymin = extent(gbb)[3], xmax = extent(gbb)[2], ymax = extent(gbb)[4])
-ggplot(data=bb_sf$multipolygon) + geom_sf(fill=our_beige, color=our_purple) + theme_tufte()
-```
 
 
 
