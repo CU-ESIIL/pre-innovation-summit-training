@@ -2,7 +2,7 @@
 
 # Get Ready to Innovate: Virtual Technical Training for Collaboration in Environmental Data Science
 
-Welcome to the Environmental Data Science Innovation & Inclusion Lab (<a href="https://esiil.org/" target="_blank">**ESIIL**</a>)! These training sessions are intended to provide attendees to the ESIIL Innovation Summit with some technical background to help foster innovation and collaboartion during the summit. Through this training, attendees will learn how to access and engage with cloud-based communication and computational tools that will be relied on throughout the summit, fundamental Environmental Data Science (EDS) skills using R and Python, and ways to make your science open and reproducible. These sessions are being recorded and published on our YouTube channel for anyone who is unable to attend, or for those who would like to go back and revisit these lessons. Finally, we will have super fun virtual and in-person help desks set up during the summit as questions come up and for anyone who would like help troubleshooting.
+Welcome to the Environmental Data Science Innovation & Inclusion Lab (<a href="https://esiil.org/" target="_blank">**ESIIL**</a>)! These training sessions are intended to provide attendees to the <a href="https://esiil.org/innovation-summit" target="_blank">**ESIIL Innovation Summit**</a> with some technical background to help foster innovation and collaboartion during the summit. Through this training, attendees will learn how to access and engage with cloud-based communication and computational tools that will be relied on throughout the summit, fundamental Environmental Data Science (EDS) skills using <a href="https://www.r-project.org/" target="_blank">**R**</a> and <a href="https://www.python.org/" target="_blank">**Python**</a>, and ways to make your science open and reproducible. These sessions are being recorded and published on our YouTube channel for anyone who is unable to attend, or for those who would like to go back and revisit these lessons. Finally, we will have super fun virtual and in-person help desks set up during the summit as questions come up and for anyone who would like help troubleshooting.
 
 ***
 
@@ -46,13 +46,15 @@ Each session will run from **12pm - 2pm MT** and will meet _virtually_ over **Zo
 ## Important links:
 **Zoom:**
 
-**GitHub repository:**
+**GitHub repository:** <a href="https://github.com/CU-ESIIL/pre-innovation-summit-training" target="_blank">**https://github.com/CU-ESIIL/pre-innovation-summit-training**</a>
 
 **KIStorm:**
 
 **Slack:** 
 
 **CyVerse:**
+
+**Open Textbook:** <a href="https://www.earthdatascience.org/" target="_blank">**https://www.earthdatascience.org/**</a>
 
 *** 
 
