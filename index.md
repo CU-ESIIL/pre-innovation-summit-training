@@ -8,7 +8,7 @@ Welcome to the Environmental Data Science Innovation & Inclusion Lab (<a href="h
 
 ## Our team
 
-<img style="float: right;" src="https://earthlab.colorado.edu/sites/default/files/styles/square_med/public/media/image/Elsa%20Culler%20-%20reduced.jpg?itok=RWCtw7K7" width="125" height="125">
+<img style="float: right;" src="https://earthlab.colorado.edu/sites/default/files/styles/square_med/public/media/image/Elsa%20Culler%20-%20reduced.jpg?itok=RWCtw7K7" height="100">
 
 ### **Elsa Culler**
 
@@ -17,7 +17,7 @@ Welcome to the Environmental Data Science Innovation & Inclusion Lab (<a href="h
 
 ***
 
-<img style="float: right;" src="https://earthlab.colorado.edu/sites/default/files/styles/square_med/public/media/image/profile.png?itok=81I5qGge" width="125" height="125">
+<img style="float: right;" src="https://earthlab.colorado.edu/sites/default/files/styles/square_med/public/media/image/profile.png?itok=81I5qGge" height="100">
 
 ### **Nate Quarderer** 
 
@@ -26,7 +26,7 @@ Welcome to the Environmental Data Science Innovation & Inclusion Lab (<a href="h
 
 ***
 
-<img style="float: right;" src="https://media.licdn.com/dms/image/D5603AQFIoqS91aBcaw/profile-displayphoto-shrink_200_200/0/1674354325257?e=1683763200&v=beta&t=Ua-EWUlQOzMrEdR61FS6UV0LDhwK4oltMOJeyMVIb1A" width="125" height="125">
+<img style="float: right;" src="https://media.licdn.com/dms/image/D5603AQFIoqS91aBcaw/profile-displayphoto-shrink_200_200/0/1674354325257?e=1683763200&v=beta&t=Ua-EWUlQOzMrEdR61FS6UV0LDhwK4oltMOJeyMVIb1A" height="100">
 
 ### **Jim Sanovia**
 
@@ -35,7 +35,7 @@ Welcome to the Environmental Data Science Innovation & Inclusion Lab (<a href="h
 
 ***
 
-<img style="float: right;" src="https://esiil.org/sites/default/files/inline-images/tyson%20headshot.png" height="125">
+<img style="float: right;" src="https://esiil.org/sites/default/files/inline-images/tyson%20headshot.png" height="100">
 
 ### **Tyson Swetnam**
 
@@ -44,7 +44,7 @@ Welcome to the Environmental Data Science Innovation & Inclusion Lab (<a href="h
 
 ***
 
-<img style="float: right;" src="https://esiil.org/sites/default/files/inline-images/Screen%20Shot%202023-01-17%20at%2011.57.14%20AM.png" width="125">
+<img style="float: right;" src="https://esiil.org/sites/default/files/inline-images/Screen%20Shot%202023-01-17%20at%2011.57.14%20AM.png" height="100">
 
 ### **Ty Tuff**
 
@@ -53,7 +53,7 @@ Welcome to the Environmental Data Science Innovation & Inclusion Lab (<a href="h
 
 ***
 
-<img style="float: right;" src="https://earthlab.colorado.edu/sites/default/files/styles/square_med/public/media/image/ev_headshot.JPG?itok=PSAqqP2n" width="125">
+<img style="float: right;" src="https://earthlab.colorado.edu/sites/default/files/styles/square_med/public/media/image/ev_headshot.JPG?itok=PSAqqP2n" height="100">
 
 ### **Erick Verleye**
 
