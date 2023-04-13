@@ -93,16 +93,24 @@ plt.show()
 ```
 
 
-```{r}
-df <- datasets::AirPassengers
-#converting Time-Series object into an R Dataframe 
-#Thx: https://stackoverflow.com/questions/5331901/transforming-a-time-series-into-a-data-frame-and-back
-df1 <- data.frame(tapply(df, list(year = floor(time(df)), month = month.abb[cycle(df)]), c))
-df1 <- df1[month.abb]
-#building a heatmap using seaborn 
-#please note the function r_to_py() that converts R object into a python 
-
+```{python}
+plt.clf()
+sns.pairplot(r.iris, hue = 'Species')
+plt.show()
 ```
+
+
+```{python}
+plt.clf()
+correlation_matrix = r.iris.corr()
+plt.figure(figsize=(1,1))
+sns.heatmap(correlation_matrix, cbar=True, fmt='.1f', annot=True, cmap='Blues')
+plt.show()
+plt.savefig('Correlation Heat map')
+```
+
+
+
 
 
 
@@ -128,7 +136,6 @@ runGadget(shinyApp(ui, server,options=c("launch.browser"=FALSE,"port"=1111)),por
 
 
 
-# Import datasets
 
 
 
