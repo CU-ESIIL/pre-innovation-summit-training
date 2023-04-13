@@ -44,6 +44,7 @@ library(osmdata)
 library(mapview)
 library(cowplot)
 library(here)
+library(testthat)
 ```
 
 ```{python}
@@ -81,6 +82,47 @@ write.csv(iris, file=here("2 R and Py bilingualism", "data", "iris_example_data.
 
 ```{python}
 
+```
+
+
+# Write a function
+```{r}
+library(rvest)
+
+scrape_wikipedia_table <- function(url) {
+  page <- read_html(url)
+  table <- html_table(html_nodes(page, "table")[[2]])
+  return(table)
+}
+
+# Unit tests
+library(testthat)
+
+test_that("scrape_wikipedia_table returns a data frame", {
+  url <- "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population"
+  table <- scrape_wikipedia_table(url)
+  expect_is(table, "data.frame")
+})
+
+test_that("scrape_wikipedia_table returns the correct table", {
+  url <- "https://en.wikipedia.org/wiki/List_of_countries_by_population_(United_Nations)"
+  table <- scrape_wikipedia_table(url)
+  expect_equal(dim(table), c(235, 6))
+})
+```
+
+```{python}
+import requests
+from bs4 import BeautifulSoup
+
+def scrape_wikipedia_table(url):
+    page = requests.get(url)
+    soup = BeautifulSoup(page.content, 'html.parser')
+    table = soup.find_all('table')[1]
+    return pd.read_html(str(table))[0]
+  
+  url = "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population"
+table = scrape_wikipedia_table(url)
 ```
 
 
