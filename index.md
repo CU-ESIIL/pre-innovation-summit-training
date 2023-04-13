@@ -8,6 +8,58 @@ Welcome to the Environmental Data Science Innovation & Inclusion Lab (<a href="h
 
 ## Our team
 
+<img style="float: right;" src="https://earthlab.colorado.edu/sites/default/files/styles/square_med/public/media/image/Elsa%20Culler%20-%20reduced.jpg?itok=RWCtw7K7" width="125" height="125">
+
+### **Elsa Culler**
+
+* Education Trainer - Earth Lab; ESIIL
+* <a href="https://earthlab.colorado.edu/our-team/elsa-culler" target="_blank">**Website**</a>
+
+***
+
+<img style="float: right;" src="https://earthlab.colorado.edu/sites/default/files/styles/square_med/public/media/image/profile.png?itok=81I5qGge" width="125" height="125">
+
+### **Nate Quarderer** 
+
+* Education Director - Earth Lab; ESIIL
+* <a href="https://earthlab.colorado.edu/our-team/nathan-quarderer" target="_blank">**Website**</a>
+
+***
+
+<img style="float: right;" src="https://media.licdn.com/dms/image/D5603AQFIoqS91aBcaw/profile-displayphoto-shrink_200_200/0/1674354325257?e=1683763200&v=beta&t=Ua-EWUlQOzMrEdR61FS6UV0LDhwK4oltMOJeyMVIb1A" width="125" height="125">
+
+### **Jim Sanovia**
+
+* Tribal Resilience Data Scientist - ESIIL
+* <a href="https://esiil.org/our-team" target="_blank">**Website**</a>
+
+***
+
+<img style="float: right;" src="https://esiil.org/sites/default/files/inline-images/tyson%20headshot.png" width="125">
+
+### **Tyson Swetnam**
+
+* Co-PI and Science Lead - CyVerse
+* <a href="https://tysonswetnam.com/" target="_blank">**Website**</a>
+
+***
+
+<img style="float: right;" src="https://esiil.org/sites/default/files/inline-images/Screen%20Shot%202023-01-17%20at%2011.57.14%20AM.png" width="125">
+
+### **Ty Tuff**
+
+* Data Scientist - Earth Lab; ESIIL
+* <a href="https://earthlab.colorado.edu/our-team/ty-tuff" target="_blank">**Website**</a>
+
+***
+
+<img style="float: right;" src="https://earthlab.colorado.edu/sites/default/files/styles/square_med/public/media/image/ev_headshot.JPG?itok=PSAqqP2n" width="125">
+
+### **Erick Verleye**
+
+* Software Developer - Earth Lab; ESIIL
+* <a href="https://earthlab.colorado.edu/our-team/erick-verleye" target="_blank">**Website**</a>
+
 ***
 
 ## Agenda
@@ -44,7 +96,7 @@ Each session will run from **12pm - 2pm MT** and will meet _virtually_ over **Zo
 ## Day 2 (Friday May, 19)
 > ### ***Tools for Keeping Your Science Open and Reproducible*** 
 > 
-> (borrowed from the _CyVerse Foundational Open Science Skills 2023_ open online course)
+> (borrowed from the <a href="https://foss.cyverse.org/" target="_blank">***CyVerse Foundational Open Science Skills 2023***</a> open online course)
 > * **Instructors:** Culler, Swetnam & CyVerse Team, Tuff
 >   * <a href="https://foss.cyverse.org/01_intro_open_sci/" target="_blank">**Introduction to Open Science**</a>
 >   * <a href="https://foss.cyverse.org/04_documentation_communication/" target="_blank">**Documentation & Communication**</a>
