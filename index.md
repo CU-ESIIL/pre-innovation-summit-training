@@ -14,9 +14,9 @@ Welcome to the Environmental Data Science Innovation & Inclusion Lab (<a href="h
 
 Each session will run from **12pm - 2pm MT** and will meet _virtually_ over **Zoom**.
 
-### Day 0 (Wednesday May, 17)
-> ***Collaborating with Other People Using Cloud Computing***
-> * **Instructors:** Culler, Swetnam, Tuff, Verleye, Know Innovation Team, CyVerse Team
+## Day 0 (Wednesday May, 17)
+> ### ***Collaborating with Other People Using Cloud Computing***
+> * **Instructors:** Culler, Know Innovation Team, Swetnam & CyVerse Team, Tuff, Verleye
 >   * Team introductions
 >   * Navigating the Constellation of Cyberinfrastructure (Swetnam & CyVerse Team, Tuff, Verleye)
 >     * <a href="https://de.cyverse.org/" target="_blank">**CyVerse Discovery Environment**</a> ✨
@@ -27,8 +27,8 @@ Each session will run from **12pm - 2pm MT** and will meet _virtually_ over **Zo
 
 
 
-### Day 1 (Thursday May, 18)
-> ***R and Python Bilingualism: How to Talk to Everybody***
+## Day 1 (Thursday May, 18)
+> ### ***R and Python Bilingualism: How to Talk to Everybody***
 > * **Instructors:** Culler, Quarderer(?), Sanovia(?), Tuff
 >   * Libraries for Doing Earth Data Science 📚
 >   * How do things change over time? (Time-series data applications) 📈
@@ -41,8 +41,8 @@ Each session will run from **12pm - 2pm MT** and will meet _virtually_ over **Zo
 
 
 
-### Day 2 (Friday May, 19)
-> ***Tools for Keeping Your Science Open and Reproducible*** 
+## Day 2 (Friday May, 19)
+> ### ***Tools for Keeping Your Science Open and Reproducible*** 
 > 
 > (borrowed from the _CyVerse Foundational Open Science Skills 2023_ open online course)
 > * **Instructors:** Culler, Swetnam & CyVerse Team, Tuff
@@ -76,4 +76,8 @@ Each session will run from **12pm - 2pm MT** and will meet _virtually_ over **Zo
 * Gracefully accept constructive criticism
 * Focus on what is best for the community
 * Show courtesy and respect towards other community members
+
+***
+
+### This work is funded by the National Science Foundation (NSF Award Number <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2153040&HistoricalAwards=false" target="_blank">DBI-2153040</a>).
 
