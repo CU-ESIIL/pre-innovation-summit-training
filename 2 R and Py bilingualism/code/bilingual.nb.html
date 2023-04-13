@@ -1767,30 +1767,32 @@ pre code {
 can download R packages with the install.packages() function</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuaW5zdGFsbC5wYWNrYWdlcyhcXHJldGljdWxhdGVcXClcbmBgYFxuYGBgIn0= -->
-<pre class="r"><code>```r
-install.packages(\reticulate\)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaW5zdGFsbC5wYWNrYWdlcyhcInJldGljdWxhdGVcIilcbmBgYCJ9 -->
+<pre class="r"><code>install.packages(&quot;reticulate&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoidHJ5aW5nIFVSTCAnaHR0cHM6Ly9jcmFuLnJzdHVkaW8uY29tL2Jpbi9tYWNvc3gvY29udHJpYi80LjIvcmV0aWN1bGF0ZV8xLjI4LnRneidcbkNvbnRlbnQgdHlwZSAnYXBwbGljYXRpb24veC1nemlwJyBsZW5ndGggMjU3MDQxNSBieXRlcyAoMi41IE1CKVxuPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT1cbmRvd25sb2FkZWQgMi41IE1CXG4ifQ== -->
+<pre><code>trying URL &#39;https://cran.rstudio.com/bin/macosx/contrib/4.2/reticulate_1.28.tgz&#39;
+Content type &#39;application/x-gzip&#39; length 2570415 bytes (2.5 MB)
+==================================================
+downloaded 2.5 MB</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5UaGUgZG93bmxvYWRlZCBiaW5hcnkgcGFja2FnZXMgYXJlIGluXG5cdC92YXIvZm9sZGVycy8yMi9teDlfNHoxbjd5NTFmd3doaGx4bDRtNDgwMDAwZ3AvVC8vUnRtcHgwQm5wOS9kb3dubG9hZGVkX3BhY2thZ2VzXG4ifQ== -->
 <pre><code>
-&lt;!-- rnb-source-end --&gt;
-
-&lt;!-- rnb-chunk-end --&gt;
-
-
-&lt;!-- rnb-text-begin --&gt;
-
-You only need to install packages once, but you need to mount those packages with the library() function each time you open R. 
-
-
-&lt;!-- rnb-text-end --&gt;
-
-
-&lt;!-- rnb-chunk-begin --&gt;
-
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShyZXRpY3VsYXRlKVxuYGBgIn0= --&gt;
-
-```r
-library(reticulate)</code></pre>
+The downloaded binary packages are in
+    /var/folders/22/mx9_4z1n7y51fwwhhlxl4m480000gp/T//Rtmpx0Bnp9/downloaded_packages</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZyBtZXNzYWdlOlxuUiBncmFwaGljcyBlbmdpbmUgdmVyc2lvbiAxNSBpcyBub3Qgc3VwcG9ydGVkIGJ5IHRoaXMgdmVyc2lvbiBvZiBSU3R1ZGlvLiBUaGUgUGxvdHMgdGFiIHdpbGwgYmUgZGlzYWJsZWQgdW50aWwgYSBuZXdlciB2ZXJzaW9uIG9mIFJTdHVkaW8gaXMgaW5zdGFsbGVkLiBcbiJ9 -->
+<pre><code>Warning message:
+R graphics engine version 15 is not supported by this version of RStudio. The Plots tab will be disabled until a newer version of RStudio is installed. </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>You only need to install packages once, but you need to mount those
+packages with the library() function each time you open R.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShyZXRpY3VsYXRlKVxuYGBgIn0= -->
+<pre class="r"><code>library(reticulate)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -1801,9 +1803,35 @@ cumbersome for users because you need to manage dependencies yourself.
 You can download python packages using both R and Python code</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucHlfaW5zdGFsbChcInR1cnRsZVwiKVxuXG5gYGAifQ== -->
-<pre class="r"><code>py_install(&quot;turtle&quot;)
-</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucHlfaW5zdGFsbChcInBhbmRhc1wiKVxuYGBgIn0= -->
+<pre class="r"><code>py_install(&quot;pandas&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiKyAnL1VzZXJzL3R5L29wdC9taW5pY29uZGEzL2Jpbi9jb25kYScgJ2luc3RhbGwnICctLXllcycgJy0tcHJlZml4JyAnL1VzZXJzL3R5L29wdC9taW5pY29uZGEzL2VudnMvZWFydGgtYW5hbHl0aWNzLXB5dGhvbicgJy1jJyAnY29uZGEtZm9yZ2UnICdwYW5kYXMnXG4ifQ== -->
+<pre><code>+ &#39;/Users/ty/opt/miniconda3/bin/conda&#39; &#39;install&#39; &#39;--yes&#39; &#39;--prefix&#39; &#39;/Users/ty/opt/miniconda3/envs/earth-analytics-python&#39; &#39;-c&#39; &#39;conda-forge&#39; &#39;pandas&#39;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiQ29sbGVjdGluZyBwYWNrYWdlIG1ldGFkYXRhIChjdXJyZW50X3JlcG9kYXRhLmpzb24pOiAuLi53b3JraW5nLi4uIGRvbmVcblNvbHZpbmcgZW52aXJvbm1lbnQ6IC4uLndvcmtpbmcuLi4gZG9uZVxuIn0= -->
+<pre><code>Collecting package metadata (current_repodata.json): ...working... done
+Solving environment: ...working... done</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5cbj09PiBXQVJOSU5HOiBBIG5ld2VyIHZlcnNpb24gb2YgY29uZGEgZXhpc3RzLiA8PT1cbiAgY3VycmVudCB2ZXJzaW9uOiAyMi45LjBcbiAgbGF0ZXN0IHZlcnNpb246IDIzLjMuMVxuXG5QbGVhc2UgdXBkYXRlIGNvbmRhIGJ5IHJ1bm5pbmdcblxuICAgICQgY29uZGEgdXBkYXRlIC1uIGJhc2UgLWMgZGVmYXVsdHMgY29uZGFcbiJ9 -->
+<pre><code>
+
+==&gt; WARNING: A newer version of conda exists. &lt;==
+  current version: 22.9.0
+  latest version: 23.3.1
+
+Please update conda by running
+
+    $ conda update -n base -c defaults conda</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG4jIEFsbCByZXF1ZXN0ZWQgcGFja2FnZXMgYWxyZWFkeSBpbnN0YWxsZWQuXG5cblJldHJpZXZpbmcgbm90aWNlczogLi4ud29ya2luZy4uLiBkb25lXG4ifQ== -->
+<pre><code>
+# All requested packages already installed.
+
+Retrieving notices: ...working... done</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucHlfaW5zdGFsbChcInR1cnRsZVwiKVxuYGBgIn0= -->
+<pre class="r"><code>py_install(&quot;turtle&quot;)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiKyAnL1VzZXJzL3R5L29wdC9taW5pY29uZGEzL2Jpbi9jb25kYScgJ2luc3RhbGwnICctLXllcycgJy0tcHJlZml4JyAnL1VzZXJzL3R5L29wdC9taW5pY29uZGEzL2VudnMvZWFydGgtYW5hbHl0aWNzLXB5dGhvbicgJy1jJyAnY29uZGEtZm9yZ2UnICd0dXJ0bGUnXG4ifQ== -->
 <pre><code>+ &#39;/Users/ty/opt/miniconda3/bin/conda&#39; &#39;install&#39; &#39;--yes&#39; &#39;--prefix&#39; &#39;/Users/ty/opt/miniconda3/envs/earth-analytics-python&#39; &#39;-c&#39; &#39;conda-forge&#39; &#39;turtle&#39;</code></pre>
@@ -1934,11 +1962,6 @@ objects()
 <h1>Save data</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2F2ZShpcmlzLCBmaWxlPWhlcmUoXCIyIFIgYW5kIFB5IGJpbGluZ3VhbGlzbVwiLCBcImRhdGFcIiwgXCJpcmlzX2V4YW1wbGVfZGF0YS5yZGF0YVwiKSlcblxud3JpdGUuY3N2KGlyaXMsIGZpbGU9aGVyZShcIjIgUiBhbmQgUHkgYmlsaW5ndWFsaXNtXCIsIFwiZGF0YVwiLCBcImlyaXNfZXhhbXBsZV9kYXRhLmNzdlwiKSlcbmBgYCJ9 -->
-<pre class="r"><code>save(iris, file=here(&quot;2 R and Py bilingualism&quot;, &quot;data&quot;, &quot;iris_example_data.rdata&quot;))
-
-write.csv(iris, file=here(&quot;2 R and Py bilingualism&quot;, &quot;data&quot;, &quot;iris_example_data.csv&quot;))</code></pre>
-<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
@@ -2006,7 +2029,7 @@ plt.figure(figsize=(1,1))</code></pre>
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShzaGlueSlcbnh5IDwtIGMoNzg0LDQ3OSkgI291dHB1dCBvZiBnckRldmljZXM6OmRldi5zaXplKFwicHhcIilcbnVybCA8LSBcImh0dHBzOi8vd3d3LnlvdXR1YmUuY29tL3dhdGNoP3Y9Vk8xYlFvNFBYVjRcIiAjY29weSB5dCBsaW5rIGhlcmVcbnVybCA8LSBnc3ViKFwid2F0Y2hcXFxcP3Y9XCIsXCJlbWJlZC9cIix1cmwpXG51aSA8LSBmbHVpZFBhZ2UoXG4gIEhUTUwocGFzdGUwKCc8aWZyYW1lIHdpZHRoPVwiJyx4eVsxXSwnXCIgaGVpZ2h0PVwiJyx4eVsyXSwnXCIgc3JjPVwiJyx1cmwsJ1wiIGZyYW1lYm9yZGVyPVwiMFwiPjxcL2lmcmFtZT4nKSlcbilcbnNlcnZlciA8LSBmdW5jdGlvbihpbnB1dCwgb3V0cHV0LCBzZXNzaW9uKSB7XG59XG5cbnJ1bkdhZGdldChzaGlueUFwcCh1aSwgc2VydmVyLG9wdGlvbnM9YyhcImxhdW5jaC5icm93c2VyXCI9RkFMU0UsXCJwb3J0XCI9MTExMSkpLHBvcnQ9MTExMSx2aWV3ZXIgPSBwYW5lVmlld2VyKCkpXG5gYGAifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjpbImxpYnJhcnkoc2hpbnkpIiwieHkgPC0gYyg3ODQsNDc5KSAjb3V0cHV0IG9mIGdyRGV2aWNlczo6ZGV2LnNpemUoXCJweFwiKSIsInVybCA8LSBcImh0dHBzOi8vd3d3LnlvdXR1YmUuY29tL3dhdGNoP3Y9Vk8xYlFvNFBYVjRcIiAjY29weSB5dCBsaW5rIGhlcmUiLCJ1cmwgPC0gZ3N1YihcIndhdGNoXFxcXD92PVwiLFwiZW1iZWQvXCIsdXJsKSIsInVpIDwtIGZsdWlkUGFnZSgiLCIgIEhUTUwocGFzdGUwKCc8aWZyYW1lIHdpZHRoPVwiJyx4eVsxXSwnXCIgaGVpZ2h0PVwiJyx4eVsyXSwnXCIgc3JjPVwiJyx1cmwsJ1wiIGZyYW1lYm9yZGVyPVwiMFwiPjxcL2lmcmFtZT4nKSkiLCIpIiwic2VydmVyIDwtIGZ1bmN0aW9uKGlucHV0LCBvdXRwdXQsIHNlc3Npb24pIHsiLCJ9IiwiIiwicnVuR2FkZ2V0KHNoaW55QXBwKHVpLCBzZXJ2ZXIsb3B0aW9ucz1jKFwibGF1bmNoLmJyb3dzZXJcIj1GQUxTRSxcInBvcnRcIj0xMTExKSkscG9ydD0xMTExLHZpZXdlciA9IHBhbmVWaWV3ZXIoKSkiXX0= -->
 <pre class="r"><code>library(shiny)
 xy &lt;- c(784,479) #output of grDevices::dev.size(&quot;px&quot;)
 url &lt;- &quot;https://www.youtube.com/watch?v=VO1bQo4PXV4&quot; #copy yt link here
@@ -2019,14 +2042,6 @@ server &lt;- function(input, output, session) {
 
 runGadget(shinyApp(ui, server,options=c(&quot;launch.browser&quot;=FALSE,&quot;port&quot;=1111)),port=1111,viewer = paneViewer())</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG5MaXN0ZW5pbmcgb24gaHR0cDovLzEyNy4wLjAuMToxMTExXG4ifQ== -->
-<pre><code>
-Listening on http://127.0.0.1:1111</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3IgaW4gZXhlY0NhbGxiYWNrcyh0aW1lb3V0U2VjcywgYWxsLCBsb29wJGlkKSA6IFxuICBubyBmdW5jdGlvbiB0byByZXR1cm4gZnJvbSwganVtcGluZyB0byB0b3AgbGV2ZWxcbiJ9 -->
-<pre><code>Error in execCallbacks(timeoutSecs, all, loop$id) : 
-  no function to return from, jumping to top level</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -2035,7 +2050,7 @@ Listening on http://127.0.0.1:1111</code></pre>
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKIyBJbnN0YWxsIHBhY2thZ2VzClIgbGlicmFyaWVzIGFyZSBzdG9yZWQgYW5kIG1hbmFnZWQgaW4gYSByZXBvc2l0b3J5IGNhbGxlZCBDUkFOLiBZb3UgY2FuIGRvd25sb2FkIFIgcGFja2FnZXMgd2l0aCB0aGUgaW5zdGFsbC5wYWNrYWdlcygpIGZ1bmN0aW9uCgpgYGB7cn0KaW5zdGFsbC5wYWNrYWdlcygicmV0aWN1bGF0ZSIpCmBgYApZb3Ugb25seSBuZWVkIHRvIGluc3RhbGwgcGFja2FnZXMgb25jZSwgYnV0IHlvdSBuZWVkIHRvIG1vdW50IHRob3NlIHBhY2thZ2VzIHdpdGggdGhlIGxpYnJhcnkoKSBmdW5jdGlvbiBlYWNoIHRpbWUgeW91IG9wZW4gUi4gCgpgYGB7cn0KbGlicmFyeShyZXRpY3VsYXRlKQpgYGAKClB5dGhvbiBsaWJyYXJpZXMgYXJlIHN0b3JlZCBhbmQgbWFuYWdlZCBpbiBhIGZldyBkaWZmZXJlbnQgbGlicmFyaWVzIGFuZCB0aGVpciBkZXBlbmRlbmNpZXMgYXJlIG5vdCByZWd1bGF0ZWQgYXMgc3RyaWN0bHkgYXMgUiBsaWJyYXJpZXMgYXJlIGluIENSQU4uIEl0J3MgZWFzaWVyIHRvIHB1Ymxpc2ggYSBweXRob24gcGFja2FnZSBidXQgaXQgY2FuIGFsc28gYmUgbW9yZSBjdW1iZXJzb21lIGZvciB1c2VycyBiZWNhdXNlIHlvdSBuZWVkIHRvIG1hbmFnZSBkZXBlbmRlbmNpZXMgeW91cnNlbGYuIFlvdSBjYW4gZG93bmxvYWQgcHl0aG9uIHBhY2thZ2VzIHVzaW5nIGJvdGggUiBhbmQgUHl0aG9uIGNvZGUKYGBge3J9CnB5X2luc3RhbGwoInBhbmRhcyIpCnB5X2luc3RhbGwoInR1cnRsZSIpCmBgYAoKCiMgTG9hZCBwYWNrYWdlcyBhbmQgY2hhbmdlIHNldHRpbmdzCmBgYHtyfQpvcHRpb25zKGphdmEucGFyYW1ldGVycyA9ICItWG14NUciKQoKbGlicmFyeShyNXIpCmxpYnJhcnkoc2YpCmxpYnJhcnkoZGF0YS50YWJsZSkKbGlicmFyeShnZ3Bsb3QyKQpsaWJyYXJ5KGludGVycCkKbGlicmFyeShkcGx5cikKbGlicmFyeShvc21kYXRhKQpsaWJyYXJ5KGdndGhlbWVzKQpsaWJyYXJ5KHNmKQpsaWJyYXJ5KGRhdGEudGFibGUpCmxpYnJhcnkoZ2dwbG90MikKbGlicmFyeShha2ltYSkKbGlicmFyeShkcGx5cikKbGlicmFyeShyYXN0ZXIpCmxpYnJhcnkob3NtZGF0YSkKbGlicmFyeShtYXB2aWV3KQpsaWJyYXJ5KGNvd3Bsb3QpCmxpYnJhcnkoaGVyZSkKYGBgCgpgYGB7cHl0aG9ufQppbXBvcnQgc3lzCnN5cy5hcmd2LmFwcGVuZChbIi0tbWF4LW1lbW9yeSIsICI1RyJdKQoKaW1wb3J0IHBhbmRhcyBhcyBwZAppbXBvcnQgZ2VvcGFuZGFzCmltcG9ydCBtYXRwbG90bGliLnB5cGxvdCBhcyBwbHQKaW1wb3J0IG51bXB5IGFzIG5wCmltcG9ydCBwbG90bmluZQppbXBvcnQgY29udGV4dGlseSBhcyBjeAppbXBvcnQgcjVweQppbXBvcnQgc2VhYm9ybiBhcyBzbnMKYGBgCgojIExvYWQgc2F2ZWQgZGF0YQpgYGB7cn0KZGF0YSgiaXJpcyIpCgpsb2FkKGZpbGU9aGVyZSgiMiBSIGFuZCBQeSBiaWxpbmd1YWxpc20iLCAiZGF0YSIsICJpcmlzX2V4YW1wbGVfZGF0YS5yZGF0YSIpKQpvYmplY3RzKCkKYGBgCgpgYGB7cHl0aG9ufQoKYGBgCgojIFNhdmUgZGF0YQpgYGB7cn0Kc2F2ZShpcmlzLCBmaWxlPWhlcmUoIjIgUiBhbmQgUHkgYmlsaW5ndWFsaXNtIiwgImRhdGEiLCAiaXJpc19leGFtcGxlX2RhdGEucmRhdGEiKSkKCndyaXRlLmNzdihpcmlzLCBmaWxlPWhlcmUoIjIgUiBhbmQgUHkgYmlsaW5ndWFsaXNtIiwgImRhdGEiLCAiaXJpc19leGFtcGxlX2RhdGEuY3N2IikpCmBgYAoKYGBge3B5dGhvbn0KCmBgYAoKCgoKYGBge3B5dGhvbn0KcGx0LmNsZigpCnNucy5jb3VudHBsb3QoeD0nU3BlY2llcycsIGRhdGE9ci5pcmlzKQpwbHQuc2hvdygpCmBgYAoKCmBgYHtweXRob259CnBsdC5jbGYoKQpzbnMucGFpcnBsb3Qoci5pcmlzLCBodWUgPSAnU3BlY2llcycpCnBsdC5zaG93KCkKYGBgCgoKYGBge3B5dGhvbn0KcGx0LmNsZigpCmNvcnJlbGF0aW9uX21hdHJpeCA9IHIuaXJpcy5jb3JyKCkKcGx0LmZpZ3VyZShmaWdzaXplPSgxLDEpKQpzbnMuaGVhdG1hcChjb3JyZWxhdGlvbl9tYXRyaXgsIGNiYXI9VHJ1ZSwgZm10PScuMWYnLCBhbm5vdD1UcnVlLCBjbWFwPSdCbHVlcycpCnBsdC5zaG93KCkKcGx0LnNhdmVmaWcoJ0NvcnJlbGF0aW9uIEhlYXQgbWFwJykKYGBgCgoKCgoKCgpgYGB7cn0KbGlicmFyeShzaGlueSkKeHkgPC0gYyg3ODQsNDc5KSAjb3V0cHV0IG9mIGdyRGV2aWNlczo6ZGV2LnNpemUoInB4IikKdXJsIDwtICJodHRwczovL3d3dy55b3V0dWJlLmNvbS93YXRjaD92PVZPMWJRbzRQWFY0IiAjY29weSB5dCBsaW5rIGhlcmUKdXJsIDwtIGdzdWIoIndhdGNoXFw/dj0iLCJlbWJlZC8iLHVybCkKdWkgPC0gZmx1aWRQYWdlKAogIEhUTUwocGFzdGUwKCc8aWZyYW1lIHdpZHRoPSInLHh5WzFdLCciIGhlaWdodD0iJyx4eVsyXSwnIiBzcmM9IicsdXJsLCciIGZyYW1lYm9yZGVyPSIwIj48L2lmcmFtZT4nKSkKKQpzZXJ2ZXIgPC0gZnVuY3Rpb24oaW5wdXQsIG91dHB1dCwgc2Vzc2lvbikgewp9CgpydW5HYWRnZXQoc2hpbnlBcHAodWksIHNlcnZlcixvcHRpb25zPWMoImxhdW5jaC5icm93c2VyIj1GQUxTRSwicG9ydCI9MTExMSkpLHBvcnQ9MTExMSx2aWV3ZXIgPSBwYW5lVmlld2VyKCkpCmBgYAoKCgoKIyBSZXRyaWV2ZSBkYXRhIGZyb20gYW4gQVBJCgoKCgoKCgoK</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKIyBJbnN0YWxsIHBhY2thZ2VzClIgbGlicmFyaWVzIGFyZSBzdG9yZWQgYW5kIG1hbmFnZWQgaW4gYSByZXBvc2l0b3J5IGNhbGxlZCBDUkFOLiBZb3UgY2FuIGRvd25sb2FkIFIgcGFja2FnZXMgd2l0aCB0aGUgaW5zdGFsbC5wYWNrYWdlcygpIGZ1bmN0aW9uCgpgYGB7cn0KaW5zdGFsbC5wYWNrYWdlcygicmV0aWN1bGF0ZSIpCmBgYApZb3Ugb25seSBuZWVkIHRvIGluc3RhbGwgcGFja2FnZXMgb25jZSwgYnV0IHlvdSBuZWVkIHRvIG1vdW50IHRob3NlIHBhY2thZ2VzIHdpdGggdGhlIGxpYnJhcnkoKSBmdW5jdGlvbiBlYWNoIHRpbWUgeW91IG9wZW4gUi4gCgpgYGB7cn0KbGlicmFyeShyZXRpY3VsYXRlKQpgYGAKClB5dGhvbiBsaWJyYXJpZXMgYXJlIHN0b3JlZCBhbmQgbWFuYWdlZCBpbiBhIGZldyBkaWZmZXJlbnQgbGlicmFyaWVzIGFuZCB0aGVpciBkZXBlbmRlbmNpZXMgYXJlIG5vdCByZWd1bGF0ZWQgYXMgc3RyaWN0bHkgYXMgUiBsaWJyYXJpZXMgYXJlIGluIENSQU4uIEl0J3MgZWFzaWVyIHRvIHB1Ymxpc2ggYSBweXRob24gcGFja2FnZSBidXQgaXQgY2FuIGFsc28gYmUgbW9yZSBjdW1iZXJzb21lIGZvciB1c2VycyBiZWNhdXNlIHlvdSBuZWVkIHRvIG1hbmFnZSBkZXBlbmRlbmNpZXMgeW91cnNlbGYuIFlvdSBjYW4gZG93bmxvYWQgcHl0aG9uIHBhY2thZ2VzIHVzaW5nIGJvdGggUiBhbmQgUHl0aG9uIGNvZGUKYGBge3J9CnB5X2luc3RhbGwoInBhbmRhcyIpCgpgYGAKCgojIExvYWQgcGFja2FnZXMgYW5kIGNoYW5nZSBzZXR0aW5ncwpgYGB7cn0Kb3B0aW9ucyhqYXZhLnBhcmFtZXRlcnMgPSAiLVhteDVHIikKCmxpYnJhcnkocjVyKQpsaWJyYXJ5KHNmKQpsaWJyYXJ5KGRhdGEudGFibGUpCmxpYnJhcnkoZ2dwbG90MikKbGlicmFyeShpbnRlcnApCmxpYnJhcnkoZHBseXIpCmxpYnJhcnkob3NtZGF0YSkKbGlicmFyeShnZ3RoZW1lcykKbGlicmFyeShzZikKbGlicmFyeShkYXRhLnRhYmxlKQpsaWJyYXJ5KGdncGxvdDIpCmxpYnJhcnkoYWtpbWEpCmxpYnJhcnkoZHBseXIpCmxpYnJhcnkocmFzdGVyKQpsaWJyYXJ5KG9zbWRhdGEpCmxpYnJhcnkobWFwdmlldykKbGlicmFyeShjb3dwbG90KQpsaWJyYXJ5KGhlcmUpCmBgYAoKYGBge3B5dGhvbn0KaW1wb3J0IHN5cwpzeXMuYXJndi5hcHBlbmQoWyItLW1heC1tZW1vcnkiLCAiNUciXSkKCmltcG9ydCBwYW5kYXMgYXMgcGQKaW1wb3J0IGdlb3BhbmRhcwppbXBvcnQgbWF0cGxvdGxpYi5weXBsb3QgYXMgcGx0CmltcG9ydCBudW1weSBhcyBucAppbXBvcnQgcGxvdG5pbmUKaW1wb3J0IGNvbnRleHRpbHkgYXMgY3gKaW1wb3J0IHI1cHkKaW1wb3J0IHNlYWJvcm4gYXMgc25zCmBgYAoKIyBMb2FkIHNhdmVkIGRhdGEKYGBge3J9CmRhdGEoImlyaXMiKQoKbG9hZChmaWxlPWhlcmUoIjIgUiBhbmQgUHkgYmlsaW5ndWFsaXNtIiwgImRhdGEiLCAiaXJpc19leGFtcGxlX2RhdGEucmRhdGEiKSkKb2JqZWN0cygpCmBgYAoKYGBge3B5dGhvbn0KCmBgYAoKIyBTYXZlIGRhdGEKYGBge3J9CnNhdmUoaXJpcywgZmlsZT1oZXJlKCIyIFIgYW5kIFB5IGJpbGluZ3VhbGlzbSIsICJkYXRhIiwgImlyaXNfZXhhbXBsZV9kYXRhLnJkYXRhIikpCgp3cml0ZS5jc3YoaXJpcywgZmlsZT1oZXJlKCIyIFIgYW5kIFB5IGJpbGluZ3VhbGlzbSIsICJkYXRhIiwgImlyaXNfZXhhbXBsZV9kYXRhLmNzdiIpKQpgYGAKCmBgYHtweXRob259CgpgYGAKCgoKCmBgYHtweXRob259CnBsdC5jbGYoKQpzbnMuY291bnRwbG90KHg9J1NwZWNpZXMnLCBkYXRhPXIuaXJpcykKcGx0LnNob3coKQpgYGAKCgpgYGB7cHl0aG9ufQpwbHQuY2xmKCkKc25zLnBhaXJwbG90KHIuaXJpcywgaHVlID0gJ1NwZWNpZXMnKQpwbHQuc2hvdygpCmBgYAoKCmBgYHtweXRob259CnBsdC5jbGYoKQpjb3JyZWxhdGlvbl9tYXRyaXggPSByLmlyaXMuY29ycigpCnBsdC5maWd1cmUoZmlnc2l6ZT0oMSwxKSkKc25zLmhlYXRtYXAoY29ycmVsYXRpb25fbWF0cml4LCBjYmFyPVRydWUsIGZtdD0nLjFmJywgYW5ub3Q9VHJ1ZSwgY21hcD0nQmx1ZXMnKQpwbHQuc2hvdygpCnBsdC5zYXZlZmlnKCdDb3JyZWxhdGlvbiBIZWF0IG1hcCcpCmBgYAoKCgoKCgoKYGBge3IsIGV2YWw9RkFMU0V9CmxpYnJhcnkoc2hpbnkpCnh5IDwtIGMoNzg0LDQ3OSkgI291dHB1dCBvZiBnckRldmljZXM6OmRldi5zaXplKCJweCIpCnVybCA8LSAiaHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1WTzFiUW80UFhWNCIgI2NvcHkgeXQgbGluayBoZXJlCnVybCA8LSBnc3ViKCJ3YXRjaFxcP3Y9IiwiZW1iZWQvIix1cmwpCnVpIDwtIGZsdWlkUGFnZSgKICBIVE1MKHBhc3RlMCgnPGlmcmFtZSB3aWR0aD0iJyx4eVsxXSwnIiBoZWlnaHQ9IicseHlbMl0sJyIgc3JjPSInLHVybCwnIiBmcmFtZWJvcmRlcj0iMCI+PC9pZnJhbWU+JykpCikKc2VydmVyIDwtIGZ1bmN0aW9uKGlucHV0LCBvdXRwdXQsIHNlc3Npb24pIHsKfQoKcnVuR2FkZ2V0KHNoaW55QXBwKHVpLCBzZXJ2ZXIsb3B0aW9ucz1jKCJsYXVuY2guYnJvd3NlciI9RkFMU0UsInBvcnQiPTExMTEpKSxwb3J0PTExMTEsdmlld2VyID0gcGFuZVZpZXdlcigpKQpgYGAKCgoKCiMgUmV0cmlldmUgZGF0YSBmcm9tIGFuIEFQSQoKCgoKCgoKCg==</div>
 
 
 

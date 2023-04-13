@@ -18,7 +18,7 @@ library(reticulate)
 Python libraries are stored and managed in a few different libraries and their dependencies are not regulated as strictly as R libraries are in CRAN. It's easier to publish a python package but it can also be more cumbersome for users because you need to manage dependencies yourself. You can download python packages using both R and Python code
 ```{r}
 py_install("pandas")
-py_install("turtle")
+
 ```
 
 
@@ -115,7 +115,7 @@ plt.savefig('Correlation Heat map')
 
 
 
-```{r}
+```{r, eval=FALSE}
 library(shiny)
 xy <- c(784,479) #output of grDevices::dev.size("px")
 url <- "https://www.youtube.com/watch?v=VO1bQo4PXV4" #copy yt link here
