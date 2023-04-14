@@ -17,6 +17,15 @@ Welcome to the Environmental Data Science Innovation & Inclusion Lab (<a href="h
 
 ***
 
+<img style="float: right;" src="https://esiil.org/sites/default/files/inline-images/Posa%20M%20headshot_0.png" height="100">
+
+### **Ming Posa**
+
+* Executive Assistant - ESIIL
+* <a href="https://esiil.org/our-team" target="_blank">**Webpage**</a>
+
+***
+
 <img style="float: right;" src="https://earthlab.colorado.edu/sites/default/files/styles/square_med/public/media/image/profile.png?itok=81I5qGge" height="100">
 
 ### **Nate Quarderer** 
