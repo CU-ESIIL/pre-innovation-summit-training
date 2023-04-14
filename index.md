@@ -22,7 +22,7 @@ Welcome to the Environmental Data Science Innovation & Inclusion Lab (<a href="h
 ### **Ming Posa**
 
 * Executive Assistant - ESIIL
-* <a href="https://esiil.org/our-team" target="_blank">**Webpage**</a>
+* <a href="https://esiil.org/our-team" target="_blank">**Website**</a>
 
 ***
 
