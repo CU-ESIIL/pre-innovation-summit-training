@@ -70,10 +70,10 @@ Each session will run from **12pm - 2pm MT** and will meet _virtually_ over **Zo
 > ### ***Collaborating with Other People Using Cloud Computing***
 > * **Instructors:** Culler, Know Innovation Team, Swetnam & CyVerse Team, Tuff, Verleye
 >   * Team introductions
+>   * Navigating KIStorm (Know Innovation Team) ⚡
 >   * Navigating the Constellation of Cyberinfrastructure (Swetnam & CyVerse Team, Tuff, Verleye)
 >     * <a href="https://de.cyverse.org/" target="_blank">**CyVerse Discovery Environment**</a> ✨
 >     * <a href="https://jetstream-cloud.org/" target="_blank">**JetStream2**</a> 🚀
->   * Navigating KIStorm (Know Innovation Team) ⚡
 >   * <a href="https://github.com/" target="_blank">**GitHub**</a> for Collaboration (Culler, Tuff, Verleye) 🤝
 
 
