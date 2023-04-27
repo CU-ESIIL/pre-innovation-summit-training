@@ -16,7 +16,7 @@ nav:
   - Collaboration: 
     - Collaboration on Cloud: 1_Collaboration_on_Cloud/collaboration.md
   - Bilingualism:
-    - R and Python Bilingualism: 2_R_and_Py_bilingualism/r_py_bilingualism.md
+    - R and Python Bilingualism: 2_R_and_Py_bilingualism/code/bilingualism_md.md
   - Open Science:
     - Tools for Reproducible and Open Science: 3_Tools_for_reproducible_and_open_science/openscience.md
 
