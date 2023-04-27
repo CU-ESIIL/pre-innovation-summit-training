@@ -123,7 +123,7 @@ These are just a few of the many differences between R and Python. Ultimately, t
 
 
 # Load saved data
-```{r}
+```{r,eval=FALSE}
 data("iris")
 here()
 load(file=here("2_R_and_Py_bilingualism", "data", "iris_example_data.rdata"))
@@ -135,7 +135,7 @@ objects()
 ```
 
 # Save data
-```{r}
+```{r, eval=FALSE}
 save(iris, file=here("2_R_and_Py_bilingualism", "data", "iris_example_data.rdata"))
 
 write.csv(iris, file=here("2_R_and_Py_bilingualism", "data", "iris_example_data.csv"))
