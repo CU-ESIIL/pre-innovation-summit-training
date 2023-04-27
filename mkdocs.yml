@@ -1,0 +1,131 @@
+site_name: 'Innovation Summit 2023'
+site_description: 'Documentation for May 2023 ESIIL Innovation Summit'
+site_author: 'Tyson L Swetnam'
+site_url: https://cu-esiil.github.io/pre-innovation-summit-training
+
+# Repository
+repo_name: pre-innovation-summit-training
+repo_url: https://github.com/tyson-swetnam/pre-innovation-summit-training
+edit_uri: edit/main/docs/
+# Copyright
+copyright: 'Copyright &copy; 2023 University of Colorado Boulder'
+
+# Page tree
+nav:
+  - Home: index.md
+  - Collaboration on Cloud: 1_Collaboration_on_Cloud/collaboration.md
+  - R and Python Bilingualism: 2_R_and_Py_bilingualism/r_py_bilingualism.md
+  - Tools for Reproducible and Open Science: 3_Tools_for_reproducible_and_open_science/openscience.md
+
+# Configuration
+imgwidth: 70px;
+theme:
+  highlightjs: true
+  name: material
+  font:
+    text: 'Open Sans'
+    code: 'Roboto Mono'
+  logo: 'assets/ESIIL_logo.png'
+  favicon: 'assets/favicon.ico'
+# setting features for the navigation tab
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.indexes
+    - navigation.top
+    - toc.integrate
+    - toc.follow
+    - content.code.copy
+  # Default values, taken from mkdocs_theme.yml
+  language: en
+  # custom_dir: 'overrides'
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: white)"
+      primary: 'white'
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to system preference
+
+# Options
+extra:
+  social:
+    - icon: fontawesome/brands/orcid
+      link: https://orcid.org/0000-0002-6639-7181
+    - icon: simple/googlescholar  
+      link: https://scholar.google.com/citations?user=nanIeAYAAAAJ&hl=en
+    - icon: fontawesome/brands/github
+      link: https://github.com/tyson-swetnam/
+    - icon: fontawesome/brands/mastodon
+      link: https://fosstodon.org/@tswetnam  
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/tswetnam
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/tyson-swetnam
+    - icon: fontawesome/brands/docker
+      link: https://hub.docker.com/u/tswetnam
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/channel/UC5xPt9KZHccC0ehMNEkINzQ
+  analytics:
+    provider: google
+    property: G-NYETZFD8DN
+  
+# Extensions
+markdown_extensions:
+  - admonition
+  - abbr
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+extra_css:
+  - stylesheets/extra.css
+ 
+plugins:
+    - search
+    - mkdocstrings
+    - git-revision-date
+    - mkdocs-jupyter:
+          include_source: True
+          ignore_h1_titles: True
