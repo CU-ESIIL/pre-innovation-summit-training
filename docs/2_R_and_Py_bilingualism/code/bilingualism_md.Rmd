@@ -5,8 +5,68 @@ output:
     df_print: paged
   pdf_document: default
 ---
+# R and Python bilingualism
 
-# Install packages
+Welcome to this lesson on R and Python bilingualism! In this lesson, we'll explore the similarities and differences between these two powerful programming languages, and why it's important to be comfortable using both.
+
+First, let's talk about the similarities between R and Python. Both languages are widely used in data science and are open-source, meaning that they are free to use and constantly being improved by the community. Additionally, they both have robust libraries for data analysis, visualization, and machine learning.
+
+However, there are also some key differences between R and Python that make them better suited for different tasks. Python is generally preferred for larger applications and projects due to its versatility, scalability, and the ability to handle more complex projects. It has a large and active developer community, which has contributed to the development of many powerful tools and libraries, making it a popular choice for web development, artificial intelligence, and more.
+
+On the other hand, R is known for its exceptional statistical capabilities and is often used in data analysis and modeling. Its syntax and built-in functions are designed specifically for statistical operations, making it a go-to language for many data scientists and statisticians.
+
+Despite these differences, there are many cases where it makes sense to use both languages. For example, you may need to use Python to clean and prepare data before analyzing it in R, or use R for statistical analysis before deploying a machine learning model in Python.
+
+Being bilingual in R and Python can give you a significant advantage in the field of data science. You'll be able to leverage the strengths of each language to create more robust and efficient data analysis workflows.
+
+So, let's dive in and explore the world of R and Python bilingualism!
+
+
+## Install packages
+
+In R, packages can be installed from CRAN repository by using the install.packages() function:
+
+R code:
+```{r, eval=FALSE}
+# Install the dplyr package from CRAN
+install.packages("dplyr")
+
+```
+
+In Python, packages can be installed from the Anaconda repository by using the conda install command:
+
+Python code:
+```{python, eval=FALSE}
+# Install the pandas package from Anaconda
+!conda install pandas
+```
+
+Loading libraries in R and Python
+
+In R, libraries can be loaded in the same way as before, using the library() function:
+
+R code:
+```{r, eval=FALSE}
+# Load the dplyr library
+library(dplyr)
+```
+
+In Python, libraries can be loaded in the same way as before, using the import statement. Here's an example:
+
+
+Python code:
+```{python, eval=FALSE}
+# Load the pandas library
+import pandas as pd
+```
+
+Note that the package or library must be installed from the respective repository before it can be loaded. Also, make sure you have the correct repository specified in your system before installing packages. By default, R uses CRAN as its primary repository, whereas Anaconda uses its own repository by default.
+
+
+
+
+## reticulate package lets you run both R and Python together in the R environment. 
+
 R libraries are stored and managed in a repository called CRAN. You can download R packages with the install.packages() function
 
 ```{r, eval=FALSE}
@@ -21,11 +81,10 @@ library(reticulate)
 Python libraries are stored and managed in a few different libraries and their dependencies are not regulated as strictly as R libraries are in CRAN. It's easier to publish a python package but it can also be more cumbersome for users because you need to manage dependencies yourself. You can download python packages using both R and Python code
 ```{r}
 py_install("pandas")
-
 ```
 
 
-# Load packages and change settings
+## Load packages and change settings
 ```{r}
 options(java.parameters = "-Xmx5G")
 
@@ -63,11 +122,6 @@ import contextily as cx
 import r5py
 import seaborn as sns
 ```
-
-
-
-
-
 
 R and Python are two popular programming languages used for data analysis, statistics, and machine learning. Although they share some similarities, there are some fundamental differences between them. Here's an example code snippet in R and Python to illustrate some of the differences:
 
@@ -117,7 +171,8 @@ These are just a few of the many differences between R and Python. Ultimately, t
 
 
 
-# Load saved data
+## Load saved data
+R Code:
 ```{r,eval=FALSE}
 data("iris")
 here()
@@ -125,25 +180,28 @@ load(file=here("2_R_and_Py_bilingualism", "data", "iris_example_data.rdata"))
 objects()
 ```
 
+Python code:
 ```{python}
 
 ```
 
-# Save data
+## Save data
+R Code:
 ```{r, eval=FALSE}
 save(iris, file=here("2_R_and_Py_bilingualism", "data", "iris_example_data.rdata"))
 
 write.csv(iris, file=here("2_R_and_Py_bilingualism", "data", "iris_example_data.csv"))
 ```
 
+Python code:
 ```{python}
 
 ```
 
 
-# functions
+## functions
 Both R and Python are powerful languages for writing functions that can take input, perform a specific task, and return output. 
-
+R Code:
 ```{r}
 # Define a function that takes two arguments and returns their sum
 sum_r <- function(a, b) {
@@ -155,7 +213,7 @@ result_r <- sum_r(3, 5)
 print(result_r)
 ```
 
-
+Python code:
 ```{python}
 # Define a function that takes two arguments and returns their sum
 def sum_py(a, b):
@@ -178,7 +236,8 @@ Function names: Function names in R and Python can differ significantly. In the 
 
 
 
-# Data Plots
+## Data Plots
+R Code:
 ```{r}
 # Load the "ggplot2" package for plotting
 library(ggplot2)
@@ -191,7 +250,7 @@ y <- x + rnorm(10)
 ggplot(data.frame(x, y), aes(x = x, y = y)) +
   geom_point()
 ```
-
+Python code:
 ```{python}
 # Load the "matplotlib" library
 import matplotlib.pyplot as plt
@@ -218,8 +277,8 @@ Data format: In R, we use a data frame to store the input data, while in Python,
 Plotting functions: In R, we use the ggplot() function to create a new plot object, and then use the geom_point() function to create a scatter plot layer. In Python, we use the scatter() function from the matplotlib.pyplot module to create a scatter plot directly.
 
 
-# Linear regression
-
+## Linear regression
+R Code:
 ```{r}
 # Load the "ggplot2" package for plotting
 library(ggplot2)
@@ -240,7 +299,7 @@ ggplot(data.frame(x, y), aes(x = x, y = y)) +
   geom_smooth(method = "lm", se = FALSE)
 ```
 
-
+Python code:
 ```{python}
 # Load the "matplotlib" and "scikit-learn" libraries
 import matplotlib.pyplot as plt
@@ -276,8 +335,8 @@ Data format: In R, we can specify the dependent and independent variables in the
 Model summary: In R, we can use the summary() function to print a summary of the model, including the estimated coefficients, standard errors, and p-values. In Python, we need to print the coefficients and intercept separately.
 
 
-# Random Forest
-
+## Random Forest
+R Code:
 ```{r}
 # Load the "randomForest" package
 library(randomForest)
@@ -301,7 +360,7 @@ predictions <- predict(rf_model, test_data)
 accuracy <- sum(predictions == test_data$Species) / nrow(test_data)
 print(paste("Accuracy:", accuracy))
 ```
-
+Python code:
 ```{python}
 # Load the "pandas", "numpy", and "sklearn" libraries
 import pandas as pd
@@ -338,8 +397,8 @@ Data format: In R, we use a data frame to store the input data, while in Python,
 
 # Retrieve data from an API
 
-# Basic streetmap from Open Street Map
-
+## Basic streetmap from Open Street Map
+R Code:
 ```{r}
 # Load the "osmdata" package for mapping
 library(osmdata)
@@ -357,7 +416,7 @@ osm_data <- opq(bbox) %>%
 tm_shape(osm_data$osm_lines) + 
   tm_lines()
 ```
-
+Python code:
 ```{python}
 # Load the "osmnx" package for mapping
 import osmnx as ox
@@ -379,8 +438,8 @@ The main differences between the two approaches are:
 Package names and syntax: In R, we use the osmdata package and its syntax to download and process the OpenStreetMap data, while in Python, we use the osmnx package and its syntax.
 Mapping libraries: In R, we use the tmap package to create a static map of the OpenStreetMap data, while in Python, we use the built-in ox.plot_graph function from the osmnx package to plot the map.
 
-# CNN on Raster data
-
+## CNN on Raster data
+R Code:
 ```{r, eval=FALSE}
 # Load the "keras" package for building the CNN
 library(tensorflow)
