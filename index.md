@@ -1,4 +1,4 @@
-<img align="right" width="1000" height="100" src="https://raw.githubusercontent.com/CU-ESIIL/pre-innovation-summit-training/main/pre-summit-training-header.png">
+<img width="1000" height="100" src="https://raw.githubusercontent.com/CU-ESIIL/pre-innovation-summit-training/main/pre-summit-training-header.png">
 
 # Get Ready to Innovate: Virtual Technical Training for Collaboration in Environmental Data Science
 
@@ -14,6 +14,15 @@ Welcome to the Environmental Data Science Innovation & Inclusion Lab (<a href="h
 
 * Education Trainer - Earth Lab; ESIIL
 * <a href="https://earthlab.colorado.edu/our-team/elsa-culler" target="_blank">**Website**</a>
+
+***
+
+<img style="float: right;" src="https://esiil.org/sites/default/files/inline-images/Posa%20M%20headshot_0.png" height="100">
+
+### **Ming Posa**
+
+* Executive Assistant - ESIIL
+* <a href="https://esiil.org/our-team" target="_blank">**Website**</a>
 
 ***
 
@@ -35,7 +44,7 @@ Welcome to the Environmental Data Science Innovation & Inclusion Lab (<a href="h
 
 ***
 
-<img style="float: right;" src="https://esiil.org/sites/default/files/inline-images/tyson%20headshot.png" height="100">
+<img style="float: right;" src="https://avatars.githubusercontent.com/u/11527041?v=4" height="100">
 
 ### **Tyson Swetnam**
 
@@ -70,10 +79,10 @@ Each session will run from **12pm - 2pm MT** and will meet _virtually_ over **Zo
 > ### ***Collaborating with Other People Using Cloud Computing***
 > * **Instructors:** Culler, Know Innovation Team, Swetnam & CyVerse Team, Tuff, Verleye
 >   * Team introductions
+>   * Navigating KIStorm (Know Innovation Team) ⚡
 >   * Navigating the Constellation of Cyberinfrastructure (Swetnam & CyVerse Team, Tuff, Verleye)
 >     * <a href="https://de.cyverse.org/" target="_blank">**CyVerse Discovery Environment**</a> ✨
 >     * <a href="https://jetstream-cloud.org/" target="_blank">**JetStream2**</a> 🚀
->   * Navigating KIStorm (Know Innovation Team) ⚡
 >   * <a href="https://github.com/" target="_blank">**GitHub**</a> for Collaboration (Culler, Tuff, Verleye) 🤝
 
 
@@ -109,7 +118,7 @@ Each session will run from **12pm - 2pm MT** and will meet _virtually_ over **Zo
 
 **GitHub repository:** <a href="https://github.com/CU-ESIIL/pre-innovation-summit-training" target="_blank">**https://github.com/CU-ESIIL/pre-innovation-summit-training**</a>
 
-**KIStorm:**
+**KIStorm:** <a href="https://kistorm.com/login" target="_blank">**https://kistorm.com/login**</a>
 
 **Slack:** 
 
