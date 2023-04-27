@@ -59,25 +59,21 @@ theme:
 # Options
 extra:
   social:
-    - icon: fontawesome/brands/orcid
-      link: https://orcid.org/0000-0002-6639-7181
-    - icon: simple/googlescholar  
-      link: https://scholar.google.com/citations?user=nanIeAYAAAAJ&hl=en
+#    - icon: fontawesome/brands/orcid
+#      link: 
     - icon: fontawesome/brands/github
-      link: https://github.com/tyson-swetnam/
-    - icon: fontawesome/brands/mastodon
-      link: https://fosstodon.org/@tswetnam  
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/tswetnam
-    - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com/in/tyson-swetnam
-    - icon: fontawesome/brands/docker
-      link: https://hub.docker.com/u/tswetnam
-    - icon: fontawesome/brands/youtube
-      link: https://www.youtube.com/channel/UC5xPt9KZHccC0ehMNEkINzQ
-  analytics:
-    provider: google
-    property: G-NYETZFD8DN
+      link: https://github.com/cu-esiil/
+#    - icon: fontawesome/brands/mastodon
+#      link: 
+#    - icon: fontawesome/brands/twitter
+#      link: 
+#    - icon: fontawesome/brands/linkedin
+#      link: 
+#    - icon: fontawesome/brands/youtube
+#      link: 
+#  analytics:
+#    provider: google
+#    property: G-NYETZFD8DN
   
 # Extensions
 markdown_extensions:
