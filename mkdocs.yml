@@ -1,11 +1,11 @@
 site_name: 'Innovation Summit 2023'
 site_description: 'Documentation for May 2023 ESIIL Innovation Summit'
-site_author: 'Tyson L Swetnam'
+site_author: 'ESIIL Education'
 site_url: https://cu-esiil.github.io/pre-innovation-summit-training
 
 # Repository
 repo_name: pre-innovation-summit-training
-repo_url: https://github.com/tyson-swetnam/pre-innovation-summit-training
+repo_url: https://github.com/cu-esiil/pre-innovation-summit-training
 edit_uri: edit/main/docs/
 # Copyright
 copyright: 'Copyright &copy; 2023 University of Colorado Boulder'
@@ -13,9 +13,12 @@ copyright: 'Copyright &copy; 2023 University of Colorado Boulder'
 # Page tree
 nav:
   - Home: index.md
-  - Collaboration on Cloud: 1_Collaboration_on_Cloud/collaboration.md
-  - R and Python Bilingualism: 2_R_and_Py_bilingualism/r_py_bilingualism.md
-  - Tools for Reproducible and Open Science: 3_Tools_for_reproducible_and_open_science/openscience.md
+  - Collaboration: 
+    - Collaboration on Cloud: 1_Collaboration_on_Cloud/collaboration.md
+  - Bilingualism:
+    - R and Python Bilingualism: 2_R_and_Py_bilingualism/r_py_bilingualism.md
+  - Open Science:
+    - Tools for Reproducible and Open Science: 3_Tools_for_reproducible_and_open_science/openscience.md
 
 # Configuration
 imgwidth: 70px;
