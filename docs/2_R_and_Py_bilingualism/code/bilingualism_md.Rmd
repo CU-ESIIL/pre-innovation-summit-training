@@ -626,7 +626,7 @@ import pandas as pd
 ```
 
 
-# for loops
+## for loops
 
 
 Here is an example of a for loop in R:
@@ -665,7 +665,7 @@ In Python, the for loop iterates over each element in the numbers list, assignin
 Both languages also support nested for loops, which can be used to perform iterations over multiple dimensions, such as looping through a 2D array.
 
 
-# Parallel
+## Parallel
 
 Parallel computing is a technique used to execute multiple computational tasks simultaneously, which can significantly reduce the time required to complete a task. Both R and Python have built-in support for parallel computing, although the approaches are slightly different. In this answer, we will compare and contrast the parallel computing capabilities of R and Python, and provide working examples in code.
 

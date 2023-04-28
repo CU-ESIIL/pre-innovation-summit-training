@@ -363,7 +363,7 @@ ggplot(data.frame(x, y), aes(x = x, y = y)) +
   geom_point()
 ```
 
-![](bilingualism_md_files/figure-gfm/unnamed-chunk-27-1.png)<!-- -->
+![](bilingualism_md_files/figure-gfm/unnamed-chunk-25-1.png)<!-- -->
 Python code:
 
 ``` python
@@ -383,7 +383,7 @@ plt.scatter(x, y)
 plt.show()
 ```
 
-<img src="bilingualism_md_files/figure-gfm/unnamed-chunk-28-1.png" width="768" />
+<img src="bilingualism_md_files/figure-gfm/unnamed-chunk-26-1.png" width="768" />
 
 In both cases, we generate some sample data and create a scatter plot to
 visualize the relationship between the variables.
@@ -446,7 +446,7 @@ ggplot(data.frame(x, y), aes(x = x, y = y)) +
 
     ## `geom_smooth()` using formula = 'y ~ x'
 
-![](bilingualism_md_files/figure-gfm/unnamed-chunk-29-3.png)<!-- -->
+![](bilingualism_md_files/figure-gfm/unnamed-chunk-27-3.png)<!-- -->
 
 Python code:
 
@@ -467,7 +467,7 @@ model_py = LinearRegression().fit(x.reshape(-1, 1), y)
 print("Coefficients: ", model_py.coef_)
 ```
 
-    ## Coefficients:  [0.89753595]
+    ## Coefficients:  [1.1075475]
 
 ``` python
 print("Intercept: ", model_py.intercept_)
@@ -475,7 +475,7 @@ print("Intercept: ", model_py.intercept_)
 #clear last plot
 ```
 
-    ## Intercept:  0.6443078947349674
+    ## Intercept:  -0.42261325728783916
 
 ``` python
 plt.clf()
@@ -486,7 +486,7 @@ plt.plot(x, model_py.predict(x.reshape(-1, 1)), color='red')
 plt.show()
 ```
 
-<img src="bilingualism_md_files/figure-gfm/unnamed-chunk-30-1.png" width="768" />
+<img src="bilingualism_md_files/figure-gfm/unnamed-chunk-28-1.png" width="768" />
 
 In both cases, we generate some sample data with a linear relationship
 between x and y, and then perform a simple linear regression to estimate
@@ -613,7 +613,7 @@ tm_shape(osm_data$osm_lines) +
   tm_lines()
 ```
 
-![](bilingualism_md_files/figure-gfm/unnamed-chunk-33-1.png)<!-- -->
+![](bilingualism_md_files/figure-gfm/unnamed-chunk-31-1.png)<!-- -->
 Python code:
 
 ``` python
@@ -632,7 +632,7 @@ ox.plot_graph(osm_data)
 
     ## (<Figure size 800x800 with 0 Axes>, <AxesSubplot:>)
 
-<img src="bilingualism_md_files/figure-gfm/unnamed-chunk-34-1.png" width="768" />
+<img src="bilingualism_md_files/figure-gfm/unnamed-chunk-32-1.png" width="768" />
 
 In both cases, we define the map location and zoom level, retrieve the
 OpenStreetMap data using the specified bounding box, and plot the map.
@@ -776,7 +776,7 @@ iris %>%
        y = "Mean Petal Length")
 ```
 
-![](bilingualism_md_files/figure-gfm/unnamed-chunk-39-1.png)<!-- -->
+![](bilingualism_md_files/figure-gfm/unnamed-chunk-37-1.png)<!-- -->
 
 In this example, we start with the iris dataset and filter it to only
 include rows where the Species column is “setosa”. We then group the
@@ -814,7 +814,7 @@ import pandas as pd
     ## 1  sepal_length  5.843333
     ## 0  petal_length  3.758667
 
-# for loops
+## for loops
 
 Here is an example of a for loop in R:
 
@@ -868,7 +868,7 @@ Both languages also support nested for loops, which can be used to
 perform iterations over multiple dimensions, such as looping through a
 2D array.
 
-# Parallel
+## Parallel
 
 Parallel computing is a technique used to execute multiple computational
 tasks simultaneously, which can significantly reduce the time required
