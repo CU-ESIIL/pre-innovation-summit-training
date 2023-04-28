@@ -14,11 +14,17 @@ During this introductory module, led by <a href="https://knowinnovation.com/" ta
 ***
 
 # CyVerse Discovery Environment
+### Instructors: Swetnam, CyVerse team
+#### Time: 15 min
 
 ***
 
 # Data Management in CyVerse
+### Instructors: Swetnam, CyVerse team
+#### Time: 30 min
 
 ***
 
 # Opening an Instance in JetStream2
+### Instructors: Verleye
+#### Time: 30 min
