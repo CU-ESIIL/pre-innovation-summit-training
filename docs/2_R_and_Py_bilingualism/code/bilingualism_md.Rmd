@@ -79,13 +79,13 @@ library(reticulate)
 
 Python libraries are stored and managed in a few different libraries and their dependencies are not regulated as strictly as R libraries are in CRAN. It's easier to publish a python package but it can also be more cumbersome for users because you need to manage dependencies yourself. You can download python packages using both R and Python code
 ```{r, cache=TRUE}
-py_install("pandas")
+py_install("laspy")
 ```
 
 Now, let's create a Python list and assign it to a variable py_list:
 
 R code:
-```{r, cache=TRUE}
+```{r, cache=TRUE, eval=FALSE}
 py_list <- r_to_py(list(1, 2, 3))
 ```
 
@@ -93,7 +93,7 @@ py_list <- r_to_py(list(1, 2, 3))
 We can now print out the py_list variable in Python using the py_run_string() function:
 
 R code:
-```{r, cache=TRUE}
+```{r, cache=TRUE, eval=FALSE}
 py_run_string("print(r.py_list)")
 ```
 
@@ -755,6 +755,329 @@ Comparison and contrast
 Both R and Python have built-in support for parallel computing, with similar basic functionality for creating and managing parallel processes. However, the higher-level abstractions differ between the two languages. In R, the foreach package provides a high-level interface that makes it easy to write parallel code, while in Python, the multiprocessing module provides a basic interface that can be extended using third-party packages like joblib and dask.
 
 Additionally, Python has better support for distributed computing using frameworks like Apache Spark, while R has better support for shared-memory parallelism using tools like data.table and ff.
+
+
+## Data wrangling
+
+Data wrangling is an important part of any data analysis project, and both R and Python provide tools and libraries for performing this task. In this answer, we will compare and contrast data wrangling in R's tidyverse and Python's pandas library, with working examples in code.
+
+Data Wrangling in R Tidyverse
+
+The tidyverse is a collection of R packages designed for data science, and it includes several packages that are useful for data wrangling. One of the most popular packages is dplyr, which provides a grammar of data manipulation for data frames.
+
+Here is an example of using dplyr to filter, mutate, and summarize a data frame:
+
+R code
+
+```{r, cache=TRUE}
+library(dplyr)
+
+# Load data
+data(mtcars)
+
+# Filter for cars with more than 100 horsepower
+mtcars %>%
+  filter(hp > 100) %>%
+  # Add a new column with fuel efficiency in km per liter
+  mutate(kmpl = 0.425 * mpg) %>%
+  # Group by number of cylinders and summarize
+  group_by(cyl) %>%
+  summarize(mean_hp = mean(hp),
+            mean_kmpl = mean(kmpl))
+```
+
+
+
+In this example, we first filter the mtcars data frame to only include cars with more than 100 horsepower. We then use mutate to create a new column with fuel efficiency in kilometers per liter. Finally, we group the data by the number of cylinders and calculate the mean horsepower and fuel efficiency.
+
+Data Wrangling in Python Pandas
+
+Pandas is a popular library for data manipulation in Python. It provides a data frame object similar to R's data frames, along with a wide range of functions for data wrangling.
+
+Here is an example of using pandas to filter, transform, and group a data frame:
+
+Python code:
+
+```{python, cache=TRUE, eval=FALSE}
+import pandas as pd
+
+# Load data
+mtcars = pd.read_csv('https://raw.githubusercontent.com/mwaskom/seaborn-data/master/mtcars.csv')
+
+# Filter for cars with more than 100 horsepower
+filtered_mtcars = mtcars[mtcars['hp'] > 100]
+
+# Add a new column with fuel efficiency in km per liter
+filtered_mtcars['kmpl'] = 0.425 * filtered_mtcars['mpg']
+
+# Group by number of cylinders and calculate mean horsepower and fuel efficiency
+grouped_mtcars = filtered_mtcars.groupby('cyl').agg({'hp': 'mean',
+                                                     'kmpl': 'mean'})
+```
+
+
+In this example, we first load the mtcars data from a CSV file. We then filter the data to only include cars with more than 100 horsepower, using boolean indexing. We use the assign function to create a new column with fuel efficiency in kilometers per liter. Finally, we group the data by the number of cylinders and calculate the mean horsepower and fuel efficiency.
+
+Comparison
+
+Overall, both R's tidyverse and Python's pandas provide similar functionality for data wrangling. Both allow for filtering, transforming, and aggregating data frames. The syntax for performing these operations is slightly different between the two languages, with R using the %>% operator for chaining operations and Python using method chaining or the apply family of functions.
+
+One key difference between the two languages is that R's tidyverse provides a consistent grammar for data manipulation across its various packages, making it easier to learn and use. However, Python's pandas library has a larger developer community and is more versatile for use in other applications, such as web development or machine learning.
+
+In conclusion, both R and Python provide powerful tools for data wrangling, and the choice between the two ultimately depends on the specific needs of the user and their familiarity
+
+## Data from API
+Retrieving data from an API is a common task in both R and Python. Here are examples of how to retrieve data from an API in both languages:
+
+Python
+
+To retrieve data from an API in Python, we can use the requests library. Here's an example of how to retrieve weather data from the OpenWeatherMap API:
+
+Python code:
+
+```{python, cache=TRUE, eval=FALSE}
+import requests
+
+url = 'https://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=API_KEY'
+
+response = requests.get(url)
+
+data = response.json()
+
+print(data)
+```
+
+
+This code retrieves the current weather data for London from the OpenWeatherMap API. We first construct the API URL with the location and API key, then use the requests.get() function to make a request to the API. We then extract the JSON data from the response using the .json() method and print the resulting data.
+
+R
+
+In R, we can use the httr package to retrieve data from an API. Here's an example of how to retrieve weather data from the OpenWeatherMap API in R:
+
+R code:
+
+```{r, eval=FALSE}
+library(httr)
+
+url <- 'https://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=API_KEY'
+
+response <- GET(url)
+
+data <- content(response, 'text')
+
+print(data)
+```
+
+
+This code is similar to the Python code above. We first load the httr library, then construct the API URL and use the GET() function to make a request to the API. We then extract the data from the response using the content() function and print the resulting data.
+
+Retrieving Data from an API in R Tidyverse
+In R Tidyverse, we can use the httr and jsonlite packages to retrieve and process data from an API.
+
+R code:
+
+```{r, cache=TRUE}
+# Load required packages
+library(httr)
+library(jsonlite)
+
+# Define API endpoint
+endpoint <- "https://jsonplaceholder.typicode.com/posts"
+
+# Retrieve data from API
+response <- GET(endpoint)
+
+# Extract content from response
+content <- content(response, "text")
+
+# Convert content to JSON
+json <- fromJSON(content)
+
+# Convert JSON to a data frame
+df <- as.data.frame(json)
+```
+
+
+In the above example, we use the GET() function from the httr package to retrieve data from an API endpoint, and the content() function to extract the content of the response. We then use the fromJSON() function from the jsonlite package to convert the JSON content to a list, and the as.data.frame() function to convert the list to a data frame.
+
+Retrieving Data from an API in Python
+In Python, we can use the requests library to retrieve data from an API, and the json library to process the JSON data.
+
+Python code:
+
+```{python, cache=TRUE}
+
+# Load required libraries
+import requests
+import json
+
+# Define API endpoint
+endpoint = "https://jsonplaceholder.typicode.com/posts"
+
+# Retrieve data from API
+response = requests.get(endpoint)
+
+# Extract content from response
+content = response.content
+
+# Convert content to JSON
+json_data = json.loads(content)
+
+# Convert JSON to a list of dictionaries
+data = [dict(row) for row in json_data]
+```
+
+In the above example, we use the get() function from the requests library to retrieve data from an API endpoint, and the content attribute to extract the content of the response. We then use the loads() function from the json library to convert the JSON content to a list of dictionaries.
+
+Comparison
+Both R Tidyverse and Python provide powerful tools for retrieving and processing data from an API. In terms of syntax, the two languages are somewhat similar. In both cases, we use a library to retrieve data from the API, extract the content of the response, and then process the JSON data. However, there are some differences in the specific functions and methods used. For example, in R Tidyverse, we use the content() function to extract the content of the response, whereas in Python, we use the content attribute. Additionally, in R Tidyverse, we use the fromJSON() function to convert the JSON data to a list, whereas in Python, we use the loads() function.
+
+
+## Census data
+
+Retrieving USA census data in R, R Tidy, and Python can be done using different packages and libraries. Here are some working examples in code for each language:
+
+R:
+
+To retrieve census data in R, we can use the tidycensus package. Here's an example of how to retrieve the total population for the state of California:
+
+R code:
+
+```{r, cache=TRUE, eval=FALSE}
+library(tidycensus)
+library(tidyverse)
+
+# Set your Census API key
+census_api_key("your_api_key")
+
+# Get the total population for the state of California
+ca_pop <- get_acs(
+  geography = "state",
+  variables = "B01003_001",
+  state = "CA"
+) %>% 
+  rename(total_population = estimate) %>% 
+  select(total_population)
+
+# View the result
+ca_pop
+```
+
+
+R Tidy:
+
+To retrieve census data in R Tidy, we can also use the tidycensus package. Here's an example of how to retrieve the total population for the state of California using pipes and dplyr functions:
+
+R tidy code:
+
+```{r, cache=TRUE, eval=FALSE}
+library(tidycensus)
+library(tidyverse)
+
+# Set your Census API key
+census_api_key("your_api_key")
+
+# Get the total population for the state of California
+ca_pop <- get_acs(
+  geography = "state",
+  variables = "B01003_001",
+  state = "CA"
+) %>% 
+  rename(total_population = estimate) %>% 
+  select(total_population)
+
+# View the result
+ca_pop
+```
+
+
+Python:
+
+To retrieve census data in Python, we can use the census library. Here's an example of how to retrieve the total population for the state of California:
+
+Python code:
+
+```{python, cache=TRUE, eval=FALSE}
+from census import Census
+from us import states
+import pandas as pd
+
+# Set your Census API key
+c = Census("your_api_key")
+
+# Get the total population for the state of California
+ca_pop = c.acs5.state(("B01003_001"), states.CA.fips, year=2019)
+
+# Convert the result to a Pandas DataFrame
+ca_pop_df = pd.DataFrame(ca_pop)
+
+# Rename the column
+ca_pop_df = ca_pop_df.rename(columns={"B01003_001E": "total_population"})
+
+# Select only the total population column
+ca_pop_df = ca_pop_df[["total_population"]]
+
+# View the result
+ca_pop_df
+```
+
+
+## Lidar data
+
+To find Lidar data in R and Python, you typically need to start by identifying sources of Lidar data and then accessing them using appropriate packages and functions. Here are some examples of how to find Lidar data in R and Python:
+
+R:
+
+Identify sources of Lidar data: The USGS National Map Viewer provides access to Lidar data for the United States. You can also find Lidar data on state and local government websites, as well as on commercial data providers' websites.
+Access the data: You can use the lidR package in R to download and read Lidar data in the LAS format. For example, the following code downloads and reads Lidar data for a specific area:
+
+R code:
+
+```{r, cache=TRUE}
+library(lidR)
+
+# Download Lidar data
+LASfile <- system.file("extdata", "Megaplot.laz", package="lidR")
+lidar <- readLAS(LASfile)
+
+# Visualize the data
+plot(lidar)
+```
+
+
+Python:
+
+Identify sources of Lidar data: The USGS 3DEP program provides access to Lidar data for the United States. You can also find Lidar data on state and local government websites, as well as on commercial data providers' websites.
+Access the data: You can use the pylastools package in Python to download and read Lidar data in the LAS format. For example, the following code downloads and reads Lidar data for a specific area:
+
+Python code:
+
+```{r, eval=FALSE}
+py_install("requests")
+py_install("pylas")
+py_install("laspy")
+
+```
+
+```{python, cache=TRUE, eval=FALSE}
+
+import requests
+from pylas import read
+import laspy
+import numpy as np
+
+# Download Lidar data
+url = "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_CA_SanFrancisco_2016_LAS_2018.zip"
+lasfile = "USGS_LPC_CA_SanFrancisco_2016_LAS_2018.las"
+r = requests.get(url, allow_redirects=True)
+open(lasfile, 'wb').write(r.content)
+
+# Read the data
+lidar = read(lasfile)
+
+# Visualize the data
+laspy.plot.plot(lidar)
+```
 
 
 

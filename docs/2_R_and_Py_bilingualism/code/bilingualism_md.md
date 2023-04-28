@@ -107,10 +107,10 @@ cumbersome for users because you need to manage dependencies yourself.
 You can download python packages using both R and Python code
 
 ``` r
-py_install("pandas")
+py_install("laspy")
 ```
 
-    ## + '/Users/ty/opt/miniconda3/bin/conda' 'install' '--yes' '--prefix' '/Users/ty/opt/miniconda3/envs/earth-analytics-python' '-c' 'conda-forge' 'pandas'
+    ## + '/Users/ty/opt/miniconda3/bin/conda' 'install' '--yes' '--prefix' '/Users/ty/opt/miniconda3/envs/earth-analytics-python' '-c' 'conda-forge' 'laspy'
 
 Now, let’s create a Python list and assign it to a variable py_list:
 
@@ -176,25 +176,154 @@ This will output 6 in the R console.
 options(java.parameters = "-Xmx5G")
 
 library(r5r)
+```
+
+    ## Please make sure you have already allocated some memory to Java by running:
+    ##   options(java.parameters = '-Xmx2G').
+    ## You should replace '2G' by the amount of memory you'll require. Currently, Java memory is set to -Xmx5G
+
+``` r
 library(sf)
+```
+
+    ## Linking to GEOS 3.10.2, GDAL 3.4.2, PROJ
+    ## 8.2.1; sf_use_s2() is TRUE
+
+    ## 
+    ## Attaching package: 'sf'
+
+    ## The following object is masked from 'package:lidR':
+    ## 
+    ##     st_concave_hull
+
+``` r
 library(data.table)
+```
+
+    ## data.table 1.14.8 using 1 threads (see ?getDTthreads).  Latest news: r-datatable.com
+
+    ## **********
+    ## This installation of data.table has not detected OpenMP support. It should still work but in single-threaded mode.
+    ## This is a Mac. Please read https://mac.r-project.org/openmp/. Please engage with Apple and ask them for support. Check r-datatable.com for updates, and our Mac instructions here: https://github.com/Rdatatable/data.table/wiki/Installation. After several years of many reports of installation problems on Mac, it's time to gingerly point out that there have been no similar problems on Windows or Linux.
+    ## **********
+
+    ## 
+    ## Attaching package: 'data.table'
+
+    ## The following objects are masked from 'package:lubridate':
+    ## 
+    ##     hour, isoweek, mday, minute,
+    ##     month, quarter, second, wday,
+    ##     week, yday, year
+
+    ## The following objects are masked from 'package:dplyr':
+    ## 
+    ##     between, first, last
+
+    ## The following object is masked from 'package:purrr':
+    ## 
+    ##     transpose
+
+``` r
 library(ggplot2)
 library(interp)
+```
+
+    ## 
+    ## Attaching package: 'interp'
+
+    ## The following object is masked from 'package:lidR':
+    ## 
+    ##     area
+
+``` r
 library(dplyr)
 library(osmdata)
+```
+
+    ## Data (c) OpenStreetMap contributors, ODbL 1.0. https://www.openstreetmap.org/copyright
+
+``` r
 library(ggthemes)
 library(sf)
 library(data.table)
 library(ggplot2)
 library(akima)
+```
+
+    ## 
+    ## Attaching package: 'akima'
+
+    ## The following objects are masked from 'package:interp':
+    ## 
+    ##     aspline, bicubic, bicubic.grid,
+    ##     bilinear, bilinear.grid,
+    ##     franke.data, franke.fn, interp,
+    ##     interp2xyz, interpp
+
+``` r
 library(dplyr)
 library(raster)
+```
+
+    ## Loading required package: sp
+
+    ## 
+    ## Attaching package: 'raster'
+
+    ## The following object is masked from 'package:dplyr':
+    ## 
+    ##     select
+
+    ## The following objects are masked from 'package:lidR':
+    ## 
+    ##     projection, projection<-
+
+``` r
 library(osmdata)
 library(mapview)
 library(cowplot)
+```
+
+    ## 
+    ## Attaching package: 'cowplot'
+
+    ## The following object is masked from 'package:ggthemes':
+    ## 
+    ##     theme_map
+
+    ## The following object is masked from 'package:lubridate':
+    ## 
+    ##     stamp
+
+``` r
 library(here)
+```
+
+    ## here() starts at /Users/ty/Documents/Github/pre-innovation-summit-training
+
+``` r
 library(testthat)
 ```
+
+    ## 
+    ## Attaching package: 'testthat'
+
+    ## The following object is masked from 'package:dplyr':
+    ## 
+    ##     matches
+
+    ## The following object is masked from 'package:purrr':
+    ## 
+    ##     is_null
+
+    ## The following objects are masked from 'package:readr':
+    ## 
+    ##     edition_get, local_edition
+
+    ## The following object is masked from 'package:tidyr':
+    ## 
+    ##     matches
 
 ``` python
 import sys
@@ -383,7 +512,7 @@ plt.scatter(x, y)
 plt.show()
 ```
 
-<img src="bilingualism_md_files/figure-gfm/unnamed-chunk-26-1.png" width="768" />
+<img src="bilingualism_md_files/figure-gfm/unnamed-chunk-26-1.png" width="672" />
 
 In both cases, we generate some sample data and create a scatter plot to
 visualize the relationship between the variables.
@@ -423,19 +552,24 @@ summary(model_r)
     ## lm(formula = y ~ x)
     ## 
     ## Residuals:
-    ##      Min       1Q   Median       3Q      Max 
-    ## -2.32905 -0.34294  0.09855  0.49624  1.81314 
+    ##     Min      1Q  Median      3Q     Max 
+    ## -2.4500 -0.6536  0.1489  0.8103  1.6521 
     ## 
     ## Coefficients:
-    ##             Estimate Std. Error t value Pr(>|t|)    
-    ## (Intercept)  -0.1107     0.7796  -0.142    0.891    
-    ## x             1.0557     0.1256   8.403 3.06e-05 ***
+    ##             Estimate Std. Error t value
+    ## (Intercept)   0.5985     0.8550   0.700
+    ## x             0.9523     0.1378   6.911
+    ##             Pr(>|t|)    
+    ## (Intercept) 0.503777    
+    ## x           0.000123 ***
     ## ---
-    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## Signif. codes:  
+    ##   0 '***' 0.001 '**' 0.01 '*' 0.05 '.'
+    ##   0.1 ' ' 1
     ## 
-    ## Residual standard error: 1.141 on 8 degrees of freedom
-    ## Multiple R-squared:  0.8982, Adjusted R-squared:  0.8855 
-    ## F-statistic:  70.6 on 1 and 8 DF,  p-value: 3.062e-05
+    ## Residual standard error: 1.252 on 8 degrees of freedom
+    ## Multiple R-squared:  0.8565, Adjusted R-squared:  0.8386 
+    ## F-statistic: 47.76 on 1 and 8 DF,  p-value: 0.0001232
 
 ``` r
 # Plot the data and regression line
@@ -467,7 +601,7 @@ model_py = LinearRegression().fit(x.reshape(-1, 1), y)
 print("Coefficients: ", model_py.coef_)
 ```
 
-    ## Coefficients:  [1.20020474]
+    ## Coefficients:  [0.97156838]
 
 ``` python
 print("Intercept: ", model_py.intercept_)
@@ -475,7 +609,7 @@ print("Intercept: ", model_py.intercept_)
 #clear last plot
 ```
 
-    ## Intercept:  -1.283735905534293
+    ## Intercept:  0.14354084171869985
 
 ``` python
 plt.clf()
@@ -486,7 +620,7 @@ plt.plot(x, model_py.predict(x.reshape(-1, 1)), color='red')
 plt.show()
 ```
 
-<img src="bilingualism_md_files/figure-gfm/unnamed-chunk-28-1.png" width="768" />
+<img src="bilingualism_md_files/figure-gfm/unnamed-chunk-28-1.png" width="672" />
 
 In both cases, we generate some sample data with a linear relationship
 between x and y, and then perform a simple linear regression to estimate
@@ -515,7 +649,24 @@ R Code:
 ``` r
 # Load the "randomForest" package
 library(randomForest)
+```
 
+    ## randomForest 4.7-1.1
+
+    ## Type rfNews() to see new features/changes/bug fixes.
+
+    ## 
+    ## Attaching package: 'randomForest'
+
+    ## The following object is masked from 'package:dplyr':
+    ## 
+    ##     combine
+
+    ## The following object is masked from 'package:ggplot2':
+    ## 
+    ##     margin
+
+``` r
 # Load the "iris" dataset
 data(iris)
 
@@ -890,8 +1041,24 @@ R code:
 
 ``` r
 library(foreach)
-library(doParallel)
+```
 
+    ## 
+    ## Attaching package: 'foreach'
+
+    ## The following objects are masked from 'package:purrr':
+    ## 
+    ##     accumulate, when
+
+``` r
+library(doParallel)
+```
+
+    ## Loading required package: iterators
+
+    ## Loading required package: parallel
+
+``` r
 # Set up a parallel backend with 4 workers
 cl <- makeCluster(4)
 registerDoParallel(cl)
@@ -931,7 +1098,18 @@ R Tidy code:
 ``` r
 library(tidyverse)
 library(furrr)
+```
 
+    ## Loading required package: future
+
+    ## 
+    ## Attaching package: 'future'
+
+    ## The following object is masked from 'package:rmarkdown':
+    ## 
+    ##     run
+
+``` r
 # Generate a list of numbers
 numbers <- 1:10
 
@@ -990,3 +1168,390 @@ be extended using third-party packages like joblib and dask.
 Additionally, Python has better support for distributed computing using
 frameworks like Apache Spark, while R has better support for
 shared-memory parallelism using tools like data.table and ff.
+
+## Data wrangling
+
+Data wrangling is an important part of any data analysis project, and
+both R and Python provide tools and libraries for performing this task.
+In this answer, we will compare and contrast data wrangling in R’s
+tidyverse and Python’s pandas library, with working examples in code.
+
+Data Wrangling in R Tidyverse
+
+The tidyverse is a collection of R packages designed for data science,
+and it includes several packages that are useful for data wrangling. One
+of the most popular packages is dplyr, which provides a grammar of data
+manipulation for data frames.
+
+Here is an example of using dplyr to filter, mutate, and summarize a
+data frame:
+
+R code
+
+``` r
+library(dplyr)
+
+# Load data
+data(mtcars)
+
+# Filter for cars with more than 100 horsepower
+mtcars %>%
+  filter(hp > 100) %>%
+  # Add a new column with fuel efficiency in km per liter
+  mutate(kmpl = 0.425 * mpg) %>%
+  # Group by number of cylinders and summarize
+  group_by(cyl) %>%
+  summarize(mean_hp = mean(hp),
+            mean_kmpl = mean(kmpl))
+```
+
+In this example, we first filter the mtcars data frame to only include
+cars with more than 100 horsepower. We then use mutate to create a new
+column with fuel efficiency in kilometers per liter. Finally, we group
+the data by the number of cylinders and calculate the mean horsepower
+and fuel efficiency.
+
+Data Wrangling in Python Pandas
+
+Pandas is a popular library for data manipulation in Python. It provides
+a data frame object similar to R’s data frames, along with a wide range
+of functions for data wrangling.
+
+Here is an example of using pandas to filter, transform, and group a
+data frame:
+
+Python code:
+
+``` python
+import pandas as pd
+
+# Load data
+mtcars = pd.read_csv('https://raw.githubusercontent.com/mwaskom/seaborn-data/master/mtcars.csv')
+
+# Filter for cars with more than 100 horsepower
+filtered_mtcars = mtcars[mtcars['hp'] > 100]
+
+# Add a new column with fuel efficiency in km per liter
+filtered_mtcars['kmpl'] = 0.425 * filtered_mtcars['mpg']
+
+# Group by number of cylinders and calculate mean horsepower and fuel efficiency
+grouped_mtcars = filtered_mtcars.groupby('cyl').agg({'hp': 'mean',
+                                                     'kmpl': 'mean'})
+```
+
+In this example, we first load the mtcars data from a CSV file. We then
+filter the data to only include cars with more than 100 horsepower,
+using boolean indexing. We use the assign function to create a new
+column with fuel efficiency in kilometers per liter. Finally, we group
+the data by the number of cylinders and calculate the mean horsepower
+and fuel efficiency.
+
+Comparison
+
+Overall, both R’s tidyverse and Python’s pandas provide similar
+functionality for data wrangling. Both allow for filtering,
+transforming, and aggregating data frames. The syntax for performing
+these operations is slightly different between the two languages, with R
+using the %\>% operator for chaining operations and Python using method
+chaining or the apply family of functions.
+
+One key difference between the two languages is that R’s tidyverse
+provides a consistent grammar for data manipulation across its various
+packages, making it easier to learn and use. However, Python’s pandas
+library has a larger developer community and is more versatile for use
+in other applications, such as web development or machine learning.
+
+In conclusion, both R and Python provide powerful tools for data
+wrangling, and the choice between the two ultimately depends on the
+specific needs of the user and their familiarity
+
+## Data from API
+
+Retrieving data from an API is a common task in both R and Python. Here
+are examples of how to retrieve data from an API in both languages:
+
+Python
+
+To retrieve data from an API in Python, we can use the requests library.
+Here’s an example of how to retrieve weather data from the
+OpenWeatherMap API:
+
+Python code:
+
+``` python
+import requests
+
+url = 'https://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=API_KEY'
+
+response = requests.get(url)
+
+data = response.json()
+
+print(data)
+```
+
+This code retrieves the current weather data for London from the
+OpenWeatherMap API. We first construct the API URL with the location and
+API key, then use the requests.get() function to make a request to the
+API. We then extract the JSON data from the response using the .json()
+method and print the resulting data.
+
+R
+
+In R, we can use the httr package to retrieve data from an API. Here’s
+an example of how to retrieve weather data from the OpenWeatherMap API
+in R:
+
+R code:
+
+``` r
+library(httr)
+
+url <- 'https://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=API_KEY'
+
+response <- GET(url)
+
+data <- content(response, 'text')
+
+print(data)
+```
+
+This code is similar to the Python code above. We first load the httr
+library, then construct the API URL and use the GET() function to make a
+request to the API. We then extract the data from the response using the
+content() function and print the resulting data.
+
+Retrieving Data from an API in R Tidyverse In R Tidyverse, we can use
+the httr and jsonlite packages to retrieve and process data from an API.
+
+R code:
+
+``` r
+# Load required packages
+library(httr)
+library(jsonlite)
+
+# Define API endpoint
+endpoint <- "https://jsonplaceholder.typicode.com/posts"
+
+# Retrieve data from API
+response <- GET(endpoint)
+
+# Extract content from response
+content <- content(response, "text")
+
+# Convert content to JSON
+json <- fromJSON(content)
+
+# Convert JSON to a data frame
+df <- as.data.frame(json)
+```
+
+In the above example, we use the GET() function from the httr package to
+retrieve data from an API endpoint, and the content() function to
+extract the content of the response. We then use the fromJSON() function
+from the jsonlite package to convert the JSON content to a list, and the
+as.data.frame() function to convert the list to a data frame.
+
+Retrieving Data from an API in Python In Python, we can use the requests
+library to retrieve data from an API, and the json library to process
+the JSON data.
+
+Python code:
+
+``` python
+# Load required libraries
+import requests
+import json
+
+# Define API endpoint
+endpoint = "https://jsonplaceholder.typicode.com/posts"
+
+# Retrieve data from API
+response = requests.get(endpoint)
+
+# Extract content from response
+content = response.content
+
+# Convert content to JSON
+json_data = json.loads(content)
+
+# Convert JSON to a list of dictionaries
+data = [dict(row) for row in json_data]
+```
+
+In the above example, we use the get() function from the requests
+library to retrieve data from an API endpoint, and the content attribute
+to extract the content of the response. We then use the loads() function
+from the json library to convert the JSON content to a list of
+dictionaries.
+
+Comparison Both R Tidyverse and Python provide powerful tools for
+retrieving and processing data from an API. In terms of syntax, the two
+languages are somewhat similar. In both cases, we use a library to
+retrieve data from the API, extract the content of the response, and
+then process the JSON data. However, there are some differences in the
+specific functions and methods used. For example, in R Tidyverse, we use
+the content() function to extract the content of the response, whereas
+in Python, we use the content attribute. Additionally, in R Tidyverse,
+we use the fromJSON() function to convert the JSON data to a list,
+whereas in Python, we use the loads() function.
+
+## Census data
+
+Retrieving USA census data in R, R Tidy, and Python can be done using
+different packages and libraries. Here are some working examples in code
+for each language:
+
+R:
+
+To retrieve census data in R, we can use the tidycensus package. Here’s
+an example of how to retrieve the total population for the state of
+California:
+
+R code:
+
+``` r
+library(tidycensus)
+library(tidyverse)
+
+# Set your Census API key
+census_api_key("your_api_key")
+
+# Get the total population for the state of California
+ca_pop <- get_acs(
+  geography = "state",
+  variables = "B01003_001",
+  state = "CA"
+) %>% 
+  rename(total_population = estimate) %>% 
+  select(total_population)
+
+# View the result
+ca_pop
+```
+
+R Tidy:
+
+To retrieve census data in R Tidy, we can also use the tidycensus
+package. Here’s an example of how to retrieve the total population for
+the state of California using pipes and dplyr functions:
+
+R tidy code:
+
+``` r
+library(tidycensus)
+library(tidyverse)
+
+# Set your Census API key
+census_api_key("your_api_key")
+
+# Get the total population for the state of California
+ca_pop <- get_acs(
+  geography = "state",
+  variables = "B01003_001",
+  state = "CA"
+) %>% 
+  rename(total_population = estimate) %>% 
+  select(total_population)
+
+# View the result
+ca_pop
+```
+
+Python:
+
+To retrieve census data in Python, we can use the census library. Here’s
+an example of how to retrieve the total population for the state of
+California:
+
+Python code:
+
+``` python
+from census import Census
+from us import states
+import pandas as pd
+
+# Set your Census API key
+c = Census("your_api_key")
+
+# Get the total population for the state of California
+ca_pop = c.acs5.state(("B01003_001"), states.CA.fips, year=2019)
+
+# Convert the result to a Pandas DataFrame
+ca_pop_df = pd.DataFrame(ca_pop)
+
+# Rename the column
+ca_pop_df = ca_pop_df.rename(columns={"B01003_001E": "total_population"})
+
+# Select only the total population column
+ca_pop_df = ca_pop_df[["total_population"]]
+
+# View the result
+ca_pop_df
+```
+
+## Lidar data
+
+To find Lidar data in R and Python, you typically need to start by
+identifying sources of Lidar data and then accessing them using
+appropriate packages and functions. Here are some examples of how to
+find Lidar data in R and Python:
+
+R:
+
+Identify sources of Lidar data: The USGS National Map Viewer provides
+access to Lidar data for the United States. You can also find Lidar data
+on state and local government websites, as well as on commercial data
+providers’ websites. Access the data: You can use the lidR package in R
+to download and read Lidar data in the LAS format. For example, the
+following code downloads and reads Lidar data for a specific area:
+
+R code:
+
+``` r
+library(lidR)
+
+# Download Lidar data
+LASfile <- system.file("extdata", "Megaplot.laz", package="lidR")
+lidar <- readLAS(LASfile)
+
+# Visualize the data
+plot(lidar)
+```
+
+Python:
+
+Identify sources of Lidar data: The USGS 3DEP program provides access to
+Lidar data for the United States. You can also find Lidar data on state
+and local government websites, as well as on commercial data providers’
+websites. Access the data: You can use the pylastools package in Python
+to download and read Lidar data in the LAS format. For example, the
+following code downloads and reads Lidar data for a specific area:
+
+Python code:
+
+``` r
+py_install("requests")
+py_install("pylas")
+py_install("laspy")
+```
+
+``` python
+import requests
+from pylas import read
+import laspy
+import numpy as np
+
+# Download Lidar data
+url = "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_CA_SanFrancisco_2016_LAS_2018.zip"
+lasfile = "USGS_LPC_CA_SanFrancisco_2016_LAS_2018.las"
+r = requests.get(url, allow_redirects=True)
+open(lasfile, 'wb').write(r.content)
+
+# Read the data
+lidar = read(lasfile)
+
+# Visualize the data
+laspy.plot.plot(lidar)
+```
