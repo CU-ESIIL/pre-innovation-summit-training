@@ -1,41 +1,35 @@
 # R and Python bilingualism
 
-Welcome to this lesson on R and Python bilingualism! In this lesson,
-we’ll explore the similarities and differences between these two
-powerful programming languages, and why it’s important to be comfortable
-using both.
+Welcome to the R and Python bilingualism reference guide! If you’re
+fluent in one of these languages but hesitant to learn the other, you’re
+in the right place. The good news is that there are many similarities
+between R and Python that make it easy to switch between the two.
 
-First, let’s talk about the similarities between R and Python. Both
-languages are widely used in data science and are open-source, meaning
-that they are free to use and constantly being improved by the
-community. Additionally, they both have robust libraries for data
-analysis, visualization, and machine learning.
+Both R and Python are widely used in data science and are open-source,
+meaning that they are free to use and constantly being improved by the
+community. They both have extensive libraries for data analysis,
+visualization, and machine learning. In fact, many of the libraries in
+both languages have similar names and functions, such as Pandas in
+Python and data.table in R.
 
-However, there are also some key differences between R and Python that
-make them better suited for different tasks. Python is generally
-preferred for larger applications and projects due to its versatility,
-scalability, and the ability to handle more complex projects. It has a
-large and active developer community, which has contributed to the
-development of many powerful tools and libraries, making it a popular
-choice for web development, artificial intelligence, and more.
+While there are differences between the two languages, they can
+complement each other well. Python is versatile and scalable, making it
+ideal for large and complex projects such as web development and
+artificial intelligence. R, on the other hand, is known for its
+exceptional statistical capabilities and is often used in data analysis
+and modeling. Visualization is also easier in R, making it a popular
+choice for creating graphs and charts.
 
-On the other hand, R is known for its exceptional statistical
-capabilities and is often used in data analysis and modeling. Its syntax
-and built-in functions are designed specifically for statistical
-operations, making it a go-to language for many data scientists and
-statisticians.
+By learning both R and Python, you’ll be able to take advantage of the
+strengths of each language and create more efficient and robust data
+analysis workflows. Don’t let the differences between the two languages
+intimidate you - once you become familiar with one, learning the other
+will be much easier.
 
-Despite these differences, there are many cases where it makes sense to
-use both languages. For example, you may need to use Python to clean and
-prepare data before analyzing it in R, or use R for statistical analysis
-before deploying a machine learning model in Python.
-
-Being bilingual in R and Python can give you a significant advantage in
-the field of data science. You’ll be able to leverage the strengths of
-each language to create more robust and efficient data analysis
-workflows.
-
-So, let’s dive in and explore the world of R and Python bilingualism!
+So, whether you’re a Python enthusiast looking to expand your
+statistical analysis capabilities, or an R user interested in exploring
+the world of web development and artificial intelligence, this guide
+will help you become bilingual in R and Python.
 
 ## Install packages
 
@@ -115,31 +109,174 @@ py_install("pandas")
 
     ## + '/Users/ty/opt/miniconda3/bin/conda' 'install' '--yes' '--prefix' '/Users/ty/opt/miniconda3/envs/earth-analytics-python' '-c' 'conda-forge' 'pandas'
 
+Now, let’s create a Python list and assign it to a variable py_list:
+
+R code:
+
+``` r
+py_list <- r_to_py(list(1, 2, 3))
+```
+
+We can now print out the py_list variable in Python using the
+py_run_string() function:
+
+R code:
+
+``` r
+py_run_string("print(r.py_list)")
+```
+
+This will output \[1, 2, 3\] in the Python console.
+
+Now, let’s create an R vector and assign it to a variable r_vec:
+
+R code:
+
+``` r
+r_vec <- c(4, 5, 6)
+```
+
+We can now print out the r_vec variable in R using the py$ syntax to
+access Python variables:
+
+R code:
+
+``` r
+print(py$py_list)
+```
+
+This will output \[1, 2, 3\] in the R console.
+
+We can also call Python functions from R using the py_call() function.
+For example, let’s call the Python sum() function on the py_list
+variable and assign the result to an R variable r_sum:
+
+R code:
+
+r_sum \<- py_call(“sum”, args = list(py_list)) We can now print out the
+r_sum variable in R:
+
+r Copy code print(r_sum) This will output 6 in the R console.
+
 ## Load packages and change settings
 
 ``` r
 options(java.parameters = "-Xmx5G")
 
 library(r5r)
+```
+
+    ## Registered S3 method overwritten by 'data.table':
+    ##   method           from
+    ##   print.data.table
+
+    ## Please make sure you have already allocated some memory to Java by running:
+    ##   options(java.parameters = '-Xmx2G').
+    ## You should replace '2G' by the amount of memory you'll require. Currently, Java memory is set to -Xmx5G
+
+``` r
 library(sf)
+```
+
+    ## Linking to GEOS 3.10.2, GDAL 3.4.2, PROJ 8.2.1; sf_use_s2() is TRUE
+
+``` r
 library(data.table)
+```
+
+    ## data.table 1.14.8 using 1 threads (see ?getDTthreads).  Latest news: r-datatable.com
+
+    ## **********
+    ## This installation of data.table has not detected OpenMP support. It should still work but in single-threaded mode.
+    ## This is a Mac. Please read https://mac.r-project.org/openmp/. Please engage with Apple and ask them for support. Check r-datatable.com for updates, and our Mac instructions here: https://github.com/Rdatatable/data.table/wiki/Installation. After several years of many reports of installation problems on Mac, it's time to gingerly point out that there have been no similar problems on Windows or Linux.
+    ## **********
+
+``` r
 library(ggplot2)
 library(interp)
 library(dplyr)
+```
+
+    ## 
+    ## Attaching package: 'dplyr'
+
+    ## The following objects are masked from 'package:data.table':
+    ## 
+    ##     between, first, last
+
+    ## The following objects are masked from 'package:stats':
+    ## 
+    ##     filter, lag
+
+    ## The following objects are masked from 'package:base':
+    ## 
+    ##     intersect, setdiff, setequal, union
+
+``` r
 library(osmdata)
+```
+
+    ## Data (c) OpenStreetMap contributors, ODbL 1.0. https://www.openstreetmap.org/copyright
+
+``` r
 library(ggthemes)
 library(sf)
 library(data.table)
 library(ggplot2)
 library(akima)
+```
+
+    ## 
+    ## Attaching package: 'akima'
+
+    ## The following objects are masked from 'package:interp':
+    ## 
+    ##     aspline, bicubic, bicubic.grid, bilinear, bilinear.grid,
+    ##     franke.data, franke.fn, interp, interp2xyz, interpp
+
+``` r
 library(dplyr)
 library(raster)
+```
+
+    ## Loading required package: sp
+
+    ## 
+    ## Attaching package: 'raster'
+
+    ## The following object is masked from 'package:dplyr':
+    ## 
+    ##     select
+
+``` r
 library(osmdata)
 library(mapview)
 library(cowplot)
+```
+
+    ## 
+    ## Attaching package: 'cowplot'
+
+    ## The following object is masked from 'package:ggthemes':
+    ## 
+    ##     theme_map
+
+``` r
 library(here)
+```
+
+    ## here() starts at /Users/ty/Documents/Github/pre-innovation-summit-training
+
+``` r
 library(testthat)
 ```
+
+    ## 
+    ## Attaching package: 'testthat'
+
+    ## The following object is masked from 'package:dplyr':
+    ## 
+    ##     matches
 
 ``` python
 import sys
@@ -308,7 +445,7 @@ ggplot(data.frame(x, y), aes(x = x, y = y)) +
   geom_point()
 ```
 
-![](bilingualism_md_files/figure-gfm/unnamed-chunk-20-1.png)<!-- -->
+![](bilingualism_md_files/figure-gfm/unnamed-chunk-24-1.png)<!-- -->
 Python code:
 
 ``` python
@@ -328,7 +465,7 @@ plt.scatter(x, y)
 plt.show()
 ```
 
-<img src="bilingualism_md_files/figure-gfm/unnamed-chunk-21-1.png" width="768" />
+<img src="bilingualism_md_files/figure-gfm/unnamed-chunk-25-1.png" width="672" />
 
 In both cases, we generate some sample data and create a scatter plot to
 visualize the relationship between the variables.
@@ -368,23 +505,19 @@ summary(model_r)
     ## lm(formula = y ~ x)
     ## 
     ## Residuals:
-    ##      Min       1Q   Median       3Q      Max 
-    ## -2.32905 -0.34294  0.09855  0.49624  1.81314 
+    ##     Min      1Q  Median      3Q     Max 
+    ## -2.4500 -0.6536  0.1489  0.8103  1.6521 
     ## 
     ## Coefficients:
-    ##             Estimate Std. Error t value
-    ## (Intercept)  -0.1107     0.7796  -0.142
-    ## x             1.0557     0.1256   8.403
-    ##             Pr(>|t|)    
-    ## (Intercept)    0.891    
-    ## x           3.06e-05 ***
+    ##             Estimate Std. Error t value Pr(>|t|)    
+    ## (Intercept)   0.5985     0.8550   0.700 0.503777    
+    ## x             0.9523     0.1378   6.911 0.000123 ***
     ## ---
-    ## Signif. codes:  
-    ## 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Residual standard error: 1.141 on 8 degrees of freedom
-    ## Multiple R-squared:  0.8982, Adjusted R-squared:  0.8855 
-    ## F-statistic:  70.6 on 1 and 8 DF,  p-value: 3.062e-05
+    ## Residual standard error: 1.252 on 8 degrees of freedom
+    ## Multiple R-squared:  0.8565, Adjusted R-squared:  0.8386 
+    ## F-statistic: 47.76 on 1 and 8 DF,  p-value: 0.0001232
 
 ``` r
 # Plot the data and regression line
@@ -395,7 +528,7 @@ ggplot(data.frame(x, y), aes(x = x, y = y)) +
 
     ## `geom_smooth()` using formula = 'y ~ x'
 
-![](bilingualism_md_files/figure-gfm/unnamed-chunk-22-3.png)<!-- -->
+![](bilingualism_md_files/figure-gfm/unnamed-chunk-26-3.png)<!-- -->
 
 Python code:
 
@@ -416,7 +549,7 @@ model_py = LinearRegression().fit(x.reshape(-1, 1), y)
 print("Coefficients: ", model_py.coef_)
 ```
 
-    ## Coefficients:  [0.99937549]
+    ## Coefficients:  [1.11026866]
 
 ``` python
 print("Intercept: ", model_py.intercept_)
@@ -424,7 +557,7 @@ print("Intercept: ", model_py.intercept_)
 #clear last plot
 ```
 
-    ## Intercept:  0.18840113597645836
+    ## Intercept:  -0.2606558907790655
 
 ``` python
 plt.clf()
@@ -435,7 +568,7 @@ plt.plot(x, model_py.predict(x.reshape(-1, 1)), color='red')
 plt.show()
 ```
 
-<img src="bilingualism_md_files/figure-gfm/unnamed-chunk-23-1.png" width="768" />
+<img src="bilingualism_md_files/figure-gfm/unnamed-chunk-27-1.png" width="672" />
 
 In both cases, we generate some sample data with a linear relationship
 between x and y, and then perform a simple linear regression to estimate
@@ -464,7 +597,24 @@ R Code:
 ``` r
 # Load the "randomForest" package
 library(randomForest)
+```
 
+    ## randomForest 4.7-1.1
+
+    ## Type rfNews() to see new features/changes/bug fixes.
+
+    ## 
+    ## Attaching package: 'randomForest'
+
+    ## The following object is masked from 'package:dplyr':
+    ## 
+    ##     combine
+
+    ## The following object is masked from 'package:ggplot2':
+    ## 
+    ##     margin
+
+``` r
 # Load the "iris" dataset
 data(iris)
 
@@ -564,7 +714,7 @@ tm_shape(osm_data$osm_lines) +
   tm_lines()
 ```
 
-![](bilingualism_md_files/figure-gfm/unnamed-chunk-26-1.png)<!-- -->
+![](bilingualism_md_files/figure-gfm/unnamed-chunk-30-1.png)<!-- -->
 Python code:
 
 ``` python
@@ -583,7 +733,7 @@ ox.plot_graph(osm_data)
 
     ## (<Figure size 800x800 with 0 Axes>, <AxesSubplot:>)
 
-<img src="bilingualism_md_files/figure-gfm/unnamed-chunk-27-1.png" width="768" />
+<img src="bilingualism_md_files/figure-gfm/unnamed-chunk-31-1.png" width="768" />
 
 In both cases, we define the map location and zoom level, retrieve the
 OpenStreetMap data using the specified bounding box, and plot the map.
@@ -642,3 +792,357 @@ model %>% evaluate(x = array(test_data), y = to_categorical(1:nlayers(test_data)
 # Plot the model accuracy over time
 plot(history)
 ```
+
+## Piping
+
+Piping is a powerful feature in both R and Python that allows for a more
+streamlined and readable code. However, the syntax for piping is
+slightly different between the two languages.
+
+In R, piping is done using the %\>% operator from the magrittr package,
+while in Python, it is done using the \| operator from the pandas
+package.
+
+Let’s compare and contrast piping in R and Python with some examples:
+
+Piping in R In R, we can use the %\>% operator to pipe output from one
+function to another, which can make our code more readable and easier to
+follow. Here’s an example:
+
+R code:
+
+``` r
+library(dplyr)
+
+# create a data frame
+df <- data.frame(x = c(1,2,3), y = c(4,5,6))
+
+# calculate the sum of column x and y
+df %>%
+  mutate(z = x + y) %>%
+  summarize(sum_z = sum(z))
+```
+
+In this example, we first create a data frame df with two columns x and
+y. We then pipe the output of df to mutate, which adds a new column z to
+the data frame that is the sum of x and y. Finally, we pipe the output
+to summarize, which calculates the sum of z and returns the result.
+
+Piping in Python In Python, we can use the \| operator to pipe output
+from one function to another. However, instead of piping output from one
+function to another, we pipe a DataFrame to a method of the DataFrame.
+Here’s an example:
+
+Python code:
+
+``` python
+import pandas as pd
+
+# create a DataFrame
+df = pd.DataFrame({'x': [1,2,3], 'y': [4,5,6]})
+
+# calculate the sum of column x and y
+(df.assign(z = df['x'] + df['y'])
+   .agg(sum_z = ('z', 'sum')))
+```
+
+    ##         z
+    ## sum_z  21
+
+In this example, we first create a DataFrame df with two columns x and
+y. We then use the assign() method to add a new column z to the
+DataFrame that is the sum of x and y. Finally, we use the agg() method
+to calculate the sum of z and return the result.
+
+As we can see, the syntax for piping is slightly different between R and
+Python, but the concept remains the same. Piping can make our code more
+readable and easier to follow, which is an important aspect of creating
+efficient and effective code.
+
+R code:
+
+``` r
+library(dplyr)
+library(ggplot2)
+
+iris %>%
+  filter(Species == "setosa") %>%
+  group_by(Sepal.Width) %>%
+  summarise(mean.Petal.Length = mean(Petal.Length)) %>%
+  mutate(Sepal.Width = as.factor(Sepal.Width)) %>%
+  ggplot(aes(x = Sepal.Width, y = mean.Petal.Length)) +
+  geom_bar(stat = "identity", fill = "dodgerblue") +
+  labs(title = "Mean Petal Length of Setosa by Sepal Width",
+       x = "Sepal Width",
+       y = "Mean Petal Length")
+```
+
+![](bilingualism_md_files/figure-gfm/unnamed-chunk-36-1.png)<!-- -->
+
+In this example, we start with the iris dataset and filter it to only
+include rows where the Species column is “setosa”. We then group the
+remaining rows by the Sepal.Width column and calculate the mean
+Petal.Length for each group. Next, we convert Sepal.Width to a factor
+variable to ensure that it is treated as a categorical variable in the
+visualization. Finally, we create a bar plot using ggplot2, with
+Sepal.Width on the x-axis and mean.Petal.Length on the y-axis. The
+resulting plot shows the mean petal length of setosa flowers for each
+sepal width category.
+
+Python code:
+
+``` python
+import pandas as pd
+
+# Load the iris dataset and pipe it into the next function
+( pd.read_csv("https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data", header=None, names=['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'class'])
+  
+  # Select columns and pivot the dataset
+  .loc[:, ['sepal_length', 'sepal_width', 'petal_length']]
+  .melt(var_name='variable', value_name='value')
+  
+  # Group by variable and calculate mean
+  .groupby('variable', as_index=False)
+  .mean()
+  
+  # Filter for mean greater than 3.5 and sort by descending mean
+  .query('value > 3.5')
+  .sort_values('value', ascending=False)
+)
+```
+
+    ##        variable     value
+    ## 1  sepal_length  5.843333
+    ## 0  petal_length  3.758667
+
+# for loops
+
+Here is an example of a for loop in R:
+
+R code
+
+``` r
+# Create a vector of numbers
+numbers <- c(1, 2, 3, 4, 5)
+
+# Use a for loop to print out each number in the vector
+for (i in numbers) {
+  print(i)
+}
+```
+
+    ## [1] 1
+    ## [1] 2
+    ## [1] 3
+    ## [1] 4
+    ## [1] 5
+
+In this example, the for loop iterates over each element in the numbers
+vector, assigning the current element to the variable i. The print(i)
+statement is then executed for each iteration, outputting the value of
+i.
+
+Here is the equivalent example in Python:
+
+Python code
+
+``` python
+# Create a list of numbers
+numbers = [1, 2, 3, 4, 5]
+
+# Use a for loop to print out each number in the list
+for i in numbers:
+  print(i)
+```
+
+    ## 1
+    ## 2
+    ## 3
+    ## 4
+    ## 5
+
+In Python, the for loop iterates over each element in the numbers list,
+assigning the current element to the variable i. The print(i) statement
+is then executed for each iteration, outputting the value of i.
+
+Both languages also support nested for loops, which can be used to
+perform iterations over multiple dimensions, such as looping through a
+2D array.
+
+# Parallel
+
+Parallel computing is a technique used to execute multiple computational
+tasks simultaneously, which can significantly reduce the time required
+to complete a task. Both R and Python have built-in support for parallel
+computing, although the approaches are slightly different. In this
+answer, we will compare and contrast the parallel computing capabilities
+of R and Python, and provide working examples in code.
+
+Parallel computing in R In R, there are several packages that support
+parallel computing, such as parallel, foreach, and doParallel. The
+parallel package provides basic functionality for parallel computing,
+while foreach and doParallel provide higher-level abstractions that make
+it easier to write parallel code.
+
+Here is an example of using the foreach package to execute a loop in
+parallel:
+
+R code:
+
+``` r
+library(foreach)
+library(doParallel)
+```
+
+    ## Loading required package: iterators
+
+    ## Loading required package: parallel
+
+``` r
+# Set up a parallel backend with 4 workers
+cl <- makeCluster(4)
+registerDoParallel(cl)
+
+# Define a function to apply in parallel
+myfunc <- function(x) {
+  # some computation here
+  return(x^2)
+}
+
+# Generate some data
+mydata <- 1:1000
+
+# Apply the function to the data in parallel
+result <- foreach(i = mydata) %dopar% {
+  myfunc(i)
+}
+
+# Stop the cluster
+stopCluster(cl)
+```
+
+In this example, we use the makeCluster() function to set up a cluster
+with 4 workers, and the registerDoParallel() function to register the
+cluster as the parallel backend for foreach. We then define a function
+myfunc() that takes an input x and returns x^2. We generate some data
+mydata and use foreach to apply myfunc() to each element of mydata in
+parallel, using the %dopar% operator.
+
+R Tidyverse parallel
+
+In R Tidyverse, we can use the furrr package for parallel computing.
+Here’s an example of using furrr to parallelize a map function:
+
+R Tidy code:
+
+``` r
+library(tidyverse)
+```
+
+    ## ── Attaching core tidyverse packages ──────────────── tidyverse 2.0.0 ──
+    ## ✔ forcats   1.0.0     ✔ stringr   1.5.0
+    ## ✔ lubridate 1.9.2     ✔ tibble    3.2.1
+    ## ✔ purrr     1.0.1     ✔ tidyr     1.3.0
+    ## ✔ readr     2.1.4     
+    ## ── Conflicts ────────────────────────────────── tidyverse_conflicts() ──
+    ## ✖ purrr::accumulate()     masks foreach::accumulate()
+    ## ✖ dplyr::between()        masks data.table::between()
+    ## ✖ randomForest::combine() masks dplyr::combine()
+    ## ✖ readr::edition_get()    masks testthat::edition_get()
+    ## ✖ tidyr::extract()        masks raster::extract()
+    ## ✖ dplyr::filter()         masks stats::filter()
+    ## ✖ dplyr::first()          masks data.table::first()
+    ## ✖ lubridate::hour()       masks data.table::hour()
+    ## ✖ purrr::is_null()        masks testthat::is_null()
+    ## ✖ lubridate::isoweek()    masks data.table::isoweek()
+    ## ✖ dplyr::lag()            masks stats::lag()
+    ## ✖ dplyr::last()           masks data.table::last()
+    ## ✖ readr::local_edition()  masks testthat::local_edition()
+    ## ✖ randomForest::margin()  masks ggplot2::margin()
+    ## ✖ tidyr::matches()        masks testthat::matches(), dplyr::matches()
+    ## ✖ lubridate::mday()       masks data.table::mday()
+    ## ✖ lubridate::minute()     masks data.table::minute()
+    ## ✖ lubridate::month()      masks data.table::month()
+    ## ✖ lubridate::quarter()    masks data.table::quarter()
+    ## ✖ lubridate::second()     masks data.table::second()
+    ## ✖ raster::select()        masks dplyr::select()
+    ## ✖ lubridate::stamp()      masks cowplot::stamp()
+    ## ✖ purrr::transpose()      masks data.table::transpose()
+    ## ✖ lubridate::wday()       masks data.table::wday()
+    ## ✖ lubridate::week()       masks data.table::week()
+    ## ✖ purrr::when()           masks foreach::when()
+    ## ✖ lubridate::yday()       masks data.table::yday()
+    ## ✖ lubridate::year()       masks data.table::year()
+    ## ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+
+``` r
+library(furrr)
+```
+
+    ## Loading required package: future
+    ## 
+    ## Attaching package: 'future'
+    ## 
+    ## The following object is masked from 'package:rmarkdown':
+    ## 
+    ##     run
+
+``` r
+# Generate a list of numbers
+numbers <- 1:10
+
+# Use the future_map function from furrr to parallelize the map function
+plan(multisession)
+squares <- future_map(numbers, function(x) x^2)
+```
+
+In this example, we first load the Tidyverse and furrr libraries. We
+then generate a list of numbers from 1 to 10. We then use the plan
+function to set the parallelization strategy to “multisession”, which
+will use multiple CPU cores to execute the code. Finally, we use the
+future_map function from furrr to apply the function x^2 to each number
+in the list in parallel.
+
+Parallel computing in Python In Python, the standard library includes
+the multiprocessing module, which provides basic support for parallel
+computing. Additionally, there are several third-party packages that
+provide higher-level abstractions, such as joblib and dask.
+
+Here is an example of using the multiprocessing module to execute a loop
+in parallel:
+
+Python code:
+
+``` python
+def square(x):
+    return x**2
+  
+from multiprocessing import Pool
+
+# Generate a list of numbers
+numbers = list(range(1, 11))
+
+# Use the map function and a pool of workers to parallelize the square function
+with Pool() as pool:
+    squares = pool.map(square, numbers)
+    
+print(squares)
+```
+
+In this example, we define a function myfunc() that takes an input x and
+returns x^2. We generate some data mydata and use the Pool class from
+the multiprocessing module to set up a pool of 4 workers. We then use
+the map() method of the Pool class to apply myfunc() to each element of
+mydata in parallel.
+
+Comparison and contrast Both R and Python have built-in support for
+parallel computing, with similar basic functionality for creating and
+managing parallel processes. However, the higher-level abstractions
+differ between the two languages. In R, the foreach package provides a
+high-level interface that makes it easy to write parallel code, while in
+Python, the multiprocessing module provides a basic interface that can
+be extended using third-party packages like joblib and dask.
+
+Additionally, Python has better support for distributed computing using
+frameworks like Apache Spark, while R has better support for
+shared-memory parallelism using tools like data.table and ff.

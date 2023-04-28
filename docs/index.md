@@ -12,7 +12,7 @@ Each session will run from **12pm - 2pm Mountain Daylight Time** and will meet _
 
 <div style="text-align:center;padding:1em 0;"> <h4><a style="text-decoration:none;" href="https://www.zeitverschiebung.net/en/city/5574991"><span style="color:gray;">Current local time in</span><br />Boulder, United States</a></h4> <iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&size=small&timezone=America%2FDenver" width="100%" height="90" frameborder="0" seamless></iframe> </div>
 
-## Day 0 (Wednesday May, 17)
+## Day 1 (Wednesday May, 17)
 > ### ***Collaborating with Other People Using Cloud Computing***
 > * **Instructors:** Culler, Know Innovation Team, Swetnam & CyVerse Team, Tuff, Verleye
 >   * Team introductions
@@ -25,7 +25,7 @@ Each session will run from **12pm - 2pm Mountain Daylight Time** and will meet _
 
 
 
-## Day 1 (Thursday May, 18)
+## Day 2 (Thursday May, 18)
 > ### ***R and Python Bilingualism: How to Talk to Everybody***
 > * **Instructors:** Culler, Quarderer(?), Sanovia(?), Tuff
 >   * Libraries for Doing Earth Data Science 📚
@@ -39,7 +39,7 @@ Each session will run from **12pm - 2pm Mountain Daylight Time** and will meet _
 
 
 
-## Day 2 (Friday May, 19)
+## Day 3 (Friday May, 19)
 > ### ***Tools for Keeping Your Science Open and Reproducible*** 
 > 
 > (borrowed from the <a href="https://foss.cyverse.org/" target="_blank">***CyVerse Foundational Open Science Skills 2023***</a> open online course)
