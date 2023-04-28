@@ -61,7 +61,9 @@ Note that the package or library must be installed from the respective repositor
 
 
 
-## reticulate package lets you run both R and Python together in the R environment. 
+## reticulate
+
+The reticulate package lets you run both R and Python together in the R environment. 
 
 R libraries are stored and managed in a repository called CRAN. You can download R packages with the install.packages() function
 
@@ -117,16 +119,19 @@ This will output [1, 2, 3] in the R console.
 We can also call Python functions from R using the py_call() function. For example, let's call the Python sum() function on the py_list variable and assign the result to an R variable r_sum:
 
 R code:
-```{r}
-
+```{r, eval=FALSE}
+r_sum <- py_call("sum", args = list(py_list))
 ```
 
-r_sum <- py_call("sum", args = list(py_list))
+
 We can now print out the r_sum variable in R:
 
-r
-Copy code
+R code:
+```{r, eval=FALSE}
 print(r_sum)
+```
+
+
 This will output 6 in the R console.
 
 ## Load packages and change settings
@@ -440,7 +445,9 @@ Library and package names: In R, we use the randomForest package to build random
 Model parameters: The syntax for setting model parameters is slightly different in R and Python. For example, in R, we specify the number of trees using the ntree parameter, while in Python, we use the n_estimators parameter.
 Data format: In R, we use a data frame to store the input data, while in Python, we use numpy arrays.
 
-## Retrieve data from an API
+
+
+
 
 ## Basic streetmap from Open Street Map
 R Code:

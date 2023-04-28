@@ -81,7 +81,10 @@ repository specified in your system before installing packages. By
 default, R uses CRAN as its primary repository, whereas Anaconda uses
 its own repository by default.
 
-## reticulate package lets you run both R and Python together in the R environment.
+## reticulate
+
+The reticulate package lets you run both R and Python together in the R
+environment.
 
 R libraries are stored and managed in a repository called CRAN. You can
 download R packages with the install.packages() function
@@ -153,10 +156,19 @@ variable and assign the result to an R variable r_sum:
 
 R code:
 
-r_sum \<- py_call(“sum”, args = list(py_list)) We can now print out the
-r_sum variable in R:
+``` r
+r_sum <- py_call("sum", args = list(py_list))
+```
 
-r Copy code print(r_sum) This will output 6 in the R console.
+We can now print out the r_sum variable in R:
+
+R code:
+
+``` r
+print(r_sum)
+```
+
+This will output 6 in the R console.
 
 ## Load packages and change settings
 
@@ -351,7 +363,7 @@ ggplot(data.frame(x, y), aes(x = x, y = y)) +
   geom_point()
 ```
 
-![](bilingualism_md_files/figure-gfm/unnamed-chunk-56-1.png)<!-- -->
+![](bilingualism_md_files/figure-gfm/unnamed-chunk-27-1.png)<!-- -->
 Python code:
 
 ``` python
@@ -371,7 +383,7 @@ plt.scatter(x, y)
 plt.show()
 ```
 
-<img src="bilingualism_md_files/figure-gfm/unnamed-chunk-57-1.png" width="768" />
+<img src="bilingualism_md_files/figure-gfm/unnamed-chunk-28-1.png" width="768" />
 
 In both cases, we generate some sample data and create a scatter plot to
 visualize the relationship between the variables.
@@ -434,7 +446,7 @@ ggplot(data.frame(x, y), aes(x = x, y = y)) +
 
     ## `geom_smooth()` using formula = 'y ~ x'
 
-![](bilingualism_md_files/figure-gfm/unnamed-chunk-58-3.png)<!-- -->
+![](bilingualism_md_files/figure-gfm/unnamed-chunk-29-3.png)<!-- -->
 
 Python code:
 
@@ -455,7 +467,7 @@ model_py = LinearRegression().fit(x.reshape(-1, 1), y)
 print("Coefficients: ", model_py.coef_)
 ```
 
-    ## Coefficients:  [0.89535002]
+    ## Coefficients:  [0.89753595]
 
 ``` python
 print("Intercept: ", model_py.intercept_)
@@ -463,7 +475,7 @@ print("Intercept: ", model_py.intercept_)
 #clear last plot
 ```
 
-    ## Intercept:  0.6523751470965768
+    ## Intercept:  0.6443078947349674
 
 ``` python
 plt.clf()
@@ -474,7 +486,7 @@ plt.plot(x, model_py.predict(x.reshape(-1, 1)), color='red')
 plt.show()
 ```
 
-<img src="bilingualism_md_files/figure-gfm/unnamed-chunk-59-1.png" width="768" />
+<img src="bilingualism_md_files/figure-gfm/unnamed-chunk-30-1.png" width="768" />
 
 In both cases, we generate some sample data with a linear relationship
 between x and y, and then perform a simple linear regression to estimate
@@ -579,8 +591,6 @@ ntree parameter, while in Python, we use the n_estimators parameter.
 Data format: In R, we use a data frame to store the input data, while in
 Python, we use numpy arrays.
 
-## Retrieve data from an API
-
 ## Basic streetmap from Open Street Map
 
 R Code:
@@ -603,7 +613,7 @@ tm_shape(osm_data$osm_lines) +
   tm_lines()
 ```
 
-![](bilingualism_md_files/figure-gfm/unnamed-chunk-62-1.png)<!-- -->
+![](bilingualism_md_files/figure-gfm/unnamed-chunk-33-1.png)<!-- -->
 Python code:
 
 ``` python
@@ -622,7 +632,7 @@ ox.plot_graph(osm_data)
 
     ## (<Figure size 800x800 with 0 Axes>, <AxesSubplot:>)
 
-<img src="bilingualism_md_files/figure-gfm/unnamed-chunk-63-1.png" width="768" />
+<img src="bilingualism_md_files/figure-gfm/unnamed-chunk-34-1.png" width="768" />
 
 In both cases, we define the map location and zoom level, retrieve the
 OpenStreetMap data using the specified bounding box, and plot the map.
@@ -766,7 +776,7 @@ iris %>%
        y = "Mean Petal Length")
 ```
 
-![](bilingualism_md_files/figure-gfm/unnamed-chunk-68-1.png)<!-- -->
+![](bilingualism_md_files/figure-gfm/unnamed-chunk-39-1.png)<!-- -->
 
 In this example, we start with the iris dataset and filter it to only
 include rows where the Species column is “setosa”. We then group the
