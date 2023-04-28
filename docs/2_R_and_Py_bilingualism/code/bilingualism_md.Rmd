@@ -4,10 +4,6 @@ output:
   html_document:
     df_print: paged
     toc: yes
-    toc_depth: 6
-    toc_float:
-      collapsed: no
-      smooth_scroll: no
   pdf_document: default
   
 ---
