@@ -467,7 +467,7 @@ model_py = LinearRegression().fit(x.reshape(-1, 1), y)
 print("Coefficients: ", model_py.coef_)
 ```
 
-    ## Coefficients:  [0.86751694]
+    ## Coefficients:  [1.20020474]
 
 ``` python
 print("Intercept: ", model_py.intercept_)
@@ -475,7 +475,7 @@ print("Intercept: ", model_py.intercept_)
 #clear last plot
 ```
 
-    ## Intercept:  1.1149077212296916
+    ## Intercept:  -1.283735905534293
 
 ``` python
 plt.clf()
