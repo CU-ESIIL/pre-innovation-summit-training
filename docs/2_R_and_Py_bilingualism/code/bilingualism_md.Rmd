@@ -440,7 +440,7 @@ Library and package names: In R, we use the randomForest package to build random
 Model parameters: The syntax for setting model parameters is slightly different in R and Python. For example, in R, we specify the number of trees using the ntree parameter, while in Python, we use the n_estimators parameter.
 Data format: In R, we use a data frame to store the input data, while in Python, we use numpy arrays.
 
-# Retrieve data from an API
+## Retrieve data from an API
 
 ## Basic streetmap from Open Street Map
 R Code:

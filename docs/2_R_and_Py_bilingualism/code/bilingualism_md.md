@@ -164,119 +164,25 @@ r Copy code print(r_sum) This will output 6 in the R console.
 options(java.parameters = "-Xmx5G")
 
 library(r5r)
-```
-
-    ## Registered S3 method overwritten by 'data.table':
-    ##   method           from
-    ##   print.data.table
-
-    ## Please make sure you have already allocated some memory to Java by running:
-    ##   options(java.parameters = '-Xmx2G').
-    ## You should replace '2G' by the amount of memory you'll require. Currently, Java memory is set to -Xmx5G
-
-``` r
 library(sf)
-```
-
-    ## Linking to GEOS 3.10.2, GDAL 3.4.2, PROJ 8.2.1; sf_use_s2() is TRUE
-
-``` r
 library(data.table)
-```
-
-    ## data.table 1.14.8 using 1 threads (see ?getDTthreads).  Latest news: r-datatable.com
-
-    ## **********
-    ## This installation of data.table has not detected OpenMP support. It should still work but in single-threaded mode.
-    ## This is a Mac. Please read https://mac.r-project.org/openmp/. Please engage with Apple and ask them for support. Check r-datatable.com for updates, and our Mac instructions here: https://github.com/Rdatatable/data.table/wiki/Installation. After several years of many reports of installation problems on Mac, it's time to gingerly point out that there have been no similar problems on Windows or Linux.
-    ## **********
-
-``` r
 library(ggplot2)
 library(interp)
 library(dplyr)
-```
-
-    ## 
-    ## Attaching package: 'dplyr'
-
-    ## The following objects are masked from 'package:data.table':
-    ## 
-    ##     between, first, last
-
-    ## The following objects are masked from 'package:stats':
-    ## 
-    ##     filter, lag
-
-    ## The following objects are masked from 'package:base':
-    ## 
-    ##     intersect, setdiff, setequal, union
-
-``` r
 library(osmdata)
-```
-
-    ## Data (c) OpenStreetMap contributors, ODbL 1.0. https://www.openstreetmap.org/copyright
-
-``` r
 library(ggthemes)
 library(sf)
 library(data.table)
 library(ggplot2)
 library(akima)
-```
-
-    ## 
-    ## Attaching package: 'akima'
-
-    ## The following objects are masked from 'package:interp':
-    ## 
-    ##     aspline, bicubic, bicubic.grid, bilinear, bilinear.grid,
-    ##     franke.data, franke.fn, interp, interp2xyz, interpp
-
-``` r
 library(dplyr)
 library(raster)
-```
-
-    ## Loading required package: sp
-
-    ## 
-    ## Attaching package: 'raster'
-
-    ## The following object is masked from 'package:dplyr':
-    ## 
-    ##     select
-
-``` r
 library(osmdata)
 library(mapview)
 library(cowplot)
-```
-
-    ## 
-    ## Attaching package: 'cowplot'
-
-    ## The following object is masked from 'package:ggthemes':
-    ## 
-    ##     theme_map
-
-``` r
 library(here)
-```
-
-    ## here() starts at /Users/ty/Documents/Github/pre-innovation-summit-training
-
-``` r
 library(testthat)
 ```
-
-    ## 
-    ## Attaching package: 'testthat'
-
-    ## The following object is masked from 'package:dplyr':
-    ## 
-    ##     matches
 
 ``` python
 import sys
@@ -445,7 +351,7 @@ ggplot(data.frame(x, y), aes(x = x, y = y)) +
   geom_point()
 ```
 
-![](bilingualism_md_files/figure-gfm/unnamed-chunk-24-1.png)<!-- -->
+![](bilingualism_md_files/figure-gfm/unnamed-chunk-56-1.png)<!-- -->
 Python code:
 
 ``` python
@@ -465,7 +371,7 @@ plt.scatter(x, y)
 plt.show()
 ```
 
-<img src="bilingualism_md_files/figure-gfm/unnamed-chunk-25-1.png" width="672" />
+<img src="bilingualism_md_files/figure-gfm/unnamed-chunk-57-1.png" width="768" />
 
 In both cases, we generate some sample data and create a scatter plot to
 visualize the relationship between the variables.
@@ -505,19 +411,19 @@ summary(model_r)
     ## lm(formula = y ~ x)
     ## 
     ## Residuals:
-    ##     Min      1Q  Median      3Q     Max 
-    ## -2.4500 -0.6536  0.1489  0.8103  1.6521 
+    ##      Min       1Q   Median       3Q      Max 
+    ## -2.32905 -0.34294  0.09855  0.49624  1.81314 
     ## 
     ## Coefficients:
     ##             Estimate Std. Error t value Pr(>|t|)    
-    ## (Intercept)   0.5985     0.8550   0.700 0.503777    
-    ## x             0.9523     0.1378   6.911 0.000123 ***
+    ## (Intercept)  -0.1107     0.7796  -0.142    0.891    
+    ## x             1.0557     0.1256   8.403 3.06e-05 ***
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Residual standard error: 1.252 on 8 degrees of freedom
-    ## Multiple R-squared:  0.8565, Adjusted R-squared:  0.8386 
-    ## F-statistic: 47.76 on 1 and 8 DF,  p-value: 0.0001232
+    ## Residual standard error: 1.141 on 8 degrees of freedom
+    ## Multiple R-squared:  0.8982, Adjusted R-squared:  0.8855 
+    ## F-statistic:  70.6 on 1 and 8 DF,  p-value: 3.062e-05
 
 ``` r
 # Plot the data and regression line
@@ -528,7 +434,7 @@ ggplot(data.frame(x, y), aes(x = x, y = y)) +
 
     ## `geom_smooth()` using formula = 'y ~ x'
 
-![](bilingualism_md_files/figure-gfm/unnamed-chunk-26-3.png)<!-- -->
+![](bilingualism_md_files/figure-gfm/unnamed-chunk-58-3.png)<!-- -->
 
 Python code:
 
@@ -549,7 +455,7 @@ model_py = LinearRegression().fit(x.reshape(-1, 1), y)
 print("Coefficients: ", model_py.coef_)
 ```
 
-    ## Coefficients:  [1.11026866]
+    ## Coefficients:  [0.89535002]
 
 ``` python
 print("Intercept: ", model_py.intercept_)
@@ -557,7 +463,7 @@ print("Intercept: ", model_py.intercept_)
 #clear last plot
 ```
 
-    ## Intercept:  -0.2606558907790655
+    ## Intercept:  0.6523751470965768
 
 ``` python
 plt.clf()
@@ -568,7 +474,7 @@ plt.plot(x, model_py.predict(x.reshape(-1, 1)), color='red')
 plt.show()
 ```
 
-<img src="bilingualism_md_files/figure-gfm/unnamed-chunk-27-1.png" width="672" />
+<img src="bilingualism_md_files/figure-gfm/unnamed-chunk-59-1.png" width="768" />
 
 In both cases, we generate some sample data with a linear relationship
 between x and y, and then perform a simple linear regression to estimate
@@ -597,24 +503,7 @@ R Code:
 ``` r
 # Load the "randomForest" package
 library(randomForest)
-```
 
-    ## randomForest 4.7-1.1
-
-    ## Type rfNews() to see new features/changes/bug fixes.
-
-    ## 
-    ## Attaching package: 'randomForest'
-
-    ## The following object is masked from 'package:dplyr':
-    ## 
-    ##     combine
-
-    ## The following object is masked from 'package:ggplot2':
-    ## 
-    ##     margin
-
-``` r
 # Load the "iris" dataset
 data(iris)
 
@@ -690,7 +579,7 @@ ntree parameter, while in Python, we use the n_estimators parameter.
 Data format: In R, we use a data frame to store the input data, while in
 Python, we use numpy arrays.
 
-# Retrieve data from an API
+## Retrieve data from an API
 
 ## Basic streetmap from Open Street Map
 
@@ -714,7 +603,7 @@ tm_shape(osm_data$osm_lines) +
   tm_lines()
 ```
 
-![](bilingualism_md_files/figure-gfm/unnamed-chunk-30-1.png)<!-- -->
+![](bilingualism_md_files/figure-gfm/unnamed-chunk-62-1.png)<!-- -->
 Python code:
 
 ``` python
@@ -733,7 +622,7 @@ ox.plot_graph(osm_data)
 
     ## (<Figure size 800x800 with 0 Axes>, <AxesSubplot:>)
 
-<img src="bilingualism_md_files/figure-gfm/unnamed-chunk-31-1.png" width="768" />
+<img src="bilingualism_md_files/figure-gfm/unnamed-chunk-63-1.png" width="768" />
 
 In both cases, we define the map location and zoom level, retrieve the
 OpenStreetMap data using the specified bounding box, and plot the map.
@@ -877,7 +766,7 @@ iris %>%
        y = "Mean Petal Length")
 ```
 
-![](bilingualism_md_files/figure-gfm/unnamed-chunk-36-1.png)<!-- -->
+![](bilingualism_md_files/figure-gfm/unnamed-chunk-68-1.png)<!-- -->
 
 In this example, we start with the iris dataset and filter it to only
 include rows where the Species column is “setosa”. We then group the
@@ -992,13 +881,7 @@ R code:
 ``` r
 library(foreach)
 library(doParallel)
-```
 
-    ## Loading required package: iterators
-
-    ## Loading required package: parallel
-
-``` r
 # Set up a parallel backend with 4 workers
 cl <- makeCluster(4)
 registerDoParallel(cl)
@@ -1037,57 +920,8 @@ R Tidy code:
 
 ``` r
 library(tidyverse)
-```
-
-    ## ── Attaching core tidyverse packages ──────────────── tidyverse 2.0.0 ──
-    ## ✔ forcats   1.0.0     ✔ stringr   1.5.0
-    ## ✔ lubridate 1.9.2     ✔ tibble    3.2.1
-    ## ✔ purrr     1.0.1     ✔ tidyr     1.3.0
-    ## ✔ readr     2.1.4     
-    ## ── Conflicts ────────────────────────────────── tidyverse_conflicts() ──
-    ## ✖ purrr::accumulate()     masks foreach::accumulate()
-    ## ✖ dplyr::between()        masks data.table::between()
-    ## ✖ randomForest::combine() masks dplyr::combine()
-    ## ✖ readr::edition_get()    masks testthat::edition_get()
-    ## ✖ tidyr::extract()        masks raster::extract()
-    ## ✖ dplyr::filter()         masks stats::filter()
-    ## ✖ dplyr::first()          masks data.table::first()
-    ## ✖ lubridate::hour()       masks data.table::hour()
-    ## ✖ purrr::is_null()        masks testthat::is_null()
-    ## ✖ lubridate::isoweek()    masks data.table::isoweek()
-    ## ✖ dplyr::lag()            masks stats::lag()
-    ## ✖ dplyr::last()           masks data.table::last()
-    ## ✖ readr::local_edition()  masks testthat::local_edition()
-    ## ✖ randomForest::margin()  masks ggplot2::margin()
-    ## ✖ tidyr::matches()        masks testthat::matches(), dplyr::matches()
-    ## ✖ lubridate::mday()       masks data.table::mday()
-    ## ✖ lubridate::minute()     masks data.table::minute()
-    ## ✖ lubridate::month()      masks data.table::month()
-    ## ✖ lubridate::quarter()    masks data.table::quarter()
-    ## ✖ lubridate::second()     masks data.table::second()
-    ## ✖ raster::select()        masks dplyr::select()
-    ## ✖ lubridate::stamp()      masks cowplot::stamp()
-    ## ✖ purrr::transpose()      masks data.table::transpose()
-    ## ✖ lubridate::wday()       masks data.table::wday()
-    ## ✖ lubridate::week()       masks data.table::week()
-    ## ✖ purrr::when()           masks foreach::when()
-    ## ✖ lubridate::yday()       masks data.table::yday()
-    ## ✖ lubridate::year()       masks data.table::year()
-    ## ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
-
-``` r
 library(furrr)
-```
 
-    ## Loading required package: future
-    ## 
-    ## Attaching package: 'future'
-    ## 
-    ## The following object is masked from 'package:rmarkdown':
-    ## 
-    ##     run
-
-``` r
 # Generate a list of numbers
 numbers <- 1:10
 

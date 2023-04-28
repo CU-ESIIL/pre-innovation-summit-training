@@ -1,4 +1,4 @@
-![header](docs/assets/pre-summit-training-header.png){width=1000}
+![header](docs/assets/pre-summit-training-header.png)
 
 # Get ready to innovate: pre-innovation-summit-training
 Welcome to the Technical Training Series for the upcoming Innovation Summit! This voluntary 3-class series has been designed to equip attendees with the technical skills and knowledge needed to fully participate in the Summit. Our curriculum includes instruction on GitHub, CyVerse, R, and Python, as well as an introduction to open data and reproducible workflows.
