@@ -1080,4 +1080,545 @@ laspy.plot.plot(lidar)
 ```
 
 
+## Data for black lives
+Data for Black Lives (https://d4bl.org/) is a movement that uses data science to create measurable change in the lives of Black people. While the Data for Black Lives website provides resources, reports, articles, and datasets related to racial equity, it doesn't provide a direct API for downloading data.
 
+Instead, you can access the Data for Black Lives GitHub repository (https://github.com/Data4BlackLives) to find datasets and resources to work with. In this example, we'll use a sample dataset available at https://github.com/Data4BlackLives/covid-19/tree/master/data. The dataset "COVID19_race_data.csv" contains COVID-19 race-related data.
+
+R:
+In R, we'll use the 'readr' and 'dplyr' packages to read, process, and analyze the dataset.
+
+R code:
+
+```{r, eval=FALSE}
+# Install and load necessary libraries
+
+library(readr)
+library(dplyr)
+
+# Read the CSV file
+url <- "https://raw.githubusercontent.com/Data4BlackLives/covid-19/master/data/COVID19_race_data.csv"
+data <- read_csv(url)
+
+# Basic information about the dataset
+print(dim(data))
+print(head(data))
+
+# Example analysis: calculate the mean of 'cases_total' by 'state'
+data %>%
+  group_by(state) %>%
+  summarize(mean_cases_total = mean(cases_total, na.rm = TRUE)) %>%
+  arrange(desc(mean_cases_total))
+```
+
+
+
+Python:
+In Python, we'll use the 'pandas' library to read, process, and analyze the dataset.
+
+Python code:
+
+```{python, cache=TRUE, eval=FALSE}
+import pandas as pd
+
+# Read the CSV file
+url = "https://raw.githubusercontent.com/Data4BlackLives/covid-19/master/data/COVID19_race_data.csv"
+data = pd.read_csv(url)
+
+# Basic information about the dataset
+print(data.shape)
+print(data.head())
+
+# Example analysis: calculate the mean of 'cases_total' by 'state'
+mean_cases_total = data.groupby("state")["cases_total"].mean().sort_values(ascending=False)
+print(mean_cases_total)
+```
+
+
+In conclusion, both R and Python provide powerful libraries and tools for downloading, processing, and analyzing datasets, such as those found in the Data for Black Lives repository. The 'readr' and 'dplyr' libraries in R offer a simple and intuitive way to read and manipulate data, while the 'pandas' library in Python offers similar functionality with a different syntax. Depending on your preferred programming language and environment, both options can be effective in working with social justice datasets.
+
+
+## Propublica Congress API
+The ProPublica Congress API provides information about the U.S. Congress members and their voting records. In this example, we'll fetch data about the current Senate members and calculate the number of members in each party.
+
+R:
+In R, we'll use the 'httr' and 'jsonlite' packages to fetch and process data from the ProPublica Congress API.
+
+```{r, include=FALSE}
+api_key <- "hdNmDKoE3FFdqa09iy2yFpRq7hYOyKwq8enO2T5M"
+```
+
+
+R code:
+
+```{r, cache=TRUE}
+# load necessary libraries
+library(httr)
+library(jsonlite)
+
+# Replace 'your_api_key' with your ProPublica API key
+
+#
+
+# Fetch data about the current Senate members
+url <- "https://api.propublica.org/congress/v1/117/senate/members.json"
+response <- GET(url, add_headers(`X-API-Key` = api_key))
+
+# Check if the request was successful
+if (http_status(response)$category == "Success") {
+  data <- content(response, "parsed")
+  members <- data$results[[1]]$members
+  
+  # Calculate the number of members in each party
+  party_counts <- table(sapply(members, function(x) x$party))
+  print(party_counts)
+} else {
+  print(http_status(response)$message)
+}
+```
+
+
+Python:
+In Python, we'll use the 'requests' library to fetch data from the ProPublica Congress API and 'pandas' library to process the data.
+
+python code:
+
+```{python, cache=TRUE, eval=FALSE}
+# Install necessary libraries
+
+import requests
+import pandas as pd
+
+# Replace 'your_api_key' with your ProPublica API key
+api_key = "your_api_key"
+headers = {"X-API-Key": api_key}
+
+# Fetch data about the current Senate members
+url = "https://api.propublica.org/congress/v1/117/senate/members.json"
+response = requests.get(url, headers=headers)
+
+# Check if the request was successful
+if response.status_code == 200:
+    data = response.json()
+    members = data["results"][0]["members"]
+    
+    # Calculate the number of members in each party
+    party_counts = pd.DataFrame(members)["party"].value_counts()
+    print(party_counts)
+else:
+    print(f"Error: {response.status_code}")
+```
+
+
+In conclusion, both R and Python offer efficient ways to fetch and process data from APIs like the ProPublica Congress API. The 'httr' and 'jsonlite' libraries in R provide a straightforward way to make HTTP requests and parse JSON data, while the 'requests' library in Python offers similar functionality. The 'pandas' library in Python can be used for data manipulation and analysis, and R provides built-in functions like table() for aggregating data. Depending on your preferred programming language and environment, both options can be effective for working with the ProPublica Congress API.
+
+## Nonprofit Explorer API by ProPublica
+The Nonprofit Explorer API by ProPublica provides data on tax-exempt organizations in the United States. In this example, we'll search for organizations with the keyword "education" and analyze the results.
+
+R:
+In R, we'll use the 'httr' and 'jsonlite' packages to fetch and process data from the Nonprofit Explorer API.
+
+R code:
+
+```{r, cache=TRUE}
+# Install and load necessary libraries
+library(httr)
+library(jsonlite)
+
+# Fetch data for organizations with the keyword "education"
+url <- "https://projects.propublica.org/nonprofits/api/v2/search.json?q=education"
+response <- GET(url)
+
+# Check if the request was successful
+if (http_status(response)$category == "Success") {
+  data <- content(response, "parsed")
+  organizations <- data$organizations
+  
+  # Count the number of organizations per state
+  state_counts <- table(sapply(organizations, function(x) x$state))
+  print(state_counts)
+} else {
+  print(http_status(response)$message)
+}
+```
+
+
+Python:
+In Python, we'll use the 'requests' library to fetch data from the Nonprofit Explorer API and 'pandas' library to process the data.
+
+Python code:
+
+```{python, cache=TRUE}
+# Install necessary libraries
+import requests
+import pandas as pd
+
+# Fetch data for organizations with the keyword "education"
+url = "https://projects.propublica.org/nonprofits/api/v2/search.json?q=education"
+response = requests.get(url)
+
+# Check if the request was successful
+if response.status_code == 200:
+    data = response.json()
+    organizations = data["organizations"]
+    
+    # Count the number of organizations per state
+    state_counts = pd.DataFrame(organizations)["state"].value_counts()
+    print(state_counts)
+else:
+    print(f"Error: {response.status_code}")
+```
+
+
+In conclusion, both R and Python offer efficient ways to fetch and process data from APIs like the Nonprofit Explorer API. The 'httr' and 'jsonlite' libraries in R provide a straightforward way to make HTTP requests and parse JSON data, while the 'requests' library in Python offers similar functionality. The 'pandas' library in Python can be used for data manipulation and analysis, and R provides built-in functions like table() for aggregating data. Depending on your preferred programming language and environment, both options can be effective for working with the Nonprofit Explorer API.
+
+## Campaign Finance API by ProPublica
+
+The Campaign Finance API by the Federal Election Commission (FEC) provides data on campaign finance in U.S. federal elections. In this example, we'll fetch data about individual contributions for the 2020 election cycle and analyze the results.
+
+R:
+In R, we'll use the 'httr' and 'jsonlite' packages to fetch and process data from the Campaign Finance API.
+
+R code:
+
+```{r, cache=TRUE}
+# Install and load necessary libraries
+library(httr)
+library(jsonlite)
+
+# Fetch data about individual contributions for the 2020 election cycle
+url <- "https://api.open.fec.gov/v1/schedules/schedule_a/?api_key='OGwpkX7tH5Jihs1qQcisKfVAMddJzmzouWKtKoby'&two_year_transaction_period=2020&sort_hide_null=false&sort_null_only=false&per_page=20&page=1"
+response <- GET(url)
+
+# Check if the request was successful
+if (http_status(response)$category == "Success") {
+  data <- content(response, "parsed")
+  contributions <- data$results
+  
+  # Calculate the total contributions per state
+  state_totals <- aggregate(contributions$contributor_state, by = list(contributions$contributor_state), FUN = sum)
+  colnames(state_totals) <- c("State", "Total_Contributions")
+  print(state_totals)
+} else {
+  print(http_status(response)$message)
+}
+```
+
+
+Python:
+In Python, we'll use the 'requests' library to fetch data from the Campaign Finance API and 'pandas' library to process the data.
+
+Python code:
+
+```{python, cache=TRUE}
+# Install necessary libraries
+
+import requests
+import pandas as pd
+
+# Fetch data about individual contributions for the 2020 election cycle
+url = "https://api.open.fec.gov/v1/schedules/schedule_a/?api_key=your_api_key&two_year_transaction_period=2020&sort_hide_null=false&sort_null_only=false&per_page=20&page=1"
+response = requests.get(url)
+
+# Check if the request was successful
+if response.status_code == 200:
+    data = response.json()
+    contributions = data["results"]
+    
+    # Calculate the total contributions per state
+    df = pd.DataFrame(contributions)
+    state_totals = df.groupby("contributor_state")["contribution_receipt_amount"].sum()
+    print(state_totals)
+else:
+    print(f"Error: {response.status_code}")
+```
+
+
+In conclusion, both R and Python offer efficient ways to fetch and process data from APIs like the Campaign Finance API. The 'httr' and 'jsonlite' libraries in R provide a straightforward way to make HTTP requests and parse JSON data, while the 'requests' library in Python offers similar functionality. The 'pandas' library in Python can be used for data manipulation and analysis, and R provides built-in functions like aggregate() for aggregating data. Depending on your preferred programming language and environment, both options can be effective for working with the Campaign Finance API.
+
+Note: Remember to replace your_api_key with your actual FEC API key in the code examples above.
+
+## Historic Redlining
+
+Historic redlining data refers to data from the Home Owners' Loan Corporation (HOLC) that created residential security maps in the 1930s, which contributed to racial segregation and disinvestment in minority neighborhoods. One popular source for this data is the Mapping Inequality project (https://dsl.richmond.edu/panorama/redlining/).
+
+In this example, we'll download historic redlining data for Philadelphia in the form of a GeoJSON file and analyze the data in R and Python.
+
+R:
+In R, we'll use the 'sf' and 'dplyr' packages to read and process the GeoJSON data.
+
+R code:
+
+```{r, cache=TRUE}
+# Install and load necessary libraries
+library(sf)
+library(dplyr)
+
+# Download historic redlining data for Philadelphia
+url <- "https://dsl.richmond.edu/panorama/redlining/static/downloads/geojson/PAPhiladelphia1937.geojson"
+philly_geojson <- read_sf(url)
+
+# Count the number of areas per HOLC grade
+grade_counts <- philly_geojson %>%
+  group_by(holc_grade) %>%
+  summarize(count = n())
+
+plot(grade_counts)
+```
+
+
+Python:
+In Python, we'll use the 'geopandas' library to read and process the GeoJSON data.
+
+Python code:
+
+```{python, cache=TRUE}
+# Install necessary libraries
+
+
+import geopandas as gpd
+
+# Download historic redlining data for Philadelphia
+url = "https://dsl.richmond.edu/panorama/redlining/static/downloads/geojson/PAPhiladelphia1937.geojson"
+philly_geojson = gpd.read_file(url)
+
+# Count the number of areas per HOLC grade
+grade_counts = philly_geojson["holc_grade"].value_counts()
+print(grade_counts)
+```
+
+
+In conclusion, both R and Python offer efficient ways to download and process historic redlining data in the form of GeoJSON files. The 'sf' package in R provides a simple way to read and manipulate spatial data, while the 'geopandas' library in Python offers similar functionality. The 'dplyr' package in R can be used for data manipulation and analysis, and Python's built-in functions like value_counts() can be used for aggregating data. Depending on your preferred programming language and environment, both options can be effective for working with historic redlining data.
+
+## American Indian and Alaska Native Areas (AIANNH)
+
+In this example, we'll download and analyze the American Indian and Alaska Native Areas (AIANNH) TIGER/Line Shapefile from the U.S. Census Bureau. We'll download the data for the year 2020, and analyze the number of AIANNH per congressional district
+
+R:
+In R, we'll use the 'sf' and 'dplyr' packages to read and process the Shapefile data.
+
+R code:
+
+```{r, cache=TRUE}
+# Install and load necessary libraries
+library(sf)
+library(dplyr)
+
+# Download historic redlining data for Philadelphia
+url <- "https://www2.census.gov/geo/tiger/TIGER2020/AIANNH/tl_2020_us_aiannh.zip"
+temp_file <- tempfile(fileext = ".zip")
+download.file(url, temp_file, mode = "wb")
+unzip(temp_file, exdir = tempdir())
+
+# Read the Shapefile
+shapefile_path <- file.path(tempdir(), "tl_2020_us_aiannh.shp")
+aiannh <- read_sf(shapefile_path)
+
+# Count the number of AIANNH per congressional district
+state_counts <- aiannh %>%
+  group_by(LSAD) %>%
+  summarize(count = n())
+
+print(state_counts[order(-state_counts$count),])
+```
+
+
+Python:
+In Python, we'll use the 'geopandas' library to read and process the Shapefile data.
+
+Python code:
+
+```{python, cache=TRUE}
+import geopandas as gpd
+import pandas as pd
+import requests
+import zipfile
+import os
+from io import BytesIO
+
+# Download historic redlining data for Philadelphia
+url = "https://www2.census.gov/geo/tiger/TIGER2020/AIANNH/tl_2020_us_aiannh.zip"
+response = requests.get(url)
+zip_file = zipfile.ZipFile(BytesIO(response.content))
+
+# Extract Shapefile
+temp_dir = "temp"
+if not os.path.exists(temp_dir):
+    os.makedirs(temp_dir)
+
+zip_file.extractall(path=temp_dir)
+shapefile_path = os.path.join(temp_dir, "tl_2020_us_aiannh.shp")
+
+# Read the Shapefile
+aiannh = gpd.read_file(shapefile_path)
+
+# Count the number of AIANNH per congressional district
+state_counts = aiannh.groupby("LSAD").size().reset_index(name="count")
+
+# Sort by descending count
+state_counts_sorted = state_counts.sort_values(by="count", ascending=False)
+
+print(state_counts_sorted)
+```
+
+
+In conclusion, both R and Python offer efficient ways to download and process AIANNH TIGER/Line Shapefile data from the U.S. Census Bureau. The 'sf' package in R provides a simple way to read and manipulate spatial data, while the 'geopandas' library in Python offers similar functionality. The 'dplyr' package in R can be used for data manipulation and analysis, and Python's built-in functions like value_counts() can be used for aggregating data. Depending on your preferred programming language and environment, both options can be effective for working with AIANNH data.
+
+
+## Indian Entities Recognized and Eligible To Receive Services by BIA
+
+The Bureau of Indian Affairs (BIA) provides a PDF document containing a list of Indian Entities Recognized and Eligible To Receive Services. To analyze the data, we'll first need to extract the information from the PDF. In this example, we'll extract the names of the recognized tribes and count the number of tribes per state.
+
+R:
+In R, we'll use the 'pdftools' package to extract text from the PDF and the 'stringr' package to process the text data.
+
+R code:
+
+```{r, cache=TRUE}
+# Install and load necessary libraries
+library(pdftools)
+library(stringr)
+library(dplyr)
+
+# Download the BIA PDF
+url <- "https://www.govinfo.gov/content/pkg/FR-2022-01-28/pdf/2022-01789.pdf"
+temp_file <- tempfile(fileext = ".pdf")
+download.file(url, temp_file, mode = "wb")
+
+# Extract text from the PDF
+pdf_text <- pdf_text(temp_file)
+tribe_text <- pdf_text[4:length(pdf_text)]
+
+# Define helper functions
+tribe_state_extractor <- function(text_line) {
+  regex_pattern <- "(.*),\\s+([A-Z]{2})$"
+  tribe_state <- str_match(text_line, regex_pattern)
+  return(tribe_state)
+}
+
+is_valid_tribe_line <- function(text_line) {
+  regex_pattern <- "^\\d+\\s+"
+  return(!is.na(str_match(text_line, regex_pattern)))
+}
+
+# Process text data to extract tribes and states
+tribe_states <- sapply(tribe_text, tribe_state_extractor)
+valid_lines <- sapply(tribe_text, is_valid_tribe_line)
+tribe_states <- tribe_states[valid_lines, 2:3]
+
+# Count the number of tribes per state
+tribe_data <- as.data.frame(tribe_states)
+colnames(tribe_data) <- c("Tribe", "State")
+state_counts <- tribe_data %>%
+  group_by(State) %>%
+  summarise(Count = n())
+
+print(state_counts)
+```
+
+
+Python:
+In Python, we'll use the 'PyPDF2' library to extract text from the PDF and the 're' module to process the text data.
+
+Python code:
+
+```{python, cache=TRUE, eval=FALSE}
+# Install necessary libraries
+import requests
+import PyPDF2
+import io
+import re
+from collections import Counter
+
+# Download the BIA PDF
+url = "https://www.bia.gov/sites/bia.gov/files/assets/public/raca/online-tribal-leaders-directory/tribal_leaders_2021-12-27.pdf"
+response = requests.get(url)
+
+# Extract text from the PDF
+pdf_reader = PyPDF2.PdfFileReader(io.BytesIO(response.content))
+tribe_text = [pdf_reader.getPage(i).extractText() for i in range(3, pdf_reader.numPages)]
+
+# Process text data to extract tribes and states
+tribes = [re.findall(r'^\d+\s+(.+),\s+([A-Z]{2})', line) for text in tribe_text for line in text.split('\n') if line]
+tribe_states = [state for tribe, state in tribes]
+
+# Count the number of tribes per state
+state_counts = Counter(tribe_states)
+print(state_counts)
+```
+
+
+In conclusion, both R and Python offer efficient ways to download and process the list of Indian Entities Recognized and Eligible To Receive Services from the BIA. The 'pdftools' package in R provides a simple way to extract text from PDF files, while the 'PyPDF2' library in Python offers similar functionality. The 'stringr' package in R and the 're' module in Python can be used to process and analyze text data. Depending on your preferred programming language and environment, both options can be effective for working with BIA data.
+
+
+## National Atlas - Indian Lands of the United States dataset
+
+In this example, we will download and analyze the National Atlas - Indian Lands of the United States dataset in both R and Python. We will read the dataset and count the number of Indian lands per state.
+
+R:
+In R, we'll use the 'sf' package to read the Shapefile and the 'dplyr' package to process the data.
+
+R code:
+
+```{r, cache=TRUE}
+# Install and load necessary libraries
+
+library(sf)
+library(dplyr)
+
+# Download the Indian Lands dataset
+url <- "https://prd-tnm.s3.amazonaws.com/StagedProducts/Small-scale/data/Boundaries/indlanp010g.shp_nt00968.tar.gz"
+temp_file <- tempfile(fileext = ".tar.gz")
+download.file(url, temp_file, mode = "wb")
+untar(temp_file, exdir = tempdir())
+
+# Read the Shapefile
+shapefile_path <- file.path(tempdir(), "indlanp010g.shp")
+indian_lands <- read_sf(shapefile_path)
+
+# Count the number of Indian lands per state
+# state_counts <- indian_lands %>%
+#   group_by(STATE) %>%
+#   summarize(count = n())
+
+plot(indian_lands)
+```
+
+
+Python:
+In Python, we'll use the 'geopandas' and 'pandas' libraries to read the Shapefile and process the data.
+
+Python code:
+
+```{python, cache=TRUE, eval=FALSE}
+import geopandas as gpd
+import pandas as pd
+import requests
+import tarfile
+import os
+from io import BytesIO
+
+# Download the Indian Lands dataset
+url = "https://prd-tnm.s3.amazonaws.com/StagedProducts/Small-scale/data/Boundaries/indlanp010g.shp_nt00966.tar.gz"
+response = requests.get(url)
+tar_file = tarfile.open(fileobj=BytesIO(response.content), mode='r:gz')
+
+# Extract Shapefile
+temp_dir = "temp"
+if not os.path.exists(temp_dir):
+    os.makedirs(temp_dir)
+
+tar_file.extractall(path=temp_dir)
+shapefile_path = os.path.join(temp_dir, "indlanp010g.shp")
+
+# Read the Shapefile
+indian_lands = gpd.read_file(shapefile_path)
+
+# Count the number of Indian lands per state
+state_counts = indian_lands.groupby("STATE").size().reset_index(name="count")
+
+print(state_counts)
+```
+
+
+Both R and Python codes download the dataset and read the Shapefile using the respective packages. They then group the data by the 'STATE' attribute and calculate the count of Indian lands per state.
