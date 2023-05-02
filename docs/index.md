@@ -60,7 +60,7 @@ Each session will run from **12pm - 2pm Mountain Daylight Time** and will meet _
 
 **Slack:** <a href="https://join.slack.com/t/esiilinnovationsummit/shared_invite/zt-1udjsf8v6-ci7YIr1XgyuMdGCMuE3OuA" target="_blank">**Join the Innovation Summit Slack Workspace here**</a>
 
-**CyVerse User Portal** [**https://user.cyverse.org**](https://user.cyverse.org){target=_blank}
+**CyVerse User Portal:** <a href="https://user.cyverse.org" target="_blank">**https://user.cyverse.org**</a>
 
 **Open Earth Data Science Textbook:** <a href="https://www.earthdatascience.org/" target="_blank">**https://www.earthdatascience.org/**</a>
 
