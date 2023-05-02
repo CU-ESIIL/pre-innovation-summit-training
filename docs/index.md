@@ -58,7 +58,7 @@ Each session will run from **12pm - 2pm Mountain Daylight Time** and will meet _
 
 **KIStorm:** <a href="https://kistorm.com/login" target="_blank">**https://kistorm.com/login**</a>
 
-**Slack:** <a href="https://join.slack.com/t/esiilinnovationsummit/shared_invite/zt-1udjsf8v6-ci7YIr1XgyuMdGCMuE3OuA" target="_blank">**Join the Innovation Summit Slack Workspace here**</a>
+**Slack:** <a href="https://join.slack.com/t/esiilinnovationsummit/shared_invite/zt-1udjsf8v6-ci7YIr1XgyuMdGCMuE3OuA" target="_blank">**esiilinnovationsummit.slack.com**</a>
 
 **CyVerse User Portal:** <a href="https://user.cyverse.org" target="_blank">**https://user.cyverse.org**</a>
 
