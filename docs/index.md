@@ -52,8 +52,6 @@ Each session will run from **12pm - 2pm Mountain Daylight Time** and will meet _
 
 ## Links
 
-**Zoom:**
-
 **GitHub repository:** <a href="https://github.com/CU-ESIIL/pre-innovation-summit-training" target="_blank">**https://github.com/CU-ESIIL/pre-innovation-summit-training**</a>
 
 **KIStorm:** <a href="https://kistorm.com/login" target="_blank">**https://kistorm.com/login**</a>
