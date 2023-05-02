@@ -42,10 +42,10 @@ Each session will run from **12pm - 2pm Mountain Daylight Time** and will meet _
 ## Day 3 (Friday May, 19)
 > ### ***Tools for Keeping Your Science Open and Reproducible*** 
 > (borrowed from the <a href="https://foss.cyverse.org/" target="_blank">***CyVerse Foundational Open Science Skills 2023***</a> open online course)
-> * **Instructors:** Culler, Swetnam & CyVerse Team, Tuff
->   * <a href="https://foss.cyverse.org/01_intro_open_sci/" target="_blank">**Introduction to Open Science**</a>
->   * <a href="https://foss.cyverse.org/04_documentation_communication/" target="_blank">**Documentation & Communication**</a>
->   * <a href="https://foss.cyverse.org/06_reproducibility_i/" target="_blank">**Repeatability and Reproducibility**</a>
+>   * **Instructors:** Culler, Swetnam & CyVerse Team, Tuff
+>     * <a href="https://foss.cyverse.org/01_intro_open_sci/" target="_blank">**Introduction to Open Science**</a>
+>     * <a href="https://foss.cyverse.org/04_documentation_communication/" target="_blank">**Documentation & Communication**</a>
+>     * <a href="https://foss.cyverse.org/06_reproducibility_i/" target="_blank">**Repeatability and Reproducibility**</a>
 
 ***
 
