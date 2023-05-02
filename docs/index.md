@@ -44,9 +44,9 @@ Each session will run from **12pm - 2pm Mountain Daylight Time** and will meet _
 > (borrowed from the <a href="https://foss.cyverse.org/" target="_blank">***CyVerse Foundational Open Science Skills 2023***</a> open online course)
 > 
 > * **Instructors:** Culler, Swetnam & CyVerse Team, Tuff
->   * <a href="https://foss.cyverse.org/01_intro_open_sci/" target="_blank">**Introduction to Open Science**</a>
->   * <a href="https://foss.cyverse.org/04_documentation_communication/" target="_blank">**Documentation & Communication**</a>
->   * <a href="https://foss.cyverse.org/06_reproducibility_i/" target="_blank">**Repeatability and Reproducibility**</a>
+>     * <a href="https://foss.cyverse.org/01_intro_open_sci/" target="_blank">**Introduction to Open Science**</a>
+>     * <a href="https://foss.cyverse.org/04_documentation_communication/" target="_blank">**Documentation & Communication**</a>
+>     * <a href="https://foss.cyverse.org/06_reproducibility_i/" target="_blank">**Repeatability and Reproducibility**</a>
 
 ***
 
@@ -58,7 +58,7 @@ Each session will run from **12pm - 2pm Mountain Daylight Time** and will meet _
 
 **KIStorm:** <a href="https://kistorm.com/login" target="_blank">**https://kistorm.com/login**</a>
 
-**Slack:** 
+**Slack:** <a href="https://join.slack.com/t/esiilinnovationsummit/shared_invite/zt-1udjsf8v6-ci7YIr1XgyuMdGCMuE3OuA" target="_blank">**Join the Innovation Summit Slack Workspace here**</a>
 
 **CyVerse User Portal** [**https://user.cyverse.org**](https://user.cyverse.org){target=_blank}
 
