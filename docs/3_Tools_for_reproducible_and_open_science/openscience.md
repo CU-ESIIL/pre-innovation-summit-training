@@ -1,8 +1,18 @@
-# Introduction to Open Science
+# Tools for Reproducible and Open Science
 
-!!! Success "Learning Objectives"
+This page is organized into three distinct segments:
 
-        After this lesson, you should be able to:
+- [Introduction to Open Science](#introduction-to-open-science) (~50 minutes)
+- [Documentation & Communication](#documentation-and-communication) (~25 minutes)
+- [Repeatability and Reproducibility](#repeatability-and-reproducibility) (~ 45 minutes)
+
+---
+
+## Introduction to Open Science
+
+!!! Success "Objectives"
+
+        After this section, you should be able to:
         
         * Explain what Open Science is
         * Explain the components of Open Science
@@ -12,7 +22,7 @@
         * Identify who the practitioners of Open Science are
         * Understand the underlying Ethos of Open Science
 
-## What is Open Science?
+### *What* is Open Science?
 
 If you ask a dozen researchers this question, you will probably get just as many answers.
 
@@ -52,8 +62,6 @@ This means that Open Science isn't necessarily a set of checkboxes you need to t
             [![foster](https://www.fosteropenscience.eu/themes/fosterstrap/images/taxonomies/os_taxonomy.png)](https://www.fosteropenscience.eu/resources){target=_blank} 
 
              Graphic by [Foster Open Science](https://www.fosteropenscience.eu/){target=_blank}
-
-
 
 ``` mermaid
 flowchart LR
@@ -96,7 +104,7 @@ Mermaid Diagram: Conceptual relationships of Open Science and cyberinfrastructur
 
 To help move the scientific community toward open science, NASA has declared [2023 is the year of Open Science!](https://nasa.github.io/Transform-to-Open-Science/year-of-open-science/){target=_blank} 
 
-### **:material-pillar: Open Access Publications**
+#### :material-pillar: Open Access Publications
 
 [![open access](https://upload.wikimedia.org/wikipedia/commons/f/f3/Open_Access_PLoS.svg){width=300}](https://en.wikipedia.org/wiki/Open_access){target=_blank}
 
@@ -145,7 +153,6 @@ To help move the scientific community toward open science, NASA has declared [20
     [Max Planck Digital Library](https://group.springernature.com/gb/group/media/press-releases/landmark-agreement-between-springer-nature-and-mpdl/18498782){target=_blank} - German authors can have OA fees in Springer Nature research journals paid for.
 
     [Bibsam Consortium](https://www.springernature.com/gp/open-research/institutional-agreements/oaforsweden){target=_blank} - Swedish authors can have OA fees in Springer Nature research journals paid for.
-
 
 ??? Example "Pre-print Services"
 
@@ -197,13 +204,13 @@ To help move the scientific community toward open science, NASA has declared [20
 
         [ThesisCommons](https://thesiscommons.org/) - open Theses
         
-### **:material-pillar: Open Data**
+#### :material-pillar: Open Data
 
 Open Data are a critical aspect of open science. There are three key attributes of Open Data:
 
-* Availability and accessibility
-* Reusability
-* Inclusivity
+- Availability and accessibility
+- Reusability
+- Inclusivity
 
 ??? Quote "Definitions"
 
@@ -235,7 +242,7 @@ Open Data are a critical aspect of open science. There are three key attributes 
 
     [![linked open data](https://lod-cloud.net/clouds/lod-cloud.svg)](https://lod-cloud.net/clouds/lod-cloud.svg){target=_blank}
 
-### **:material-pillar: Open Educational Resources**
+#### :material-pillar: Open Educational Resources
 
 [![open educational resources](https://upload.wikimedia.org/wikipedia/commons/2/20/Global_Open_Educational_Resources_Logo.svg){width=240}](https://www.unesco.org/en/communication-information/open-solutions/open-educational-resources)
 
@@ -280,7 +287,7 @@ Open Data are a critical aspect of open science. There are three key attributes 
     [DigitalLearn](https://www.digitallearn.org/){target=_blank}
 
 
-### **:material-pillar: Open Methodology**
+#### :material-pillar: Open Methodology
 
 [![plos open methods](https://plos.org/wp-content/uploads/2021/08/Methods-infographic-option-c-2-edit.png)](https://plos.org/open-science/open-methods/){target=_blank}
 
@@ -326,7 +333,7 @@ The use of version control systems like [GitHub](https://github.com/search?q=ope
 
     To learn more about preregistration, you can check out the [Open Science Foundation](https://osf.io/){target=_blank}, a project that provides a preregistration platform and other Open Science tools. You can also read this [publication](https://www.pnas.org/doi/10.1073/pnas.1708274114){target=_blank}
 
-### **:material-pillar: Open Peer Review**
+#### :material-pillar: Open Peer Review
 
 [![plos open peer review](https://theplosblog.plos.org/wp-content/uploads/sites/6/2020/05/TPR_chart-final-edited-003-scaled.jpg)](https://theplosblog.plos.org/2019/05/plos-journals-now-open-for-published-peer-review/){target=_blank}
 
@@ -352,7 +359,7 @@ The use of version control systems like [GitHub](https://github.com/search?q=ope
 
     [Sciety](https://sciety.org/){target=_blank} platform for evaluating preprints.
 
-### **:material-pillar: Open Source Software**
+#### :material-pillar: Open Source Software
 
 [![](https://upload.wikimedia.org/wikipedia/commons/4/42/Opensource.svg){width=240}](https://opensource.org/){target=_blank}
 
@@ -366,47 +373,7 @@ The use of version control systems like [GitHub](https://github.com/search?q=ope
 
 [Awesome list](https://tyson-swetnam.github.io/awesome-open-science/software/){target=_blank}
 
-## Breakout Discussion 1
-
-As you already know, being a scientist requires you to wear many hats, and trying to do Open Science is no different.
-
-<figure markdown>
-  <a href="https://doi.org/10.7554/eLife.81075" target="blank" rel="venn">![venn](https://iiif.elifesciences.org/lax/81075%2Felife-81075-fig2-v1.tif/full/,1500/0/default.jpg){ width="700" } </a>
-    <figcaption> [Bernery et al. (2022)](https://doi.org/10.7554/eLife.81075){target=_blank} Figure 2: The positive aspects of doing a PhD. </figcaption>
-</figure>
-
-
-As we mentioned, Open Science is not a set of boxes you need to check off to be "Certified Open", but an intersecting set of philosophies and approaches, all of which occur on some type of spectrum. 
-
-To get a feel for how Open Science can be multifaceted and different for each researcher, we will do a short breakout group session to discuss what Open Science means to you.
-
-??? Question "What does Open Science mean to you?"
-
-    ??? Example "Which of the :material-pillar: pillars of Open Science is nearest to your own heart?"
-
-        **:material-pillar: Open Access Publications**
-
-        **:material-pillar: Open Data**
-
-        **:material-pillar: Open Educational Resources**
-
-        **:material-pillar: Open Methodology**
-      
-        **:material-pillar: Open Peer Review**
-
-        **:material-pillar: Open Source Software**
-
-    ??? Example "Are any of the :material-pillar: pillars more important than the others?"
-
-    ??? Example "Are there any :material-pillar: pillars not identified that you think should be considered?"
-
-??? Question "What characteristics might a paper, project, lab group require to qualify as doing *Open Science*"
-
-??? Question "What are some limitations to you, your lab group, or your domain?"
-
----
-
-## *WHY* do Open Science?
+### *WHY* do Open Science?
 
 There are many reasons to do Open Science, and presumably one or more of them brought you to this workshop. 
 
@@ -432,17 +399,7 @@ A paper from [Bartling & Friesike (2014)](https://doi.org/10.1007/978-3-319-0002
 
 While many researchers may be motivated by one or more of these aspects, we will not necessarily focus on any of them in particular. If anything, FOSS may be slightly more in the Infrastructure school, because we aim to give you the tools to do Open Science based on your own underlying motivations.
 
-## Breakout Discussion 2
-
-Let's break out into groups again to discuss some of our motivations for doing Open Science.
-
-??? Question "What motivates you to do Open Science?"
-
-??? Question "Do you feel that you fall into a particular "school"? If so, which one, and why?"
-
-??? Question "Are there any motivating factors for doing Open Science that don't fit into this framework?"
-
-## Ethos of Open Science
+### Ethos of Open Science
 
 Doing Open Science requires us to understand the ethics of why working with data which do not belong to us is privileged.
 
@@ -471,13 +428,11 @@ For more information (training):
 
 Ethics and Data Access (General Information with BioMedical and Life Sciences Data) includes [a legal and ethical checklist lesson for researchers](https://ilias.fraunhofer.de/goto.php?target=fold_15177&client_id=fraunhofer){target=_blank} around "FAIR Plus".
 
-## Recommended Open Science Communities
+### Recommended Open Science Communities
 
-[![The Turing Way](https://the-turing-way.netlify.app/_static/logo-detail-with-text.svg){width=150}](https://the-turing-way.netlify.app/welcome.html)
-[![NASA Transform to Open Science](https://zenodo.org/record/7262104/files/Tops_Badge_Nasa.png){width=150}](https://github.com/nasa/Transform-to-Open-Science)
-[![Foster Open Science](https://www.fosteropenscience.eu/images/logos/FOSTER-hires.png){width=300}](https://www.fosteropenscience.eu/)
-[![The Carpentries](https://carpentries.org/assets/img/TheCarpentries.svg)](https://carpentries.org/)
-[![COS](https://www.cos.io/hubfs/Cos_2020/Images/cos_logo.png){width=200}](https://www.cos.io/)
+|The Turing Way|NASA Transform to Open Science|Foster Open Science|The Carpentries|Center of Open Science|
+|:---:|:---:|:---:|:---:|:---:|
+|[![The Turing Way](https://the-turing-way.netlify.app/_static/logo-detail-with-text.svg){width=150}](https://the-turing-way.netlify.app/welcome.html)|[![NASA Transform to Open Science](https://zenodo.org/record/7262104/files/Tops_Badge_Nasa.png){width=150}](https://github.com/nasa/Transform-to-Open-Science)|[![Foster Open Science](https://www.fosteropenscience.eu/images/logos/FOSTER-hires.png){width=150}](https://www.fosteropenscience.eu/)|[![The Carpentries](https://carpentries.org/assets/img/TheCarpentries.svg){width=150}](https://carpentries.org/)|[![COS](https://www.cos.io/hubfs/Cos_2020/Images/cos_logo.png){width=150}](https://www.cos.io/)|
 
 [:material-school: Open Scholarship Grassroots Community Networks](https://docs.google.com/spreadsheets/d/1LNF5_bOkRV-RLIF4HYmu-gOemIa4IdfXEer89fM-Vy8/edit#gid=847887324){target=_blank}
 
@@ -537,7 +492,13 @@ Ethics and Data Access (General Information with BioMedical and Life Sciences Da
 
 ---
 
-## Self Assessment
+### Self Assessment 1
+
+??? Question "What motivates you to do Open Science?"
+
+??? Question "What characteristics might a paper, project, lab group require to qualify as doing *Open Science*"
+
+??? Question "What are some limitations to you, your lab group, or your domain?"
 
 ??? Question "True or False: All research papers published in the top journals, like Science and Nature, are always Open Access?"
 
@@ -582,35 +543,15 @@ Ethics and Data Access (General Information with BioMedical and Life Sciences Da
 
         Ways to improve your open methology can include documentation of your physical bench work, and even video recordings and step-by-step guides for every part of your project.
 
-??? Question "You are asked to review a paper for an important journal in your field. The editor asks if you're willing to release your identity to the authors, thereby "signing" your review. Is this an example of "Open Peer Review"?"
-
-    ??? Failure
-
-        No
-
-        Just because you've given your name to the author(s) of the manuscript, this does not make your review open.
-
-        If the journal later publishes your review alongside the final manuscript, than you will have participated in an Open Review. 
-
-??? Question "You read a paper where the author(s) wrote their own code and licensed as "Open Source" software for a specific set of scientific tasks which you want to replicate. When you visit their personal website, you find the GitHub repository does not exist (because its now private). You contact the authors asking for access, but they refuse to share it 'due to competing researchers who are seeking to steal their intellectual property". Is the software open source?"
-
-    ??? Failure
-
-        No
-
-        Just because an author states they have given their software a permissive software license, does not make the software open source. 
-
-        Always make certain there is a [LICENSE](https://choosealicense.com/licenses/){target=_blank} associated with any software you find on the internet. 
-
-        In order for the software to be open, it must follow the [Open Source Initiative definition](https://opensource.org/osd){target=_blank}
+---
 
 ---
 
-# :material-file-document-multiple: Documentation & :material-antenna: Communication
+## Documentation and Communication
 
 !!! Success "Learning Objectives"
         
-    After this lesson, you should be able to:
+    After this section, you should be able to:
 
     *  Identify and explain different types of project documentation (both internal and external)
     *  Describe tools and approaches to creating your own documentation
@@ -626,24 +567,24 @@ Communicating amongst a team of researchers that may span institutions, time zon
 
 Strong frameworks for internal communication and documentation can make collaboration easier, improve the quality of your science, and reduce the hassle of collaborative work.
 
-## :material-file-document-multiple: Project Documentation
+---
+
+### :material-file-document-multiple: Project Documentation
 
 **The documentation system**, by Divio, categorizes the different types of documentation into 4 quadrants:
 
 [![quadrants](https://documentation.divio.com/_images/overview.png)](https://documentation.divio.com/)
 
-??? Question "Can you explain the documentation type for each quadrant?"
+!!! Note "Explaining the documentation system quadrants"
 
-    ??? Success
-
-        - **Tutorials**: Lessons! Tutorials are lessons that take the reader by the hand through a series of steps to complete a project of some kind. They are what your project needs in order to show a beginner that they can achieve something with it.
-        - **How-to-guides**: Recipes! How-to-guides take the reader through the steps required to solve a real-world problem.
-        - **References**: Guides! References offer technical descriptions of the machinery and how to operate it. References have one job only: to describe. They are code-determined, because ultimately that’s what they describe: key classes, functions, APIs, and so they should list things like functions, fields, attributes and methods, and set out how to use them.
-        - **Explanation**: Discussions! The aims of explanations are to clarify and illuminate a particular topic by broadening the documentation’s coverage of a topic.
+    - **Tutorials**: Lessons! Tutorials are lessons that take the reader by the hand through a series of steps to complete a project of some kind. They are what your project needs in order to show a beginner that they can achieve something with it.
+    - **How-to-guides**: Recipes! How-to-guides take the reader through the steps required to solve a real-world problem.
+    - **References**: Guides! References offer technical descriptions of the machinery and how to operate it. References have one job only: to describe. They are code-determined, because ultimately that’s what they describe: key classes, functions, APIs, and so they should list things like functions, fields, attributes and methods, and set out how to use them.
+    - **Explanation**: Discussions! The aims of explanations are to clarify and illuminate a particular topic by broadening the documentation’s coverage of a topic.
 
 You can read more in depth on this chart by visiting https://documentation.divio.com/introduction/.
 
-### Public Repositories for Documentation
+#### Public Repositories for Documentation
 
 This website is rendered using [:simple-github: GitHub Pages](https://pages.github.com/){target=_blank} using [:simple-markdown: MkDocs](https://www.mkdocs.org/){target=_blank} and the [Material](https://squidfunk.github.io/mkdocs-material/){target=_blank} theme for MkDocs. 
 
@@ -710,7 +651,7 @@ for documenting your workflow.
 - [GitBook](https://docs.gitbook.com/){target=_blank} websites use MarkDown syntax
 - Free for open source projects, paid plans are available
 
-### Websites to Host Methods & Protocols
+#### Websites to Host Methods & Protocols
 
 [Open Science Framework](https://osf.io/){target=_blank} for free. OSF can be directly linked to your ORCID.
 
@@ -722,72 +663,19 @@ for documenting your workflow.
 
 [QUBES](https://qubeshub.org/){target=_blank} - community of math and biology educators who share resources and methods for preparing students to tackle real, complex, biological problems.
 
-??? Question "What are the benefits of using a GitHub.io website?"
+#### Other GitHub Pages Website Quickstarts
 
-    [Github Pages](https://pages.github.com/) are hosted directly from your GitHub repository. 
-    
-    Just edit, push, and your changes are live.
-
-    You do not need to run your own web server!!
-
-### Further Documentation
-
-Here are some guides that you may find useful:
-
-- [MarkDown cheatsheet](https://www.markdownguide.org/cheat-sheet/): for correct MarkDown synthax.
-- [MkDocs-material](https://squidfunk.github.io/mkdocs-material/getting-started/): a starting guide to MkDocs Material theme ([massive list of supported emojis here](https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/#search)).
-- [MkDocs-material References](https://squidfunk.github.io/mkdocs-material/reference/): more sophisticated documentation for MkDocs Material. 
-- [YouTube link to FOSS 2022](https://www.youtube.com/watch?v=UQZseJjR_OI&t=3750s&ab_channel=CyVerse.org): Michael explains (~1h mark) his Jekyll-based website and gives a tutorial on how to use [academicpages](https://academicpages.github.io/).
-
-### Other GitHub Pages Website Quickstarts
-
-[:simple-github: *GitHub Pages*](https://pages.github.com/){target=_blank}
-
-1.  Create a GitHub account
-2.  Clone the repo `https://github.com/username/username.github.io`
-3.  Create an `index.html`
-4.  Push it back to GitHub
-
-[:simple-readthedocs: *ReadTheDocs.org*](https://readthedocs.org/){target=_blank}
-
-1.  [Install](https://docs.readthedocs.io/en/stable/install.html){target=_blank}
-2.  [Use Github](https://github.com/rtfd/readthedocs.org){target=_blank}
-3.  [Create a ReadTheDocs account](https://readthedocs.org/accounts/signup/){target=_blank}
-
-[:simple-markdown: *Material MkDocs*](https://squidfunk.github.io/mkdocs-material/getting-started/){target=_blank}
-
-1. [Install Material](https://squidfunk.github.io/mkdocs-material/getting-started/#installation) 
-    a. use a [`reqirements.txt`](https://github.com/CyVerse-learning-materials/foss/blob/mkdocs/requirements.txt) 
-    b. or `pip install mkdocs-material`
-2. Clone a repository with an existing template or create a new repo with `mkdocs new .` 
-3. Run `python -m mkdocs serve` to build and serve locally
-4. Open your browser to preview the build at https://localhost:8000`
-
-[:material-book-arrow-down: *Bookdown*](https://bookdown.org/){target=_blank}
-
-1.  [Install R and RStudio](https://www.rstudio.com/products/rstudio/download/){target=_blank}
-2.  Install Bookdown package with `install.packages("bookdown", dependencies=TRUE)`
-3.  Open the Bookdown demo and get started
-
-[:simple-r: *Quarto*](https://quarto.org/docs/publishing/github-pages.html){target=_blank}
-
-1. Build locally
-2. Push to GitHub
-3. (alt) Use GitHub Actions
-
-[:simple-jupyter: *JupyterBook*](https://jupyterbook.org/en/stable/intro.html)
-
-1. [Create your first book](https://jupyterbook.org/en/stable/start/your-first-book.html)
-
-[:simple-git: *GitBook*](https://docs.gitbook.com/){target=_blank}
-
-1. [Follow Template builder](https://app.gitbook.com/join)
+|[:simple-github: *GitHub Pages*](https://pages.github.com/){target=_blank}|[:simple-readthedocs: *ReadTheDocs.org*](https://readthedocs.org/){target=_blank}| [:simple-markdown: *Material MkDocs*](https://squidfunk.github.io/mkdocs-material/getting-started/){target=_blank} | [:material-book-arrow-down: *Bookdown*](https://bookdown.org/){target=_blank} |
+|---|---|---|---|
+|1.  Create a GitHub account <br> 2.  Clone the repo <br> 3.  Create an `index.html` <br> 4.  Push it back to GitHub| 1.  [Install](https://docs.readthedocs.io/en/stable/install.html){target=_blank} <br> 2.  [Use Github](https://github.com/rtfd/readthedocs.org){target=_blank} <br> 3.  [Create a ReadTheDocs account](https://readthedocs.org/accounts/signup/){target=_blank} | 1. [Install Material](https://squidfunk.github.io/mkdocs-material/getting-started/#installation) <br> 2. Clone a repository with an existing template or create a new repo with `mkdocs new .` <br> 3. Run `python -m mkdocs serve` to build and serve locally <br> 4. Open your browser to preview the build at https://localhost:8000 | 1.  [Install R and RStudio](https://www.rstudio.com/products/rstudio/download/){target=_blank} <br> 2.  Install Bookdown package with `install.packages("bookdown", dependencies=TRUE)` <br> 3.  Open the Bookdown demo and get started | 
+|[:simple-r: ***Quarto***](https://quarto.org/docs/publishing/github-pages.html){target=_blank} | [:simple-jupyter: ***JupyterBook***](https://jupyterbook.org/en/stable/intro.html) | [:simple-git: ***GitBook***](https://docs.gitbook.com/){target=_blank} | 
+| 1. Build locally <br> 2. Push to GitHub (or use Actions) | 1. [Create your first book](https://jupyterbook.org/en/stable/start/your-first-book.html) | 1. [Follow Template builder](https://app.gitbook.com/join) (requires account)|
 
 ---
 
-## :material-antenna: Communication
+### :material-antenna: Communication
 
-### Internal Project 
+#### Internal Project 
 
 Choosing which software to use for your internal lab communication can be complicated by the cost of setting up, the cost of maintaining, and simply by the sheer number of platforms that are out there.
 
@@ -818,9 +706,8 @@ Remember, the intention of these platforms are to **improve productivity** & not
         1.  [Create a new Workspace](https://get.slack.help/hc/en-us/articles/206845317-Create-a-Slack-workspace){target=_blank}
         2.  [Create channels, add apps & tools](https://get.slack.help/hc/en-us/articles/217626298-tips-for-team-creators-and-admins){target=_blank}
 
----
 
-### External (Public)
+#### External (Public)
 
 Although we didn't cover it explicitly in the announcement for the workshop, communicating with the public and other members of your science community is one of the most important parts of your science!
 
@@ -859,9 +746,7 @@ There are many ways scientists use social media and the web to share their data 
         organization you work for and may be used in decisions about hiring or
         dismissal.
 
----
-
-## Self-Paced Material
+### Self-Paced Material
 
 - [15 Data Science Communities to Join](https://towardsdatascience.com/15-data-science-slack-communities-to-join-8fac301bd6ce){target=_blank}
 - [Python & Slack](https://towardsdatascience.com/python-and-slack-a-natural-match-60b136883d4d){target=_blank}
@@ -870,7 +755,7 @@ There are many ways scientists use social media and the web to share their data 
 
 ---
 
-## Self Assessment
+### Self Assessment 2
 
 ??? Question "True or False: Tutorials and How-to-Guides are the same"
 
@@ -898,16 +783,18 @@ There are many ways scientists use social media and the web to share their data 
 
 ---
 
-# Repeatability and Reproducibility
+---
 
-!!! Success "Learning Objectives"
+## Repeatability and Reproducibility
+
+!!! Success "Objectives"
         
-    After this lesson, you should be able to:
+    After this section, you should be able to:
 
-    *  Describe what reproducibility is
-    *  Discriminate between reproducibility, replicability, and repeatability
-    *  Explain why reproducible research is valuable 
-    *  Set up a software project with an environment
+    - Describe what reproducibility is
+    - Discriminate between reproducibility, replicability, and repeatability
+    - Explain why reproducible research is valuable 
+    - Set up a software project with an environment
 
 The so-called reproducibility crisis (see [1](https://www.nature.com/articles/533452a) , [2](https://www.nature.com/collections/prbfkwmwvz) , [3](https://blogs.scientificamerican.com/observations/to-fix-the-reproducibility-crisis-rethink-how-we-do-experiments/)) is something you have
 probably heard about (and maybe one of the reasons you have come to FOSS).
@@ -954,9 +841,9 @@ Before we go further, it's actually important to ask what is reproducibility?
         - **Inferential reproducibility**: draw the same conclusions from either an
             independent replication of a study or a reanalysis of the original study.
 
-## Defining Reproducibility
+### Defining Reproducibility
 
-!!! question "Discussion Question"
+!!! Question "Discussion Question"
         How do these definitions apply to your research/teaching?
 
         Work with your fellow learners to develop a shortlist of ways reproducibility
@@ -978,21 +865,13 @@ Assuming you have taken in the potentially anxiety inducing information above,
 the most important thing to know is that there is a lot of help to make
 reproducibility a foundation of all of your research.
 
-## Repeatability: a first step
+### Repeatability: a first step
 
 A big first step on the road to reproducibility is **repeatability**. In the context of computation, this means that you should be able to reliably generate the same results.
 
 In many ways, this is the biggest hurdle to reproducibility, as it often requires the biggest leap in skills. You can think of repeatability in a few ways.
 
-
-!!! question "Discussion Question"
-	**Have you ever had any hurdles to reproducing your work?**
-
-	- Have you ever run into a problem that prevented you from generating the same results, figures, analyses as before?
-	- Have you ever lost time trying to figure out how you (or a collaborator) got a particular result?
-	- What were the issues you ran into, and how might you have solved them?
-
-## Software Management
+#### Software Management
 
 Have you ever tried to run a script, only to realize you had updated a package without knowing, and now the script doesn't work? 
 
@@ -1000,7 +879,7 @@ Package managers can be extremely helpful in keeping software versions aligned w
 
 In Python, it is common to use `pip` and a `requirements.txt` file, and in R, the `renv` package can be used to keep package versions stable within individual projects.
 
-## Automation
+### Automation
 
 In the process of making your work more repeatable, you will often be trying to reduce the amount of work you're doing "by hand". Reducing the human input necessary at each step of a project is a key to reliably reproducing the same results, but it can also help save you a lot of time in the long run.
 
@@ -1009,15 +888,6 @@ Have you ever manually edited a figure for a manuscript, only to be asked to cha
 Automating tasks often comes with an up-front cost, but it is important for the eventual reproducibility of the work, and will often save you time in the short run. 
 
 Automation also tends to make tasks scale more easily (editing 10 rows of data by hand is fine, editing 10,000 is much harder), adapt to new scenarios, and extend to future projects.
-
-!!! question "Discussion Question"
-	**What are some tasks you have automated or want to automate?**
-
-	- Have you ever successfully automated a task?
-	- Found a way to make something scale or take less time? 
-	- What was the task, and how did you do it? 
-	- Are there any things you wish you could automate?
-	- What are some barriers to automating them?
 
 While we often think about writing scripts to clean data, run analyses, and generate figures, there are even more parts of a research project that can be automated. Here are a few examples:
 
@@ -1031,7 +901,7 @@ While we often think about writing scripts to clean data, run analyses, and gene
 
 Code can be thought of as a set of machine-actionable instructions, or instructions that we write for a computer to follow. What other sets of instructions do you have, either written down or in your head? How can you turn them into something machine-actionable?
 
-## Disposability
+### Disposability
 
 A great approach to repeatability/reproducbility is to ask "could I generate my results if I lost X?"
 
@@ -1043,13 +913,13 @@ What might happen to your work if:
 - your laptop got stolen?
 - some software or computing provider stopped being maintained?
 
-## Get off your own machine
+### Get off your own machine
 
 More and more work is being done somewhere other than a personal computer. This could be an HPC cluster at a university or a cloud computing provider. "Cloud" just means somebody else is handling the computers, and you get to use them when you need to, typically for a price.
 
 Non-local computing resources have varying levels of complexity, flexibility, cost, and scale. Some services like Binder, Colab, and VICE try to abstract more of the computational details away, letting you focus on your code (ideally). Others, like Gitpod, Codespaces, or GitHub Actions, have more limited uses (in a good way).
 
-## Dependency Hell
+### Dependency Hell
 
 Think for a moment about all the branching possibilities for how a computer could be set up:
 
@@ -1064,7 +934,7 @@ All jokes aside, dealing with software dependencies can be extremely frustrating
 
 There is a way to handle all of these frustrations at once:
 
-## Containers
+### Containers
 
 Ok, to be fair, working with containers will also be frustrating. But the beautiful thing about working with containers is that you can handle all of the hard stuff at the start of a project, and you won't have to worry about things changing later on. 
 
@@ -1073,6 +943,7 @@ What **are** containers?
 Containers are reproducible computing environments that contain an operating system (OS), software, and even code needed to run analyses. Containers are similar to virtual machines (VMs), but are smaller and easier to share. A big distinction between Containers and VMs is what is within each environment: VMs require the OS to be present within the image, whilst containers rely solemnly on the host OS (and the container engine). 
 
 ![VM_vs_containers](https://cloudblogs.microsoft.com/wp-content/uploads/sites/37/2019/07/Demystifying-containers_image1.png)
+
 Source: [Microsoft Cloudblogs](https://cloudblogs.microsoft.com/opensource/2019/07/15/how-to-get-started-containers-docker-kubernetes/)
 
 A popular container platform is [Docker](https://www.docker.com/):material-docker:([wikipedia](https://en.wikipedia.org/wiki/Docker_(software)), ["what is a Docker container?"](https://www.docker.com/resources/what-container/)), hosting user created containers on [DockerHub](https://hub.docker.com/), and providing a cross-OS user-friendly toolset for container creation and deployment.
@@ -1080,3 +951,12 @@ A popular container platform is [Docker](https://www.docker.com/):material-docke
 RStudio has a number of [available Docker containers](https://rocker-project.org/images/versioned/rstudio.html), each for different use cases and maintained by the [Rocker Project](https://rocker-project.org/). 
 
 [Apptainer](https://apptainer.org/docs/user/main/) (formerly, Singularity), is another popular container engine, which allows you to deploy containers on HPC clusters.
+
+---
+
+### Self Assessment 3
+
+!!! question "What methods have you employed to ensure repeatablility?"
+???+ question "Has anyone been able to successfully reproduce your work?"
+
+    !!! Failure "If not, what could have you done to make your come more reproducible?"
