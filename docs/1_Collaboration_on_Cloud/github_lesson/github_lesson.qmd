@@ -3,7 +3,6 @@ title: "Github essentials"
 format: gfm
 ---
 
-
 ## I. Introduction (2 minutes)
 ### A. Brief overview of GitHub:
 GitHub is a web-based platform that provides version control and collaboration features using Git, a distributed version control system. It enables developers to work together on projects, track changes to code, and efficiently manage different versions of the project. GitHub is widely used in the software development industry and is an essential tool for collaborative projects and maintaining code quality.
@@ -11,6 +10,77 @@ GitHub is a web-based platform that provides version control and collaboration f
 ### B. Introduce GitHub Desktop and JupyterHub GitHub widget:
 GitHub Desktop is a graphical user interface (GUI) application that simplifies working with Git and GitHub by providing a more visual and intuitive way to manage repositories, branches, commits, and other Git features. JupyterHub GitHub widget, on the other hand, is a built-in widget that integrates Git and GitHub functionality directly into Jupyter notebooks, allowing users to perform version control and collaboration tasks within the Jupyter environment. Both tools help streamline the process of working with GitHub and make it more accessible to users with varying levels of experience with Git and version control.
 
+#### 1. Download GitHub Desktop
+##### Step 1: Download GitHub Desktop
+
+Go to the GitHub Desktop download page: https://desktop.github.com/
+
+Click on the "Download for Windows" or "Download for macOS" button, depending on your operating system. The download should start automatically.
+
+##### Step 2: Install GitHub Desktop
+
+For Windows:
+
+Locate the downloaded installer file (usually in the Downloads folder) and double-click on it to run the installer.
+
+Follow the installation instructions that appear on the screen, accepting the default settings or customizing them as desired.
+
+Once the installation is complete, GitHub Desktop will launch automatically.
+For macOS:
+
+Locate the downloaded .zip file (usually in the Downloads folder) and double-click on it to extract the GitHub Desktop application.
+
+Drag the extracted "GitHub Desktop" application into the "Applications" folder.
+
+Open the "Applications" folder and double-click on "GitHub Desktop" to launch the application.
+
+##### Step 3: Set up GitHub Desktop
+
+When GitHub Desktop launches for the first time, you will be prompted to sign in with your GitHub account. If you don't have one, you can create one at https://github.com/join.
+
+Enter your GitHub username (or email) and password, and click on "Sign in."
+
+You will then be prompted to configure Git. Enter your name and email address, which will be used for your commit messages. Click "Continue" when you're done.
+Choose whether you want to submit usage data to help improve GitHub Desktop. Click "Finish" to complete the setup.
+
+Now, you have successfully installed and set up GitHub Desktop. You can start using it to clone repositories, make changes, commit, and sync with the remote repositories on GitHub.
+
+#### 1. Download GitHub Desktop
+### Step 1: Accessing JupyterHub on the cloud
+
+Visit the JupyterHub cloud service you want to use (e.g., Binder, Google Colab, or a custom JupyterHub deployment provided by your organization).
+
+Sign in with your credentials or authenticate using a third-party service if required.
+
+### Step 2: Launch a new Jupyter Notebook or open an existing one
+
+Click on the "New" button (usually located in the top right corner) and select "Python" to create a new Jupyter Notebook or open an existing one from the file browser.
+
+Once the notebook is open, you will see the Jupyter Notebook interface with the familiar cells for writing and executing code.
+
+### Step 3: Install and enable the JupyterLab Git extension
+
+In your Jupyter Notebook, create a new code cell and run the following command to install the JupyterLab Git extension:
+
+```{python}
+!pip install jupyterlab-git
+```
+
+
+Restart the Jupyter Notebook server for the changes to take effect.
+
+### Step 4: Using the JupyterHub GitHub widget
+
+In the Jupyter Notebook interface, you should now see a Git icon on the left sidebar. Click on it to open the GitHub widget.
+
+To clone a repository, click on the "+" icon in the GitHub widget and enter the repository URL. This will clone the repository into your JupyterHub workspace.
+You can now navigate through the cloned repository, make changes, and use the GitHub widget to stage, commit, and push your changes back to the remote repository.
+
+To create and manage branches, use the branch icon in the GitHub widget. You can create new branches, switch between branches, and merge branches using this interface.
+
+To sync your local repository with the remote repository, use the "Pull" and "Push" buttons in the GitHub widget.
+
+Now, you know how to access and use the JupyterHub GitHub widget running on the cloud. This allows you to work with Git and GitHub directly from your Jupyter Notebook interface, streamlining your workflow and making collaboration easier.
 
 ## II. GitHub Basics (4 minutes)
 
@@ -22,6 +92,9 @@ Forking and cloning are two essential operations for working with repositories o
 
 ### C. Branches:
 Branches are a critical aspect of Git version control, as they allow you to create multiple parallel versions of your project within a single repository. This is particularly useful when working on new features or bug fixes, as it prevents changes from interfering with the main (or "master") branch until they are ready to be merged. Creating a new branch in GitHub Desktop can be done by clicking the "Current Branch" dropdown and selecting "New Branch." In JupyterHub GitHub widget, you can create a new branch by clicking the "New Branch" button in the "Branches" section of the widget.
+
+### D. Replace 'master' with 'main':
+In recent years, there has been a growing awareness of the importance of inclusive language in technology. One such example is the use of the term "master" in the context of the default branch in a GitHub repository. The term "master" has historical connections to the "master/slave" file structure, which evokes an unsavory colonial past associated with slavery. In light of this, many developers and organizations have begun to replace the term "master" with more neutral terms, such as "main." We encourage you to follow this practice and change the default branch name in your repositories from "master" to "main" or another suitable alternative. This small change can help promote a more inclusive and welcoming environment within the technology community.
 
 
 ## III. Collaboration and Version Control (5 minutes)
@@ -54,3 +127,14 @@ While this introduction provides a solid foundation for understanding and using 
 ### C. Share resources for learning more about GitHub:
 There are many resources available for learning more about GitHub and expanding your skills. Some popular resources include GitHub Guides (https://guides.github.com/), which offers a collection of tutorials and best practices, the official GitHub documentation (https://docs.github.com/), and various online tutorials and courses. By engaging with these resources and participating in the GitHub community, you can further develop your understanding of the platform and become a more proficient user.
 
+
+## V. Conclusion (2 minutes)
+
+### A. Recap of the essentials of GitHub:
+In this brief introduction, we have covered the essentials of GitHub, including the basics of repositories, forking, cloning, branching, commits, pull requests, merging, and resolving conflicts. We have also discussed additional features like issues for project management and GitHub Pages for hosting websites directly from a repository.
+
+### B. Encourage further exploration and learning:
+While this introduction provides a solid foundation for understanding and using GitHub, there is still much more to learn and explore. As you continue to use GitHub in your projects, you will discover new features and workflows that can enhance your productivity and collaboration. We encourage you to dive deeper into the platform and experiment with different tools and techniques.
+
+### C. Share resources for learning more about GitHub:
+There are many resources available for learning more about GitHub and expanding your skills. Some popular resources include GitHub Guides (https://guides.github.com/), which offers a collection of tutorials and best practices, the official GitHub documentation (https://docs.github.com/), and various online tutorials and courses. By engaging with these resources and participating in the GitHub community, you can further develop your understanding of the platform and become a more proficient user.
