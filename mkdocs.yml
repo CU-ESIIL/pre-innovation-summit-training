@@ -18,7 +18,7 @@ nav:
     - Github essentials: 1_Collaboration_on_Cloud/github_lesson/github_lesson.md
   - R and Python Bilingualism:
     - Overview: 2_R_and_Py_bilingualism/code/outline/outline.md
-    - Code examples: /Users/ty/Documents/Github/pre-innovation-summit-training/docs/2_R_and_Py_bilingualism/code/code_demo/bilingualism.md
+    - Code examples: 2_R_and_Py_bilingualism/code/code_demo/bilingualism.md
   - Open Science:
     - Tools for Reproducible and Open Science: 3_Tools_for_reproducible_and_open_science/openscience.md
 
