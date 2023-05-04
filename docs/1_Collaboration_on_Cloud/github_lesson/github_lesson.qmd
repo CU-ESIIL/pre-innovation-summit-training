@@ -62,10 +62,7 @@ Once the notebook is open, you will see the Jupyter Notebook interface with the 
 
 In your Jupyter Notebook, create a new code cell and run the following command to install the JupyterLab Git extension:
 
-```{python}
 !pip install jupyterlab-git
-```
-
 
 Restart the Jupyter Notebook server for the changes to take effect.
 
