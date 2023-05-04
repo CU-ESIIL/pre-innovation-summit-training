@@ -275,7 +275,37 @@ JupyterHub GitHub widget, you can create a commit by selecting the files
 with changes, entering a commit message, and clicking the “Commit”
 button.
 
-### B. Pull Requests:
+### B. Push:
+
+In GitHub, “push” is a fundamental operation in the version control
+process that transfers commits from your local repository to a remote
+repository, such as the one hosted on GitHub. When you push changes, you
+synchronize the remote repository with the latest updates made to your
+local repository, making those changes accessible to other collaborators
+working on the same project. This operation ensures that the remote
+repository reflects the most recent state of your work and allows your
+team members to stay up to date with your changes. Pushing is an
+essential step in distributed version control systems like Git, as it
+promotes efficient collaboration among multiple contributors and
+provides a centralized location for tracking the project’s history and
+progress.
+
+In GitHub, the concepts of “commit” and “push” represent two distinct
+steps in the version control process. A “commit” is the action of saving
+changes to your local repository. When you commit changes, you create a
+snapshot of your work, accompanied by a unique identifier and an
+optional descriptive message. Commits allow you to track the progress of
+your work over time and make it easy to revert to a previous state if
+necessary. On the other hand, “push” is the action of transferring your
+local commits to a remote repository, such as the one hosted on GitHub.
+Pushing makes your changes accessible to others collaborating on the
+same project and ensures that the remote repository stays up to date
+with your local repository. In summary, committing saves changes
+locally, while pushing synchronizes those changes with a remote
+repository, allowing for seamless collaboration among multiple
+contributors.
+
+### C. Pull Requests:
 
 Pull requests are a collaboration feature on GitHub that enables
 developers to propose changes to a repository, discuss those changes,
@@ -286,7 +316,7 @@ widget, you can navigate to the original repository, click the “Pull
 Request” tab, and create a new pull request. After the pull request is
 reviewed and approved, it can be merged into the main branch.
 
-### C. Merging and Resolving Conflicts:
+### D. Merging and Resolving Conflicts:
 
 Merging is the process of combining changes from one branch into
 another. This is typically done when a feature or bugfix has been
