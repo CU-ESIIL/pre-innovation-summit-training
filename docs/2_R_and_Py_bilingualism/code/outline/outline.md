@@ -210,7 +210,9 @@ my_list = ["apple", 42, [1, 2, 3], True]
 
 #### 2. Tuples:
 
-     Tuples are ordered, immutable collections that can store elements of different data types. They are similar to Python's lists but cannot be modified after creation. Tuples can be created using parentheses `()`.
+Tuples are ordered, immutable collections that can store elements of
+different data types. They are similar to Python’s lists but cannot be
+modified after creation. Tuples can be created using parentheses `()`.
 
 Python code:
 
@@ -221,7 +223,9 @@ my_tuple = ("apple", 42, (1, 2, 3), True)
 
 #### 3. Sets:
 
-     Sets are unordered collections of unique elements. They can store elements of different data types but do not maintain their order. Sets can be created using the `set()` function or curly braces `{}`.
+Sets are unordered collections of unique elements. They can store
+elements of different data types but do not maintain their order. Sets
+can be created using the `set()` function or curly braces `{}`.
 
 Python code:
 
@@ -232,7 +236,10 @@ my_set = {1, 2, 3, 4, 5}
 
 #### 4. Dictionaries:
 
-     Dictionaries are unordered collections of key-value pairs. They are similar to R's named lists and can store elements of different data types. Dictionaries can be created using curly braces `{}` with key-value pairs separated by colons 
+Dictionaries are unordered collections of key-value pairs. They are
+similar to R’s named lists and can store elements of different data
+types. Dictionaries can be created using curly braces `{}` with
+key-value pairs separated by colons
 
 Python code:
 
@@ -288,7 +295,12 @@ filtered_df <- df[df$age > 27, ]
 
 #### 2. dplyr and the tidyverse:
 
-     dplyr is a popular R package for data manipulation that is part of the tidyverse, a collection of R packages designed for data science. dplyr provides a set of intuitive and easy-to-read functions for data manipulation, such as `filter()`, `select()`, `mutate()`, `summarise()`, and `group_by()`. dplyr functions can be chained together using the pipe operator (`%>%`) to create a more readable and efficient workflow.
+dplyr is a popular R package for data manipulation that is part of the
+tidyverse, a collection of R packages designed for data science. dplyr
+provides a set of intuitive and easy-to-read functions for data
+manipulation, such as `filter()`, `select()`, `mutate()`, `summarise()`,
+and `group_by()`. dplyr functions can be chained together using the pipe
+operator (`%>%`) to create a more readable and efficient workflow.
 
 R code:
 
@@ -333,7 +345,12 @@ Python code:
 
 #### 2. pandas library:
 
-     The pandas library is a powerful and flexible data manipulation tool in Python. It provides various functions for cleaning, transforming, and analyzing data in a DataFrame format, making it easy to work with structured data. Some common pandas functions for data manipulation include `loc[]`, `iloc[]`, `query()`, `merge()`, `groupby()`, and `agg()`.
+The pandas library is a powerful and flexible data manipulation tool in
+Python. It provides various functions for cleaning, transforming, and
+analyzing data in a DataFrame format, making it easy to work with
+structured data. Some common pandas functions for data manipulation
+include `loc[]`, `iloc[]`, `query()`, `merge()`, `groupby()`, and
+`agg()`.
 
 Python code:
 
@@ -350,20 +367,6 @@ df = pd.DataFrame(data)
 # Filter rows where age is greater than 27
 filtered_df = df[df['age'] > 27]
 ```
-
-     ```python
-     # Example of filtering rows using pandas
-     import pandas as pd
-
-     data = {'name': ['Alice', 'Bob', 'Carol', 'David'],
-             'age': [25, 30, 35, 28],
-             'height': [162, 175, 168, 172]}
-
-     df = pd.DataFrame(data)
-
-     # Filter rows where age is greater than 27
-     filtered_df = df[df['age'] > 27]
-     ```
 
 ## V. Data Visualization (10 minutes)
 
@@ -391,7 +394,13 @@ plot(df$x, df$y, main = "Scatter Plot", xlab = "X-axis", ylab = "Y-axis", col = 
 
 #### 2. ggplot2:
 
-     ggplot2 is a popular R package for data visualization and is part of the tidyverse. It implements the "Grammar of Graphics" concept, which allows users to create complex and customizable visualizations using a consistent and intuitive syntax. With ggplot2, users can create a wide range of visualizations, including scatter plots, bar charts, histograms, and more, using functions like `ggplot()`, `geom_point()`, `geom_bar()`, and `geom_histogram()`.
+ggplot2 is a popular R package for data visualization and is part of the
+tidyverse. It implements the “Grammar of Graphics” concept, which allows
+users to create complex and customizable visualizations using a
+consistent and intuitive syntax. With ggplot2, users can create a wide
+range of visualizations, including scatter plots, bar charts,
+histograms, and more, using functions like `ggplot()`, `geom_point()`,
+`geom_bar()`, and `geom_histogram()`.
 
 R code:
 
@@ -410,13 +419,17 @@ ggplot(df, aes(x = x, y = y)) +
 
 ![](outline_files/figure-gfm/unnamed-chunk-20-1.png)
 
-B. Python \#### 1. matplotlib: matplotlib is a widely-used data
-visualization library in Python that provides a comprehensive set of
-tools for creating static, animated, and interactive visualizations. It
-is inspired by MATLAB’s plotting system and offers a simple and flexible
-interface for creating a wide range of visualizations, such as line
-plots, scatter plots, bar plots, and histograms. Some commonly used
-matplotlib functions include plot(), scatter(), bar(), and hist().
+### B. Python
+
+#### 1. matplotlib:
+
+matplotlib is a widely-used data visualization library in Python that
+provides a comprehensive set of tools for creating static, animated, and
+interactive visualizations. It is inspired by MATLAB’s plotting system
+and offers a simple and flexible interface for creating a wide range of
+visualizations, such as line plots, scatter plots, bar plots, and
+histograms. Some commonly used matplotlib functions include plot(),
+scatter(), bar(), and hist().
 
 Python code:
 
@@ -439,7 +452,14 @@ width="672" />
 
 #### 2. seaborn:
 
-     seaborn is a Python data visualization library based on matplotlib that provides a high-level interface for creating informative and attractive statistical graphics. It comes with several built-in themes and color palettes to make it easy to create aesthetically pleasing and consistent visualizations. seaborn offers functions for a wide range of visualizations, such as scatter plots, line plots, bar plots, and box plots, using functions like `scatterplot()`, `lineplot()`, `barplot()`, and `boxplot()`.
+seaborn is a Python data visualization library based on matplotlib that
+provides a high-level interface for creating informative and attractive
+statistical graphics. It comes with several built-in themes and color
+palettes to make it easy to create aesthetically pleasing and consistent
+visualizations. seaborn offers functions for a wide range of
+visualizations, such as scatter plots, line plots, bar plots, and box
+plots, using functions like `scatterplot()`, `lineplot()`, `barplot()`,
+and `boxplot()`.
 
 Python code:
 
@@ -494,12 +514,15 @@ can use dplyr to filter a data frame and ggplot2 to create a scatter
 plot, while in Python, you can use pandas to filter a DataFrame and
 seaborn to create a scatter plot. capabilities
 
-6.  Similarities and Differences (10 minutes)
+## VI. Similarities and Differences (10 minutes)
 
-B. Differences between R and Python \#### 1. Syntax and language
-structure: R and Python have different syntax and language structures,
-which can be a challenge for those learning both languages. R uses \<-
-for assignment, while Python uses =. R’s syntax is also more functional,
+### B. Differences between R and Python
+
+#### 1. Syntax and language structure:
+
+R and Python have different syntax and language structures, which can be
+a challenge for those learning both languages. R uses \<- for
+assignment, while Python uses =. R’s syntax is also more functional,
 whereas Python is more object-oriented. Familiarizing oneself with the
 syntax and structure of each language is essential for working
 efficiently in both.
@@ -523,7 +546,7 @@ On the other hand, Python has a more diverse set of libraries, making it
 suitable for a wide range of applications, including machine learning,
 computer vision, and natural language processing.
 
-C. Recommendations for learning both languages
+### C. Recommendations for learning both languages
 
 #### 1. Focus on learning the core concepts and structures in both languages:
 
