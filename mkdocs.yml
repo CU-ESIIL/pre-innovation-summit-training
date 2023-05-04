@@ -1,6 +1,6 @@
 site_name: 'Innovation Summit 2023'
 site_description: 'Documentation for May 2023 ESIIL Innovation Summit'
-site_author: 'ESIIL Education'
+site_author: 'ESIIL Education and CI'
 site_url: https://cu-esiil.github.io/pre-innovation-summit-training
 
 # Repository
@@ -15,6 +15,7 @@ nav:
   - Home: index.md
   - Collaboration: 
     - Collaboration on Cloud: 1_Collaboration_on_Cloud/collaboration.md
+    - Github essentials: 1_Collaboration_on_Cloud/github_lesson/github_lesson.md
   - R and Python Bilingualism:
     - Overview: 2_R_and_Py_bilingualism/code/outline/outline.md
     - Code examples: /Users/ty/Documents/Github/pre-innovation-summit-training/docs/2_R_and_Py_bilingualism/code/code_demo/bilingualism.md
