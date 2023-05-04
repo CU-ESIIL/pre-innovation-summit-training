@@ -75,7 +75,7 @@ Now, you have successfully installed and set up GitHub Desktop. You can
 start using it to clone repositories, make changes, commit, and sync
 with the remote repositories on GitHub.
 
-#### 1. Download GitHub Desktop
+#### 1. Download GitHub for JupyterHub cloud service
 
 ### Step 1: Accessing JupyterHub on the cloud
 
