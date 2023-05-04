@@ -25,6 +25,7 @@ nav:
 # Configuration
 imgwidth: 70px;
 theme:
+  nav_depth: 3 
   highlightjs: true
   name: material
   font:
