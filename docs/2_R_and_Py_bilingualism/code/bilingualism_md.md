@@ -363,7 +363,7 @@ ggplot(data.frame(x, y), aes(x = x, y = y)) +
   geom_point()
 ```
 
-![](bilingualism_md_files/figure-gfm/unnamed-chunk-126-1.png)<!-- -->
+![](bilingualism_md_files/figure-gfm/unnamed-chunk-25-1.pdf)<!-- -->
 Python code:
 
 ``` python
@@ -383,7 +383,7 @@ plt.scatter(x, y)
 plt.show()
 ```
 
-<img src="bilingualism_md_files/figure-gfm/unnamed-chunk-127-1.png" width="672" />
+![](bilingualism_md_files/figure-gfm/unnamed-chunk-26-1.pdf)<!-- -->
 
 In both cases, we generate some sample data and create a scatter plot to
 visualize the relationship between the variables.
@@ -423,23 +423,19 @@ summary(model_r)
     ## lm(formula = y ~ x)
     ## 
     ## Residuals:
-    ##     Min      1Q  Median      3Q     Max 
-    ## -1.9500 -0.5617 -0.1993  0.9213  1.5644 
+    ##      Min       1Q   Median       3Q      Max 
+    ## -1.69344 -0.42336  0.08961  0.34778  1.56728 
     ## 
     ## Coefficients:
-    ##             Estimate Std. Error t value
-    ## (Intercept)  -0.1377     0.8189  -0.168
-    ## x             0.9718     0.1320   7.364
-    ##             Pr(>|t|)    
-    ## (Intercept)    0.871    
-    ## x           7.89e-05 ***
+    ##             Estimate Std. Error t value Pr(>|t|)    
+    ## (Intercept)  -0.1676     0.6781  -0.247    0.811    
+    ## x             0.9750     0.1093   8.921 1.98e-05 ***
     ## ---
-    ## Signif. codes:  
-    ##   0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1  ' ' 1
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Residual standard error: 1.199 on 8 degrees of freedom
-    ## Multiple R-squared:  0.8714, Adjusted R-squared:  0.8554 
-    ## F-statistic: 54.23 on 1 and 8 DF,  p-value: 7.887e-05
+    ## Residual standard error: 0.9926 on 8 degrees of freedom
+    ## Multiple R-squared:  0.9087, Adjusted R-squared:  0.8972 
+    ## F-statistic: 79.59 on 1 and 8 DF,  p-value: 1.976e-05
 
 ``` r
 # Plot the data and regression line
@@ -450,7 +446,7 @@ ggplot(data.frame(x, y), aes(x = x, y = y)) +
 
     ## `geom_smooth()` using formula = 'y ~ x'
 
-![](bilingualism_md_files/figure-gfm/unnamed-chunk-128-3.png)<!-- -->
+![](bilingualism_md_files/figure-gfm/unnamed-chunk-27-3.pdf)<!-- -->
 
 Python code:
 
@@ -471,7 +467,7 @@ model_py = LinearRegression().fit(x.reshape(-1, 1), y)
 print("Coefficients: ", model_py.coef_)
 ```
 
-    ## Coefficients:  [1.02424583]
+    ## Coefficients:  [1.15539692]
 
 ``` python
 print("Intercept: ", model_py.intercept_)
@@ -479,7 +475,7 @@ print("Intercept: ", model_py.intercept_)
 #clear last plot
 ```
 
-    ## Intercept:  -0.015996814145032623
+    ## Intercept:  -1.1291396173221218
 
 ``` python
 plt.clf()
@@ -490,7 +486,7 @@ plt.plot(x, model_py.predict(x.reshape(-1, 1)), color='red')
 plt.show()
 ```
 
-<img src="bilingualism_md_files/figure-gfm/unnamed-chunk-129-1.png" width="672" />
+![](bilingualism_md_files/figure-gfm/unnamed-chunk-28-1.pdf)<!-- -->
 
 In both cases, we generate some sample data with a linear relationship
 between x and y, and then perform a simple linear regression to estimate
@@ -617,7 +613,7 @@ tm_shape(osm_data$osm_lines) +
   tm_lines()
 ```
 
-![](bilingualism_md_files/figure-gfm/unnamed-chunk-132-1.png)<!-- -->
+![](bilingualism_md_files/figure-gfm/unnamed-chunk-31-1.pdf)<!-- -->
 Python code:
 
 ``` python
@@ -634,9 +630,9 @@ osm_data = ox.graph_from_bbox(north=bbox[2], south=bbox[0], east=bbox[3], west=b
 ox.plot_graph(osm_data)
 ```
 
-    ## (<Figure size 800x800 with 0 Axes>, <AxesSubplot:>)
+    ## (<Figure size 1600x1600 with 0 Axes>, <AxesSubplot:>)
 
-<img src="bilingualism_md_files/figure-gfm/unnamed-chunk-133-1.png" width="768" />
+![](bilingualism_md_files/figure-gfm/unnamed-chunk-32-1.pdf)<!-- -->
 
 In both cases, we define the map location and zoom level, retrieve the
 OpenStreetMap data using the specified bounding box, and plot the map.
@@ -726,6 +722,9 @@ df %>%
   summarize(sum_z = sum(z))
 ```
 
+    ##   sum_z
+    ## 1    21
+
 In this example, we first create a data frame df with two columns x and
 y. We then pipe the output of df to mutate, which adds a new column z to
 the data frame that is the sum of x and y. Finally, we pipe the output
@@ -780,7 +779,7 @@ iris %>%
        y = "Mean Petal Length")
 ```
 
-![](bilingualism_md_files/figure-gfm/unnamed-chunk-138-1.png)<!-- -->
+![](bilingualism_md_files/figure-gfm/unnamed-chunk-37-1.pdf)<!-- -->
 
 In this example, we start with the iris dataset and filter it to only
 include rows where the Species column is “setosa”. We then group the
@@ -1030,6 +1029,13 @@ mtcars %>%
   summarize(mean_hp = mean(hp),
             mean_kmpl = mean(kmpl))
 ```
+
+    ## # A tibble: 3 × 3
+    ##     cyl mean_hp mean_kmpl
+    ##   <dbl>   <dbl>     <dbl>
+    ## 1     4    111      11.0 
+    ## 2     6    122.      8.39
+    ## 3     8    209.      6.42
 
 In this example, we first filter the mtcars data frame to only include
 cars with more than 100 horsepower. We then use mutate to create a new
@@ -1569,18 +1575,12 @@ if (http_status(response)$category == "Success") {
 ```
 
     ## 
-    ##      AZ      CA      CO      DC      FL 
-    ##       3      22       6       5       3 
-    ##      GA      HI      IL Indiana      LA 
-    ##       2       1       2       1       1 
-    ##      MD      MI      MN      MO      MP 
-    ##       1       2       5       3       1 
-    ##      MS      NC      NE      NJ      NM 
-    ##       1       2       2       2       1 
-    ##      NY      OH      OK  Oregon      PA 
-    ##       1       5       1       2       2 
-    ##      TX      UT      VA      WA      WV 
-    ##      12       1       4       3       1 
+    ##      AZ      CA      CO      DC      FL      GA      HI      IL Indiana      LA 
+    ##       3      22       6       5       3       2       1       2       1       1 
+    ##      MD      MI      MN      MO      MP      MS      NC      NE      NJ      NM 
+    ##       1       2       5       3       1       1       2       2       2       1 
+    ##      NY      OH      OK  Oregon      PA      TX      UT      VA      WA      WV 
+    ##       1       5       1       2       2      12       1       4       3       1 
     ##      ZZ 
     ##       2
 
@@ -1766,7 +1766,7 @@ grade_counts <- philly_geojson %>%
 plot(grade_counts)
 ```
 
-![](bilingualism_md_files/figure-gfm/unnamed-chunk-166-1.png)<!-- -->
+![](bilingualism_md_files/figure-gfm/unnamed-chunk-65-1.pdf)<!-- -->
 
 Python: In Python, we’ll use the ‘geopandas’ library to read and process
 the GeoJSON data.
@@ -1844,6 +1844,20 @@ print(state_counts[order(-state_counts$count),])
     ## Dimension:     XY
     ## Bounding box:  xmin: -174.236 ymin: 18.91069 xmax: -67.03552 ymax: 71.34019
     ## Geodetic CRS:  NAD83
+    ## # A tibble: 26 × 3
+    ##    LSAD  count                                                          geometry
+    ##    <chr> <int>                                                <MULTIPOLYGON [°]>
+    ##  1 79      221 (((-166.5331 65.33918, -166.5331 65.33906, -166.533 65.33699, -1…
+    ##  2 86      206 (((-83.38811 35.46645, -83.38342 35.46596, -83.38316 35.46593, -…
+    ##  3 OT      155 (((-92.32972 47.81374, -92.3297 47.81305, -92.32967 47.81196, -9…
+    ##  4 78       75 (((-155.729 20.02457, -155.7288 20.02428, -155.7288 20.02427, -1…
+    ##  5 85       46 (((-122.3355 37.95215, -122.3354 37.95206, -122.3352 37.95199, -…
+    ##  6 92       35 (((-93.01356 31.56287, -93.01354 31.56251, -93.01316 31.56019, -…
+    ##  7 88       25 (((-97.35299 36.908, -97.35291 36.90801, -97.35287 36.908, -97.3…
+    ##  8 96       19 (((-116.48 32.63814, -116.48 32.63718, -116.4794 32.63716, -116.…
+    ##  9 84       16 (((-105.5937 36.40379, -105.5937 36.40324, -105.5937 36.40251, -…
+    ## 10 89       11 (((-95.91705 41.28037, -95.91653 41.28036, -95.91653 41.28125, -…
+    ## # ℹ 16 more rows
 
 Python: In Python, we’ll use the ‘geopandas’ library to read and process
 the Shapefile data.
@@ -1976,6 +1990,9 @@ state_counts <- tribe_data %>%
 print(state_counts)
 ```
 
+    ## # A tibble: 0 × 2
+    ## # ℹ 2 variables: State <chr>, Count <int>
+
 Python: In Python, we’ll use the ‘PyPDF2’ library to extract text from
 the PDF and the ‘re’ module to process the text data.
 
@@ -2050,10 +2067,10 @@ indian_lands <- read_sf(shapefile_path)
 plot(indian_lands)
 ```
 
-    ## Warning: plotting the first 9 out of 23
-    ## attributes; use max.plot = 23 to plot all
+    ## Warning: plotting the first 9 out of 23 attributes; use max.plot = 23 to plot
+    ## all
 
-![](bilingualism_md_files/figure-gfm/unnamed-chunk-172-1.png)<!-- -->
+![](bilingualism_md_files/figure-gfm/unnamed-chunk-71-1.pdf)<!-- -->
 
 Python: In Python, we’ll use the ‘geopandas’ and ‘pandas’ libraries to
 read the Shapefile and process the data.
