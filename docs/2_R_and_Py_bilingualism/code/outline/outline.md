@@ -63,7 +63,11 @@ R code:
 
 #### 2. R syntax:
 
-     R syntax is characterized by its use of assignment operators (e.g., `<-`), functions, and control structures (e.g., `if`, `for`, `while`). R is case-sensitive, and comments are denoted by the pound sign (`#`). One notable feature of R syntax is its preference for the use of vectors and vectorized operations, which can lead to concise and efficient code.
+R syntax is characterized by its use of assignment operators (e.g.,
+`<-`), functions, and control structures (e.g., `if`, `for`, `while`). R
+is case-sensitive, and comments are denoted by the pound sign (`#`). One
+notable feature of R syntax is its preference for the use of vectors and
+vectorized operations, which can lead to concise and efficient code.
 
 R code:
 
@@ -100,28 +104,13 @@ R code:
 
     [1]  2  4  6  8 10
 
-R syntax is characterized by its use of assignment operators (e.g.,
-`<-`), functions, and control structures (e.g., `if`, `for`, `while`). R
-is case-sensitive, and comments are denoted by the pound sign (`#`). One
-notable feature of R syntax is its preference for the use of vectors and
-vectorized operations, which can lead to concise and efficient code.
-
-R code:
-
-``` r
-# Example of R syntax
-     x <- seq(1, 10)
-     y <- x^2
-     if (mean(y) > 20) {
-       print("Mean is greater than 20")
-     }
-```
-
-    [1] "Mean is greater than 20"
-
 #### 2. Python syntax:
 
-     Python syntax is designed to be readable and concise, using indentation to denote code blocks instead of curly braces or keywords. Python is case-sensitive, and comments are denoted by the hash sign (`#`). Like R, Python supports vectorized operations, especially when using libraries like NumPy or pandas.
+Python syntax is designed to be readable and concise, using indentation
+to denote code blocks instead of curly braces or keywords. Python is
+case-sensitive, and comments are denoted by the hash sign (`#`). Like R,
+Python supports vectorized operations, especially when using libraries
+like NumPy or pandas.
 
 Python code:
 
@@ -152,11 +141,16 @@ if sum(y) / len(y) > 20:
 
     Mean is greater than 20
 
-\##III. Data Structures (10 minutes) \### A. R \#### 1. Vectors: Vectors
-are one-dimensional arrays that can store elements of the same data type
-(e.g., numeric, character, logical). They are the most basic data
-structure in R and are used extensively in R programming. Vectors can be
-created using the c() function.
+## III. Data Structures (10 minutes)
+
+### A. R
+
+#### 1. Vectors:
+
+Vectors are one-dimensional arrays that can store elements of the same
+data type (e.g., numeric, character, logical). They are the most basic
+data structure in R and are used extensively in R programming. Vectors
+can be created using the c() function.
 
 R code:
 
@@ -301,20 +295,7 @@ R code:
 ``` r
 # Example of filtering rows using dplyr
 library(dplyr)
-```
 
-
-    Attaching package: 'dplyr'
-
-    The following objects are masked from 'package:stats':
-
-        filter, lag
-
-    The following objects are masked from 'package:base':
-
-        intersect, setdiff, setequal, union
-
-``` r
 df <- data.frame(name = c("Alice", "Bob", "Carol",        "David"),age = c(25, 30, 35, 28),height = c(162, 175,   168, 172))
 
 # Filter rows where age is greater than 27
@@ -406,7 +387,7 @@ df <- data.frame(x = rnorm(50), y = rnorm(50))
 plot(df$x, df$y, main = "Scatter Plot", xlab = "X-axis", ylab = "Y-axis", col = "blue")
 ```
 
-![](outline_files/figure-gfm/unnamed-chunk-20-1.png)
+![](outline_files/figure-gfm/unnamed-chunk-19-1.png)
 
 #### 2. ggplot2:
 
@@ -427,7 +408,7 @@ ggplot(df, aes(x = x, y = y)) +
     ylab("Y-axis")
 ```
 
-![](outline_files/figure-gfm/unnamed-chunk-21-1.png)
+![](outline_files/figure-gfm/unnamed-chunk-20-1.png)
 
 B. Python \#### 1. matplotlib: matplotlib is a widely-used data
 visualization library in Python that provides a comprehensive set of
@@ -453,7 +434,7 @@ plt.ylabel('Y-axis')
 plt.show()
 ```
 
-<img src="outline_files/figure-gfm/unnamed-chunk-22-1.png"
+<img src="outline_files/figure-gfm/unnamed-chunk-21-1.png"
 width="672" />
 
 #### 2. seaborn:
@@ -475,7 +456,7 @@ plt.ylabel('Y-axis')
 plt.show()
 ```
 
-<img src="outline_files/figure-gfm/unnamed-chunk-23-3.png"
+<img src="outline_files/figure-gfm/unnamed-chunk-22-3.png"
 width="672" />
 
 ## VI. Conclusions and Recommendations (5 minutes)

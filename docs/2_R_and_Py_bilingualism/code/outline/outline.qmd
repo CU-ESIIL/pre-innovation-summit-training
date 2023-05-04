@@ -28,7 +28,7 @@ R code:
 ```
 
 #### 2. R syntax:
-     R syntax is characterized by its use of assignment operators (e.g., `<-`), functions, and control structures (e.g., `if`, `for`, `while`). R is case-sensitive, and comments are denoted by the pound sign (`#`). One notable feature of R syntax is its preference for the use of vectors and vectorized operations, which can lead to concise and efficient code.
+R syntax is characterized by its use of assignment operators (e.g., `<-`), functions, and control structures (e.g., `if`, `for`, `while`). R is case-sensitive, and comments are denoted by the pound sign (`#`). One notable feature of R syntax is its preference for the use of vectors and vectorized operations, which can lead to concise and efficient code.
 
 R code:
 
@@ -54,23 +54,8 @@ R code:
      print(y)
 ```
 
- R syntax is characterized by its use of assignment operators (e.g., `<-`), functions, and control structures (e.g., `if`, `for`, `while`). R is case-sensitive, and comments are denoted by the pound sign (`#`). One notable feature of R syntax is its preference for the use of vectors and vectorized operations, which can lead to concise and efficient code.
-
-R code: 
-
-```{r}
-# Example of R syntax
-     x <- seq(1, 10)
-     y <- x^2
-     if (mean(y) > 20) {
-       print("Mean is greater than 20")
-     }
-```
-
-
-
 #### 2. Python syntax:
-     Python syntax is designed to be readable and concise, using indentation to denote code blocks instead of curly braces or keywords. Python is case-sensitive, and comments are denoted by the hash sign (`#`). Like R, Python supports vectorized operations, especially when using libraries like NumPy or pandas.
+Python syntax is designed to be readable and concise, using indentation to denote code blocks instead of curly braces or keywords. Python is case-sensitive, and comments are denoted by the hash sign (`#`). Like R, Python supports vectorized operations, especially when using libraries like NumPy or pandas.
 
 Python code:
 
@@ -94,7 +79,7 @@ if sum(y) / len(y) > 20:
 ```
 
 
-##III. Data Structures (10 minutes)
+## III. Data Structures (10 minutes)
 ### A. R
 #### 1. Vectors:
 Vectors are one-dimensional arrays that can store elements of the same data type (e.g., numeric, character, logical). They are the most basic data structure in R and are used extensively in R programming. Vectors can be created using the c() function.
