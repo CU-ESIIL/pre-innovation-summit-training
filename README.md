@@ -1,3 +1,5 @@
+[![pages-build-deployment](https://github.com/CU-ESIIL/pre-innovation-summit-training/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/CU-ESIIL/pre-innovation-summit-training/actions/workflows/pages/pages-build-deployment)
+
 ![header](docs/assets/pre-summit-training-header.png)
 
 # Get ready to innovate: pre-innovation-summit-training
@@ -10,3 +12,17 @@ The second class, R and Python Bilingualism, will teach attendees about the simi
 The third and final class, Open and Reproducible Science, will focus on the importance of transparency and reproducibility in scientific research. Attendees will learn how to create and manage research data and code using CyVerse, a powerful data management platform. We will also cover the principles of open science and how to make research more accessible and impactful.
 
 We are excited to offer this training series as a resource to help attendees get the most out of the Innovation Summit. We hope that you find this series valuable and look forward to working with you in the coming weeks!
+
+# Build instructions
+
+Built using [MkDocs](https://www.mkdocs.org/) with [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) 
+
+```
+git clone https://github.com/CU-ESIIL/pre-innovation-summit-training
+
+cd pre-innovation-summit-training
+
+pip install -r requirements.txt
+
+python3 -m mkdocs serve
+```
