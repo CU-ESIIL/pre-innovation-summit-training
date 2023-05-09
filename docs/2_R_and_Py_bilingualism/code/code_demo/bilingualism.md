@@ -16,10 +16,11 @@ Python and data.table in R.
 While there are differences between the two languages, they can
 complement each other well. Python is versatile and scalable, making it
 ideal for large and complex projects such as web development and
-artificial intelligence. R, on the other hand, is known for its
-exceptional statistical capabilities and is often used in data analysis
-and modeling. Visualization is also easier in R, making it a popular
-choice for creating graphs and charts.
+artificial intelligence. Object-oriented programming is easier and more
+common in Python, which is useful for large development teams. R, on the
+other hand, is known for its exceptional statistical capabilities and is
+often used in data analysis and modeling. Visualization is also easier
+in R, making it a popular choice for creating graphs and charts.
 
 By learning both R and Python, you’ll be able to take advantage of the
 strengths of each language and create more efficient and robust data
@@ -32,10 +33,14 @@ statistical analysis capabilities, or an R user interested in exploring
 the world of web development and artificial intelligence, this guide
 will help you become bilingual in R and Python.
 
-## Install packages
+## Packages/libraries – No need to write it from scratch
 
-In R, packages can be installed from CRAN repository by using the
-install.packages() function:
+One thing Python and R have in common is they are extendable using
+external packages or libraries. You should have all the packages you
+need for today installed already.
+
+R libraries are stored and managed in a repository called CRAN. You can
+download and install R packages with the install.packages() function:
 
 R code:
 
@@ -44,20 +49,47 @@ R code:
 install.packages("dplyr")
 ```
 
-In Python, packages can be installed from the Anaconda repository by
-using the conda install command:
+Installing Python packages can be trickier than installing R packages.
+Python libraries are stored and managed in a few different repositories
+and their dependencies are not regulated as strictly as R libraries are
+in CRAN. Python’s default package manager `pip` can be used in a
+terminal or command line to install packages from the `PyPI` repository,
+and this is a good solution if you need to install a single simple
+package, like the `requests` package that handles downloads. However,
+`pip` has long had some challenges, which you are very likely to run
+into if you are using a package that requires the GDAL library for
+coordinate transformations (like `cartopy`, `rioxarray` or `geopandas`).
 
-Python code:
+So what is an earth scientist to do? Most packages can also be installed
+from the Anaconda repository by using the `conda install` or better yet
+`mamba install` command. `mamba` is a version of `conda` that is much
+faster at solving environments. For most packages, we also recommending
+specifying the `conda-forge` channel, as below:
 
-``` python
+bash code to install Python packages:
+
+``` bash
+# First install mamba with conda if needed
+conda install -c conda-forge mamba
 # Install the pandas package from Anaconda
-!conda install pandas
+mamba install -c conda-forge pandas
 ```
 
-Loading libraries in R and Python
+It is common in Python to install all the packages you need at once.
+This prevents incompatible packages from being loaded. Installing an
+environment from and environment.yml file can be done with the following
+code:
 
-In R, libraries can be loaded in the same way as before, using the
-library() function:
+``` bash
+mamba env create -f environment.yml
+```
+
+The `environment.yml` file in this repository is an example of an
+environment that will let you run all the Python code in this notebook.
+
+### Loading libraries in R and Python
+
+In R, libraries can be loaded using the library() function:
 
 R code:
 
@@ -66,8 +98,8 @@ R code:
 library(dplyr)
 ```
 
-In Python, libraries can be loaded in the same way as before, using the
-import statement. Here’s an example:
+In Python, libraries can be loaded using the import statement. Here’s an
+example:
 
 Python code:
 
@@ -82,17 +114,26 @@ repository specified in your system before installing packages. By
 default, R uses CRAN as its primary repository, whereas Anaconda uses
 its own repository by default.
 
-## reticulate
+Importing libraries from R imports all the functions inside the library
+under their own name. For example, once you have installed the r package
+`readr`, you can use the included function `read.csv()` directly. On the
+other hand, with a typical Python import like the one for `pandas`
+above, you need to specify the package, e.g. `pd.read_csv`. This can be
+cumbersome if you have to type the package name a lot (that’s why we
+`import pandas as pd` instead of `import pandas` – our way we only have
+to type out the two-letter alias `pd`). On the other hand, it can also
+be really handy if you are trying to figure out what packages you need
+to install to use a function in your own code.
 
-The reticulate package lets you run both R and Python together in the R
-environment.
+> **GOTCHA ALERT:** The dot `.` is a special character in Python, but
+> not in R. It is kind of like the `/` in your file system; instead of
+> navigating your file tree, it navigates a tree structure like a class
+> or a library.
 
-R libraries are stored and managed in a repository called CRAN. You can
-download R packages with the install.packages() function
+### reticulate - Why choose?
 
-``` r
-install.packages("reticulate")
-```
+The reticulate package lets you run share variables between R and
+Python.
 
 You only need to install packages once, but you need to mount those
 packages with the library() function each time you open R.
@@ -101,24 +142,12 @@ packages with the library() function each time you open R.
 library(reticulate)
 ```
 
-Python libraries are stored and managed in a few different libraries and
-their dependencies are not regulated as strictly as R libraries are in
-CRAN. It’s easier to publish a python package but it can also be more
-cumbersome for users because you need to manage dependencies yourself.
-You can download python packages using both R and Python code
-
-``` r
-py_install("laspy")
-```
-
-    + '/Users/ty/opt/miniconda3/bin/conda' 'install' '--yes' '--prefix' '/Users/ty/opt/miniconda3/envs/earth-analytics-python' '-c' 'conda-forge' 'laspy'
-
 Now, let’s create a Python list and assign it to a variable py_list:
 
 R code:
 
-``` r
-py_list <- r_to_py(list(1, 2, 3))
+``` python
+py_list = [1, 2, 3]
 ```
 
 We can now print out the py_list variable in Python using the
@@ -127,10 +156,10 @@ py_run_string() function:
 R code:
 
 ``` r
-py_run_string("print(r.py_list)")
+py_run_string("print(py_list)")
 ```
 
-This will output \[1, 2, 3\] in the Python console.
+This will output `[1, 2, 3]` in the Python console.
 
 Now, let’s create an R vector and assign it to a variable r_vec:
 
@@ -140,42 +169,44 @@ R code:
 r_vec <- c(4, 5, 6)
 ```
 
-We can now print out the r_vec variable in R using the py\$ syntax to
+> Notice that in Python we use `=` to assign variables, while in R we
+> use `<-`. Actually, we could use either one in R, but here we’re
+> following the popular [tidyverse style
+> guide](https://style.tidyverse.org/). In R there is a distinction
+> between the assignment operator `<-` and the parameter setting
+> operator `=`. In Python these are considered the same.
+
+We can now print out the py_list variable in R using the py\$ syntax to
 access Python variables:
 
 R code:
 
 ``` r
 print(py$py_list)
+print(py)
 ```
 
-This will output \[1, 2, 3\] in the R console.
+This will output \[1, 2, 3\] in the R console. Conversely, we can get
+the R variable `r_vec` in Python:
 
-We can also call Python functions from R using the py_call() function.
-For example, let’s call the Python sum() function on the py_list
-variable and assign the result to an R variable r_sum:
-
-R code:
-
-``` r
-r_sum <- py_call("sum", args = list(py_list))
+``` python
+print(r.r_vec)
 ```
 
-We can now print out the r_sum variable in R:
+> There’s that dot `.` again - in this case it is getting the r_vec
+> variable from within the “R interface object” `r` similarly to how the
+> `$` character gets attributes of the `py` object.
 
-R code:
+### Load packages and change settings
 
-``` r
-print(r_sum)
-```
-
-This will output 6 in the R console.
-
-## Load packages and change settings
+In both R and Python, it is suggested to do all your library/package
+imports at the top of your file. This makes it easier for others to run
+or copy your code.
 
 ``` r
 options(java.parameters = "-Xmx5G")
 
+library(readr)
 library(r5r)
 ```
 
@@ -187,7 +218,7 @@ library(r5r)
 library(sf)
 ```
 
-    Linking to GEOS 3.10.2, GDAL 3.4.2, PROJ 8.2.1; sf_use_s2() is TRUE
+    Linking to GEOS 3.11.0, GDAL 3.5.3, PROJ 9.1.0; sf_use_s2() is TRUE
 
 ``` r
 library(data.table)
@@ -264,7 +295,7 @@ library(cowplot)
 library(here)
 ```
 
-    here() starts at /Users/ty/Documents/Github/pre-innovation-summit-training
+    here() starts at /Users/elsa/04-workshops/pre-innovation-summit-training
 
 ``` r
 library(testthat)
@@ -277,18 +308,43 @@ library(testthat)
 
         matches
 
+    The following objects are masked from 'package:readr':
+
+        edition_get, local_edition
+
+``` r
+library(reticulate)
+Sys.setenv(
+  RETICULATE_PYTHON=path.expand('~/opt/miniconda3/envs/earth-analytics-python/bin/python'))
+use_condaenv('earth-analytics-python')
+```
+
 ``` python
+import os
+import pathlib
+import pickle
 import sys
 sys.argv.append(["--max-memory", "5G"])
 
-import pandas as pd
+import contextily as cx
+import dask
 import geopandas
 import matplotlib.pyplot as plt
 import numpy as np
-import plotnine
-import contextily as cx
+import pandas as pd
 import r5py
+import requests
+import rioxarray as rxr
+```
+
+    /Users/elsa/opt/miniconda3/envs/earth-analytics-python/lib/python3.8/site-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.16.5 and <1.23.0 is required for this version of SciPy (detected version 1.23.5
+      warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+
+``` python
 import seaborn as sns
+import seaborn.objects as so
+import xarray as xr
+from plotnine import ggplot, aes, geom_point, labs, ggtitle
 ```
 
 R and Python are two popular programming languages used for data
@@ -315,172 +371,491 @@ print(mean_x)
 Python Code:
 
 ``` python
-# Import the numpy library for numerical operations
-import numpy as np
-
 # Create a numpy array of numbers from 1 to 10
-x = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+x_arr = np.array(range(1, 10))
 
 # Compute the mean of the array
-mean_x = np.mean(x)
+mean_x = x_arr.mean()
 
 # Print the result
 print(mean_x)
 ```
 
-    5.5
+    5.0
 
 In this example, we can see that there are several differences between R
 and Python:
 
-Syntax: R uses the assignment operator \<- while Python uses the equals
-sign = for variable assignment.
+Syntax: `<-` in R vs. `=` in Python; `$` in R vs. `.` in Python
 
 Libraries: Python relies heavily on external libraries such as numpy,
-pandas, and matplotlib for data analysis, while R has built-in functions
-for many data analysis tasks.
+pandas, and xarray for data analysis, while R has built-in functions for
+many data analysis tasks. The Python libraries require extra
+installation steps, but they have the potential to be much faster when
+working with large amounts of data because they are compiled to take
+full advantage of your hardware and advances in mathematics kernel
+libraries.
 
-Data types: R is designed to work with vectors and matrices, while
-Python uses lists and arrays. In the example above, we used the numpy
-library to create a numerical array in Python.
+Function vs. Methods: Python is an object-oriented language, which means
+that where you would use a function in R, you often must apply a method
+to an object in Python - see `mean()` in R vs. `x_arr.mean()` in Python.
+Another way to think about this is that functions and methods are verbs
+(`pd.read_csv()`), classes are nouns (`csv.writer()`), and methods are
+also verbs but they act on the object they are part of
+(`my_csv_writer.writerows()`).
 
-Function names: Function names in R and Python can differ significantly.
-In the example above, we used the mean() function in R and the np.mean()
-function in Python to calculate the mean of the vector/array.
+Style:
 
 These are just a few of the many differences between R and Python.
 Ultimately, the choice between the two languages will depend on your
 specific needs and preferences.
 
-## Load saved data
+## Using and managing tabular data
+
+### Load tabular data from the web
+
+For tabular data like comma separate value (CSV) files, all you need to
+get started is a web url. Another thing to notice in the following cells
+is how to add line breaks in long strings
 
 R Code:
 
 ``` r
-data("iris")
-here()
-load(file=here("2_R_and_Py_bilingualism", "data", "iris_example_data.rdata"))
-objects()
+penguins_url <- paste0(
+  'https://raw.githubusercontent.com/allisonhorst/palmerpenguins/',
+  'main/inst/extdata/penguins.csv')
+
+# Load penguins data
+penguins_df <- read_csv(penguins_url)
 ```
 
-Python code:
+    Rows: 344 Columns: 8
+    ── Column specification ────────────────────────────────────────────────────────
+    Delimiter: ","
+    chr (3): species, island, sex
+    dbl (5): bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g, year
 
-## Save data
-
-R Code:
+    ℹ Use `spec()` to retrieve the full column specification for this data.
+    ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 
 ``` r
-save(iris, file=here("2_R_and_Py_bilingualism", "data", "iris_example_data.rdata"))
-
-write.csv(iris, file=here("2_R_and_Py_bilingualism", "data", "iris_example_data.csv"))
+penguins_df
 ```
 
-Python code:
-
-## functions
-
-Both R and Python are powerful languages for writing functions that can
-take input, perform a specific task, and return output. R Code:
-
-``` r
-# Define a function that takes two arguments and returns their sum
-sum_r <- function(a, b) {
-  return(a + b)
-}
-
-# Call the function with two arguments and print the result
-result_r <- sum_r(3, 5)
-print(result_r)
-```
-
-    [1] 8
+    # A tibble: 344 × 8
+       species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+       <chr>   <chr>              <dbl>         <dbl>             <dbl>       <dbl>
+     1 Adelie  Torgersen           39.1          18.7               181        3750
+     2 Adelie  Torgersen           39.5          17.4               186        3800
+     3 Adelie  Torgersen           40.3          18                 195        3250
+     4 Adelie  Torgersen           NA            NA                  NA          NA
+     5 Adelie  Torgersen           36.7          19.3               193        3450
+     6 Adelie  Torgersen           39.3          20.6               190        3650
+     7 Adelie  Torgersen           38.9          17.8               181        3625
+     8 Adelie  Torgersen           39.2          19.6               195        4675
+     9 Adelie  Torgersen           34.1          18.1               193        3475
+    10 Adelie  Torgersen           42            20.2               190        4250
+    # ℹ 334 more rows
+    # ℹ 2 more variables: sex <chr>, year <dbl>
 
 Python code:
 
 ``` python
-# Define a function that takes two arguments and returns their sum
-def sum_py(a, b):
-    return a + b
-
-# Call the function with two arguments and print the result
-result_py = sum_py(3, 5)
-print(result_py)
+penguins_url = (
+    'https://raw.githubusercontent.com/allisonhorst/palmerpenguins/'
+    'main/inst/extdata/penguins.csv'
+)
+    
+# Load in penguins data
+penguins_df = pd.read_csv(penguins_url)
+penguins_df
 ```
 
-    8
+           species     island  bill_length_mm  ...  body_mass_g     sex  year
+    0       Adelie  Torgersen            39.1  ...       3750.0    male  2007
+    1       Adelie  Torgersen            39.5  ...       3800.0  female  2007
+    2       Adelie  Torgersen            40.3  ...       3250.0  female  2007
+    3       Adelie  Torgersen             NaN  ...          NaN     NaN  2007
+    4       Adelie  Torgersen            36.7  ...       3450.0  female  2007
+    ..         ...        ...             ...  ...          ...     ...   ...
+    339  Chinstrap      Dream            55.8  ...       4000.0    male  2009
+    340  Chinstrap      Dream            43.5  ...       3400.0  female  2009
+    341  Chinstrap      Dream            49.6  ...       3775.0    male  2009
+    342  Chinstrap      Dream            50.8  ...       4100.0    male  2009
+    343  Chinstrap      Dream            50.2  ...       3775.0  female  2009
 
-In both cases, we define a function that takes two arguments and returns
-their sum. In R, we use the function keyword to define a function, while
-in Python, we use the def keyword. The function body in R is enclosed in
-curly braces, while in Python it is indented.
+    [344 rows x 8 columns]
 
-There are a few differences in the syntax and functionality between the
-two approaches:
+### Forming reproducible file paths
 
-Function arguments: In R, function arguments are separated by commas,
-while in Python they are enclosed in parentheses. The syntax for
-specifying default arguments and variable-length argument lists can also
-differ between the two languages. Return statement: In R, we use the
-return keyword to specify the return value of a function, while in
-Python, we simply use the return statement. Function names: Function
-names in R and Python can differ significantly. In the example above, we
-used the sum_r() function in R and the sum_py() function in Python to
-calculate the sum of two numbers.
+In both R and Python, it is important to use **reproducible file paths**
+when collaborating on or sharing code. That means files should be
+relative to the current directory, or even better inside the home
+directory so it can be specified on every computer.
+
+First, we might want to know where the **working directory** is. If you
+build a **relative** file path (one that doesn’t start with something
+like a `/` on Unix systems or `C://` on Windows systems) the working
+directory will be where your code looks for that path:
+
+``` r
+getwd()
+```
+
+    [1] "/Users/elsa/04-workshops/pre-innovation-summit-training/docs/2_R_and_Py_bilingualism/code/code_demo"
+
+``` python
+os.getcwd()
+```
+
+    '/Users/elsa/04-workshops/pre-innovation-summit-training/docs/2_R_and_Py_bilingualism/code/code_demo'
+
+Next, let’s make a cross-platform file path to a data directory in your
+home folder and set that as your new working directory. Despite the use
+of the Unix-style `~` to indicate the home directory, this code should
+work on both Windows and Unix computers. Windows users can check out
+`help(path.expand)` in the R console for more information on what the
+home directory is.
+
+> We know that sometimes it doesn’t work to put data in your home
+> directory. Another option is putting a configuration file with the
+> data path in the home directory. Keeping the data in your project
+> directory is also an option.
+
+``` r
+data_dir <- file.path(path.expand('~'), 'esiil-summit', 'r_and_py')
+
+# Make the data directory
+dir.create(data_dir, showWarnings=F, recursive=T)
+print(data_dir)
+```
+
+    [1] "/Users/elsa/esiil-summit/r_and_py"
+
+``` python
+data_dir = os.path.join(pathlib.Path.home(), 'esiil-summit', 'r_and_py')
+
+# Make the data directory
+os.makedirs(data_dir, exist_ok=True)
+print(data_dir)
+```
+
+    /Users/elsa/esiil-summit/r_and_py
+
+You should see your username in both paths.
+
+Parameter notes:
+
+- In R we get a warning if the directory we’re creating already exists,
+  which is suppressed by the `showWarnings=F` parameter. In Python, it
+  is an error unless the `exist_ok=True` parameter is supplied.
+
+- In R, we can use the same function to create a single directory and
+  multiple nested directories, as long as we use the `recursive=T`
+  parameter. In Python, there is a different `os.mkdir()` function for
+  creating single directories.
+
+> **GOTCHA ALERT**: In Python, boolean values are `True` and `False`; in
+> R they are `TRUE` or `T` and `FALSE` or `F`
+
+### Getting tabular data to and from text files
+
+Let’s save that data so if we like we can work offline (and avoid
+hitting the server too many times). You can also save your own results
+or processed data this way.
+
+> Notice that in R this is a **function** and in Python it is a
+> **method** of our `pd.DataFrame` object.
+
+``` r
+# Write penguin data to CSV
+penguins_r_csv_path = file.path(data_dir, "penguins_r.csv")
+write_csv(penguins_df, file=penguins_r_csv_path)
+```
+
+``` python
+# Write penguin data to CSV
+penguins_py_csv_path = os.path.join(data_dir, "penguins_py.csv")
+penguins_df.to_csv(penguins_py_csv_path, index=False)
+```
+
+> **GOTCHA ALERT**: The pandas `pd.DataFrame.to_csv()` method is not
+> *quite* symmetrical with `pd.read_csv()`. This is because pandas
+> `DataFrame`s have an **index**, or row identifier, and you need to
+> choose how to deal with it when reading and writing files. Since in
+> this case the index is simply a row number and not critical
+> information, we’ve solved this problem by eliminating the index
+> altogether in the file using the `index=False` parameter. Go ahead and
+> try removing it to see what happens when we reload!
+
+Now we can delete our original data frames. We wouldn’t normally need to
+do this, but we want to make sure the data are really loading from
+`.csv`. You should get errors from both print statements.
+
+``` r
+rm(penguins_df)
+print(penguins_df)
+```
+
+``` python
+del penguins_df
+print(penguins_df)
+```
+
+finally – reload the Palmer Penguin data from the saved `.csv` files.
+
+``` r
+penguins_df <- read_csv(penguins_r_csv_path)
+```
+
+    Rows: 344 Columns: 8
+    ── Column specification ────────────────────────────────────────────────────────
+    Delimiter: ","
+    chr (3): species, island, sex
+    dbl (5): bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g, year
+
+    ℹ Use `spec()` to retrieve the full column specification for this data.
+    ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+
+``` r
+penguins_df
+```
+
+    # A tibble: 344 × 8
+       species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+       <chr>   <chr>              <dbl>         <dbl>             <dbl>       <dbl>
+     1 Adelie  Torgersen           39.1          18.7               181        3750
+     2 Adelie  Torgersen           39.5          17.4               186        3800
+     3 Adelie  Torgersen           40.3          18                 195        3250
+     4 Adelie  Torgersen           NA            NA                  NA          NA
+     5 Adelie  Torgersen           36.7          19.3               193        3450
+     6 Adelie  Torgersen           39.3          20.6               190        3650
+     7 Adelie  Torgersen           38.9          17.8               181        3625
+     8 Adelie  Torgersen           39.2          19.6               195        4675
+     9 Adelie  Torgersen           34.1          18.1               193        3475
+    10 Adelie  Torgersen           42            20.2               190        4250
+    # ℹ 334 more rows
+    # ℹ 2 more variables: sex <chr>, year <dbl>
+
+``` python
+penguins_df = pd.read_csv(penguins_py_csv_path)
+penguins_df
+```
+
+           species     island  bill_length_mm  ...  body_mass_g     sex  year
+    0       Adelie  Torgersen            39.1  ...       3750.0    male  2007
+    1       Adelie  Torgersen            39.5  ...       3800.0  female  2007
+    2       Adelie  Torgersen            40.3  ...       3250.0  female  2007
+    3       Adelie  Torgersen             NaN  ...          NaN     NaN  2007
+    4       Adelie  Torgersen            36.7  ...       3450.0  female  2007
+    ..         ...        ...             ...  ...          ...     ...   ...
+    339  Chinstrap      Dream            55.8  ...       4000.0    male  2009
+    340  Chinstrap      Dream            43.5  ...       3400.0  female  2009
+    341  Chinstrap      Dream            49.6  ...       3775.0    male  2009
+    342  Chinstrap      Dream            50.8  ...       4100.0    male  2009
+    343  Chinstrap      Dream            50.2  ...       3775.0  female  2009
+
+    [344 rows x 8 columns]
+
+### Serialize data
+
+In both Python and R, you can also **serialize** objects so they can be
+read back into the environment quickly (but aren’t easily readable by
+other programming languages).
+
+> **Why serialize?** This can be a great option when you want to cache
+> intermediate analysis results, long downloads, or if you need to send
+> objects from one worker to another in a multiprocessing context.
+
+R Code:
+
+``` r
+penguins_rds_path = file.path(data_dir, "penguins.rds")
+
+# Serialize penguin data
+saveRDS(penguins_df, file=penguins_rds_path)
+```
+
+Python code:
+
+``` python
+penguins_pickle_path = os.path.join(data_dir, "penguins.pickle")
+
+# Serialize penguins data
+with open(penguins_pickle_path, 'wb') as penguins_file:
+    pickle.dump(penguins_df, penguins_file)
+```
+
+In Python, it is important to use a **context manager**
+(`with open(...) as file:`) when accessing files, as otherwise a file
+connection may stay open and drain resources. You can choose:
+
+- whether to open files for reading (`'r'`) or writing (`'w'`)
+
+- whether to interpret the content as a string (default) or binary/bytes
+  as needed to write pickled data (add a `b`)
+
+You can rely on the `pandas` library to manage your file connections for
+you, so there’s no need for a context manager.
+
+Go ahead and take a look at those files to see what they look like! You
+can do so using a terminal and the command
+`head /path/to/penguins/file`.
+
+### Load serialized data
+
+``` r
+# Clear penguin data from environment
+rm(penguins_df)
+
+# Unserialize penguin data
+penguins_df <- readRDS(penguins_rds_path)
+penguins_df
+```
+
+    # A tibble: 344 × 8
+       species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+       <chr>   <chr>              <dbl>         <dbl>             <dbl>       <dbl>
+     1 Adelie  Torgersen           39.1          18.7               181        3750
+     2 Adelie  Torgersen           39.5          17.4               186        3800
+     3 Adelie  Torgersen           40.3          18                 195        3250
+     4 Adelie  Torgersen           NA            NA                  NA          NA
+     5 Adelie  Torgersen           36.7          19.3               193        3450
+     6 Adelie  Torgersen           39.3          20.6               190        3650
+     7 Adelie  Torgersen           38.9          17.8               181        3625
+     8 Adelie  Torgersen           39.2          19.6               195        4675
+     9 Adelie  Torgersen           34.1          18.1               193        3475
+    10 Adelie  Torgersen           42            20.2               190        4250
+    # ℹ 334 more rows
+    # ℹ 2 more variables: sex <chr>, year <dbl>
+
+In R, there are a number of slightly different functions for serializing
+data. For example, you can check out `save()` and `load()` as well if
+you need to save multiple objects at once.
+
+``` python
+# Clear penguin data from environment
+del penguins_df
+
+# Unserialize penguin data
+with open(penguins_pickle_path, 'rb') as penguins_file:
+    penguins_df = pickle.load(penguins_file)
+penguins_df
+```
+
+           species     island  bill_length_mm  ...  body_mass_g     sex  year
+    0       Adelie  Torgersen            39.1  ...       3750.0    male  2007
+    1       Adelie  Torgersen            39.5  ...       3800.0  female  2007
+    2       Adelie  Torgersen            40.3  ...       3250.0  female  2007
+    3       Adelie  Torgersen             NaN  ...          NaN     NaN  2007
+    4       Adelie  Torgersen            36.7  ...       3450.0  female  2007
+    ..         ...        ...             ...  ...          ...     ...   ...
+    339  Chinstrap      Dream            55.8  ...       4000.0    male  2009
+    340  Chinstrap      Dream            43.5  ...       3400.0  female  2009
+    341  Chinstrap      Dream            49.6  ...       3775.0    male  2009
+    342  Chinstrap      Dream            50.8  ...       4100.0    male  2009
+    343  Chinstrap      Dream            50.2  ...       3775.0  female  2009
+
+    [344 rows x 8 columns]
 
 ## Data Plots
 
 R Code:
 
 ``` r
-# Load the "ggplot2" package for plotting
-library(ggplot2)
-
-# Generate some sample data
-x <- seq(1, 10, 1)
-y <- x + rnorm(10)
-
-# Create a scatter plot
-ggplot(data.frame(x, y), aes(x = x, y = y)) +
-  geom_point()
+# Plot the penguin data
+ggplot(penguins_df, aes(x = bill_length_mm, y = body_mass_g, color=species)) +
+  # Create a scatter plot of the data
+  geom_point() +
+  # Label the plot
+  labs(x = 'Bill Length (mm)', y = 'Body Mass (g)', color = 'Species') +
+  # Add a title
+  ggtitle('Penguin Characteristics by Species')
 ```
 
-![](bilingualism_files/figure-gfm/unnamed-chunk-24-1.png)
+    Warning: Removed 2 rows containing missing values (`geom_point()`).
 
-Python code:
+![](bilingualism_files/figure-commonmark/unnamed-chunk-32-1.png)
+
+Python seaborn.objects code:
 
 ``` python
-# Load the "matplotlib" library
-import matplotlib.pyplot as plt
-
-# Generate some sample data
-import numpy as np
-x = np.arange(1, 11)
-y = x + np.random.normal(0, 1, 10)
-
-#clear last plot
-plt.clf()
-
-# Create a scatter plot
-plt.scatter(x, y)
-plt.show()
+# Make a scatter plot with the penguin data
+(so.Plot(penguins_df, x='bill_length_mm', y='body_mass_g')
+ # Make a scatter plot colored by species
+ .add(so.Dot(), color='species')
+ # Add labels
+ .label(
+     x='Bill Length (mm)', y='Body Mass (g)', color='Species',
+     title='Penguin Characteristics by Species')
+ # Give the legend some more room so it doesn't overlap the data
+ .layout(engine="constrained")
+ # Display the plot
+ .show()
+)
 ```
 
-<img src="bilingualism_files/figure-gfm/unnamed-chunk-25-1.png"
-width="672" />
+    /Users/elsa/opt/miniconda3/envs/earth-analytics-python/lib/python3.8/_collections_abc.py:832: MatplotlibDeprecationWarning: 
+    The savefig.jpeg_quality rcparam was deprecated in Matplotlib 3.3 and will be removed two minor releases later.
+    /Users/elsa/opt/miniconda3/envs/earth-analytics-python/lib/python3.8/_collections_abc.py:832: MatplotlibDeprecationWarning: 
+    The savefig.jpeg_quality rcparam was deprecated in Matplotlib 3.3 and will be removed two minor releases later.
+    /Library/Frameworks/R.framework/Versions/4.3-x86_64/Resources/library/reticulate/python/rpytools/call.py:10: UserWarning: There are no gridspecs with layoutgrids. Possibly did not call parent GridSpec with the "figure" keyword
+
+![](bilingualism_files/figure-commonmark/unnamed-chunk-33-1.png)
+
+> **GOTCHA ALERT:** In Python, you will usually need to put `.show()` at
+> the end of your code to see your plot. Otherwise you may see something
+> like:
+>
+>     <seaborn._core.plot.Plot object at 0x7f81493e4070>
+
+``` python
+# Plot the penguin data
+(ggplot(penguins_df, aes(x = 'bill_length_mm', y = 'body_mass_g', color='species')) +
+  # Create a scatter plot of the data
+  geom_point() +
+  # Label the plot
+  labs(x = 'Bill Length (mm)', y = 'Body Mass (g)', color = 'Species') +
+  # Add a title
+  ggtitle('Penguin Characteristics by Species')
+)
+```
+
+    <ggplot: (8778360618310)>
+
+    /Users/elsa/opt/miniconda3/envs/earth-analytics-python/lib/python3.8/site-packages/plotnine/layer.py:401: PlotnineWarning: geom_point : Removed 2 rows containing missing values.
+
+![](bilingualism_files/figure-commonmark/unnamed-chunk-34-1.png)
+
+> **GOTCHA ALERT:** If you are used to `ggplot2` and are using
+> `plotnine`, there are a few things to be aware of. One is that
+> **quosures** and related structures allow you to leave quotes out of
+> your `ggplot2` code. You can’t do this in Python - you must use quotes
+> on column names! You also must surround the code for plotting with
+> parentheses to get the `+` syntax for layers to work in Python.
+> Finally, we had some display problems in RStudio and had to set the
+> figure size. This shouldn’t be a problem in a Python-focused
+> environment like Jupyter Notebook.
 
 In both cases, we generate some sample data and create a scatter plot to
 visualize the relationship between the variables.
 
-There are a few differences in the syntax and functionality between the
-two approaches:
+Some notes on plotting packages:
 
-Library and package names: In R, we use the ggplot2 package for
-plotting, while in Python, we use the matplotlib library. Data format:
-In R, we use a data frame to store the input data, while in Python, we
-use numpy arrays. Plotting functions: In R, we use the ggplot() function
-to create a new plot object, and then use the geom_point() function to
-create a scatter plot layer. In Python, we use the scatter() function
-from the matplotlib.pyplot module to create a scatter plot directly.
+- In R, although there is a built-in `base` plotting functionality, the
+  `ggplot2` package is overwhelmingly used for plotting. `gg` stands for
+  Grammar of Graphics, and is an intuitive interface for making plots
+  that convey the information you want.
+
+- In Python, there are many options, based on either the Matlab-inspired
+  `matplotlib` or various JavaScript libraries like `leaflet`.
+  `matplotlib` gives you a lot of control over your plot, but on the
+  downside you *have* to control nearly everything about your plot. We
+  recommend the `seaborn.objects` or `so` interface used above, though
+  it is relatively new, because it is a flexible and powerful interface
+  that does not require you to learn any `matplotlib`. You can also plot
+  with nearly identical syntax to `ggplot2` using the `plotnine`
+  library.
 
 ## Linear regression
 
@@ -507,18 +882,18 @@ summary(model_r)
 
     Residuals:
         Min      1Q  Median      3Q     Max 
-    -2.0899 -0.5044 -0.2068  0.8809  1.5087 
+    -0.9902 -0.5704  0.1817  0.4286  0.7938 
 
     Coefficients:
                 Estimate Std. Error t value Pr(>|t|)    
-    (Intercept)   1.2600     0.7896   1.596 0.149215    
-    x             0.8919     0.1273   7.008 0.000112 ***
+    (Intercept)  0.02457    0.45007   0.055    0.958    
+    x            0.98742    0.07254  13.613 8.16e-07 ***
     ---
     Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-    Residual standard error: 1.156 on 8 degrees of freedom
-    Multiple R-squared:  0.8599,    Adjusted R-squared:  0.8424 
-    F-statistic: 49.12 on 1 and 8 DF,  p-value: 0.0001117
+    Residual standard error: 0.6588 on 8 degrees of freedom
+    Multiple R-squared:  0.9586,    Adjusted R-squared:  0.9534 
+    F-statistic: 185.3 on 1 and 8 DF,  p-value: 8.157e-07
 
 ``` r
 # Plot the data and regression line
@@ -529,7 +904,7 @@ ggplot(data.frame(x, y), aes(x = x, y = y)) +
 
     `geom_smooth()` using formula = 'y ~ x'
 
-![](bilingualism_files/figure-gfm/unnamed-chunk-26-3.png)
+![](bilingualism_files/figure-commonmark/unnamed-chunk-35-5.png)
 
 Python code:
 
@@ -550,7 +925,7 @@ model_py = LinearRegression().fit(x.reshape(-1, 1), y)
 print("Coefficients: ", model_py.coef_)
 ```
 
-    Coefficients:  [0.93211863]
+    Coefficients:  [0.98507314]
 
 ``` python
 print("Intercept: ", model_py.intercept_)
@@ -558,7 +933,7 @@ print("Intercept: ", model_py.intercept_)
 #clear last plot
 ```
 
-    Intercept:  -0.5334872437833766
+    Intercept:  0.10538584341896495
 
 ``` python
 plt.clf()
@@ -569,8 +944,7 @@ plt.plot(x, model_py.predict(x.reshape(-1, 1)), color='red')
 plt.show()
 ```
 
-<img src="bilingualism_files/figure-gfm/unnamed-chunk-27-1.png"
-width="672" />
+![](bilingualism_files/figure-commonmark/unnamed-chunk-36-1.png)
 
 In both cases, we generate some sample data with a linear relationship
 between x and y, and then perform a simple linear regression to estimate
@@ -599,24 +973,7 @@ R Code:
 ``` r
 # Load the "randomForest" package
 library(randomForest)
-```
 
-    randomForest 4.7-1.1
-
-    Type rfNews() to see new features/changes/bug fixes.
-
-
-    Attaching package: 'randomForest'
-
-    The following object is masked from 'package:dplyr':
-
-        combine
-
-    The following object is masked from 'package:ggplot2':
-
-        margin
-
-``` r
 # Load the "iris" dataset
 data(iris)
 
@@ -714,7 +1071,7 @@ tm_shape(osm_data$osm_lines) +
   tm_lines()
 ```
 
-![](bilingualism_files/figure-gfm/unnamed-chunk-30-1.png)
+![](bilingualism_files/figure-commonmark/unnamed-chunk-39-1.png)
 
 Python code:
 
@@ -732,10 +1089,9 @@ osm_data = ox.graph_from_bbox(north=bbox[2], south=bbox[0], east=bbox[3], west=b
 ox.plot_graph(osm_data)
 ```
 
-    (<Figure size 1600x1600 with 0 Axes>, <AxesSubplot:>)
+    (<Figure size 800x800 with 0 Axes>, <AxesSubplot:>)
 
-<img src="bilingualism_files/figure-gfm/unnamed-chunk-31-1.png"
-width="768" />
+![](bilingualism_files/figure-commonmark/unnamed-chunk-40-1.png)
 
 In both cases, we define the map location and zoom level, retrieve the
 OpenStreetMap data using the specified bounding box, and plot the map.
@@ -829,9 +1185,11 @@ df %>%
     1    21
 
 In this example, we first create a data frame df with two columns x and
-y. We then pipe the output of df to mutate, which adds a new column z to
-the data frame that is the sum of x and y. Finally, we pipe the output
-to summarize, which calculates the sum of z and returns the result.
+
+y\. We then pipe the output of df to mutate, which adds a new column z
+to the data frame that is the sum of x and y. Finally, we pipe the
+output to summarize, which calculates the sum of z and returns the
+result.
 
 Piping in Python In Python, we can use the \| operator to pipe output
 from one function to another. However, instead of piping output from one
@@ -855,7 +1213,8 @@ df = pd.DataFrame({'x': [1,2,3], 'y': [4,5,6]})
     sum_z  21
 
 In this example, we first create a DataFrame df with two columns x and
-y. We then use the assign() method to add a new column z to the
+
+y\. We then use the assign() method to add a new column z to the
 DataFrame that is the sum of x and y. Finally, we use the agg() method
 to calculate the sum of z and return the result.
 
@@ -882,7 +1241,7 @@ iris %>%
        y = "Mean Petal Length")
 ```
 
-![](bilingualism_files/figure-gfm/unnamed-chunk-36-1.png)
+![](bilingualism_files/figure-commonmark/unnamed-chunk-45-1.png)
 
 In this example, we start with the iris dataset and filter it to only
 include rows where the Species column is “setosa”. We then group the
@@ -945,7 +1304,8 @@ for (i in numbers) {
 In this example, the for loop iterates over each element in the numbers
 vector, assigning the current element to the variable i. The print(i)
 statement is then executed for each iteration, outputting the value of
-i.
+
+i\.
 
 Here is the equivalent example in Python:
 
@@ -974,6 +1334,58 @@ Both languages also support nested for loops, which can be used to
 perform iterations over multiple dimensions, such as looping through a
 2D array.
 
+## Functions
+
+Both R and Python are powerful languages for writing functions that can
+take input, perform a specific task, and return output.
+
+R Code:
+
+``` r
+# Define a function that takes two arguments and returns their sum
+sum_r <- function(a, b) {
+  return(a + b)
+}
+
+# Call the function with two arguments and print the result
+result_r <- sum_r(3, 5)
+print(result_r)
+```
+
+    [1] 8
+
+Python code:
+
+``` python
+# Define a function that takes two arguments and returns their sum
+def sum_py(a, b):
+    return a + b
+
+# Call the function with two arguments and print the result
+result_py = sum_py(3, 5)
+print(result_py)
+```
+
+    8
+
+In both cases, we define a function that takes two arguments and returns
+their sum. In R, we use the function keyword to define a function, while
+in Python, we use the def keyword. The function body in R is enclosed in
+curly braces, while in Python it is indented.
+
+There are a few differences in the syntax and functionality between the
+two approaches:
+
+Function arguments: In R, function arguments are separated by commas,
+while in Python they are enclosed in parentheses. The syntax for
+specifying default arguments and variable-length argument lists can also
+differ between the two languages. Return statement: In R, we use the
+return keyword to specify the return value of a function, while in
+Python, we simply use the return statement. Function names: Function
+names in R and Python can differ significantly. In the example above, we
+used the sum_r() function in R and the sum_py() function in Python to
+calculate the sum of two numbers.
+
 ## Parallel
 
 Parallel computing is a technique used to execute multiple computational
@@ -997,13 +1409,7 @@ R code:
 ``` r
 library(foreach)
 library(doParallel)
-```
 
-    Loading required package: iterators
-
-    Loading required package: parallel
-
-``` r
 # Set up a parallel backend with 4 workers
 cl <- makeCluster(4)
 registerDoParallel(cl)
@@ -1042,51 +1448,8 @@ R Tidy code:
 
 ``` r
 library(tidyverse)
-```
-
-    ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-    ✔ forcats   1.0.0     ✔ stringr   1.5.0
-    ✔ lubridate 1.9.2     ✔ tibble    3.2.1
-    ✔ purrr     1.0.1     ✔ tidyr     1.3.0
-    ✔ readr     2.1.4     
-    ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-    ✖ purrr::accumulate()     masks foreach::accumulate()
-    ✖ dplyr::between()        masks data.table::between()
-    ✖ randomForest::combine() masks dplyr::combine()
-    ✖ readr::edition_get()    masks testthat::edition_get()
-    ✖ tidyr::extract()        masks raster::extract()
-    ✖ dplyr::filter()         masks stats::filter()
-    ✖ dplyr::first()          masks data.table::first()
-    ✖ lubridate::hour()       masks data.table::hour()
-    ✖ purrr::is_null()        masks testthat::is_null()
-    ✖ lubridate::isoweek()    masks data.table::isoweek()
-    ✖ dplyr::lag()            masks stats::lag()
-    ✖ dplyr::last()           masks data.table::last()
-    ✖ readr::local_edition()  masks testthat::local_edition()
-    ✖ randomForest::margin()  masks ggplot2::margin()
-    ✖ tidyr::matches()        masks testthat::matches(), dplyr::matches()
-    ✖ lubridate::mday()       masks data.table::mday()
-    ✖ lubridate::minute()     masks data.table::minute()
-    ✖ lubridate::month()      masks data.table::month()
-    ✖ lubridate::quarter()    masks data.table::quarter()
-    ✖ lubridate::second()     masks data.table::second()
-    ✖ raster::select()        masks dplyr::select()
-    ✖ lubridate::stamp()      masks cowplot::stamp()
-    ✖ purrr::transpose()      masks data.table::transpose()
-    ✖ lubridate::wday()       masks data.table::wday()
-    ✖ lubridate::week()       masks data.table::week()
-    ✖ purrr::when()           masks foreach::when()
-    ✖ lubridate::yday()       masks data.table::yday()
-    ✖ lubridate::year()       masks data.table::year()
-    ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
-
-``` r
 library(furrr)
-```
 
-    Loading required package: future
-
-``` r
 # Generate a list of numbers
 numbers <- 1:10
 
@@ -1314,16 +1677,7 @@ R code:
 # Load required packages
 library(httr)
 library(jsonlite)
-```
 
-
-    Attaching package: 'jsonlite'
-
-    The following object is masked from 'package:purrr':
-
-        flatten
-
-``` r
 # Define API endpoint
 endpoint <- "https://jsonplaceholder.typicode.com/posts"
 
@@ -1505,20 +1859,7 @@ R code:
 
 ``` r
 library(lidR)
-```
 
-
-    Attaching package: 'lidR'
-
-    The following objects are masked from 'package:raster':
-
-        projection, projection<-
-
-    The following object is masked from 'package:sf':
-
-        st_concave_hull
-
-``` r
 # Download Lidar data
 LASfile <- system.file("extdata", "Megaplot.laz", package="lidR")
 lidar <- readLAS(LASfile)
@@ -1565,16 +1906,16 @@ laspy.plot.plot(lidar)
 
 ## Data for black lives
 
-Data for Black Lives (https://d4bl.org/) is a movement that uses data
+Data for Black Lives (<https://d4bl.org/>) is a movement that uses data
 science to create measurable change in the lives of Black people. While
 the Data for Black Lives website provides resources, reports, articles,
 and datasets related to racial equity, it doesn’t provide a direct API
 for downloading data.
 
 Instead, you can access the Data for Black Lives GitHub repository
-(https://github.com/Data4BlackLives) to find datasets and resources to
+(<https://github.com/Data4BlackLives>) to find datasets and resources to
 work with. In this example, we’ll use a sample dataset available at
-https://github.com/Data4BlackLives/covid-19/tree/master/data. The
+<https://github.com/Data4BlackLives/covid-19/tree/master/data>. The
 dataset “COVID19_race_data.csv” contains COVID-19 race-related data.
 
 R: In R, we’ll use the ‘readr’ and ‘dplyr’ packages to read, process,
@@ -1750,14 +2091,14 @@ if (http_status(response)$category == "Success") {
 ```
 
 
-         AZ      CA      CO      DC      FL      GA      HI      IL Indiana      LA 
-          3      22       6       5       3       2       1       2       1       1 
-         MD      MI      MN      MO      MP      MS      NC      NE      NJ      NM 
-          1       2       5       3       1       1       2       2       2       1 
-         NY      OH      OK  Oregon      PA      TX      UT      VA      WA      WV 
-          1       5       1       2       2      12       1       4       3       1 
-         ZZ 
-          2 
+         AZ      CA      CO      DC      FL      GA      HI      IA      ID      IL 
+          3      19       6       2       4       1       1       1       1       5 
+    Indiana      LA      MA      MD      MI      MN      MO      MP      MS      NC 
+          1       2       1       1       2       5       3       1       2       2 
+         ND      NE      NJ      NY      OH  Oregon      PA      TX      UT      VA 
+          1       1       3       1       6       1       2      13       2       3 
+         WA      ZZ 
+          2       2 
 
 Python: In Python, we’ll use the ‘requests’ library to fetch data from
 the Nonprofit Explorer API and ‘pandas’ library to process the data.
@@ -1785,37 +2126,38 @@ else:
     print(f"Error: {response.status_code}")
 ```
 
-    CA         22
-    TX         12
+    CA         19
+    TX         13
+    OH          6
     CO          6
+    IL          5
     MN          5
-    OH          5
-    DC          5
-    VA          4
-    AZ          3
-    WA          3
+    FL          4
     MO          3
-    FL          3
-    IL          2
-    GA          2
-    NC          2
+    NJ          3
+    VA          3
+    AZ          3
+    DC          2
+    MS          2
+    WA          2
     MI          2
-    Oregon      2
-    NE          2
-    ZZ          2
+    UT          2
+    NC          2
+    LA          2
     PA          2
-    NJ          2
-    HI          1
-    MS          1
-    NY          1
+    ZZ          2
     Indiana     1
-    NM          1
-    LA          1
-    UT          1
-    MD          1
+    NE          1
+    NY          1
+    Oregon      1
+    HI          1
+    GA          1
     MP          1
-    WV          1
-    OK          1
+    MD          1
+    IA          1
+    ID          1
+    ND          1
+    MA          1
     Name: state, dtype: int64
 
 In conclusion, both R and Python offer efficient ways to fetch and
@@ -1914,7 +2256,7 @@ Historic redlining data refers to data from the Home Owners’ Loan
 Corporation (HOLC) that created residential security maps in the 1930s,
 which contributed to racial segregation and disinvestment in minority
 neighborhoods. One popular source for this data is the Mapping
-Inequality project (https://dsl.richmond.edu/panorama/redlining/).
+Inequality project (<https://dsl.richmond.edu/panorama/redlining/>).
 
 In this example, we’ll download historic redlining data for Philadelphia
 in the form of a GeoJSON file and analyze the data in R and Python.
@@ -1941,7 +2283,7 @@ grade_counts <- philly_geojson %>%
 plot(grade_counts)
 ```
 
-![](bilingualism_files/figure-gfm/unnamed-chunk-64-1.png)
+![](bilingualism_files/figure-commonmark/unnamed-chunk-75-1.png)
 
 Python: In Python, we’ll use the ‘geopandas’ library to read and process
 the GeoJSON data.
@@ -1995,11 +2337,6 @@ R code:
 ``` r
 # Install and load necessary libraries
 library(pdftools)
-```
-
-    Using poppler version 22.02.0
-
-``` r
 library(stringr)
 library(dplyr)
 
@@ -2119,7 +2456,7 @@ plot(indian_lands)
     Warning: plotting the first 9 out of 23 attributes; use max.plot = 23 to plot
     all
 
-![](bilingualism_files/figure-gfm/unnamed-chunk-68-1.png)
+![](bilingualism_files/figure-commonmark/unnamed-chunk-79-1.png)
 
 Python: In Python, we’ll use the ‘geopandas’ and ‘pandas’ libraries to
 read the Shapefile and process the data.
