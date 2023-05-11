@@ -13,7 +13,7 @@
 
 <img height="100" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png">
 
-**About GitHub:** GitHub is a web-based platform that provides version control and collaboration features using Git, a distributed version control system. It enables developers to work together on projects, track changes to code, and efficiently manage different versions of the project. GitHub is widely used in the software development industry and is an essential tool for collaborative projects and maintaining code quality.
+**About GitHub:** _GitHub is a web-based platform that provides version control and collaboration features using Git, a distributed version control system. It enables developers to work together on projects, track changes to code, and efficiently manage different versions of the project. GitHub is widely used in the software development industry and is an essential tool for collaborative projects and maintaining code quality._
 
 ***
 
