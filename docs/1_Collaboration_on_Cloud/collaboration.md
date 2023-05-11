@@ -1,5 +1,5 @@
 # Navigating KIStorm
-### Instructors: XX
+### Instructors: Knowinnovation Team
 #### Time: 15 min
 
 <img height="100" src="https://knowinnovation.com/wp-content/uploads/2020/07/Logo-Transparent-Background-27.png">
@@ -18,7 +18,7 @@
 ***
 
 # The CyVerse Discovery Environment & Data Management
-### Instructors: Swetnam, CyVerse team
+### Instructors: CyVerse team
 #### Time: 45 min
 
 <img height="100" src="https://cyverse.org/sites/default/files/inline-images/PoweredbyCyverse_Logo.png">
