@@ -16,27 +16,16 @@ Each session will run from **12pm - 2pm Mountain Daylight Time** and will meet _
 > ### ***Collaborating with Other People Using Cloud Computing***
 > * **Instructors:** Culler, Know Innovation Team, Swetnam & CyVerse Team, Tuff, Verleye
 >   * Team introductions
+>   * <a href="https://github.com/" target="_blank">**GitHub**</a> for Collaboration (Culler, Tuff, Verleye) 🤝
 >   * Navigating KIStorm (Know Innovation Team) ⚡
 >   * Navigating the Constellation of Cyberinfrastructure (Swetnam & CyVerse Team, Tuff, Verleye)
 >     * <a href="https://de.cyverse.org/" target="_blank">**CyVerse Discovery Environment**</a> ✨
 >     * <a href="https://jetstream-cloud.org/" target="_blank">**JetStream2**</a> 🚀
->   * <a href="https://github.com/" target="_blank">**GitHub**</a> for Collaboration (Culler, Tuff, Verleye) 🤝
-
-
 
 
 ## Day 2 (Thursday May, 18)
 > ### ***R and Python Bilingualism: How to Talk to Everybody***
-> * **Instructors:** Culler, Quarderer(?), Sanovia(?), Tuff
->   * Libraries for Doing Earth Data Science 📚
->   * How do things change over time? (Time-series data applications) 📈
->     * <a href="https://www.earthdatascience.org/courses/earth-analytics/time-series-data/date-class-in-r/" target="_blank">**Time Series Data in R**</a>
->     * <a href="https://www.earthdatascience.org/courses/use-data-open-source-python/use-time-series-data-in-python/" target="_blank">**Time Series Data in Python**</a>
->   * Let's make a map! (Vector & Raster spatial data applications) 🗺️
->     * <a href="https://www.earthdatascience.org/courses/earth-analytics/spatial-data-r/" target="_blank">**Spatial Data in R**</a>
->     * <a href="https://www.earthdatascience.org/courses/use-data-open-source-python/intro-vector-data-python/" target="_blank">**Introduction to Vector Data in Python**</a>
->     * <a href="" target="_blank">**Introduction to Raster Data in Python**</a>
-
+> * **Instructors:** Culler, Tuff
 
 
 ## Day 3 (Friday May, 19)
