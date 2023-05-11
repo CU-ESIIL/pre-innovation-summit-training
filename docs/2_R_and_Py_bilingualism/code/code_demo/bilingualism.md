@@ -33,11 +33,17 @@ statistical analysis capabilities, or an R user interested in exploring
 the world of web development and artificial intelligence, this guide
 will help you become bilingual in R and Python.
 
-## Packages/libraries – No need to write it from scratch
+## How to get help
+
+## Packages: No need to write it from scratch
 
 One thing Python and R have in common is they are extendable using
 external packages or libraries. You should have all the packages you
 need for today installed already.
+
+> Note that **package** and **library** are used interchangeably
+
+### Installing packages
 
 R libraries are stored and managed in a repository called CRAN. You can
 download and install R packages with the install.packages() function:
@@ -55,15 +61,16 @@ and their dependencies are not regulated as strictly as R libraries are
 in CRAN. Python’s default package manager `pip` can be used in a
 terminal or command line to install packages from the `PyPI` repository,
 and this is a good solution if you need to install a single simple
-package, like the `requests` package that handles downloads. However,
-`pip` has long had some challenges, which you are very likely to run
-into if you are using a package that requires the GDAL library for
-coordinate transformations (like `cartopy`, `rioxarray` or `geopandas`).
+package, like the `requests` package that provides a clean interface for
+downloads. However, `pip` has long had some challenges, which you are
+very likely to run into if you are using a package that requires the
+GDAL library for coordinate transformations (like `cartopy`, `rioxarray`
+or `geopandas`).
 
 So what is an earth scientist to do? Most packages can also be installed
-from the Anaconda repository by using the `conda install` or better yet
-`mamba install` command. `mamba` is a version of `conda` that is much
-faster at solving environments. For most packages, we also recommending
+from the Anaconda repository by using `conda install ...` or better yet
+`mamba install ...`. `mamba` is a version of `conda` that is much faster
+at solving environments. For most packages, we also recommending
 specifying the `conda-forge` channel, as below:
 
 bash code to install Python packages:
@@ -75,17 +82,33 @@ conda install -c conda-forge mamba
 mamba install -c conda-forge pandas
 ```
 
-It is common in Python to install all the packages you need at once.
-This prevents incompatible packages from being loaded. Installing an
-environment from and environment.yml file can be done with the following
-code:
+It is common to install all the packages you need at once to keep from
+boxing yourself into a corner with incompatible version numbers, or to
+facilitate packaging your own library. In R, the `renv` library has a
+number of tools for enviroment management; in Python, your best bet is
+`mamba`. You should have everything you need already if you are working
+on JetStream2. However, if you want to run this code on your own
+computer, you can go ahead and install the R and Python environments as
+follows, provided that you have renv and mamba installed:
+
+``` r
+renv::install()
+```
 
 ``` bash
 mamba env create -f environment.yml
 ```
 
-The `environment.yml` file in this repository is an example of an
-environment that will let you run all the Python code in this notebook.
+For the Python environment to work within an RMarkdown file, you may
+need to run the following code in R:
+
+``` r
+library(reticulate)
+Sys.setenv(
+  RETICULATE_PYTHON=path.expand(
+    '~/opt/miniconda3/envs/earth-analytics-python/bin/python'))
+use_condaenv('earth-analytics-python')
+```
 
 ### Loading libraries in R and Python
 
@@ -208,114 +231,28 @@ options(java.parameters = "-Xmx5G")
 
 library(readr)
 library(r5r)
-```
-
-    Please make sure you have already allocated some memory to Java by running:
-      options(java.parameters = '-Xmx2G').
-    You should replace '2G' by the amount of memory you'll require. Currently, Java memory is set to -Xmx5G
-
-``` r
 library(sf)
-```
-
-    Linking to GEOS 3.11.0, GDAL 3.5.3, PROJ 9.1.0; sf_use_s2() is TRUE
-
-``` r
 library(data.table)
 library(ggplot2)
 library(interp)
 library(dplyr)
-```
-
-
-    Attaching package: 'dplyr'
-
-    The following objects are masked from 'package:data.table':
-
-        between, first, last
-
-    The following objects are masked from 'package:stats':
-
-        filter, lag
-
-    The following objects are masked from 'package:base':
-
-        intersect, setdiff, setequal, union
-
-``` r
 library(osmdata)
-```
-
-    Data (c) OpenStreetMap contributors, ODbL 1.0. https://www.openstreetmap.org/copyright
-
-``` r
 library(ggthemes)
 library(sf)
 library(data.table)
 library(ggplot2)
 library(akima)
-```
-
-
-    Attaching package: 'akima'
-
-    The following objects are masked from 'package:interp':
-
-        aspline, bicubic, bicubic.grid, bilinear, bilinear.grid,
-        franke.data, franke.fn, interp, interp2xyz, interpp
-
-``` r
 library(dplyr)
 library(raster)
-```
-
-    Loading required package: sp
-
-
-    Attaching package: 'raster'
-
-    The following object is masked from 'package:dplyr':
-
-        select
-
-``` r
 library(osmdata)
 library(mapview)
 library(cowplot)
-```
-
-
-    Attaching package: 'cowplot'
-
-    The following object is masked from 'package:ggthemes':
-
-        theme_map
-
-``` r
 library(here)
-```
-
-    here() starts at /Users/elsa/04-workshops/pre-innovation-summit-training
-
-``` r
 library(testthat)
-```
-
-
-    Attaching package: 'testthat'
-
-    The following object is masked from 'package:dplyr':
-
-        matches
-
-    The following objects are masked from 'package:readr':
-
-        edition_get, local_edition
-
-``` r
 library(reticulate)
 Sys.setenv(
-  RETICULATE_PYTHON=path.expand('~/opt/miniconda3/envs/earth-analytics-python/bin/python'))
+  RETICULATE_PYTHON=path.expand(
+    '~/opt/miniconda3/envs/earth-analytics-python/bin/python'))
 use_condaenv('earth-analytics-python')
 ```
 
@@ -353,6 +290,10 @@ similarities, there are some fundamental differences between them.
 Here’s an example code snippet in R and Python to illustrate some of the
 differences:
 
+<div class="columns">
+
+<div class="column" width="50%">
+
 R Code:
 
 ``` r
@@ -368,9 +309,15 @@ print(mean_x)
 
     [1] 5.5
 
+</div>
+
+<div class="column" width="50%">
+
 Python Code:
 
 ``` python
+import numpy as np
+
 # Create a numpy array of numbers from 1 to 10
 x_arr = np.array(range(1, 10))
 
@@ -382,6 +329,10 @@ print(mean_x)
 ```
 
     5.0
+
+</div>
+
+</div>
 
 In this example, we can see that there are several differences between R
 and Python:
@@ -418,9 +369,15 @@ For tabular data like comma separate value (CSV) files, all you need to
 get started is a web url. Another thing to notice in the following cells
 is how to add line breaks in long strings
 
+<div class="columns">
+
+<div class="column" width="50%">
+
 R Code:
 
 ``` r
+library(readr)
+
 penguins_url <- paste0(
   'https://raw.githubusercontent.com/allisonhorst/palmerpenguins/',
   'main/inst/extdata/penguins.csv')
@@ -458,9 +415,15 @@ penguins_df
     # ℹ 334 more rows
     # ℹ 2 more variables: sex <chr>, year <dbl>
 
+</div>
+
+<div class="column" width="50%">
+
 Python code:
 
 ``` python
+import pandas as pd
+
 penguins_url = (
     'https://raw.githubusercontent.com/allisonhorst/palmerpenguins/'
     'main/inst/extdata/penguins.csv'
@@ -486,6 +449,10 @@ penguins_df
 
     [344 rows x 8 columns]
 
+</div>
+
+</div>
+
 ### Forming reproducible file paths
 
 In both R and Python, it is important to use **reproducible file paths**
@@ -499,12 +466,14 @@ like a `/` on Unix systems or `C://` on Windows systems) the working
 directory will be where your code looks for that path:
 
 ``` r
-getwd()
+print(getwd())
 ```
 
     [1] "/Users/elsa/04-workshops/pre-innovation-summit-training/docs/2_R_and_Py_bilingualism/code/code_demo"
 
 ``` python
+import os
+
 os.getcwd()
 ```
 
@@ -533,6 +502,8 @@ print(data_dir)
     [1] "/Users/elsa/esiil-summit/r_and_py"
 
 ``` python
+import os
+
 data_dir = os.path.join(pathlib.Path.home(), 'esiil-summit', 'r_and_py')
 
 # Make the data directory
@@ -558,7 +529,99 @@ Parameter notes:
 > **GOTCHA ALERT**: In Python, boolean values are `True` and `False`; in
 > R they are `TRUE` or `T` and `FALSE` or `F`
 
+Finally, let’s practice copying the data files included in this lesson
+to the reproducible data directory:
+
+``` r
+project_data_dir <- file.path('..', '..', 'data')
+data_dir <- file.path(path.expand('~'), 'esiil-summit', 'r_and_py')
+file.copy(from=project_data_dir, to=data_dir, recursive=T)
+```
+
+    [1] TRUE
+
+``` python
+import os
+import pathlib
+import shutil
+
+project_data_dir = os.path.join('..', '..', 'data')
+data_dir = os.path.join(pathlib.Path.home(), 'esiil-summit', 'r_and_py')
+shutil.move(project_data_dir, data_dir)
+```
+
+    Error: shutil.Error: Destination path '/Users/elsa/esiil-summit/r_and_py/data' already exists
+
+> Note that Python will not replace an existing directory, so you mush
+> do only one of these operations (or delete the files)
+
 ### Getting tabular data to and from text files
+
+You can also load data from comma-separated value (`.csv`) and other
+tabular text files.
+
+``` r
+library(readr)
+
+data_dir <- file.path(path.expand('~'), 'esiil-summit', 'r_and_py')
+penguins_csv_path = file.path(data_dir, "penguins.csv")
+
+penguins_df <- read_csv(penguins_csv_path)
+```
+
+    New names:
+    Rows: 344 Columns: 9
+    ── Column specification
+    ──────────────────────────────────────────────────────── Delimiter: "," chr
+    (3): species, island, sex dbl (6): ...1, bill_length_mm, bill_depth_mm,
+    flipper_length_mm, body_mass_g...
+    ℹ Use `spec()` to retrieve the full column specification for this data. ℹ
+    Specify the column types or set `show_col_types = FALSE` to quiet this message.
+    • `` -> `...1`
+
+``` r
+penguins_df
+```
+
+    # A tibble: 344 × 9
+        ...1 species island    bill_length_mm bill_depth_mm flipper_length_mm
+       <dbl> <chr>   <chr>              <dbl>         <dbl>             <dbl>
+     1     0 Adelie  Torgersen           39.1          18.7               181
+     2     1 Adelie  Torgersen           39.5          17.4               186
+     3     2 Adelie  Torgersen           40.3          18                 195
+     4     3 Adelie  Torgersen           NA            NA                  NA
+     5     4 Adelie  Torgersen           36.7          19.3               193
+     6     5 Adelie  Torgersen           39.3          20.6               190
+     7     6 Adelie  Torgersen           38.9          17.8               181
+     8     7 Adelie  Torgersen           39.2          19.6               195
+     9     8 Adelie  Torgersen           34.1          18.1               193
+    10     9 Adelie  Torgersen           42            20.2               190
+    # ℹ 334 more rows
+    # ℹ 3 more variables: body_mass_g <dbl>, sex <chr>, year <dbl>
+
+``` python
+import pandas as pd
+
+penguins_csv_path = os.path.join(data_dir, "penguins.csv")
+
+penguins_df = pd.read_csv(penguins_csv_path)
+penguins_df
+```
+
+         Unnamed: 0    species     island  ...  body_mass_g     sex  year
+    0             0     Adelie  Torgersen  ...       3750.0    male  2007
+    1             1     Adelie  Torgersen  ...       3800.0  female  2007
+    2             2     Adelie  Torgersen  ...       3250.0  female  2007
+    3             3     Adelie  Torgersen  ...          NaN     NaN  2007
+    4             4     Adelie  Torgersen  ...       3450.0  female  2007
+    ..          ...        ...        ...  ...          ...     ...   ...
+    339         339  Chinstrap      Dream  ...       4000.0    male  2009
+    340         340  Chinstrap      Dream  ...       3400.0  female  2009
+    341         341  Chinstrap      Dream  ...       3775.0    male  2009
+    342         342  Chinstrap      Dream  ...       4100.0    male  2009
+    343         343  Chinstrap      Dream  ...       3775.0  female  2009
+
+    [344 rows x 9 columns]
 
 Let’s save that data so if we like we can work offline (and avoid
 hitting the server too many times). You can also save your own results
@@ -568,15 +631,24 @@ or processed data this way.
 > **method** of our `pd.DataFrame` object.
 
 ``` r
-# Write penguin data to CSV
-penguins_r_csv_path = file.path(data_dir, "penguins_r.csv")
-write_csv(penguins_df, file=penguins_r_csv_path)
+library(readr)
+
+data('iris')
+
+data_dir <- file.path(path.expand('~'), 'esiil-summit', 'r_and_py')
+
+# Write iris data to CSV
+iris_r_csv_path = file.path(data_dir, "iris_r.csv")
+write_csv(iris, file=iris_r_csv_path)
 ```
 
 ``` python
-# Write penguin data to CSV
-penguins_py_csv_path = os.path.join(data_dir, "penguins_py.csv")
-penguins_df.to_csv(penguins_py_csv_path, index=False)
+import seaborn as sns
+iris_df = sns.load_dataset('iris')
+
+# Write iris data to CSV
+iris_py_csv_path = os.path.join(data_dir, "iris_py.csv")
+iris_df.to_csv(iris_py_csv_path, index=False)
 ```
 
 > **GOTCHA ALERT**: The pandas `pd.DataFrame.to_csv()` method is not
@@ -588,74 +660,72 @@ penguins_df.to_csv(penguins_py_csv_path, index=False)
 > altogether in the file using the `index=False` parameter. Go ahead and
 > try removing it to see what happens when we reload!
 
-Now we can delete our original data frames. We wouldn’t normally need to
-do this, but we want to make sure the data are really loading from
-`.csv`. You should get errors from both print statements.
+You can also load data from comma-separated value (`.csv`) and other
+tabular text files.
 
 ``` r
-rm(penguins_df)
-print(penguins_df)
+library(readr)
+
+penguins_csv_path = file.path(data_dir, "penguins.csv")
+
+penguins_df <- read_csv(penguins_csv_path)
 ```
 
-``` python
-del penguins_df
-print(penguins_df)
-```
-
-finally – reload the Palmer Penguin data from the saved `.csv` files.
-
-``` r
-penguins_df <- read_csv(penguins_r_csv_path)
-```
-
-    Rows: 344 Columns: 8
-    ── Column specification ────────────────────────────────────────────────────────
-    Delimiter: ","
-    chr (3): species, island, sex
-    dbl (5): bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g, year
-
-    ℹ Use `spec()` to retrieve the full column specification for this data.
-    ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+    New names:
+    Rows: 344 Columns: 9
+    ── Column specification
+    ──────────────────────────────────────────────────────── Delimiter: "," chr
+    (3): species, island, sex dbl (6): ...1, bill_length_mm, bill_depth_mm,
+    flipper_length_mm, body_mass_g...
+    ℹ Use `spec()` to retrieve the full column specification for this data. ℹ
+    Specify the column types or set `show_col_types = FALSE` to quiet this message.
+    • `` -> `...1`
 
 ``` r
 penguins_df
 ```
 
-    # A tibble: 344 × 8
-       species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
-       <chr>   <chr>              <dbl>         <dbl>             <dbl>       <dbl>
-     1 Adelie  Torgersen           39.1          18.7               181        3750
-     2 Adelie  Torgersen           39.5          17.4               186        3800
-     3 Adelie  Torgersen           40.3          18                 195        3250
-     4 Adelie  Torgersen           NA            NA                  NA          NA
-     5 Adelie  Torgersen           36.7          19.3               193        3450
-     6 Adelie  Torgersen           39.3          20.6               190        3650
-     7 Adelie  Torgersen           38.9          17.8               181        3625
-     8 Adelie  Torgersen           39.2          19.6               195        4675
-     9 Adelie  Torgersen           34.1          18.1               193        3475
-    10 Adelie  Torgersen           42            20.2               190        4250
+    # A tibble: 344 × 9
+        ...1 species island    bill_length_mm bill_depth_mm flipper_length_mm
+       <dbl> <chr>   <chr>              <dbl>         <dbl>             <dbl>
+     1     0 Adelie  Torgersen           39.1          18.7               181
+     2     1 Adelie  Torgersen           39.5          17.4               186
+     3     2 Adelie  Torgersen           40.3          18                 195
+     4     3 Adelie  Torgersen           NA            NA                  NA
+     5     4 Adelie  Torgersen           36.7          19.3               193
+     6     5 Adelie  Torgersen           39.3          20.6               190
+     7     6 Adelie  Torgersen           38.9          17.8               181
+     8     7 Adelie  Torgersen           39.2          19.6               195
+     9     8 Adelie  Torgersen           34.1          18.1               193
+    10     9 Adelie  Torgersen           42            20.2               190
     # ℹ 334 more rows
-    # ℹ 2 more variables: sex <chr>, year <dbl>
+    # ℹ 3 more variables: body_mass_g <dbl>, sex <chr>, year <dbl>
 
 ``` python
-penguins_df = pd.read_csv(penguins_py_csv_path)
+import os
+
+import pandas as pd
+
+penguins_csv_path = os.path.join(data_dir, "penguins.csv")
+
+penguins_df = pd.read_csv(penguins_csv_path)
 penguins_df
 ```
 
-           species     island  bill_length_mm  ...  body_mass_g     sex  year
-    0       Adelie  Torgersen            39.1  ...       3750.0    male  2007
-    1       Adelie  Torgersen            39.5  ...       3800.0  female  2007
-    2       Adelie  Torgersen            40.3  ...       3250.0  female  2007
-    3       Adelie  Torgersen             NaN  ...          NaN     NaN  2007
-    4       Adelie  Torgersen            36.7  ...       3450.0  female  2007
-    ..         ...        ...             ...  ...          ...     ...   ...
-    339  Chinstrap      Dream            55.8  ...       4000.0    male  2009
-    340  Chinstrap      Dream            43.5  ...       3400.0  female  2009
-    341  Chinstrap      Dream            49.6  ...       3775.0    male  2009
-    342  Chinstrap      Dream            50.8  ...       4100.0    male  2009
-    343  Chinstrap      Dream            50.2  ...       3775.0  female  2009
+         Unnamed: 0    species     island  ...  body_mass_g     sex  year
+    0             0     Adelie  Torgersen  ...       3750.0    male  2007
+    1             1     Adelie  Torgersen  ...       3800.0  female  2007
+    2             2     Adelie  Torgersen  ...       3250.0  female  2007
+    3             3     Adelie  Torgersen  ...          NaN     NaN  2007
+    4             4     Adelie  Torgersen  ...       3450.0  female  2007
+    ..          ...        ...        ...  ...          ...     ...   ...
+    339         339  Chinstrap      Dream  ...       4000.0    male  2009
+    340         340  Chinstrap      Dream  ...       3400.0  female  2009
+    341         341  Chinstrap      Dream  ...       3775.0    male  2009
+    342         342  Chinstrap      Dream  ...       4100.0    male  2009
+    343         343  Chinstrap      Dream  ...       3775.0  female  2009
 
-    [344 rows x 8 columns]
+    [344 rows x 9 columns]
 
 ### Serialize data
 
@@ -679,84 +749,78 @@ saveRDS(penguins_df, file=penguins_rds_path)
 Python code:
 
 ``` python
+import os
+
 penguins_pickle_path = os.path.join(data_dir, "penguins.pickle")
 
 # Serialize penguins data
-with open(penguins_pickle_path, 'wb') as penguins_file:
-    pickle.dump(penguins_df, penguins_file)
+penguins_df.to_pickle(penguins_pickle_path)
 ```
 
-In Python, it is important to use a **context manager**
-(`with open(...) as file:`) when accessing files, as otherwise a file
-connection may stay open and drain resources. You can choose:
-
-- whether to open files for reading (`'r'`) or writing (`'w'`)
-
-- whether to interpret the content as a string (default) or binary/bytes
-  as needed to write pickled data (add a `b`)
-
-You can rely on the `pandas` library to manage your file connections for
-you, so there’s no need for a context manager.
-
-Go ahead and take a look at those files to see what they look like! You
-can do so using a terminal and the command
+Go ahead and take a look at those files to see what they look like! One
+way to do so is by using a terminal and the command
 `head /path/to/penguins/file`.
 
 ### Load serialized data
 
 ``` r
-# Clear penguin data from environment
-rm(penguins_df)
+penguins_rds_path = file.path(data_dir, "penguins.rds")
 
 # Unserialize penguin data
-penguins_df <- readRDS(penguins_rds_path)
-penguins_df
+penguins_from_serial_df <- readRDS(penguins_rds_path)
+penguins_from_serial_df
 ```
 
-    # A tibble: 344 × 8
-       species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
-       <chr>   <chr>              <dbl>         <dbl>             <dbl>       <dbl>
-     1 Adelie  Torgersen           39.1          18.7               181        3750
-     2 Adelie  Torgersen           39.5          17.4               186        3800
-     3 Adelie  Torgersen           40.3          18                 195        3250
-     4 Adelie  Torgersen           NA            NA                  NA          NA
-     5 Adelie  Torgersen           36.7          19.3               193        3450
-     6 Adelie  Torgersen           39.3          20.6               190        3650
-     7 Adelie  Torgersen           38.9          17.8               181        3625
-     8 Adelie  Torgersen           39.2          19.6               195        4675
-     9 Adelie  Torgersen           34.1          18.1               193        3475
-    10 Adelie  Torgersen           42            20.2               190        4250
+    # A tibble: 344 × 9
+        ...1 species island    bill_length_mm bill_depth_mm flipper_length_mm
+       <dbl> <chr>   <chr>              <dbl>         <dbl>             <dbl>
+     1     0 Adelie  Torgersen           39.1          18.7               181
+     2     1 Adelie  Torgersen           39.5          17.4               186
+     3     2 Adelie  Torgersen           40.3          18                 195
+     4     3 Adelie  Torgersen           NA            NA                  NA
+     5     4 Adelie  Torgersen           36.7          19.3               193
+     6     5 Adelie  Torgersen           39.3          20.6               190
+     7     6 Adelie  Torgersen           38.9          17.8               181
+     8     7 Adelie  Torgersen           39.2          19.6               195
+     9     8 Adelie  Torgersen           34.1          18.1               193
+    10     9 Adelie  Torgersen           42            20.2               190
     # ℹ 334 more rows
-    # ℹ 2 more variables: sex <chr>, year <dbl>
+    # ℹ 3 more variables: body_mass_g <dbl>, sex <chr>, year <dbl>
 
 In R, there are a number of slightly different functions for serializing
-data. For example, you can check out `save()` and `load()` as well if
-you need to save multiple objects at once.
+data. For example, you can check out base R `save()` and `load()`
+functions as well if you need to save multiple objects (or a whole
+environment) at once.
 
 ``` python
-# Clear penguin data from environment
-del penguins_df
+import pandas as pd
+
+penguins_pickle_path = os.path.join(data_dir, "penguins.pickle")
 
 # Unserialize penguin data
-with open(penguins_pickle_path, 'rb') as penguins_file:
-    penguins_df = pickle.load(penguins_file)
-penguins_df
+penguins_from_serial_df = pd.read_pickle(penguins_pickle_path)
+penguins_from_serial_df
 ```
 
-           species     island  bill_length_mm  ...  body_mass_g     sex  year
-    0       Adelie  Torgersen            39.1  ...       3750.0    male  2007
-    1       Adelie  Torgersen            39.5  ...       3800.0  female  2007
-    2       Adelie  Torgersen            40.3  ...       3250.0  female  2007
-    3       Adelie  Torgersen             NaN  ...          NaN     NaN  2007
-    4       Adelie  Torgersen            36.7  ...       3450.0  female  2007
-    ..         ...        ...             ...  ...          ...     ...   ...
-    339  Chinstrap      Dream            55.8  ...       4000.0    male  2009
-    340  Chinstrap      Dream            43.5  ...       3400.0  female  2009
-    341  Chinstrap      Dream            49.6  ...       3775.0    male  2009
-    342  Chinstrap      Dream            50.8  ...       4100.0    male  2009
-    343  Chinstrap      Dream            50.2  ...       3775.0  female  2009
+         Unnamed: 0    species     island  ...  body_mass_g     sex  year
+    0             0     Adelie  Torgersen  ...       3750.0    male  2007
+    1             1     Adelie  Torgersen  ...       3800.0  female  2007
+    2             2     Adelie  Torgersen  ...       3250.0  female  2007
+    3             3     Adelie  Torgersen  ...          NaN     NaN  2007
+    4             4     Adelie  Torgersen  ...       3450.0  female  2007
+    ..          ...        ...        ...  ...          ...     ...   ...
+    339         339  Chinstrap      Dream  ...       4000.0    male  2009
+    340         340  Chinstrap      Dream  ...       3400.0  female  2009
+    341         341  Chinstrap      Dream  ...       3775.0    male  2009
+    342         342  Chinstrap      Dream  ...       4100.0    male  2009
+    343         343  Chinstrap      Dream  ...       3775.0  female  2009
 
-    [344 rows x 8 columns]
+    [344 rows x 9 columns]
+
+You can also use the `pickle` library to pickle objects in Python. In
+this case, the `pd.DataFrame` method for pickling takes care of some of
+the details for us (as long as we’re working only with `pandas`
+objects).
 
 ## Data Plots
 
@@ -775,23 +839,24 @@ ggplot(penguins_df, aes(x = bill_length_mm, y = body_mass_g, color=species)) +
 
     Warning: Removed 2 rows containing missing values (`geom_point()`).
 
-![](bilingualism_files/figure-commonmark/unnamed-chunk-32-1.png)
+![](bilingualism_files/figure-commonmark/unnamed-chunk-36-1.png)
 
 Python seaborn.objects code:
 
 ``` python
 # Make a scatter plot with the penguin data
-(so.Plot(penguins_df, x='bill_length_mm', y='body_mass_g')
- # Make a scatter plot colored by species
- .add(so.Dot(), color='species')
- # Add labels
- .label(
-     x='Bill Length (mm)', y='Body Mass (g)', color='Species',
-     title='Penguin Characteristics by Species')
- # Give the legend some more room so it doesn't overlap the data
- .layout(engine="constrained")
- # Display the plot
- .show()
+(
+    so.Plot(penguins_df, x='bill_length_mm', y='body_mass_g')
+    # Make a scatter plot colored by species
+    .add(so.Dot(), color='species')
+    # Add labels
+    .label(
+        x='Bill Length (mm)', y='Body Mass (g)', color='Species',
+        title='Penguin Characteristics by Species')
+    # Give the legend some more room so it doesn't overlap the data
+    .layout(engine="constrained")
+    # Display the plot
+    .show()
 )
 ```
 
@@ -799,43 +864,52 @@ Python seaborn.objects code:
     The savefig.jpeg_quality rcparam was deprecated in Matplotlib 3.3 and will be removed two minor releases later.
     /Users/elsa/opt/miniconda3/envs/earth-analytics-python/lib/python3.8/_collections_abc.py:832: MatplotlibDeprecationWarning: 
     The savefig.jpeg_quality rcparam was deprecated in Matplotlib 3.3 and will be removed two minor releases later.
-    /Library/Frameworks/R.framework/Versions/4.3-x86_64/Resources/library/reticulate/python/rpytools/call.py:10: UserWarning: There are no gridspecs with layoutgrids. Possibly did not call parent GridSpec with the "figure" keyword
+    /Users/elsa/Library/Caches/org.R-project.R/R/renv/cache/v5/R-4.3/x86_64-apple-darwin20/reticulate/1.28/86c441bf33e1d608db773cb94b848458/reticulate/python/rpytools/call.py:10: UserWarning: There are no gridspecs with layoutgrids. Possibly did not call parent GridSpec with the "figure" keyword
 
-![](bilingualism_files/figure-commonmark/unnamed-chunk-33-1.png)
+![](bilingualism_files/figure-commonmark/unnamed-chunk-37-1.png)
 
-> **GOTCHA ALERT:** In Python, you will usually need to put `.show()` at
-> the end of your code to see your plot. Otherwise you may see something
-> like:
+> **GOTCHA ALERT:** In Python, you will usually need to put `.show()` or
+> something similar at the end of your code to see your plot. Otherwise
+> you may see something like:
 >
 >     <seaborn._core.plot.Plot object at 0x7f81493e4070>
 
 ``` python
+from plotnine import ggplot, aes, geom_point, labs, theme, ggtitle
+
 # Plot the penguin data
-(ggplot(penguins_df, aes(x = 'bill_length_mm', y = 'body_mass_g', color='species')) +
-  # Create a scatter plot of the data
-  geom_point() +
-  # Label the plot
-  labs(x = 'Bill Length (mm)', y = 'Body Mass (g)', color = 'Species') +
-  # Add a title
-  ggtitle('Penguin Characteristics by Species')
+(
+    ggplot(penguins_df, aes(x = 'bill_length_mm', y = 'body_mass_g', color='species'))
+    # Create a scatter plot of the data
+    + geom_point()
+    # For some reason the legend gets cut off
+    + theme(subplots_adjust={'right': 0.8})
+    # Label the plot
+    + labs(x = 'Bill Length (mm)', y = 'Body Mass (g)', color = 'Species')
+    # Add a title
+    + ggtitle('Penguin Characteristics by Species')
 )
 ```
 
-    <ggplot: (8778360618310)>
+    <ggplot: (8790968204743)>
 
     /Users/elsa/opt/miniconda3/envs/earth-analytics-python/lib/python3.8/site-packages/plotnine/layer.py:401: PlotnineWarning: geom_point : Removed 2 rows containing missing values.
 
-![](bilingualism_files/figure-commonmark/unnamed-chunk-34-1.png)
+![](bilingualism_files/figure-commonmark/unnamed-chunk-38-1.png)
 
 > **GOTCHA ALERT:** If you are used to `ggplot2` and are using
 > `plotnine`, there are a few things to be aware of. One is that
-> **quosures** and related structures allow you to leave quotes out of
-> your `ggplot2` code. You can’t do this in Python - you must use quotes
-> on column names! You also must surround the code for plotting with
-> parentheses to get the `+` syntax for layers to work in Python.
-> Finally, we had some display problems in RStudio and had to set the
-> figure size. This shouldn’t be a problem in a Python-focused
-> environment like Jupyter Notebook.
+> [quasiquotation](https://adv-r.hadley.nz/quasiquotation.html) allows
+> you to leave quotes out of your `ggplot2` code. There is no equivalent
+> in Python - you must use quotes on column names and anything else that
+> isn’t a defined name in your environment!
+>
+> You also must surround the code for plotting with parentheses to get
+> the `+` syntax for layers to work in Python.
+>
+> Finally, we had some display problems had to adjust the plot theme to
+> see the legend. This may have to do with the interactive coding
+> environment
 
 In both cases, we generate some sample data and create a scatter plot to
 visualize the relationship between the variables.
@@ -843,19 +917,204 @@ visualize the relationship between the variables.
 Some notes on plotting packages:
 
 - In R, although there is a built-in `base` plotting functionality, the
-  `ggplot2` package is overwhelmingly used for plotting. `gg` stands for
-  Grammar of Graphics, and is an intuitive interface for making plots
-  that convey the information you want.
+  `ggplot2` package is overwhelmingly used for static plotting. `gg`
+  stands for Grammar of Graphics, and is an intuitive interface for
+  making plots that convey the information you want.
 
-- In Python, there are many options, based on either the Matlab-inspired
-  `matplotlib` or various JavaScript libraries like `leaflet`.
-  `matplotlib` gives you a lot of control over your plot, but on the
-  downside you *have* to control nearly everything about your plot. We
-  recommend the `seaborn.objects` or `so` interface used above, though
-  it is relatively new, because it is a flexible and powerful interface
-  that does not require you to learn any `matplotlib`. You can also plot
-  with nearly identical syntax to `ggplot2` using the `plotnine`
-  library.
+- In Python, there are many options, nearly all of them based on either
+  the Matlab-inspired `matplotlib`. `matplotlib` gives you a lot of
+  control over your plot, but on the downside you *have* to control
+  nearly everything about your plot. We recommend the `seaborn.objects`
+  or `so` interface used above, though it is relatively new, because it
+  is a flexible and powerful interface that does not require you to
+  learn any `matplotlib`. You can also plot with nearly identical syntax
+  to `ggplot2` using the `plotnine` library.
+
+- For making interactive plots, the go-to libraries are typically based
+  on Javascript and available in both R and Python. Some popular options
+  are: `plotly`, `leaflet` (R) or `folium` (Python), and `bokeh`.
+
+## Piping and Chaining
+
+Piping is a powerful feature in R that allows for a more streamlined and
+readable code. In Python, you can code in a similar style using a
+process called method chaining.
+
+GOTCHA ALERT: As the name implies, to use method chaining you need to be
+using a method of the object you’re working with. There is a .pipe()
+method of pd.DataFrames that that allows you to use method chaining with
+functions that you wrote or imported.
+
+GOTCHA ALERT: Though code pipelines can be easier to read, they can be
+harder to debug. If you get an error in an R pipeline, you may not get
+the information you need about where that error occurred. You can avoid
+problems by testing your pipelines one line at a time.
+
+The syntax for piping is different from method chaining. In R, piping is
+done using the %\>% operator from the magrittr package. In Python,
+method chaining is done by applying methods to the results of previous
+methods, using that dot . again, making sure to surround the whole
+statement with parentheses so you can format it nicely. Both of these
+operators have the effect of taking whatever object is before them (on
+the left) and making it the first argument in the next function/method.
+
+R code without pipes:
+
+``` r
+library(dplyr)
+
+# Create a data frame
+df <- data.frame(x = c(1,2,3), y = c(4,5,6))
+
+# Calculate the sum of x and y and the take the sum of the new column z
+summarize(mutate(df, z = x + y), sum_z = sum(z))
+```
+
+      sum_z
+    1    21
+
+R code with piping:
+
+``` r
+library(dplyr)
+
+# Create a data frame
+df <- data.frame(x = c(1,2,3), y = c(4,5,6))
+
+
+df %>%
+  # Calculate the vector sum of column x and y
+  mutate(z = x + y) %>%
+  # Calculate the sum of the new column z
+  summarize(sum_z = sum(z))
+```
+
+      sum_z
+    1    21
+
+Python code without chaining:
+
+``` python
+import pandas as pd
+
+# create a DataFrame
+df = pd.DataFrame({'x': [1,2,3], 'y': [4,5,6]})
+
+# Calculate the sum of column x and y
+df_with_sum = df.assign(z = df.x + df.y)
+
+# Calculate the sum of the new column z
+df_with_sum.agg(sum_z = ('z', 'sum'))
+```
+
+            z
+    sum_z  21
+
+Python code with chaining:
+
+``` python
+import pandas as pd
+
+# Create a DataFrame
+df = pd.DataFrame({'x': [1,2,3], 'y': [4,5,6]})
+
+(
+    df
+    # Calculate the sum of column x and y
+    .assign(z = df.x + df.y)
+    # Calculate the sum o the new column z
+    .agg(sum_z = ('z', 'sum'))
+)
+```
+
+            z
+    sum_z  21
+
+As we can see, the syntax for piping is slightly different between R and
+Python, but the concept remains the same. Piping can make our code more
+readable and easier to follow, which is an important aspect of creating
+efficient and effective code. It avoids obtuse many-layer nested
+functions and also keeping lots of intermediate processing steps in
+memory as variables.
+
+#### Try it yourself!
+
+Below are two hidden cells with R and Python code to do the following
+analysis:
+
+1.  Start with the iris dataset
+2.  Filter it to only include rows where the Species column is “setosa”
+3.  Group the remaining rows by the Sepal.Width column
+4.  Calculate the mean Petal.Length for each group
+5.  Convert Sepal.Width to a factor variable to ensure that it is
+    treated as a categorical variable in the visualization.
+6.  Finally, we create a bar plot, with Sepal.Width on the x-axis and
+    mean.Petal.Length on the y-axis. The resulting plot shows the mean
+    petal length of setosa flowers for each sepal width category.
+
+We challenge you to pick the coding language you are least familiar with
+and try writing the workflow above. If you need help, you can look at
+the code in the more familiar language, or check out our version in the
+less familiar.
+
+R code:
+
+<details>
+<summary>Show the R code</summary>
+
+``` r
+library(dplyr)
+library(ggplot2)
+
+data(iris)
+
+iris %>%
+  filter(Species == "setosa") %>%
+  group_by(Sepal.Width) %>%
+  summarise(mean.Petal.Length = mean(Petal.Length)) %>%
+  mutate(Sepal.Width = as.factor(Sepal.Width)) %>%
+  ggplot(aes(x = Sepal.Width, y = mean.Petal.Length)) +
+  geom_bar(stat = "identity", fill = "dodgerblue") +
+  labs(title = "Mean Petal Length of Setosa by Sepal Width",
+       x = "Sepal Width",
+       y = "Mean Petal Length")
+```
+
+</details>
+
+![](bilingualism_files/figure-commonmark/unnamed-chunk-43-1.png)
+
+Python code:
+
+<details>
+<summary>Show the Python code</summary>
+
+``` python
+import matplotlib.pyplot as plt
+import pandas as pd
+import seaborn as sns
+
+iris_df = sns.load_dataset('iris')
+
+(
+    iris_df
+    [iris_df.species=='setosa']
+    .groupby('sepal_width')
+    .agg(mean_petal_length=('petal_length', 'mean'))
+    .plot.bar(
+        title='Mean Petal Length of Petals by Sepal Width',
+        xlabel='Sepal Width',
+        y='mean_petal_length', ylabel='Mean Petal Length',
+        legend=False)
+)
+plt.show()
+```
+
+</details>
+
+![](bilingualism_files/figure-commonmark/unnamed-chunk-44-1.png)
+
+Your code:
 
 ## Linear regression
 
@@ -865,86 +1124,390 @@ R Code:
 # Load the "ggplot2" package for plotting
 library(ggplot2)
 
-# Generate some sample data
-x <- seq(1, 10, 1)
-y <- x + rnorm(10)
+# Get some sample data
+data('faithful')
+faithful
+```
 
+        eruptions waiting
+    1       3.600      79
+    2       1.800      54
+    3       3.333      74
+    4       2.283      62
+    5       4.533      85
+    6       2.883      55
+    7       4.700      88
+    8       3.600      85
+    9       1.950      51
+    10      4.350      85
+    11      1.833      54
+    12      3.917      84
+    13      4.200      78
+    14      1.750      47
+    15      4.700      83
+    16      2.167      52
+    17      1.750      62
+    18      4.800      84
+    19      1.600      52
+    20      4.250      79
+    21      1.800      51
+    22      1.750      47
+    23      3.450      78
+    24      3.067      69
+    25      4.533      74
+    26      3.600      83
+    27      1.967      55
+    28      4.083      76
+    29      3.850      78
+    30      4.433      79
+    31      4.300      73
+    32      4.467      77
+    33      3.367      66
+    34      4.033      80
+    35      3.833      74
+    36      2.017      52
+    37      1.867      48
+    38      4.833      80
+    39      1.833      59
+    40      4.783      90
+    41      4.350      80
+    42      1.883      58
+    43      4.567      84
+    44      1.750      58
+    45      4.533      73
+    46      3.317      83
+    47      3.833      64
+    48      2.100      53
+    49      4.633      82
+    50      2.000      59
+    51      4.800      75
+    52      4.716      90
+    53      1.833      54
+    54      4.833      80
+    55      1.733      54
+    56      4.883      83
+    57      3.717      71
+    58      1.667      64
+    59      4.567      77
+    60      4.317      81
+    61      2.233      59
+    62      4.500      84
+    63      1.750      48
+    64      4.800      82
+    65      1.817      60
+    66      4.400      92
+    67      4.167      78
+    68      4.700      78
+    69      2.067      65
+    70      4.700      73
+    71      4.033      82
+    72      1.967      56
+    73      4.500      79
+    74      4.000      71
+    75      1.983      62
+    76      5.067      76
+    77      2.017      60
+    78      4.567      78
+    79      3.883      76
+    80      3.600      83
+    81      4.133      75
+    82      4.333      82
+    83      4.100      70
+    84      2.633      65
+    85      4.067      73
+    86      4.933      88
+    87      3.950      76
+    88      4.517      80
+    89      2.167      48
+    90      4.000      86
+    91      2.200      60
+    92      4.333      90
+    93      1.867      50
+    94      4.817      78
+    95      1.833      63
+    96      4.300      72
+    97      4.667      84
+    98      3.750      75
+    99      1.867      51
+    100     4.900      82
+    101     2.483      62
+    102     4.367      88
+    103     2.100      49
+    104     4.500      83
+    105     4.050      81
+    106     1.867      47
+    107     4.700      84
+    108     1.783      52
+    109     4.850      86
+    110     3.683      81
+    111     4.733      75
+    112     2.300      59
+    113     4.900      89
+    114     4.417      79
+    115     1.700      59
+    116     4.633      81
+    117     2.317      50
+    118     4.600      85
+    119     1.817      59
+    120     4.417      87
+    121     2.617      53
+    122     4.067      69
+    123     4.250      77
+    124     1.967      56
+    125     4.600      88
+    126     3.767      81
+    127     1.917      45
+    128     4.500      82
+    129     2.267      55
+    130     4.650      90
+    131     1.867      45
+    132     4.167      83
+    133     2.800      56
+    134     4.333      89
+    135     1.833      46
+    136     4.383      82
+    137     1.883      51
+    138     4.933      86
+    139     2.033      53
+    140     3.733      79
+    141     4.233      81
+    142     2.233      60
+    143     4.533      82
+    144     4.817      77
+    145     4.333      76
+    146     1.983      59
+    147     4.633      80
+    148     2.017      49
+    149     5.100      96
+    150     1.800      53
+    151     5.033      77
+    152     4.000      77
+    153     2.400      65
+    154     4.600      81
+    155     3.567      71
+    156     4.000      70
+    157     4.500      81
+    158     4.083      93
+    159     1.800      53
+    160     3.967      89
+    161     2.200      45
+    162     4.150      86
+    163     2.000      58
+    164     3.833      78
+    165     3.500      66
+    166     4.583      76
+    167     2.367      63
+    168     5.000      88
+    169     1.933      52
+    170     4.617      93
+    171     1.917      49
+    172     2.083      57
+    173     4.583      77
+    174     3.333      68
+    175     4.167      81
+    176     4.333      81
+    177     4.500      73
+    178     2.417      50
+    179     4.000      85
+    180     4.167      74
+    181     1.883      55
+    182     4.583      77
+    183     4.250      83
+    184     3.767      83
+    185     2.033      51
+    186     4.433      78
+    187     4.083      84
+    188     1.833      46
+    189     4.417      83
+    190     2.183      55
+    191     4.800      81
+    192     1.833      57
+    193     4.800      76
+    194     4.100      84
+    195     3.966      77
+    196     4.233      81
+    197     3.500      87
+    198     4.366      77
+    199     2.250      51
+    200     4.667      78
+    201     2.100      60
+    202     4.350      82
+    203     4.133      91
+    204     1.867      53
+    205     4.600      78
+    206     1.783      46
+    207     4.367      77
+    208     3.850      84
+    209     1.933      49
+    210     4.500      83
+    211     2.383      71
+    212     4.700      80
+    213     1.867      49
+    214     3.833      75
+    215     3.417      64
+    216     4.233      76
+    217     2.400      53
+    218     4.800      94
+    219     2.000      55
+    220     4.150      76
+    221     1.867      50
+    222     4.267      82
+    223     1.750      54
+    224     4.483      75
+    225     4.000      78
+    226     4.117      79
+    227     4.083      78
+    228     4.267      78
+    229     3.917      70
+    230     4.550      79
+    231     4.083      70
+    232     2.417      54
+    233     4.183      86
+    234     2.217      50
+    235     4.450      90
+    236     1.883      54
+    237     1.850      54
+    238     4.283      77
+    239     3.950      79
+    240     2.333      64
+    241     4.150      75
+    242     2.350      47
+    243     4.933      86
+    244     2.900      63
+    245     4.583      85
+    246     3.833      82
+    247     2.083      57
+    248     4.367      82
+    249     2.133      67
+    250     4.350      74
+    251     2.200      54
+    252     4.450      83
+    253     3.567      73
+    254     4.500      73
+    255     4.150      88
+    256     3.817      80
+    257     3.917      71
+    258     4.450      83
+    259     2.000      56
+    260     4.283      79
+    261     4.767      78
+    262     4.533      84
+    263     1.850      58
+    264     4.250      83
+    265     1.983      43
+    266     2.250      60
+    267     4.750      75
+    268     4.117      81
+    269     2.150      46
+    270     4.417      90
+    271     1.817      46
+    272     4.467      74
+
+``` r
 # Perform linear regression
-model_r <- lm(y ~ x)
+model <- lm(waiting ~ eruptions, data=faithful)
 
 # Print the model summary
-summary(model_r)
+summary(model)
 ```
 
 
     Call:
-    lm(formula = y ~ x)
+    lm(formula = waiting ~ eruptions, data = faithful)
 
     Residuals:
-        Min      1Q  Median      3Q     Max 
-    -0.9902 -0.5704  0.1817  0.4286  0.7938 
+         Min       1Q   Median       3Q      Max 
+    -12.0796  -4.4831   0.2122   3.9246  15.9719 
 
     Coefficients:
                 Estimate Std. Error t value Pr(>|t|)    
-    (Intercept)  0.02457    0.45007   0.055    0.958    
-    x            0.98742    0.07254  13.613 8.16e-07 ***
+    (Intercept)  33.4744     1.1549   28.98   <2e-16 ***
+    eruptions    10.7296     0.3148   34.09   <2e-16 ***
     ---
     Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-    Residual standard error: 0.6588 on 8 degrees of freedom
-    Multiple R-squared:  0.9586,    Adjusted R-squared:  0.9534 
-    F-statistic: 185.3 on 1 and 8 DF,  p-value: 8.157e-07
+    Residual standard error: 5.914 on 270 degrees of freedom
+    Multiple R-squared:  0.8115,    Adjusted R-squared:  0.8108 
+    F-statistic:  1162 on 1 and 270 DF,  p-value: < 2.2e-16
 
 ``` r
 # Plot the data and regression line
-ggplot(data.frame(x, y), aes(x = x, y = y)) +
-  geom_point() +
-  geom_smooth(method = "lm", se = FALSE)
+faithful %>%
+  ggplot(aes(x = eruptions, y = waiting)) +
+  # Training data
+  geom_point(color='blue') +
+  # Linear regression
+  geom_smooth(method = "lm", se = FALSE, color='black') +
+  labs(x = 'Eruption Duration (min.)', y = 'Waiting Time to Next Eruption (min.)')
 ```
 
     `geom_smooth()` using formula = 'y ~ x'
 
-![](bilingualism_files/figure-commonmark/unnamed-chunk-35-5.png)
+![](bilingualism_files/figure-commonmark/unnamed-chunk-47-1.png)
 
 Python code:
 
 ``` python
-# Load the "matplotlib" and "scikit-learn" libraries
-import matplotlib.pyplot as plt
-from sklearn.linear_model import LinearRegression
 
-# Generate some sample data
-import numpy as np
-x = np.arange(1, 11)
-y = x + np.random.normal(0, 1, 10)
+import matplotlib.pyplot as plt
+import seaborn as sns
+import statsmodels.formula.api as smf
+
+faithful_df = sns.load_dataset('geyser')
 
 # Perform linear regression
-model_py = LinearRegression().fit(x.reshape(-1, 1), y)
+model = smf.ols('waiting ~ duration', data=faithful_df).fit()
 
-# Print the model coefficients
-print("Coefficients: ", model_py.coef_)
+# Print the model summary
+print(model.summary())
+
+# Plot the data with a regression line
 ```
 
-    Coefficients:  [0.98507314]
+                                OLS Regression Results                            
+    ==============================================================================
+    Dep. Variable:                waiting   R-squared:                       0.811
+    Model:                            OLS   Adj. R-squared:                  0.811
+    Method:                 Least Squares   F-statistic:                     1162.
+    Date:                Thu, 11 May 2023   Prob (F-statistic):          8.13e-100
+    Time:                        11:27:24   Log-Likelihood:                -868.38
+    No. Observations:                 272   AIC:                             1741.
+    Df Residuals:                     270   BIC:                             1748.
+    Df Model:                           1                                         
+    Covariance Type:            nonrobust                                         
+    ==============================================================================
+                     coef    std err          t      P>|t|      [0.025      0.975]
+    ------------------------------------------------------------------------------
+    Intercept     33.4744      1.155     28.985      0.000      31.201      35.748
+    duration      10.7296      0.315     34.089      0.000      10.110      11.349
+    ==============================================================================
+    Omnibus:                        5.492   Durbin-Watson:                   2.543
+    Prob(Omnibus):                  0.064   Jarque-Bera (JB):                4.683
+    Skew:                           0.237   Prob(JB):                       0.0962
+    Kurtosis:                       2.567   Cond. No.                         12.6
+    ==============================================================================
+
+    Notes:
+    [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
 
 ``` python
-print("Intercept: ", model_py.intercept_)
-
-#clear last plot
+(
+    so.Plot(faithful_df, x='duration', y='waiting')
+    # Training data
+    .add(so.Dots())
+    # Linear regression
+    .add(so.Line(color='black'), so.PolyFit(order=1))
+    .label(x = 'Eruption Duration (min.)', y = 'Waiting Time to Next Eruption (min.)')
+    .show()
+)
 ```
 
-    Intercept:  0.10538584341896495
+    /Users/elsa/opt/miniconda3/envs/earth-analytics-python/lib/python3.8/_collections_abc.py:832: MatplotlibDeprecationWarning: 
+    The savefig.jpeg_quality rcparam was deprecated in Matplotlib 3.3 and will be removed two minor releases later.
+    /Users/elsa/opt/miniconda3/envs/earth-analytics-python/lib/python3.8/_collections_abc.py:832: MatplotlibDeprecationWarning: 
+    The savefig.jpeg_quality rcparam was deprecated in Matplotlib 3.3 and will be removed two minor releases later.
 
-``` python
-plt.clf()
-
-# Plot the data and regression line
-plt.scatter(x, y)
-plt.plot(x, model_py.predict(x.reshape(-1, 1)), color='red')
-plt.show()
-```
-
-![](bilingualism_files/figure-commonmark/unnamed-chunk-36-1.png)
+![](bilingualism_files/figure-commonmark/unnamed-chunk-48-1.png)
 
 In both cases, we generate some sample data with a linear relationship
 between x and y, and then perform a simple linear regression to estimate
@@ -954,17 +1517,9 @@ regression line to visualize the fit.
 There are a few differences in the syntax and functionality between the
 two approaches:
 
-Library and package names: In R, we use the lm() function from the base
-package to perform linear regression, while in Python, we use the
-LinearRegression() class from the scikit-learn library. Additionally, we
-use the ggplot2 package in R for plotting, while we use the matplotlib
-library in Python. Data format: In R, we can specify the dependent and
-independent variables in the formula used for regression. In Python, we
-need to reshape the input data to a two-dimensional array before fitting
-the model. Model summary: In R, we can use the summary() function to
-print a summary of the model, including the estimated coefficients,
-standard errors, and p-values. In Python, we need to print the
-coefficients and intercept separately.
+- Library and package names: In R, we use the `lm()` function from the
+  `base` package to perform linear regression, while in Python, we use
+  the `olm()` function from the `statsmodels` library.
 
 ## Random Forest
 
@@ -999,9 +1554,6 @@ print(paste("Accuracy:", accuracy))
 Python code:
 
 ``` python
-# Load the "pandas", "numpy", and "sklearn" libraries
-import pandas as pd
-import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
@@ -1010,7 +1562,8 @@ from sklearn.model_selection import train_test_split
 iris = load_iris()
 
 # Split the data into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(iris.data, iris.target, test_size=0.3, random_state=123)
+X_train, X_test, y_train, y_test = train_test_split(
+    iris.data, iris.target, test_size=0.3, random_state=123)
 
 # Build a random forest model
 rf_model = RandomForestClassifier(n_estimators=500, random_state=123)
@@ -1038,16 +1591,16 @@ data and evaluate its accuracy on the testing data.
 There are a few differences in the syntax and functionality between the
 two approaches:
 
-Library and package names: In R, we use the randomForest package to
-build random forest models, while in Python, we use the
-RandomForestClassifier class from the sklearn.ensemble module. We also
-use different libraries for loading and manipulating data (pandas and
-numpy in Python, and built-in datasets in R). Model parameters: The
-syntax for setting model parameters is slightly different in R and
-Python. For example, in R, we specify the number of trees using the
-ntree parameter, while in Python, we use the n_estimators parameter.
-Data format: In R, we use a data frame to store the input data, while in
-Python, we use numpy arrays.
+- Library and package names: In R, we use the randomForest package to
+  build random forest models, while in Python, we use the
+  RandomForestClassifier class from the sklearn.ensemble module. We also
+  use different libraries for loading and manipulating data (pandas and
+  numpy in Python, and built-in datasets in R). Model parameters: The
+  syntax for setting model parameters is slightly different in R and
+  Python. For example, in R, we specify the number of trees using the
+  ntree parameter, while in Python, we use the n_estimators parameter.
+  Data format: In R, we use a data frame to store the input data, while
+  in Python, we use numpy arrays.
 
 ## Basic streetmap from Open Street Map
 
@@ -1071,7 +1624,7 @@ tm_shape(osm_data$osm_lines) +
   tm_lines()
 ```
 
-![](bilingualism_files/figure-commonmark/unnamed-chunk-39-1.png)
+![](bilingualism_files/figure-commonmark/unnamed-chunk-51-1.png)
 
 Python code:
 
@@ -1091,7 +1644,7 @@ ox.plot_graph(osm_data)
 
     (<Figure size 800x800 with 0 Axes>, <AxesSubplot:>)
 
-![](bilingualism_files/figure-commonmark/unnamed-chunk-40-1.png)
+![](bilingualism_files/figure-commonmark/unnamed-chunk-52-1.png)
 
 In both cases, we define the map location and zoom level, retrieve the
 OpenStreetMap data using the specified bounding box, and plot the map.
@@ -1150,134 +1703,6 @@ model %>% evaluate(x = array(test_data), y = to_categorical(1:nlayers(test_data)
 # Plot the model accuracy over time
 plot(history)
 ```
-
-## Piping
-
-Piping is a powerful feature in both R and Python that allows for a more
-streamlined and readable code. However, the syntax for piping is
-slightly different between the two languages.
-
-In R, piping is done using the %\>% operator from the magrittr package,
-while in Python, it is done using the \| operator from the pandas
-package.
-
-Let’s compare and contrast piping in R and Python with some examples:
-
-Piping in R In R, we can use the %\>% operator to pipe output from one
-function to another, which can make our code more readable and easier to
-follow. Here’s an example:
-
-R code:
-
-``` r
-library(dplyr)
-
-# create a data frame
-df <- data.frame(x = c(1,2,3), y = c(4,5,6))
-
-# calculate the sum of column x and y
-df %>%
-  mutate(z = x + y) %>%
-  summarize(sum_z = sum(z))
-```
-
-      sum_z
-    1    21
-
-In this example, we first create a data frame df with two columns x and
-
-y\. We then pipe the output of df to mutate, which adds a new column z
-to the data frame that is the sum of x and y. Finally, we pipe the
-output to summarize, which calculates the sum of z and returns the
-result.
-
-Piping in Python In Python, we can use the \| operator to pipe output
-from one function to another. However, instead of piping output from one
-function to another, we pipe a DataFrame to a method of the DataFrame.
-Here’s an example:
-
-Python code:
-
-``` python
-import pandas as pd
-
-# create a DataFrame
-df = pd.DataFrame({'x': [1,2,3], 'y': [4,5,6]})
-
-# calculate the sum of column x and y
-(df.assign(z = df['x'] + df['y'])
-   .agg(sum_z = ('z', 'sum')))
-```
-
-            z
-    sum_z  21
-
-In this example, we first create a DataFrame df with two columns x and
-
-y\. We then use the assign() method to add a new column z to the
-DataFrame that is the sum of x and y. Finally, we use the agg() method
-to calculate the sum of z and return the result.
-
-As we can see, the syntax for piping is slightly different between R and
-Python, but the concept remains the same. Piping can make our code more
-readable and easier to follow, which is an important aspect of creating
-efficient and effective code.
-
-R code:
-
-``` r
-library(dplyr)
-library(ggplot2)
-
-iris %>%
-  filter(Species == "setosa") %>%
-  group_by(Sepal.Width) %>%
-  summarise(mean.Petal.Length = mean(Petal.Length)) %>%
-  mutate(Sepal.Width = as.factor(Sepal.Width)) %>%
-  ggplot(aes(x = Sepal.Width, y = mean.Petal.Length)) +
-  geom_bar(stat = "identity", fill = "dodgerblue") +
-  labs(title = "Mean Petal Length of Setosa by Sepal Width",
-       x = "Sepal Width",
-       y = "Mean Petal Length")
-```
-
-![](bilingualism_files/figure-commonmark/unnamed-chunk-45-1.png)
-
-In this example, we start with the iris dataset and filter it to only
-include rows where the Species column is “setosa”. We then group the
-remaining rows by the Sepal.Width column and calculate the mean
-Petal.Length for each group. Next, we convert Sepal.Width to a factor
-variable to ensure that it is treated as a categorical variable in the
-visualization. Finally, we create a bar plot using ggplot2, with
-Sepal.Width on the x-axis and mean.Petal.Length on the y-axis. The
-resulting plot shows the mean petal length of setosa flowers for each
-sepal width category.
-
-Python code:
-
-``` python
-import pandas as pd
-
-# Load the iris dataset and pipe it into the next function
-( pd.read_csv("https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data", header=None, names=['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'class'])
-  
-  # Select columns and pivot the dataset
-  .loc[:, ['sepal_length', 'sepal_width', 'petal_length']]
-  .melt(var_name='variable', value_name='value')
-  
-  # Group by variable and calculate mean
-  .groupby('variable', as_index=False)
-  .mean()
-  
-  # Filter for mean greater than 3.5 and sort by descending mean
-  .query('value > 3.5')
-  .sort_values('value', ascending=False)
-)
-```
-
-           variable     value
-    1  sepal_length  5.843333
-    0  petal_length  3.758667
 
 ## for loops
 
@@ -1563,6 +1988,39 @@ Data Wrangling in Python Pandas
 Pandas is a popular library for data manipulation in Python. It provides
 a data frame object similar to R’s data frames, along with a wide range
 of functions for data wrangling.
+
+# Load the iris dataset and pipe it into the next function
+
+``` python
+( 
+    pd.read_csv(
+        ("https://archive.ics.uci.edu/ml/machine-learning-databases/"
+         "iris/iris.data"),
+        header=None, 
+        names=[
+            'sepal_length', 
+            'sepal_width', 
+            'petal_length', 
+            'petal_width', 
+            'class'])
+  
+  # Select columns and pivot the dataset
+  .loc[:, ['sepal_length', 'sepal_width', 'petal_length']]
+  .melt(var_name='variable', value_name='value')
+  
+  # Group by variable and calculate mean
+  .groupby('variable', as_index=False)
+  .mean()
+  
+  # Filter for mean greater than 3.5 and sort by descending mean
+  .query('value > 3.5')
+  .sort_values('value', ascending=False)
+)
+```
+
+           variable     value
+    1  sepal_length  5.843333
+    0  petal_length  3.758667
 
 Here is an example of using pandas to filter, transform, and group a
 data frame:
@@ -2283,7 +2741,7 @@ grade_counts <- philly_geojson %>%
 plot(grade_counts)
 ```
 
-![](bilingualism_files/figure-commonmark/unnamed-chunk-75-1.png)
+![](bilingualism_files/figure-commonmark/unnamed-chunk-84-1.png)
 
 Python: In Python, we’ll use the ‘geopandas’ library to read and process
 the GeoJSON data.
@@ -2456,7 +2914,7 @@ plot(indian_lands)
     Warning: plotting the first 9 out of 23 attributes; use max.plot = 23 to plot
     all
 
-![](bilingualism_files/figure-commonmark/unnamed-chunk-79-1.png)
+![](bilingualism_files/figure-commonmark/unnamed-chunk-88-1.png)
 
 Python: In Python, we’ll use the ‘geopandas’ and ‘pandas’ libraries to
 read the Shapefile and process the data.
