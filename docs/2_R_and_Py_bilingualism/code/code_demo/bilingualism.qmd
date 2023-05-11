@@ -38,6 +38,8 @@ statistical analysis capabilities, or an R user interested in exploring
 the world of web development and artificial intelligence, this guide
 will help you become bilingual in R and Python.
 
+## How to get help
+
 ## Packages: No need to write it from scratch
 
 One thing Python and R have in common is they are extendable using
@@ -56,7 +58,6 @@ R code:
 ```{r, eval=FALSE, cache=TRUE}
 # Install the dplyr package from CRAN
 install.packages("dplyr")
-
 ```
 
 Installing Python packages can be trickier than installing R packages.
@@ -489,7 +490,7 @@ import shutil
 
 project_data_dir = os.path.join('..', '..', 'data')
 data_dir = os.path.join(pathlib.Path.home(), 'esiil-summit', 'r_and_py')
-shutil.move(project_data_dir, data_dir, )
+shutil.move(project_data_dir, data_dir)
 ```
 
 > Note that Python will not replace an existing directory, so you mush
@@ -535,7 +536,7 @@ data_dir <- file.path(path.expand('~'), 'esiil-summit', 'r_and_py')
 
 # Write iris data to CSV
 iris_r_csv_path = file.path(data_dir, "iris_r.csv")
-write_csv(iris, file=penguins_r_csv_path)
+write_csv(iris, file=iris_r_csv_path)
 ```
 
 ```{python}
@@ -569,9 +570,11 @@ penguins_df
 ```
 
 ```{python}
+import os
+
 import pandas as pd
 
-penguins_csv_path = file.path(data_dir, "penguins.csv")
+penguins_csv_path = os.path.join(data_dir, "penguins.csv")
 
 penguins_df = pd.read_csv(penguins_csv_path)
 penguins_df
@@ -681,16 +684,20 @@ Python seaborn.objects code:
 >
 >     <seaborn._core.plot.Plot object at 0x7f81493e4070>
 
-```{python, fig.width=6}
+```{python}
+from plotnine import ggplot, aes, geom_point, labs, theme, ggtitle
+
 # Plot the penguin data
 (
-    ggplot(penguins_df, aes(x = 'bill_length_mm', y = 'body_mass_g', color='species')) +
+    ggplot(penguins_df, aes(x = 'bill_length_mm', y = 'body_mass_g', color='species'))
     # Create a scatter plot of the data
-    geom_point() +
+    + geom_point()
+    # For some reason the legend gets cut off
+    + theme(subplots_adjust={'right': 0.8})
     # Label the plot
-    labs(x = 'Bill Length (mm)', y = 'Body Mass (g)', color = 'Species') +
+    + labs(x = 'Bill Length (mm)', y = 'Body Mass (g)', color = 'Species')
     # Add a title
-    ggtitle('Penguin Characteristics by Species')
+    + ggtitle('Penguin Characteristics by Species')
 )
 ```
 
@@ -704,9 +711,9 @@ Python seaborn.objects code:
 > You also must surround the code for plotting with parentheses to get
 > the `+` syntax for layers to work in Python.
 >
-> Finally, we had some display problems in RStudio and had to set the
-> figure size to see the legend. This shouldn't be a problem in a
-> different code editor like Jupyter Notebook.
+> Finally, we had some display problems had to adjust the plot theme to
+> see the legend. This may have to do with the interactive coding
+> environment
 
 In both cases, we generate some sample data and create a scatter plot to
 visualize the relationship between the variables.
@@ -733,6 +740,174 @@ Some notes on plotting packages:
     options are: `plotly`, `leaflet` (R) or `folium` (Python), and
     `bokeh`.
 
+## Piping and Chaining
+
+Piping is a powerful feature in R that allows for a more streamlined and
+readable code. In Python, you can code in a similar style using a
+process called method chaining.
+
+GOTCHA ALERT: As the name implies, to use method chaining you need to be
+using a method of the object you're working with. There is a .pipe()
+method of pd.DataFrames that that allows you to use method chaining with
+functions that you wrote or imported.
+
+GOTCHA ALERT: Though code pipelines can be easier to read, they can be
+harder to debug. If you get an error in an R pipeline, you may not get
+the information you need about where that error occurred. You can avoid
+problems by testing your pipelines one line at a time.
+
+The syntax for piping is different from method chaining. In R, piping is
+done using the %>% operator from the magrittr package. In Python, method
+chaining is done by applying methods to the results of previous methods,
+using that dot . again, making sure to surround the whole statement with
+parentheses so you can format it nicely. Both of these operators have
+the effect of taking whatever object is before them (on the left) and
+making it the first argument in the next function/method.
+
+R code without pipes:
+
+```{r, cache=TRUE}
+library(dplyr)
+
+# Create a data frame
+df <- data.frame(x = c(1,2,3), y = c(4,5,6))
+
+# Calculate the sum of x and y and the take the sum of the new column z
+summarize(mutate(df, z = x + y), sum_z = sum(z))
+```
+
+R code with piping:
+
+```{r, cache=TRUE}
+library(dplyr)
+
+# Create a data frame
+df <- data.frame(x = c(1,2,3), y = c(4,5,6))
+
+
+df %>%
+  # Calculate the vector sum of column x and y
+  mutate(z = x + y) %>%
+  # Calculate the sum of the new column z
+  summarize(sum_z = sum(z))
+```
+
+Python code without chaining:
+
+```{python, cache=TRUE}
+import pandas as pd
+
+# create a DataFrame
+df = pd.DataFrame({'x': [1,2,3], 'y': [4,5,6]})
+
+# Calculate the sum of column x and y
+df_with_sum = df.assign(z = df.x + df.y)
+
+# Calculate the sum of the new column z
+df_with_sum.agg(sum_z = ('z', 'sum'))
+```
+
+Python code with chaining:
+
+```{python, cache=TRUE}
+import pandas as pd
+
+# Create a DataFrame
+df = pd.DataFrame({'x': [1,2,3], 'y': [4,5,6]})
+
+(
+    df
+    # Calculate the sum of column x and y
+    .assign(z = df.x + df.y)
+    # Calculate the sum o the new column z
+    .agg(sum_z = ('z', 'sum'))
+)
+```
+
+As we can see, the syntax for piping is slightly different between R and
+Python, but the concept remains the same. Piping can make our code more
+readable and easier to follow, which is an important aspect of creating
+efficient and effective code. It avoids obtuse many-layer nested
+functions and also keeping lots of intermediate processing steps in
+memory as variables.
+
+#### Try it yourself! 
+
+Below are two hidden cells with R and Python code to do the following
+analysis:
+
+1.  Start with the iris dataset
+2.  Filter it to only include rows where the Species column is "setosa"
+3.  Group the remaining rows by the Sepal.Width column
+4.  Calculate the mean Petal.Length for each group
+5.  Convert Sepal.Width to a factor variable to ensure that it is
+    treated as a categorical variable in the visualization.
+6.  Finally, we create a bar plot, with Sepal.Width on the x-axis and
+    mean.Petal.Length on the y-axis. The resulting plot shows the mean
+    petal length of setosa flowers for each sepal width category.
+
+We challenge you to pick the coding language you are least familiar with
+and try writing the workflow above. If you need help, you can look at
+the code in the more familiar language, or check out our version in the
+less familiar.
+
+R code:
+
+```{r, cache=TRUE}
+#| code-fold: true
+#| code-summary: "Show the R code"
+library(dplyr)
+library(ggplot2)
+
+data(iris)
+
+iris %>%
+  filter(Species == "setosa") %>%
+  group_by(Sepal.Width) %>%
+  summarise(mean.Petal.Length = mean(Petal.Length)) %>%
+  mutate(Sepal.Width = as.factor(Sepal.Width)) %>%
+  ggplot(aes(x = Sepal.Width, y = mean.Petal.Length)) +
+  geom_bar(stat = "identity", fill = "dodgerblue") +
+  labs(title = "Mean Petal Length of Setosa by Sepal Width",
+       x = "Sepal Width",
+       y = "Mean Petal Length")
+```
+
+Python code:
+
+```{python}
+#| code-fold: true
+#| code-summary: "Show the Python code"
+import matplotlib.pyplot as plt
+import pandas as pd
+import seaborn as sns
+
+iris_df = sns.load_dataset('iris')
+
+(
+    iris_df
+    [iris_df.species=='setosa']
+    .groupby('sepal_width')
+    .agg(mean_petal_length=('petal_length', 'mean'))
+    .plot.bar(
+        title='Mean Petal Length of Petals by Sepal Width',
+        xlabel='Sepal Width',
+        y='mean_petal_length', ylabel='Mean Petal Length',
+        legend=False)
+)
+plt.show()
+```
+
+Your code:
+
+```{r}
+
+```
+
+```{python}
+
+```
+
 ## Linear regression
 
 R Code:
@@ -753,12 +928,12 @@ summary(model)
 
 # Plot the data and regression line
 faithful %>%
-  mutate(lm_predict=predict(model, eruptions))
-  # ggplot() +
-  # geom_point(aes(x = eruptions, y = waiting)) +
-  # geom_smooth(method = "lm", se = FALSE, size=5, color='grey') +
-  # geom_point(aes(x = eruptions, y = lm_predict), color='black')
-  # labs(x = 'Eruption Duration (min.)', y = 'Waiting Time to Next Eruption (min.)')
+  ggplot(aes(x = eruptions, y = waiting)) +
+  # Training data
+  geom_point(color='blue') +
+  # Linear regression
+  geom_smooth(method = "lm", se = FALSE, color='black') +
+  labs(x = 'Eruption Duration (min.)', y = 'Waiting Time to Next Eruption (min.)')
 ```
 
 Python code:
@@ -780,7 +955,9 @@ print(model.summary())
 # Plot the data with a regression line
 (
     so.Plot(faithful_df, x='duration', y='waiting')
+    # Training data
     .add(so.Dots())
+    # Linear regression
     .add(so.Line(color='black'), so.PolyFit(order=1))
     .label(x = 'Eruption Duration (min.)', y = 'Waiting Time to Next Eruption (min.)')
     .show()
@@ -796,8 +973,8 @@ There are a few differences in the syntax and functionality between the
 two approaches:
 
 -   Library and package names: In R, we use the `lm()` function from the
-    base package to perform linear regression, while in Python, we use
-    the `olm()` function from the statsmodels library.
+    `base` package to perform linear regression, while in Python, we use
+    the `olm()` function from the `statsmodels` library.
 
 ## Random Forest
 
@@ -830,9 +1007,6 @@ print(paste("Accuracy:", accuracy))
 Python code:
 
 ```{python, cache=TRUE}
-# Load the "pandas", "numpy", and "sklearn" libraries
-import pandas as pd
-import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
@@ -841,7 +1015,8 @@ from sklearn.model_selection import train_test_split
 iris = load_iris()
 
 # Split the data into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(iris.data, iris.target, test_size=0.3, random_state=123)
+X_train, X_test, y_train, y_test = train_test_split(
+    iris.data, iris.target, test_size=0.3, random_state=123)
 
 # Build a random forest model
 rf_model = RandomForestClassifier(n_estimators=500, random_state=123)
@@ -862,16 +1037,16 @@ data and evaluate its accuracy on the testing data.
 There are a few differences in the syntax and functionality between the
 two approaches:
 
-Library and package names: In R, we use the randomForest package to
-build random forest models, while in Python, we use the
-RandomForestClassifier class from the sklearn.ensemble module. We also
-use different libraries for loading and manipulating data (pandas and
-numpy in Python, and built-in datasets in R). Model parameters: The
-syntax for setting model parameters is slightly different in R and
-Python. For example, in R, we specify the number of trees using the
-ntree parameter, while in Python, we use the n_estimators parameter.
-Data format: In R, we use a data frame to store the input data, while in
-Python, we use numpy arrays.
+-   Library and package names: In R, we use the randomForest package to
+    build random forest models, while in Python, we use the
+    RandomForestClassifier class from the sklearn.ensemble module. We
+    also use different libraries for loading and manipulating data
+    (pandas and numpy in Python, and built-in datasets in R). Model
+    parameters: The syntax for setting model parameters is slightly
+    different in R and Python. For example, in R, we specify the number
+    of trees using the ntree parameter, while in Python, we use the
+    n_estimators parameter. Data format: In R, we use a data frame to
+    store the input data, while in Python, we use numpy arrays.
 
 ## Basic streetmap from Open Street Map
 
@@ -971,122 +1146,6 @@ plot(history)
 
 ```{python, cache=TRUE}
 
-```
-
-## Piping
-
-Piping is a powerful feature in both R and Python that allows for a more
-streamlined and readable code. However, the syntax for piping is
-slightly different between the two languages.
-
-In R, piping is done using the %>% operator from the magrittr package,
-while in Python, it is done using the \| operator from the pandas
-package.
-
-Let's compare and contrast piping in R and Python with some examples:
-
-Piping in R In R, we can use the %>% operator to pipe output from one
-function to another, which can make our code more readable and easier to
-follow. Here's an example:
-
-R code:
-
-```{r, cache=TRUE}
-library(dplyr)
-
-# create a data frame
-df <- data.frame(x = c(1,2,3), y = c(4,5,6))
-
-# calculate the sum of column x and y
-df %>%
-  mutate(z = x + y) %>%
-  summarize(sum_z = sum(z))
-```
-
-In this example, we first create a data frame df with two columns x and
-
-y\. We then pipe the output of df to mutate, which adds a new column z
-to the data frame that is the sum of x and y. Finally, we pipe the
-output to summarize, which calculates the sum of z and returns the
-result.
-
-Piping in Python In Python, we can use the \| operator to pipe output
-from one function to another. However, instead of piping output from one
-function to another, we pipe a DataFrame to a method of the DataFrame.
-Here's an example:
-
-Python code:
-
-```{python, cache=TRUE}
-import pandas as pd
-
-# create a DataFrame
-df = pd.DataFrame({'x': [1,2,3], 'y': [4,5,6]})
-
-# calculate the sum of column x and y
-(df.assign(z = df['x'] + df['y'])
-   .agg(sum_z = ('z', 'sum')))
-```
-
-In this example, we first create a DataFrame df with two columns x and
-
-y\. We then use the assign() method to add a new column z to the
-DataFrame that is the sum of x and y. Finally, we use the agg() method
-to calculate the sum of z and return the result.
-
-As we can see, the syntax for piping is slightly different between R and
-Python, but the concept remains the same. Piping can make our code more
-readable and easier to follow, which is an important aspect of creating
-efficient and effective code.
-
-R code:
-
-```{r, cache=TRUE}
-library(dplyr)
-library(ggplot2)
-
-iris %>%
-  filter(Species == "setosa") %>%
-  group_by(Sepal.Width) %>%
-  summarise(mean.Petal.Length = mean(Petal.Length)) %>%
-  mutate(Sepal.Width = as.factor(Sepal.Width)) %>%
-  ggplot(aes(x = Sepal.Width, y = mean.Petal.Length)) +
-  geom_bar(stat = "identity", fill = "dodgerblue") +
-  labs(title = "Mean Petal Length of Setosa by Sepal Width",
-       x = "Sepal Width",
-       y = "Mean Petal Length")
-```
-
-In this example, we start with the iris dataset and filter it to only
-include rows where the Species column is "setosa". We then group the
-remaining rows by the Sepal.Width column and calculate the mean
-Petal.Length for each group. Next, we convert Sepal.Width to a factor
-variable to ensure that it is treated as a categorical variable in the
-visualization. Finally, we create a bar plot using ggplot2, with
-Sepal.Width on the x-axis and mean.Petal.Length on the y-axis. The
-resulting plot shows the mean petal length of setosa flowers for each
-sepal width category.
-
-Python code:
-
-```{python, cache=TRUE}
-import pandas as pd
-
-# Load the iris dataset and pipe it into the next function
-( pd.read_csv("https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data", header=None, names=['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'class'])
-  
-  # Select columns and pivot the dataset
-  .loc[:, ['sepal_length', 'sepal_width', 'petal_length']]
-  .melt(var_name='variable', value_name='value')
-  
-  # Group by variable and calculate mean
-  .groupby('variable', as_index=False)
-  .mean()
-  
-  # Filter for mean greater than 3.5 and sort by descending mean
-  .query('value > 3.5')
-  .sort_values('value', ascending=False)
-)
 ```
 
 ## for loops
@@ -1350,6 +1409,35 @@ Data Wrangling in Python Pandas
 Pandas is a popular library for data manipulation in Python. It provides
 a data frame object similar to R's data frames, along with a wide range
 of functions for data wrangling.
+
+# Load the iris dataset and pipe it into the next function
+
+```{python}
+( 
+    pd.read_csv(
+        ("https://archive.ics.uci.edu/ml/machine-learning-databases/"
+         "iris/iris.data"),
+        header=None, 
+        names=[
+            'sepal_length', 
+            'sepal_width', 
+            'petal_length', 
+            'petal_width', 
+            'class'])
+  
+  # Select columns and pivot the dataset
+  .loc[:, ['sepal_length', 'sepal_width', 'petal_length']]
+  .melt(var_name='variable', value_name='value')
+  
+  # Group by variable and calculate mean
+  .groupby('variable', as_index=False)
+  .mean()
+  
+  # Filter for mean greater than 3.5 and sort by descending mean
+  .query('value > 3.5')
+  .sort_values('value', ascending=False)
+)
+```
 
 Here is an example of using pandas to filter, transform, and group a
 data frame:
