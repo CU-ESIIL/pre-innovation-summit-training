@@ -17,10 +17,10 @@ Each session will run from **12pm - 2pm Mountain Daylight Time** and will meet _
 > * **Instructors:** Culler, Know Innovation Team, Swetnam & CyVerse Team, Tuff, Verleye
 >   * Team introductions
 >   * Navigating KIStorm (Know Innovation Team) ⚡
->   * <a href="https://github.com/" target="_blank">**GitHub**</a> for Collaboration (Culler, Tuff, Verleye) 🤝
 >   * Navigating the Constellation of Cyberinfrastructure (Swetnam & CyVerse Team, Tuff, Verleye)
 >     * <a href="https://de.cyverse.org/" target="_blank">**CyVerse Discovery Environment**</a> ✨
 >     * <a href="https://jetstream-cloud.org/" target="_blank">**JetStream2**</a> 🚀
+>   * <a href="https://github.com/" target="_blank">**GitHub**</a> for Collaboration (Culler, Tuff, Verleye) 🤝
 
 
 ## Day 2 (Thursday May, 18)
@@ -32,7 +32,7 @@ Each session will run from **12pm - 2pm Mountain Daylight Time** and will meet _
 > ### ***Tools for Keeping Your Science Open and Reproducible*** 
 > (borrowed from the <a href="https://foss.cyverse.org/" target="_blank">***CyVerse Foundational Open Science Skills 2023***</a> open online course)
 > 
-> * **Instructors:** Culler, Swetnam & CyVerse Team, Tuff
+> * **Instructors:** Swetnam & CyVerse Team
 >     * <a href="https://foss.cyverse.org/01_intro_open_sci/" target="_blank">**Introduction to Open Science**</a>
 >     * <a href="https://foss.cyverse.org/04_documentation_communication/" target="_blank">**Documentation & Communication**</a>
 >     * <a href="https://foss.cyverse.org/06_reproducibility_i/" target="_blank">**Repeatability and Reproducibility**</a>
