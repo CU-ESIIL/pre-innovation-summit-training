@@ -126,8 +126,8 @@ From now on, make sure to choose the SSH URI instead of the HTTPS URI when cloni
 
 ### Step 5: Using the JupyterHub GitHub widget
 
-You can now navigate through the cloned
-repository, make changes, and use the GitHub widget to stage, commit,
+You can now navigate through cloned
+repositories, make changes, and use the GitHub widget to stage, commit,
 and push your changes back to the remote repository.
 
 To create and manage branches, use the branch icon in the GitHub widget.
