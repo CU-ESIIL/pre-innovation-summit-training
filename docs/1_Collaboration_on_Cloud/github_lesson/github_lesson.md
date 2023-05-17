@@ -103,14 +103,30 @@ command to install the JupyterLab Git extension:
 
 Restart the Jupyter Notebook server for the changes to take effect.
 
-### Step 4: Using the JupyterHub GitHub widget
+### Step 4: Create a new ssh keypair and add it your GitHub Account
+
+In order to authenticate to GitHub so that you can perform write operations like pushes, you must first create a private / public keypair.
+To do so, you will first need to make a clone of the innovation-summit-utils repository. The URL for this repository is https://github.com/CU-ESIIL/innovation-summit-utils.git 
 
 In the Jupyter Notebook interface, you should now see a Git icon on the
 left sidebar. Click on it to open the GitHub widget.
 
 To clone a repository, click on the “+” icon in the GitHub widget and
 enter the repository URL. This will clone the repository into your
-JupyterHub workspace. You can now navigate through the cloned
+JupyterHub workspace. 
+
+Once the repository is cloned, navigate inside it and click on the configure_github_ssh.ipynb file to open it. Once it is open,
+execute the first cell of notebook. It will first prompt you for your GitHub username and email. The cell should output some text, the last line of which is your ssh keypair public key.
+It will look something like: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP7qv33+PZN/8uu+0rMRx2/YzQXMRHsWBKayUa6UOISJ jovyan@c0a330638f25  
+Go ahead and copy this last line now. 
+
+Next, log on to your GitHub and go to your account settings. In the menu on the left side, under 'Access' you should see a "SSH and GPG keys" option, select this. From there, click the green "New SSH key" button. Give your key a title and then paste the output that you copied earlier in to the "Key" box. Click "Add SSH key" to finish adding the key. 
+
+From now on, make sure to choose the SSH URI instead of the HTTPS URI when cloning repositories from GitHub. You will now be able to push to repositories that you have write access to from the JupyterHub.
+
+### Step 5: Using the JupyterHub GitHub widget
+
+You can now navigate through the cloned
 repository, make changes, and use the GitHub widget to stage, commit,
 and push your changes back to the remote repository.
 

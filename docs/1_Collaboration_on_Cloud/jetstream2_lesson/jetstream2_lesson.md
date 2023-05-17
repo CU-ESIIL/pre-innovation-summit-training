@@ -22,7 +22,7 @@ JupyterHub is deployed on Jetstream2 resources using CyVerse's Cloud Automation 
 A cluster consists of main node and at least one worker node. The main node is responsible for orchestrating the deployment on the cluster. When a user logs in, for example, the main node assigns them to a worker node based on the minimum computing resources required for each user.  
 
 
-### III. Using JupyterHub
+## III. Using JupyterHub
 
 ### A. Logging In
 To log in to the JupyterHub, open your web browser and go to innovation-summit-training.esiil.org. Once there, you should see a login page asking for your username and password. Your username can be found on your KI Storm page, as mentioned in the KI Storm session. The password is "password".
