@@ -41,7 +41,7 @@ Each session will run from **12pm - 2pm Mountain Daylight Time** and will meet _
 
 ## Links
 
-**Hack Pad:** <a href="https://hackmd.io/9c99iR4bS12Dqtt-8aDGCA?both" target="_blank">**https://hackmd.io/**</a>
+**Hack Pad:** <a href="https://hackmd.io/@cyverse-foss/SJV9X6WHh/edit" target="_blank">**https://hackmd.io/**</a>
 
 **GitHub repository:** <a href="https://github.com/CU-ESIIL/pre-innovation-summit-training" target="_blank">**https://github.com/CU-ESIIL/pre-innovation-summit-training**</a>
 
