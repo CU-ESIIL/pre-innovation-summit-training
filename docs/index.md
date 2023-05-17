@@ -87,7 +87,8 @@ Each session will run from **12pm - 2pm Mountain Daylight Time** and will meet _
 ![malachi](https://knowinnovation.com/wp-content/uploads/2020/07/Malachi-Square.jpg){width=100}
 
 **Malachi Greaves**
-*
+
+* Know Innovation
 * <a href="https://knowinnovation.com/our-team/" target="_blank">**Website**</a>
 
 ***
