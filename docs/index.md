@@ -15,7 +15,7 @@ Each session will run from **12pm - 2pm Mountain Daylight Time** and will meet _
 ## Day 1 (Wednesday May, 17)
 > ### ***Collaborating with Other People Using Cloud Computing***
 > * **Instructors:** Culler, Know Innovation Team, Swetnam & CyVerse Team, Tuff, Verleye
->   * Team introductions
+>   * Welcome!
 >   * Navigating KIStorm (Know Innovation Team) ⚡
 >   * Navigating the Constellation of Cyberinfrastructure (Swetnam & CyVerse Team, Tuff, Verleye)
 >     * <a href="https://de.cyverse.org/" target="_blank">**CyVerse Discovery Environment**</a> ✨
