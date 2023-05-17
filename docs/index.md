@@ -14,9 +14,9 @@ Each session will run from **12pm - 2pm Mountain Daylight Time** and will meet _
 
 ## Day 1 (Wednesday May, 17)
 > ### ***Collaborating with Other People Using Cloud Computing***
-> * **Instructors:** Culler, Know Innovation Team, Swetnam & CyVerse Team, Tuff, Verleye
+> * **Instructors:** Culler, CyVerse Team, Greaves, Tuff, Verleye
 >   * Welcome!
->   * Navigating KIStorm (Know Innovation Team) ⚡
+>   * Navigating KIStorm (Greaves) ⚡
 >   * Navigating the Constellation of Cyberinfrastructure (Swetnam & CyVerse Team, Tuff, Verleye)
 >     * <a href="https://de.cyverse.org/" target="_blank">**CyVerse Discovery Environment**</a> ✨
 >     * <a href="https://jetstream-cloud.org/" target="_blank">**JetStream2**</a> 🚀
@@ -82,6 +82,13 @@ Each session will run from **12pm - 2pm Mountain Daylight Time** and will meet _
 
 * Education Trainer - Earth Lab; ESIIL
 * <a href="https://earthlab.colorado.edu/our-team/elsa-culler" target="_blank">**Website**</a>
+
+***
+![malachi](https://knowinnovation.com/wp-content/uploads/2020/07/Malachi-Square.jpg){width=100}
+
+**Malachi Greaves**
+*
+* <a href="https://knowinnovation.com/our-team/" target="_blank">**Website**</a>
 
 ***
 
