@@ -59,7 +59,7 @@ Each session will run from **12pm - 2pm Mountain Daylight Time** and will meet _
   
 <img style="float: right;" src="https://www.software.ac.uk/sites/default/files/The%20Carpentries.jpg" width="100" height="100">
 
-* Use Welcoming and use inclusive language
+* Use welcoming and use inclusive language
 * Be respectful of different viewpoints and experiences
 * Gracefully accept constructive criticism
 * Focus on what is best for the community
