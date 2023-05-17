@@ -21,6 +21,7 @@ Each session will run from **12pm - 2pm Mountain Daylight Time** and will meet _
 >     * <a href="https://de.cyverse.org/" target="_blank">**CyVerse Discovery Environment**</a> ✨
 >     * <a href="https://jetstream-cloud.org/" target="_blank">**JetStream2**</a> 🚀
 >   * <a href="https://github.com/" target="_blank">**GitHub**</a> for Collaboration (Culler, Tuff, Verleye) 🤝
+>     * <a href="https://cu-esiil.github.io/innovation-summit-webpages/" target="_blank">GitHub Pages Instructions</a>
 
 
 ## Day 2 (Thursday May, 18)
