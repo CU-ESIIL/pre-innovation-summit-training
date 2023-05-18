@@ -1,10 +1,12 @@
 R and Python bilingualism
 ================
 
-Welcome to the R and Python bilingualism reference guide! If you’re
-fluent in one of these languages but hesitant to learn the other, you’re
-in the right place. The good news is that there are many similarities
-between R and Python that make it easy to switch between the two.
+# Welcome to the R and Python bilingualism reference guide!
+
+If you’re fluent in one of these languages but hesitant to learn the
+other, you’re in the right place. The good news is that there are many
+similarities between R and Python that make it easy to switch between
+the two.
 
 Both R and Python are widely used in data science and are open-source,
 meaning that they are free to use and constantly being improved by the
@@ -32,6 +34,15 @@ So, whether you’re a Python enthusiast looking to expand your
 statistical analysis capabilities, or an R user interested in exploring
 the world of web development and artificial intelligence, this guide
 will help you become bilingual in R and Python.
+
+## Try it yourself!
+
+We have hidden most of the code in this notebook so that you can try to
+work it out yourself first if you like. We challenge you to pick the
+coding language you are least familiar with and try writing these
+workflows. If you need help, you can look at the code in the more
+familiar language, or check out our version in the less familiar for
+hints.
 
 ## How to get help
 
@@ -290,6 +301,11 @@ to install to use a function in your own code.
 The reticulate package lets you run share variables between R and
 Python.
 
+> **GOTCHA ALERT**: Note that you will need to set the
+> `RETICULATE_PYTHON` environment variable correctly in order to get
+> Python to work using `reticulate`. The easiest way is by making a
+> `.Renviron` file in your project directory.
+
 You only need to install packages once, but you need to mount those
 packages with the library() function each time you open R.
 
@@ -356,161 +372,15 @@ print(r.r_vec)
 
 In both R and Python, it is suggested to do all your library/package
 imports at the top of your file. This makes it easier for others to run
-or copy your code.
-
-``` r
-options(java.parameters = "-Xmx5G")
-
-library(readr)
-library(r5r)
-```
-
-    Please make sure you have already allocated some memory to Java by running:
-      options(java.parameters = '-Xmx2G').
-    You should replace '2G' by the amount of memory you'll require. Currently, Java memory is set to -Xmx5G
-
-``` r
-library(sf)
-```
-
-    Linking to GEOS 3.11.0, GDAL 3.5.3, PROJ 9.1.0; sf_use_s2() is TRUE
-
-``` r
-library(data.table)
-library(ggplot2)
-library(interp)
-library(dplyr)
-```
-
-
-    Attaching package: 'dplyr'
-
-    The following objects are masked from 'package:data.table':
-
-        between, first, last
-
-    The following objects are masked from 'package:stats':
-
-        filter, lag
-
-    The following objects are masked from 'package:base':
-
-        intersect, setdiff, setequal, union
-
-``` r
-library(osmdata)
-```
-
-    Data (c) OpenStreetMap contributors, ODbL 1.0. https://www.openstreetmap.org/copyright
-
-``` r
-library(ggthemes)
-library(sf)
-library(data.table)
-library(ggplot2)
-library(akima)
-```
-
-
-    Attaching package: 'akima'
-
-    The following objects are masked from 'package:interp':
-
-        aspline, bicubic, bicubic.grid, bilinear, bilinear.grid,
-        franke.data, franke.fn, interp, interp2xyz, interpp
-
-``` r
-library(dplyr)
-library(raster)
-```
-
-    Loading required package: sp
-
-
-    Attaching package: 'raster'
-
-    The following object is masked from 'package:dplyr':
-
-        select
-
-``` r
-library(osmdata)
-library(mapview)
-library(cowplot)
-```
-
-
-    Attaching package: 'cowplot'
-
-    The following object is masked from 'package:ggthemes':
-
-        theme_map
-
-``` r
-library(here)
-```
-
-    here() starts at /Users/elsa/04-workshops/pre-innovation-summit-training
-
-``` r
-library(testthat)
-```
-
-
-    Attaching package: 'testthat'
-
-    The following object is masked from 'package:dplyr':
-
-        matches
-
-    The following objects are masked from 'package:readr':
-
-        edition_get, local_edition
-
-``` r
-library(reticulate)
-Sys.setenv(
-  RETICULATE_PYTHON=path.expand(
-    '~/opt/miniconda3/envs/earth-analytics-python/bin/python'))
-use_condaenv('earth-analytics-python')
-```
-
-``` python
-import os
-import pathlib
-import pickle
-import sys
-sys.argv.append(["--max-memory", "5G"])
-
-import contextily as cx
-import dask
-import geopandas
-import matplotlib.pyplot as plt
-import numpy as np
-import pandas as pd
-import requests
-import rioxarray as rxr
-```
-
-    /Users/elsa/opt/miniconda3/envs/earth-analytics-python/lib/python3.8/site-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.16.5 and <1.23.0 is required for this version of SciPy (detected version 1.23.5
-      warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
-
-``` python
-import seaborn as sns
-import seaborn.objects as so
-import xarray as xr
-from plotnine import ggplot, aes, geom_point, labs, ggtitle
-```
+or copy your code. However, for the purposes of this tutorial, we are
+loading libraries in the code cell where they are used so that you can
+copy and paste the entire snippet.
 
 R and Python are two popular programming languages used for data
 analysis, statistics, and machine learning. Although they share some
 similarities, there are some fundamental differences between them.
 Here’s an example code snippet in R and Python to illustrate some of the
 differences:
-
-<div class="columns">
-
-<div class="column" width="50%">
 
 R Code:
 
@@ -526,10 +396,6 @@ print(mean_x)
 ```
 
     [1] 5.5
-
-</div>
-
-<div class="column" width="50%">
 
 Python Code:
 
@@ -548,9 +414,7 @@ print(mean_x)
 
     5.0
 
-</div>
-
-</div>
+::: :::
 
 In this example, we can see that there are several differences between R
 and Python:
@@ -587,11 +451,10 @@ For tabular data like comma separate value (CSV) files, all you need to
 get started is a web url. Another thing to notice in the following cells
 is how to add line breaks in long strings
 
-<div class="columns">
-
-<div class="column" width="50%">
-
 R Code:
+
+<details>
+<summary>Show the R code</summary>
 
 ``` r
 library(readr)
@@ -604,6 +467,8 @@ penguins_url <- paste0(
 penguins_df <- read_csv(penguins_url)
 ```
 
+</details>
+
     Rows: 344 Columns: 8
     ── Column specification ────────────────────────────────────────────────────────
     Delimiter: ","
@@ -613,9 +478,14 @@ penguins_df <- read_csv(penguins_url)
     ℹ Use `spec()` to retrieve the full column specification for this data.
     ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 
+<details>
+<summary>Show the R code</summary>
+
 ``` r
 penguins_df
 ```
+
+</details>
 
     # A tibble: 344 × 8
        species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
@@ -633,11 +503,10 @@ penguins_df
     # ℹ 334 more rows
     # ℹ 2 more variables: sex <chr>, year <dbl>
 
-</div>
-
-<div class="column" width="50%">
-
 Python code:
+
+<details>
+<summary>Show the Python code</summary>
 
 ``` python
 import pandas as pd
@@ -651,6 +520,8 @@ penguins_url = (
 penguins_df = pd.read_csv(penguins_url)
 penguins_df
 ```
+
+</details>
 
            species     island  bill_length_mm  ...  body_mass_g     sex  year
     0       Adelie  Torgersen            39.1  ...       3750.0    male  2007
@@ -666,10 +537,6 @@ penguins_df
     343  Chinstrap      Dream            50.2  ...       3775.0  female  2009
 
     [344 rows x 8 columns]
-
-</div>
-
-</div>
 
 ### Forming reproducible file paths
 
@@ -709,6 +576,9 @@ home directory is.
 > data path in the home directory. Keeping the data in your project
 > directory is also an option.
 
+<details>
+<summary>Show the R code</summary>
+
 ``` r
 data_dir <- file.path(path.expand('~'), 'esiil-summit', 'r_and_py')
 
@@ -717,10 +587,16 @@ dir.create(data_dir, showWarnings=F, recursive=T)
 print(data_dir)
 ```
 
+</details>
+
     [1] "/Users/elsa/esiil-summit/r_and_py"
+
+<details>
+<summary>Show the Python code</summary>
 
 ``` python
 import os
+import pathlib
 
 data_dir = os.path.join(pathlib.Path.home(), 'esiil-summit', 'r_and_py')
 
@@ -728,6 +604,8 @@ data_dir = os.path.join(pathlib.Path.home(), 'esiil-summit', 'r_and_py')
 os.makedirs(data_dir, exist_ok=True)
 print(data_dir)
 ```
+
+</details>
 
     /Users/elsa/esiil-summit/r_and_py
 
@@ -750,13 +628,21 @@ Parameter notes:
 Finally, let’s practice copying the data files included in this lesson
 to the reproducible data directory:
 
+<details>
+<summary>Show the R code</summary>
+
 ``` r
 project_data_dir <- file.path('..', '..', 'data')
 data_dir <- file.path(path.expand('~'), 'esiil-summit', 'r_and_py')
 file.copy(from=project_data_dir, to=data_dir, recursive=T)
 ```
 
+</details>
+
     [1] TRUE
+
+<details>
+<summary>Show the Python code</summary>
 
 ``` python
 import os
@@ -768,6 +654,8 @@ data_dir = os.path.join(pathlib.Path.home(), 'esiil-summit', 'r_and_py')
 shutil.move(project_data_dir, data_dir)
 ```
 
+</details>
+
     Error: shutil.Error: Destination path '/Users/elsa/esiil-summit/r_and_py/data' already exists
 
 > Note that Python will not replace an existing directory, so you mush
@@ -778,6 +666,9 @@ shutil.move(project_data_dir, data_dir)
 You can also load data from comma-separated value (`.csv`) and other
 tabular text files.
 
+<details>
+<summary>Show the R code</summary>
+
 ``` r
 library(readr)
 
@@ -786,6 +677,8 @@ penguins_csv_path = file.path(data_dir, "penguins.csv")
 
 penguins_df <- read_csv(penguins_csv_path)
 ```
+
+</details>
 
     New names:
     Rows: 344 Columns: 9
@@ -797,9 +690,14 @@ penguins_df <- read_csv(penguins_csv_path)
     Specify the column types or set `show_col_types = FALSE` to quiet this message.
     • `` -> `...1`
 
+<details>
+<summary>Show the R code</summary>
+
 ``` r
 penguins_df
 ```
+
+</details>
 
     # A tibble: 344 × 9
         ...1 species island    bill_length_mm bill_depth_mm flipper_length_mm
@@ -817,6 +715,9 @@ penguins_df
     # ℹ 334 more rows
     # ℹ 3 more variables: body_mass_g <dbl>, sex <chr>, year <dbl>
 
+<details>
+<summary>Show the Python code</summary>
+
 ``` python
 import pandas as pd
 
@@ -825,6 +726,8 @@ penguins_csv_path = os.path.join(data_dir, "penguins.csv")
 penguins_df = pd.read_csv(penguins_csv_path)
 penguins_df
 ```
+
+</details>
 
          Unnamed: 0    species     island  ...  body_mass_g     sex  year
     0             0     Adelie  Torgersen  ...       3750.0    male  2007
@@ -848,6 +751,9 @@ or processed data this way.
 > Notice that in R this is a **function** and in Python it is a
 > **method** of our `pd.DataFrame` object.
 
+<details>
+<summary>Show the R code</summary>
+
 ``` r
 library(readr)
 
@@ -860,14 +766,31 @@ iris_r_csv_path = file.path(data_dir, "iris_r.csv")
 write_csv(iris, file=iris_r_csv_path)
 ```
 
+</details>
+<details>
+<summary>Show the Python code</summary>
+
 ``` python
 import seaborn as sns
+```
+
+</details>
+
+    /Users/elsa/opt/miniconda3/envs/earth-analytics-python/lib/python3.8/site-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.16.5 and <1.23.0 is required for this version of SciPy (detected version 1.23.5
+      warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+
+<details>
+<summary>Show the Python code</summary>
+
+``` python
 iris_df = sns.load_dataset('iris')
 
 # Write iris data to CSV
 iris_py_csv_path = os.path.join(data_dir, "iris_py.csv")
 iris_df.to_csv(iris_py_csv_path, index=False)
 ```
+
+</details>
 
 > **GOTCHA ALERT**: The pandas `pd.DataFrame.to_csv()` method is not
 > *quite* symmetrical with `pd.read_csv()`. This is because pandas
@@ -881,6 +804,9 @@ iris_df.to_csv(iris_py_csv_path, index=False)
 You can also load data from comma-separated value (`.csv`) and other
 tabular text files.
 
+<details>
+<summary>Show the R code</summary>
+
 ``` r
 library(readr)
 
@@ -888,6 +814,8 @@ penguins_csv_path = file.path(data_dir, "penguins.csv")
 
 penguins_df <- read_csv(penguins_csv_path)
 ```
+
+</details>
 
     New names:
     Rows: 344 Columns: 9
@@ -899,9 +827,14 @@ penguins_df <- read_csv(penguins_csv_path)
     Specify the column types or set `show_col_types = FALSE` to quiet this message.
     • `` -> `...1`
 
+<details>
+<summary>Show the R code</summary>
+
 ``` r
 penguins_df
 ```
+
+</details>
 
     # A tibble: 344 × 9
         ...1 species island    bill_length_mm bill_depth_mm flipper_length_mm
@@ -919,6 +852,9 @@ penguins_df
     # ℹ 334 more rows
     # ℹ 3 more variables: body_mass_g <dbl>, sex <chr>, year <dbl>
 
+<details>
+<summary>Show the Python code</summary>
+
 ``` python
 import os
 
@@ -929,6 +865,8 @@ penguins_csv_path = os.path.join(data_dir, "penguins.csv")
 penguins_df = pd.read_csv(penguins_csv_path)
 penguins_df
 ```
+
+</details>
 
          Unnamed: 0    species     island  ...  body_mass_g     sex  year
     0             0     Adelie  Torgersen  ...       3750.0    male  2007
@@ -957,6 +895,9 @@ other programming languages).
 
 R Code:
 
+<details>
+<summary>Show the R code</summary>
+
 ``` r
 penguins_rds_path = file.path(data_dir, "penguins.rds")
 
@@ -964,7 +905,12 @@ penguins_rds_path = file.path(data_dir, "penguins.rds")
 saveRDS(penguins_df, file=penguins_rds_path)
 ```
 
+</details>
+
 Python code:
+
+<details>
+<summary>Show the Python code</summary>
 
 ``` python
 import os
@@ -975,11 +921,16 @@ penguins_pickle_path = os.path.join(data_dir, "penguins.pickle")
 penguins_df.to_pickle(penguins_pickle_path)
 ```
 
+</details>
+
 Go ahead and take a look at those files to see what they look like! One
 way to do so is by using a terminal and the command
 `head /path/to/penguins/file`.
 
 ### Load serialized data
+
+<details>
+<summary>Show the R code</summary>
 
 ``` r
 penguins_rds_path = file.path(data_dir, "penguins.rds")
@@ -988,6 +939,8 @@ penguins_rds_path = file.path(data_dir, "penguins.rds")
 penguins_from_serial_df <- readRDS(penguins_rds_path)
 penguins_from_serial_df
 ```
+
+</details>
 
     # A tibble: 344 × 9
         ...1 species island    bill_length_mm bill_depth_mm flipper_length_mm
@@ -1010,6 +963,9 @@ data. For example, you can check out base R `save()` and `load()`
 functions as well if you need to save multiple objects (or a whole
 environment) at once.
 
+<details>
+<summary>Show the Python code</summary>
+
 ``` python
 import pandas as pd
 
@@ -1019,6 +975,8 @@ penguins_pickle_path = os.path.join(data_dir, "penguins.pickle")
 penguins_from_serial_df = pd.read_pickle(penguins_pickle_path)
 penguins_from_serial_df
 ```
+
+</details>
 
          Unnamed: 0    species     island  ...  body_mass_g     sex  year
     0             0     Adelie  Torgersen  ...       3750.0    male  2007
@@ -1044,6 +1002,9 @@ objects).
 
 R Code:
 
+<details>
+<summary>Show the R code</summary>
+
 ``` r
 # Plot the penguin data
 ggplot(penguins_df, aes(x = bill_length_mm, y = body_mass_g, color=species)) +
@@ -1055,13 +1016,19 @@ ggplot(penguins_df, aes(x = bill_length_mm, y = body_mass_g, color=species)) +
   ggtitle('Penguin Characteristics by Species')
 ```
 
+</details>
+
     Warning: Removed 2 rows containing missing values (`geom_point()`).
 
-![](bilingualism_files/figure-commonmark/unnamed-chunk-38-1.png)
+![](bilingualism_files/figure-commonmark/unnamed-chunk-36-1.png)
 
 Python seaborn.objects code:
 
+<details>
+<summary>Show the Python code</summary>
+
 ``` python
+import seaborn.objects as so
 # Make a scatter plot with the penguin data
 (
     so.Plot(penguins_df, x='bill_length_mm', y='body_mass_g')
@@ -1078,19 +1045,27 @@ Python seaborn.objects code:
 )
 ```
 
-    /Users/elsa/opt/miniconda3/envs/earth-analytics-python/lib/python3.8/_collections_abc.py:832: MatplotlibDeprecationWarning: 
-    The savefig.jpeg_quality rcparam was deprecated in Matplotlib 3.3 and will be removed two minor releases later.
-    /Users/elsa/opt/miniconda3/envs/earth-analytics-python/lib/python3.8/_collections_abc.py:832: MatplotlibDeprecationWarning: 
-    The savefig.jpeg_quality rcparam was deprecated in Matplotlib 3.3 and will be removed two minor releases later.
-    /Users/elsa/Library/Caches/org.R-project.R/R/renv/cache/v5/R-4.3/x86_64-apple-darwin20/reticulate/1.28/86c441bf33e1d608db773cb94b848458/reticulate/python/rpytools/call.py:10: UserWarning: There are no gridspecs with layoutgrids. Possibly did not call parent GridSpec with the "figure" keyword
+</details>
 
-![](bilingualism_files/figure-commonmark/unnamed-chunk-39-1.png)
+    /Users/elsa/opt/miniconda3/envs/earth-analytics-python/lib/python3.8/_collections_abc.py:832: MatplotlibDeprecationWarning: 
+    The savefig.jpeg_quality rcparam was deprecated in Matplotlib 3.3 and will be removed two minor releases later.
+      self[key] = other[key]
+    /Users/elsa/opt/miniconda3/envs/earth-analytics-python/lib/python3.8/_collections_abc.py:832: MatplotlibDeprecationWarning: 
+    The savefig.jpeg_quality rcparam was deprecated in Matplotlib 3.3 and will be removed two minor releases later.
+      self[key] = other[key]
+    /Users/elsa/Library/Caches/org.R-project.R/R/renv/cache/v5/R-4.3/x86_64-apple-darwin20/reticulate/1.28/86c441bf33e1d608db773cb94b848458/reticulate/python/rpytools/call.py:10: UserWarning: There are no gridspecs with layoutgrids. Possibly did not call parent GridSpec with the "figure" keyword
+      value, error = rpycall.call_r_function(f, *args, **kwargs)
+
+![](bilingualism_files/figure-commonmark/unnamed-chunk-37-1.png)
 
 > **GOTCHA ALERT:** In Python, you will usually need to put `.show()` or
 > something similar at the end of your code to see your plot. Otherwise
 > you may see something like:
 >
 >     <seaborn._core.plot.Plot object at 0x7f81493e4070>
+
+<details>
+<summary>Show the Python code</summary>
 
 ``` python
 from plotnine import ggplot, aes, geom_point, labs, theme, ggtitle
@@ -1109,11 +1084,13 @@ from plotnine import ggplot, aes, geom_point, labs, theme, ggtitle
 )
 ```
 
-    <ggplot: (8762036318199)>
+</details>
+
+    <ggplot: (8780013024901)>
 
     /Users/elsa/opt/miniconda3/envs/earth-analytics-python/lib/python3.8/site-packages/plotnine/layer.py:401: PlotnineWarning: geom_point : Removed 2 rows containing missing values.
 
-![](bilingualism_files/figure-commonmark/unnamed-chunk-40-1.png)
+![](bilingualism_files/figure-commonmark/unnamed-chunk-38-3.png)
 
 > **GOTCHA ALERT:** If you are used to `ggplot2` and are using
 > `plotnine`, there are a few things to be aware of. One is that
@@ -1126,8 +1103,8 @@ from plotnine import ggplot, aes, geom_point, labs, theme, ggtitle
 > the `+` syntax for layers to work in Python.
 >
 > Finally, we had some display problems had to adjust the plot theme to
-> see the legend. This may have to do with the interactive coding
-> environment
+> see the legend. You may or may not have this problem depending on your
+> coding environment
 
 In both cases, we generate some sample data and create a scatter plot to
 visualize the relationship between the variables.
@@ -1158,15 +1135,15 @@ Piping is a powerful feature in R that allows for a more streamlined and
 readable code. In Python, you can code in a similar style using a
 process called method chaining.
 
-GOTCHA ALERT: As the name implies, to use method chaining you need to be
-using a method of the object you’re working with. There is a .pipe()
-method of pd.DataFrames that that allows you to use method chaining with
-functions that you wrote or imported.
-
-GOTCHA ALERT: Though code pipelines can be easier to read, they can be
-harder to debug. If you get an error in an R pipeline, you may not get
-the information you need about where that error occurred. You can avoid
-problems by testing your pipelines one line at a time.
+> **GOTCHA ALERT**: As the name implies, to use method chaining you need
+> to be using a method of the object you’re working with. There is a
+> .pipe() method of pd.DataFrames that that allows you to use method
+> chaining with functions that you wrote or imported.
+>
+> **GOTCHA ALERT**: Though code pipelines can be easier to read, they
+> can be harder to debug. If you get an error in an R pipeline, you may
+> not get the information you need about where that error occurred. You
+> can avoid problems by testing your pipelines one line at a time.
 
 The syntax for piping is different from method chaining. In R, piping is
 done using the %\>% operator from the magrittr package. In Python,
@@ -1178,6 +1155,9 @@ the left) and making it the first argument in the next function/method.
 
 R code without pipes:
 
+<details>
+<summary>Show the R code</summary>
+
 ``` r
 library(dplyr)
 
@@ -1188,10 +1168,15 @@ df <- data.frame(x = c(1,2,3), y = c(4,5,6))
 summarize(mutate(df, z = x + y), sum_z = sum(z))
 ```
 
+</details>
+
       sum_z
     1    21
 
 R code with piping:
+
+<details>
+<summary>Show the R code</summary>
 
 ``` r
 library(dplyr)
@@ -1207,10 +1192,15 @@ df %>%
   summarize(sum_z = sum(z))
 ```
 
+</details>
+
       sum_z
     1    21
 
 Python code without chaining:
+
+<details>
+<summary>Show the Python code</summary>
 
 ``` python
 import pandas as pd
@@ -1225,10 +1215,15 @@ df_with_sum = df.assign(z = df.x + df.y)
 df_with_sum.agg(sum_z = ('z', 'sum'))
 ```
 
+</details>
+
             z
     sum_z  21
 
 Python code with chaining:
+
+<details>
+<summary>Show the Python code</summary>
 
 ``` python
 import pandas as pd
@@ -1245,6 +1240,8 @@ df = pd.DataFrame({'x': [1,2,3], 'y': [4,5,6]})
 )
 ```
 
+</details>
+
             z
     sum_z  21
 
@@ -1254,36 +1251,6 @@ readable and easier to follow, which is an important aspect of creating
 efficient and effective code. It avoids obtuse many-layer nested
 functions and also keeping lots of intermediate processing steps in
 memory as variables.
-
-#### Try it yourself!
-
-Below are two hidden cells with R and Python code to do the following
-analysis:
-
-1.  Start with the iris dataset
-2.  Filter it to only include rows where the Species column is “setosa”
-3.  Group the remaining rows by the Sepal.Width column
-4.  Calculate the mean Petal.Length for each group
-5.  Convert Sepal.Width to a factor variable to ensure that it is
-    treated as a categorical variable in the visualization.
-6.  Finally, we create a bar plot, with Sepal.Width on the x-axis and
-    mean.Petal.Length on the y-axis. The resulting plot shows the mean
-    petal length of setosa flowers for each sepal width category.
-
-We challenge you to pick the coding language you are least familiar with
-and try writing the workflow above. If you need help, you can look at
-the code in the more familiar language, or check out our version in the
-less familiar.
-
-Your code:
-
-``` r
-# Your R code here
-```
-
-``` python
-# Your Python code here
-```
 
 R code:
 
@@ -1310,7 +1277,7 @@ iris %>%
 
 </details>
 
-![](bilingualism_files/figure-commonmark/unnamed-chunk-47-1.png)
+![](bilingualism_files/figure-commonmark/unnamed-chunk-43-1.png)
 
 Python code:
 
@@ -1340,11 +1307,14 @@ plt.show()
 
 </details>
 
-![](bilingualism_files/figure-commonmark/unnamed-chunk-48-1.png)
+![](bilingualism_files/figure-commonmark/unnamed-chunk-44-1.png)
 
 ## Linear regression
 
 R Code:
+
+<details>
+<summary>Show the R code</summary>
 
 ``` r
 # Load the "ggplot2" package for plotting
@@ -1354,6 +1324,8 @@ library(ggplot2)
 data('faithful')
 faithful
 ```
+
+</details>
 
         eruptions waiting
     1       3.600      79
@@ -1629,6 +1601,9 @@ faithful
     271     1.817      46
     272     4.467      74
 
+<details>
+<summary>Show the R code</summary>
+
 ``` r
 # Perform linear regression
 model <- lm(waiting ~ eruptions, data=faithful)
@@ -1636,6 +1611,8 @@ model <- lm(waiting ~ eruptions, data=faithful)
 # Print the model summary
 summary(model)
 ```
+
+</details>
 
 
     Call:
@@ -1656,6 +1633,9 @@ summary(model)
     Multiple R-squared:  0.8115,    Adjusted R-squared:  0.8108 
     F-statistic:  1162 on 1 and 270 DF,  p-value: < 2.2e-16
 
+<details>
+<summary>Show the R code</summary>
+
 ``` r
 # Plot the data and regression line
 faithful %>%
@@ -1667,14 +1647,18 @@ faithful %>%
   labs(x = 'Eruption Duration (min.)', y = 'Waiting Time to Next Eruption (min.)')
 ```
 
+</details>
+
     `geom_smooth()` using formula = 'y ~ x'
 
-![](bilingualism_files/figure-commonmark/unnamed-chunk-49-3.png)
+![](bilingualism_files/figure-commonmark/unnamed-chunk-45-3.png)
 
 Python code:
 
-``` python
+<details>
+<summary>Show the Python code</summary>
 
+``` python
 import matplotlib.pyplot as plt
 import seaborn as sns
 import statsmodels.formula.api as smf
@@ -1690,13 +1674,15 @@ print(model.summary())
 # Plot the data with a regression line
 ```
 
+</details>
+
                                 OLS Regression Results                            
     ==============================================================================
     Dep. Variable:                waiting   R-squared:                       0.811
     Model:                            OLS   Adj. R-squared:                  0.811
     Method:                 Least Squares   F-statistic:                     1162.
     Date:                Thu, 18 May 2023   Prob (F-statistic):          8.13e-100
-    Time:                        00:09:34   Log-Likelihood:                -868.38
+    Time:                        11:54:21   Log-Likelihood:                -868.38
     No. Observations:                 272   AIC:                             1741.
     Df Residuals:                     270   BIC:                             1748.
     Df Model:                           1                                         
@@ -1716,6 +1702,9 @@ print(model.summary())
     Notes:
     [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
 
+<details>
+<summary>Show the Python code</summary>
+
 ``` python
 (
     so.Plot(faithful_df, x='duration', y='waiting')
@@ -1728,12 +1717,14 @@ print(model.summary())
 )
 ```
 
+</details>
+
     /Users/elsa/opt/miniconda3/envs/earth-analytics-python/lib/python3.8/_collections_abc.py:832: MatplotlibDeprecationWarning: 
     The savefig.jpeg_quality rcparam was deprecated in Matplotlib 3.3 and will be removed two minor releases later.
     /Users/elsa/opt/miniconda3/envs/earth-analytics-python/lib/python3.8/_collections_abc.py:832: MatplotlibDeprecationWarning: 
     The savefig.jpeg_quality rcparam was deprecated in Matplotlib 3.3 and will be removed two minor releases later.
 
-![](bilingualism_files/figure-commonmark/unnamed-chunk-50-3.png)
+![](bilingualism_files/figure-commonmark/unnamed-chunk-46-1.png)
 
 In both cases, we generate some sample data with a linear relationship
 between x and y, and then perform a simple linear regression to estimate
@@ -1750,6 +1741,9 @@ two approaches:
 ## Random Forest
 
 R Code:
+
+<details>
+<summary>Show the R code</summary>
 
 ``` r
 # Load the "randomForest" package
@@ -1775,9 +1769,14 @@ accuracy <- sum(predictions == test_data$Species) / nrow(test_data)
 print(paste("Accuracy:", accuracy))
 ```
 
+</details>
+
     [1] "Accuracy: 0.977777777777778"
 
 Python code:
+
+<details>
+<summary>Show the Python code</summary>
 
 ``` python
 import pandas as pd
@@ -1803,7 +1802,12 @@ rf_model.fit(X_train, y_train)
 # Make predictions on the testing set
 ```
 
+</details>
+
     RandomForestClassifier(n_estimators=500, oob_score=True, random_state=123)
+
+<details>
+<summary>Show the Python code</summary>
 
 ``` python
 predictions = rf_model.predict(X_test)
@@ -1814,7 +1818,12 @@ print('OOB score: ', rf_model.oob_score_)
 # Accuracy on test data
 ```
 
+</details>
+
     OOB score:  0.9428571428571428
+
+<details>
+<summary>Show the Python code</summary>
 
 ``` python
 accuracy = sum(predictions == y_test) / len(y_test)
@@ -1823,7 +1832,12 @@ print("Accuracy:", accuracy)
 # Confusion Matrix
 ```
 
+</details>
+
     Accuracy: 0.9555555555555556
+
+<details>
+<summary>Show the Python code</summary>
 
 ``` python
 print(confusion_matrix(y_test, predictions))
@@ -1831,9 +1845,14 @@ print(confusion_matrix(y_test, predictions))
 # Plot feature permutation importances
 ```
 
+</details>
+
     [[18  0  0]
      [ 0 10  0]
      [ 0  2 15]]
+
+<details>
+<summary>Show the Python code</summary>
 
 ``` python
 importances = permutation_importance(
@@ -1855,12 +1874,14 @@ importances = permutation_importance(
 )
 ```
 
+</details>
+
     /Users/elsa/opt/miniconda3/envs/earth-analytics-python/lib/python3.8/_collections_abc.py:832: MatplotlibDeprecationWarning: 
     The savefig.jpeg_quality rcparam was deprecated in Matplotlib 3.3 and will be removed two minor releases later.
     /Users/elsa/opt/miniconda3/envs/earth-analytics-python/lib/python3.8/_collections_abc.py:832: MatplotlibDeprecationWarning: 
     The savefig.jpeg_quality rcparam was deprecated in Matplotlib 3.3 and will be removed two minor releases later.
 
-![](bilingualism_files/figure-commonmark/unnamed-chunk-52-5.png)
+![](bilingualism_files/figure-commonmark/unnamed-chunk-48-1.png)
 
 In both cases, we load the iris dataset and split it into training and
 testing sets. We then build a random forest model using the training
@@ -1884,6 +1905,9 @@ two approaches:
 
 R Code:
 
+<details>
+<summary>Show the R code</summary>
+
 ``` r
 # Load the "osmdata" package for mapping
 library(osmdata)
@@ -1902,9 +1926,14 @@ tm_shape(osm_data$osm_lines) +
   tm_lines()
 ```
 
-![](bilingualism_files/figure-commonmark/unnamed-chunk-53-7.png)
+</details>
+
+![](bilingualism_files/figure-commonmark/unnamed-chunk-49-3.png)
 
 Python code:
+
+<details>
+<summary>Show the Python code</summary>
 
 ``` python
 # Load the "osmnx" package for mapping
@@ -1920,9 +1949,11 @@ osm_graph = ox.graph_from_bbox(**bbox)
 ox.plot_graph(osm_graph, node_size=0)
 ```
 
+</details>
+
     (<Figure size 800x800 with 0 Axes>, <AxesSubplot:>)
 
-![](bilingualism_files/figure-commonmark/unnamed-chunk-54-7.png)
+![](bilingualism_files/figure-commonmark/unnamed-chunk-50-1.png)
 
 In both cases, we define the map bounding box, retrieve the
 OpenStreetMap data using the specified bounding box, and plot the map.
@@ -1953,57 +1984,14 @@ The main differences between the two approaches are:
 > asterisk before a list to **unpack** it (provide each element
 > separately), or a double asterisk to **unpack** a dictionary.
 
-## CNN on Raster data
-
-R Code:
-
-``` r
-# Load the "keras" package for building the CNN
-library(tensorflow)
-library(keras)
-
-# Load the "raster" package for working with raster data
-library(raster)
-
-# Load the "magrittr" package for pipe operator
-library(magrittr)
-
-# Load the data as a raster brick
-raster_data <- brick("raster_data.tif")
-
-# Split the data into training and testing sets
-split_data <- sample(1:nlayers(raster_data), size = nlayers(raster_data)*0.8, replace = FALSE)
-train_data <- raster_data[[split_data]]
-test_data <- raster_data[[setdiff(1:nlayers(raster_data), split_data)]]
-
-# Define the CNN model
-model <- keras_model_sequential() %>% 
-  layer_conv_2d(filters = 32, kernel_size = c(3, 3), activation = "relu", input_shape = c(ncol(train_data), nrow(train_data), ncell(train_data))) %>% 
-  layer_max_pooling_2d(pool_size = c(2, 2)) %>% 
-  layer_dropout(rate = 0.25) %>% 
-  layer_flatten() %>% 
-  layer_dense(units = 128, activation = "relu") %>% 
-  layer_dropout(rate = 0.5) %>% 
-  layer_dense(units = nlayers(train_data), activation = "softmax")
-
-# Compile the model
-model %>% compile(loss = "categorical_crossentropy", optimizer = "adam", metrics = "accuracy")
-
-# Train the model
-history <- model %>% fit(x = array(train_data), y = to_categorical(1:nlayers(train_data)), epochs = 10, validation_split = 0.2)
-
-# Evaluate the model
-model %>% evaluate(x = array(test_data), y = to_categorical(1:nlayers(test_data)))
-
-# Plot the model accuracy over time
-plot(history)
-```
-
 ## for loops
 
 Here is an example of a for loop in R:
 
 R code
+
+<details>
+<summary>Show the R code</summary>
 
 ``` r
 # Create a vector of numbers
@@ -2014,6 +2002,8 @@ for (i in numbers) {
   print(i)
 }
 ```
+
+</details>
 
     [1] 1
     [1] 2
@@ -2030,6 +2020,9 @@ Here is the equivalent example in Python:
 
 Python code:
 
+<details>
+<summary>Show the Python code</summary>
+
 ``` python
 # Create a list of numbers
 numbers = [1, 2, 3, 4, 5]
@@ -2038,6 +2031,8 @@ numbers = [1, 2, 3, 4, 5]
 for i in numbers:
     print(i)
 ```
+
+</details>
 
     1
     2
@@ -2069,9 +2064,10 @@ take input, perform a specific task, and return output.
 
 R Code:
 
-``` r
-library(roxygen2)
+<details>
+<summary>Show the R code</summary>
 
+``` r
 # Define a function that takes two arguments and returns their sum
 sum_r <- function(a, b) {
   return(a + b)
@@ -2082,9 +2078,14 @@ result_r <- sum_r(3, 5)
 print(result_r)
 ```
 
+</details>
+
     [1] 8
 
 Python code:
+
+<details>
+<summary>Show the Python code</summary>
 
 ``` python
 # Define a function that takes two arguments and returns their sum
@@ -2095,6 +2096,8 @@ def sum_py(a, b):
 result_py = sum_py(3, 5)
 print(result_py)
 ```
+
+</details>
 
     8
 
@@ -2170,16 +2173,13 @@ of the cluster.:
 
 R code:
 
+<details>
+<summary>Show the R code</summary>
+
 ``` r
 library(foreach)
 library(doParallel)
-```
 
-    Loading required package: iterators
-
-    Loading required package: parallel
-
-``` r
 # Define a function to apply in parallel
 myfunc <- function(x) {
   # some computation here
@@ -2224,19 +2224,31 @@ cluster_time <- Sys.time() - cluster_start
 print(paste('Time without cluster: ', single_time))
 ```
 
-    [1] "Time without cluster:  0.00683379173278809"
+</details>
+
+    [1] "Time without cluster:  0.00456714630126953"
+
+<details>
+<summary>Show the R code</summary>
 
 ``` r
 print(paste('Time vectorized: ', vector_time))
 ```
 
-    [1] "Time vectorized:  0.0131227970123291"
+</details>
+
+    [1] "Time vectorized:  0.00887298583984375"
+
+<details>
+<summary>Show the R code</summary>
 
 ``` r
 print(paste('Time with cluster: ', cluster_time))
 ```
 
-    [1] "Time with cluster:  0.346697807312012"
+</details>
+
+    [1] "Time with cluster:  0.305880069732666"
 
 Oops! Our parallel version takes **more** time. Let’s try making our
 function take longer, to simulate what happens in a more complex
@@ -2270,12 +2282,15 @@ Here’s an example of using furrr to parallelize a map function:
 
 R Tidy code:
 
+<details>
+<summary>Show the R code</summary>
+
 ``` r
 library(tidyverse)
 library(furrr)
 
 # Generate a list of numbers
-numbers <- 1:10
+numbers <- 1:100
 
 # Use the future_map function from furrr to parallelize the map function
 start <- Sys.time()
@@ -2284,7 +2299,9 @@ squares <- future_map(numbers, function(x) x^2)
 print(paste('Run time: ', Sys.time() - start))
 ```
 
-    [1] "Run time:  4.24300909042358"
+</details>
+
+    [1] "Run time:  4.94922685623169"
 
 In this example, we first load the Tidyverse and furrr libraries. We
 then generate a list of numbers from 1 to 10. We then use the plan
@@ -2297,12 +2314,12 @@ in the list in parallel.
 
 In Python, the standard library includes the `multiprocessing` module
 and the `threading` module, which provides basic support for parallel
-computing. By convention, these modules have identical classes like
+computing. By convention, these modules have matching classes like
 `Pool` below which are imported individually. This allows you to switch
 between **threading** (sharing memory resources) and **multiprocessing**
 (pre-allocated memory resources) without needing to change your code.
 This choice is beyond the scope of this workshop, but in both directions
-this can be a cause of differences in performance.
+can be a cause of differences in performance.
 
 > **GOTCHA ALERT**: Python can give you more control over your
 > multitasking. That also means you have more power to mess things up.
@@ -2317,6 +2334,9 @@ Here is an example of using the multiprocessing module to execute a loop
 in parallel:
 
 Python code:
+
+<details>
+<summary>Show the Python code</summary>
 
 ``` python
 import time
@@ -2337,7 +2357,12 @@ print('Run time with for loop: {}'.format(time.time() - for_start))
 # Use the map function and a pool of workers to parallelize the square function
 ```
 
-    Run time with for loop: 0.2819862365722656
+</details>
+
+    Run time with for loop: 0.22587966918945312
+
+<details>
+<summary>Show the Python code</summary>
 
 ``` python
 start = time.time()
@@ -2347,7 +2372,9 @@ with Pool(4) as pool:
 print('Run time with Pool: {}'.format(time.time() - start))
 ```
 
-    Run time with Pool: 0.16815876960754395
+</details>
+
+    Run time with Pool: 0.14451074600219727
 
 Like R, if we used fewer numbers we don’t necessarily see and advantage
 to parallelizing.
@@ -2376,10 +2403,28 @@ page](https://docs.dask.org/en/stable/).
 
 Data wrangling is an important part of any data analysis project, and
 both R and Python provide tools and libraries for performing this task.
-In this answer, we will compare and contrast data wrangling in R’s
-tidyverse and Python’s pandas library, with working examples in code.
+Data wrangling can include:
 
-Data Wrangling in R Tidyverse
+- Filtering data to study parameters
+
+- Ensuring that nodata values are interpreted correctly
+
+- Ensuring that data has the correct number and type of dimensions
+
+- Converting units
+
+- Reprojecting spatial coordinates
+
+- Parsing dates and times
+
+- Pivoting - Changing between long (or **tidy**) and wide data formats.
+  Tidy data contains only a single observation in each row. Different
+  statistical models require different data formats.
+
+- Joining - combining multiple datasets on common column values or
+  **key**
+
+### Data Wrangling in R Tidyverse
 
 The tidyverse is a collection of R packages designed for data science,
 and it includes several packages that are useful for data wrangling. One
@@ -2391,14 +2436,18 @@ data frame:
 
 R code
 
+<details>
+<summary>Show the R code</summary>
+
 ``` r
 library(dplyr)
 
 # Load data
 data(mtcars)
 
-# Filter for cars with more than 100 horsepower
+
 mtcars %>%
+  # Filter for cars with more than 100 horsepower
   filter(hp > 100) %>%
   # Add a new column with fuel efficiency in km per liter
   mutate(kmpl = 0.425 * mpg) %>%
@@ -2407,6 +2456,8 @@ mtcars %>%
   summarize(mean_hp = mean(hp),
             mean_kmpl = mean(kmpl))
 ```
+
+</details>
 
     # A tibble: 3 × 3
         cyl mean_hp mean_kmpl
@@ -2421,117 +2472,143 @@ column with fuel efficiency in kilometers per liter. Finally, we group
 the data by the number of cylinders and calculate the mean horsepower
 and fuel efficiency.
 
-Data Wrangling in Python Pandas
+### Data Wrangling in Python Pandas
 
 Pandas is a popular library for data manipulation in Python. It provides
 a data frame object similar to R’s data frames, along with a wide range
-of functions for data wrangling.
+of functions for data wrangling. The code below performs the same
+operations as the R code above:
 
-# Load the iris dataset and pipe it into the next function
+<details>
+<summary>Show the Python code</summary>
 
 ``` python
-( 
-    pd.read_csv(
-        ("https://archive.ics.uci.edu/ml/machine-learning-databases/"
-         "iris/iris.data"),
-        header=None, 
-        names=[
-            'sepal_length', 
-            'sepal_width', 
-            'petal_length', 
-            'petal_width', 
-            'class'])
-  
-  # Select columns and pivot the dataset
-  .loc[:, ['sepal_length', 'sepal_width', 'petal_length']]
-  .melt(var_name='variable', value_name='value')
-  
-  # Group by variable and calculate mean
-  .groupby('variable', as_index=False)
-  .mean()
-  
-  # Filter for mean greater than 3.5 and sort by descending mean
-  .query('value > 3.5')
-  .sort_values('value', ascending=False)
+(
+    r.mtcars
+    # Filter for cars with more than 100 horsepower
+    [r.mtcars.hp>100]
+    # Add a new column with fuel efficiency in km per liter
+    .assign(kmpl=0.425*r.mtcars.mpg)
+    # Group by number of cylinders and summarize
+    .groupby('cyl')
+    .agg(mean_hp=('hp', 'mean'), 
+         mean_kmpl=('kmpl', 'mean'))
 )
 ```
 
-           variable     value
-    1  sepal_length  5.843333
-    0  petal_length  3.758667
+</details>
 
-Here is an example of using pandas to filter, transform, and group a
-data frame:
-
-Python code:
-
-``` python
-import pandas as pd
-
-# Load data
-mtcars = pd.read_csv('https://raw.githubusercontent.com/mwaskom/seaborn-data/master/mtcars.csv')
-
-# Filter for cars with more than 100 horsepower
-filtered_mtcars = mtcars[mtcars['hp'] > 100]
-
-# Add a new column with fuel efficiency in km per liter
-filtered_mtcars['kmpl'] = 0.425 * filtered_mtcars['mpg']
-
-# Group by number of cylinders and calculate mean horsepower and fuel efficiency
-grouped_mtcars = filtered_mtcars.groupby('cyl').agg({'hp': 'mean',
-                                                     'kmpl': 'mean'})
-```
-
-In this example, we first load the mtcars data from a CSV file. We then
-filter the data to only include cars with more than 100 horsepower,
-using boolean indexing. We use the assign function to create a new
-column with fuel efficiency in kilometers per liter. Finally, we group
-the data by the number of cylinders and calculate the mean horsepower
-and fuel efficiency.
-
-Comparison
-
-Overall, both R’s tidyverse and Python’s pandas provide similar
-functionality for data wrangling. Both allow for filtering,
-transforming, and aggregating data frames. The syntax for performing
-these operations is slightly different between the two languages, with R
-using the %\>% operator for chaining operations and Python using method
-chaining or the apply family of functions.
-
-One key difference between the two languages is that R’s tidyverse
-provides a consistent grammar for data manipulation across its various
-packages, making it easier to learn and use. However, Python’s pandas
-library has a larger developer community and is more versatile for use
-in other applications, such as web development or machine learning.
-
-In conclusion, both R and Python provide powerful tools for data
-wrangling, and the choice between the two ultimately depends on the
-specific needs of the user and their familiarity
+            mean_hp  mean_kmpl
+    cyl                       
+    4.0  111.000000  11.007500
+    6.0  122.285714   8.390714
+    8.0  209.214286   6.417500
 
 ## Data from API
 
-Retrieving data from an API is a common task in both R and Python. Here
-are examples of how to retrieve data from an API in both languages:
+An Application Programming Interface (API) is a method of accessing data
+or services using automated code. When we talk about data APIs, we are
+usually referring to web APIs which are accessed over HTTP(S) using URLs
+(just like you put in your web browser).
 
-Python
+To decipher API documentation, you need to know a little about URLs.
+Take a look at the following graphic from [mdn
+webdocs](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/What_is_a_URL):
+
+![Anatomy of a URL from mdn
+webdocs](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/What_is_a_URL/mdn-url-all.png)
+
+For an API, the main part you need to pay attention to is the
+parameters - these are going to tell the data provider which data we
+want to download.
+
+Most APIs require that you sign up for an API key or developer key. This
+allows them to track who is downloading the data and make sure than no
+one user is putting undue stress on their system. **YOU SHOULD NOT
+PUBLISH YOUR API KEYS**. Even if the data is open, there are
+web-scraping bots out there that can attack data providers, for example
+by making so many requests that the service can’t respond to anyone
+(denial-of-service attack). Some data providers will discontinue access
+for you if your API key is used in an attack - even if it was
+inadvertent. We recommend storing your API key in a file in your home
+folder and importing it. You can also use the GitHub Secrets feature to
+store an API key without making it accessible on the open web.
+
+Retrieving data from an API is a common task in both R and Python.
+Sometimes, data managers provide a library for getting data, like the
+OpenStreetMap data earlier, which takes care of URL formatting for us.
+Other times, we must determine the correct HTTP(S) URL for the data
+using the API documentation. The examples below will show how to
+download data using API URLs in R and Python.
+
+### OpenWeatherMap
+
+#### R
+
+In R, we can use the httr package to retrieve data from an API. Here’s
+an example of how to retrieve weather data from the OpenWeatherMap API
+in R. You will need to replace `API_KEY` with an [API key from the
+OpenWeatherMap site](https://openweathermap.org/faq):
+
+R code:
+
+<details>
+<summary>Show the R code</summary>
+
+``` r
+library(httr)
+library(jsonlite)
+
+# Download
+url <- 'https://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=API_KEY'
+
+response <- GET(url)
+
+data <- content(response, 'text')
+
+# Convert content to JSON
+json <- fromJSON(content)
+
+# Convert JSON to a data frame
+df <- as.data.frame(json)
+
+print(data)
+```
+
+</details>
+
+We first load the httr library, then construct the API URL and use the
+GET() function to make a request to the API. We then extract the data
+from the response using the content() function and print the resulting
+data.
+
+#### Python
 
 To retrieve data from an API in Python, we can use the requests library.
 Here’s an example of how to retrieve weather data from the
-OpenWeatherMap API:
+OpenWeatherMap API.
 
 Python code:
 
+<details>
+<summary>Show the Python code</summary>
+
 ``` python
+import pandas as pd
 import requests
 
 url = 'https://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=API_KEY'
 
 response = requests.get(url)
 
-data = response.json()
+json_data = response.json()
+
+pd.read_json(json_data)
 
 print(data)
 ```
+
+</details>
 
 This code retrieves the current weather data for London from the
 OpenWeatherMap API. We first construct the API URL with the location and
@@ -2539,115 +2616,29 @@ API key, then use the requests.get() function to make a request to the
 API. We then extract the JSON data from the response using the .json()
 method and print the resulting data.
 
-R
-
-In R, we can use the httr package to retrieve data from an API. Here’s
-an example of how to retrieve weather data from the OpenWeatherMap API
-in R:
-
-R code:
-
-``` r
-library(httr)
-
-url <- 'https://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=API_KEY'
-
-response <- GET(url)
-
-data <- content(response, 'text')
-
-print(data)
-```
-
-This code is similar to the Python code above. We first load the httr
-library, then construct the API URL and use the GET() function to make a
-request to the API. We then extract the data from the response using the
-content() function and print the resulting data.
-
 Retrieving Data from an API in R Tidyverse In R Tidyverse, we can use
 the httr and jsonlite packages to retrieve and process data from an API.
 
-R code:
+Comparison
 
-``` r
-# Load required packages
-library(httr)
-library(jsonlite)
+- Both R Tidyverse and Python provide powerful tools for retrieving and
+  processing data from an API. In terms of syntax, the two languages are
+  somewhat similar. In both cases, we use a library to retrieve data
+  from the API, extract the content of the response, and then process
+  the JSON data. However, there are some differences in the specific
+  functions and methods used. For example, in R Tidyverse, we use the
+  content() function to extract the content of the response, whereas in
+  Python, we use the content attribute. Additionally, in R Tidyverse, we
+  use the fromJSON() function to convert the JSON data to a list,
+  whereas in Python, we use the loads() function.
 
-# Define API endpoint
-endpoint <- "https://jsonplaceholder.typicode.com/posts"
-
-# Retrieve data from API
-response <- GET(endpoint)
-
-# Extract content from response
-content <- content(response, "text")
-
-# Convert content to JSON
-json <- fromJSON(content)
-
-# Convert JSON to a data frame
-df <- as.data.frame(json)
-```
-
-In the above example, we use the GET() function from the httr package to
-retrieve data from an API endpoint, and the content() function to
-extract the content of the response. We then use the fromJSON() function
-from the jsonlite package to convert the JSON content to a list, and the
-as.data.frame() function to convert the list to a data frame.
-
-Retrieving Data from an API in Python In Python, we can use the requests
-library to retrieve data from an API, and the json library to process
-the JSON data.
-
-Python code:
-
-``` python
-
-# Load required libraries
-import requests
-import json
-
-# Define API endpoint
-endpoint = "https://jsonplaceholder.typicode.com/posts"
-
-# Retrieve data from API
-response = requests.get(endpoint)
-
-# Extract content from response
-content = response.content
-
-# Convert content to JSON
-json_data = json.loads(content)
-
-# Convert JSON to a list of dictionaries
-data = [dict(row) for row in json_data]
-```
-
-In the above example, we use the get() function from the requests
-library to retrieve data from an API endpoint, and the content attribute
-to extract the content of the response. We then use the loads() function
-from the json library to convert the JSON content to a list of
-dictionaries.
-
-Comparison Both R Tidyverse and Python provide powerful tools for
-retrieving and processing data from an API. In terms of syntax, the two
-languages are somewhat similar. In both cases, we use a library to
-retrieve data from the API, extract the content of the response, and
-then process the JSON data. However, there are some differences in the
-specific functions and methods used. For example, in R Tidyverse, we use
-the content() function to extract the content of the response, whereas
-in Python, we use the content attribute. Additionally, in R Tidyverse,
-we use the fromJSON() function to convert the JSON data to a list,
-whereas in Python, we use the loads() function.
-
-## Census data
+### Census data
 
 Retrieving USA census data in R, R Tidy, and Python can be done using
 different packages and libraries. Here are some working examples in code
 for each language:
 
-R:
+#### R:
 
 To retrieve census data in R, we can use the tidycensus package. Here’s
 an example of how to retrieve the total population for the state of
@@ -2655,33 +2646,8 @@ California:
 
 R code:
 
-``` r
-library(tidycensus)
-library(tidyverse)
-
-# Set your Census API key
-census_api_key("your_api_key")
-
-# Get the total population for the state of California
-ca_pop <- get_acs(
-  geography = "state",
-  variables = "B01003_001",
-  state = "CA"
-) %>% 
-  rename(total_population = estimate) %>% 
-  select(total_population)
-
-# View the result
-ca_pop
-```
-
-R Tidy:
-
-To retrieve census data in R Tidy, we can also use the tidycensus
-package. Here’s an example of how to retrieve the total population for
-the state of California using pipes and dplyr functions:
-
-R tidy code:
+<details>
+<summary>Show the R code</summary>
 
 ``` r
 library(tidycensus)
@@ -2703,13 +2669,18 @@ ca_pop <- get_acs(
 ca_pop
 ```
 
-Python:
+</details>
+
+#### Python:
 
 To retrieve census data in Python, we can use the census library. Here’s
 an example of how to retrieve the total population for the state of
 California:
 
 Python code:
+
+<details>
+<summary>Show the Python code</summary>
 
 ``` python
 from census import Census
@@ -2735,7 +2706,9 @@ ca_pop_df = ca_pop_df[["total_population"]]
 ca_pop_df
 ```
 
-## Lidar data
+</details>
+
+### Lidar data
 
 To find Lidar data in R and Python, you typically need to start by
 identifying sources of Lidar data and then accessing them using
@@ -2744,14 +2717,19 @@ find Lidar data in R and Python:
 
 R:
 
-Identify sources of Lidar data: The USGS National Map Viewer provides
-access to Lidar data for the United States. You can also find Lidar data
-on state and local government websites, as well as on commercial data
-providers’ websites. Access the data: You can use the lidR package in R
-to download and read Lidar data in the LAS format. For example, the
-following code downloads and reads Lidar data for a specific area:
+Identify sources of Lidar data:
+
+The USGS National Map Viewer provides access to Lidar data for the
+United States. You can also find Lidar data on state and local
+government websites, as well as on commercial data providers’ websites.
+Access the data: You can use the lidR package in R to download and read
+Lidar data in the LAS format. For example, the following code downloads
+and reads Lidar data for a specific area:
 
 R code:
+
+<details>
+<summary>Show the R code</summary>
 
 ``` r
 library(lidR)
@@ -2763,6 +2741,8 @@ lidar <- readLAS(LASfile)
 # Visualize the data
 plot(lidar)
 ```
+
+</details>
 
 Python:
 
@@ -2781,16 +2761,28 @@ py_install("pylas")
 py_install("laspy")
 ```
 
+<details>
+<summary>Show the Python code</summary>
+
 ``` python
+import zipfile
+
 import requests
 from pylas import read
 import laspy
 import numpy as np
 
 # Download Lidar data
-url = "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_CA_SanFrancisco_2016_LAS_2018.zip"
+url = ("https://s3-us-west-2.amazonaws.com/usgs-lidar-public/"
+       "USGS_LPC_CA_SanFrancisco_2016_LAS_2018.zip")
+
+# Unzip
+with
+
 lasfile = "USGS_LPC_CA_SanFrancisco_2016_LAS_2018.las"
 r = requests.get(url, allow_redirects=True)
+
+
 open(lasfile, 'wb').write(r.content)
 
 # Read the data
@@ -2800,7 +2792,9 @@ lidar = read(lasfile)
 laspy.plot.plot(lidar)
 ```
 
-## Data for black lives
+</details>
+
+### Data for black lives
 
 Data for Black Lives (<https://d4bl.org/>) is a movement that uses data
 science to create measurable change in the lives of Black people. While
@@ -2814,10 +2808,15 @@ work with. In this example, we’ll use a sample dataset available at
 <https://github.com/Data4BlackLives/covid-19/tree/master/data>. The
 dataset “COVID19_race_data.csv” contains COVID-19 race-related data.
 
-R: In R, we’ll use the ‘readr’ and ‘dplyr’ packages to read, process,
-and analyze the dataset.
+#### R:
+
+In R, we’ll use the ‘readr’ and ‘dplyr’ packages to read, process, and
+analyze the dataset.
 
 R code:
+
+<details>
+<summary>Show the R code</summary>
 
 ``` r
 # Install and load necessary libraries
@@ -2840,10 +2839,17 @@ data %>%
   arrange(desc(mean_cases_total))
 ```
 
-Python: In Python, we’ll use the ‘pandas’ library to read, process, and
-analyze the dataset.
+</details>
+
+#### Python:
+
+In Python, we’ll use the ‘pandas’ library to read, process, and analyze
+the dataset.
 
 Python code:
+
+<details>
+<summary>Show the Python code</summary>
 
 ``` python
 import pandas as pd
@@ -2861,6 +2867,8 @@ mean_cases_total = data.groupby("state")["cases_total"].mean().sort_values(ascen
 print(mean_cases_total)
 ```
 
+</details>
+
 In conclusion, both R and Python provide powerful libraries and tools
 for downloading, processing, and analyzing datasets, such as those found
 in the Data for Black Lives repository. The ‘readr’ and ‘dplyr’
@@ -2870,17 +2878,22 @@ with a different syntax. Depending on your preferred programming
 language and environment, both options can be effective in working with
 social justice datasets.
 
-## Propublica Congress API
+### Propublica Congress API
 
 The ProPublica Congress API provides information about the U.S. Congress
 members and their voting records. In this example, we’ll fetch data
 about the current Senate members and calculate the number of members in
 each party.
 
-R: In R, we’ll use the ‘httr’ and ‘jsonlite’ packages to fetch and
-process data from the ProPublica Congress API.
+#### R:
+
+In R, we’ll use the ‘httr’ and ‘jsonlite’ packages to fetch and process
+data from the ProPublica Congress API.
 
 R code:
+
+<details>
+<summary>Show the R code</summary>
 
 ``` r
 # load necessary libraries
@@ -2888,8 +2901,7 @@ library(httr)
 library(jsonlite)
 
 # Replace 'your_api_key' with your ProPublica API key
-
-#
+api_key <- 'your_api_key'
 
 # Fetch data about the current Senate members
 url <- "https://api.propublica.org/congress/v1/117/senate/members.json"
@@ -2908,14 +2920,19 @@ if (http_status(response)$category == "Success") {
 }
 ```
 
+</details>
 
-     D  I ID  R 
-    49  1  2 51 
+    [1] "Server error: (500) Internal Server Error"
 
-Python: In Python, we’ll use the ‘requests’ library to fetch data from
-the ProPublica Congress API and ‘pandas’ library to process the data.
+#### Python
+
+In Python, we’ll use the ‘requests’ library to fetch data from the
+ProPublica Congress API and ‘pandas’ library to process the data.
 
 python code:
+
+<details>
+<summary>Show the Python code</summary>
 
 ``` python
 # Install necessary libraries
@@ -2943,6 +2960,8 @@ else:
     print(f"Error: {response.status_code}")
 ```
 
+</details>
+
 In conclusion, both R and Python offer efficient ways to fetch and
 process data from APIs like the ProPublica Congress API. The ‘httr’ and
 ‘jsonlite’ libraries in R provide a straightforward way to make HTTP
@@ -2953,16 +2972,21 @@ like table() for aggregating data. Depending on your preferred
 programming language and environment, both options can be effective for
 working with the ProPublica Congress API.
 
-## Nonprofit Explorer API by ProPublica
+### Nonprofit Explorer API by ProPublica
 
 The Nonprofit Explorer API by ProPublica provides data on tax-exempt
 organizations in the United States. In this example, we’ll search for
 organizations with the keyword “education” and analyze the results.
 
-R: In R, we’ll use the ‘httr’ and ‘jsonlite’ packages to fetch and
-process data from the Nonprofit Explorer API.
+#### R
+
+In R, we’ll use the ‘httr’ and ‘jsonlite’ packages to fetch and process
+data from the Nonprofit Explorer API.
 
 R code:
+
+<details>
+<summary>Show the R code</summary>
 
 ``` r
 # Install and load necessary libraries
@@ -2986,6 +3010,8 @@ if (http_status(response)$category == "Success") {
 }
 ```
 
+</details>
+
 
          AZ      CA      CO      DC      FL      GA      HI      IA      ID      IL 
           3      19       6       2       4       1       1       1       1       5 
@@ -2996,10 +3022,15 @@ if (http_status(response)$category == "Success") {
          WA      ZZ 
           2       2 
 
-Python: In Python, we’ll use the ‘requests’ library to fetch data from
-the Nonprofit Explorer API and ‘pandas’ library to process the data.
+#### Python
+
+In Python, we’ll use the ‘requests’ library to fetch data from the
+Nonprofit Explorer API and ‘pandas’ library to process the data.
 
 Python code:
+
+<details>
+<summary>Show the Python code</summary>
 
 ``` python
 # Install necessary libraries
@@ -3021,6 +3052,8 @@ if response.status_code == 200:
 else:
     print(f"Error: {response.status_code}")
 ```
+
+</details>
 
     CA         19
     TX         13
@@ -3066,17 +3099,22 @@ like table() for aggregating data. Depending on your preferred
 programming language and environment, both options can be effective for
 working with the Nonprofit Explorer API.
 
-## Campaign Finance API by ProPublica
+### Campaign Finance API by ProPublica
 
 The Campaign Finance API by the Federal Election Commission (FEC)
 provides data on campaign finance in U.S. federal elections. In this
 example, we’ll fetch data about individual contributions for the 2020
 election cycle and analyze the results.
 
-R: In R, we’ll use the ‘httr’ and ‘jsonlite’ packages to fetch and
-process data from the Campaign Finance API.
+#### R
+
+In R, we’ll use the ‘httr’ and ‘jsonlite’ packages to fetch and process
+data from the Campaign Finance API.
 
 R code:
+
+<details>
+<summary>Show the R code</summary>
 
 ``` r
 # Install and load necessary libraries
@@ -3101,12 +3139,19 @@ if (http_status(response)$category == "Success") {
 }
 ```
 
+</details>
+
     [1] "Client error: (403) Forbidden"
 
-Python: In Python, we’ll use the ‘requests’ library to fetch data from
-the Campaign Finance API and ‘pandas’ library to process the data.
+#### Python
+
+In Python, we’ll use the ‘requests’ library to fetch data from the
+Campaign Finance API and ‘pandas’ library to process the data.
 
 Python code:
+
+<details>
+<summary>Show the Python code</summary>
 
 ``` python
 # Install necessary libraries
@@ -3131,6 +3176,8 @@ else:
     print(f"Error: {response.status_code}")
 ```
 
+</details>
+
     Error: 403
 
 In conclusion, both R and Python offer efficient ways to fetch and
@@ -3146,7 +3193,7 @@ working with the Campaign Finance API.
 Note: Remember to replace your_api_key with your actual FEC API key in
 the code examples above.
 
-## Historic Redlining
+### Historic Redlining
 
 Historic redlining data refers to data from the Home Owners’ Loan
 Corporation (HOLC) that created residential security maps in the 1930s,
@@ -3157,10 +3204,15 @@ Inequality project (<https://dsl.richmond.edu/panorama/redlining/>).
 In this example, we’ll download historic redlining data for Philadelphia
 in the form of a GeoJSON file and analyze the data in R and Python.
 
-R: In R, we’ll use the ‘sf’ and ‘dplyr’ packages to read and process the
+#### R
+
+In R, we’ll use the ‘sf’ and ‘dplyr’ packages to read and process the
 GeoJSON data.
 
 R code:
+
+<details>
+<summary>Show the R code</summary>
 
 ``` r
 # Install and load necessary libraries
@@ -3179,12 +3231,19 @@ grade_counts <- philly_geojson %>%
 plot(grade_counts)
 ```
 
-![](bilingualism_files/figure-commonmark/unnamed-chunk-86-1.png)
+</details>
 
-Python: In Python, we’ll use the ‘geopandas’ library to read and process
-the GeoJSON data.
+![](bilingualism_files/figure-commonmark/unnamed-chunk-75-1.png)
+
+#### Python
+
+In Python, we’ll use the ‘geopandas’ library to read and process the
+GeoJSON data.
 
 Python code:
+
+<details>
+<summary>Show the Python code</summary>
 
 ``` python
 # Install necessary libraries
@@ -3200,6 +3259,8 @@ philly_geojson = gpd.read_file(url)
 grade_counts = philly_geojson["holc_grade"].value_counts()
 print(grade_counts)
 ```
+
+</details>
 
     B    28
     D    26
@@ -3217,7 +3278,7 @@ aggregating data. Depending on your preferred programming language and
 environment, both options can be effective for working with historic
 redlining data.
 
-## Indian Entities Recognized and Eligible To Receive Services by BIA
+### Indian Entities Recognized and Eligible To Receive Services by BIA
 
 The Bureau of Indian Affairs (BIA) provides a PDF document containing a
 list of Indian Entities Recognized and Eligible To Receive Services. To
@@ -3225,10 +3286,15 @@ analyze the data, we’ll first need to extract the information from the
 PDF. In this example, we’ll extract the names of the recognized tribes
 and count the number of tribes per state.
 
-R: In R, we’ll use the ‘pdftools’ package to extract text from the PDF
-and the ‘stringr’ package to process the text data.
+#### R
+
+In R, we’ll use the ‘pdftools’ package to extract text from the PDF and
+the ‘stringr’ package to process the text data.
 
 R code:
+
+<details>
+<summary>Show the R code</summary>
 
 ``` r
 # Install and load necessary libraries
@@ -3272,13 +3338,20 @@ state_counts <- tribe_data %>%
 print(state_counts)
 ```
 
+</details>
+
     # A tibble: 0 × 2
     # ℹ 2 variables: State <chr>, Count <int>
 
-Python: In Python, we’ll use the ‘PyPDF2’ library to extract text from
-the PDF and the ‘re’ module to process the text data.
+#### Python
+
+In Python, we’ll use the ‘PyPDF2’ library to extract text from the PDF
+and the ‘re’ module to process the text data.
 
 Python code:
+
+<details>
+<summary>Show the Python code</summary>
 
 ``` python
 # Install necessary libraries
@@ -3305,6 +3378,8 @@ state_counts = Counter(tribe_states)
 print(state_counts)
 ```
 
+</details>
+
 In conclusion, both R and Python offer efficient ways to download and
 process the list of Indian Entities Recognized and Eligible To Receive
 Services from the BIA. The ‘pdftools’ package in R provides a simple way
@@ -3314,16 +3389,21 @@ module in Python can be used to process and analyze text data. Depending
 on your preferred programming language and environment, both options can
 be effective for working with BIA data.
 
-## National Atlas - Indian Lands of the United States dataset
+### National Atlas - Indian Lands of the United States dataset
 
 In this example, we will download and analyze the National Atlas -
 Indian Lands of the United States dataset in both R and Python. We will
 read the dataset and count the number of Indian lands per state.
 
-R: In R, we’ll use the ‘sf’ package to read the Shapefile and the
-‘dplyr’ package to process the data.
+#### R
+
+In R, we’ll use the ‘sf’ package to read the Shapefile and the ‘dplyr’
+package to process the data.
 
 R code:
+
+<details>
+<summary>Show the R code</summary>
 
 ``` r
 # Install and load necessary libraries
@@ -3349,15 +3429,22 @@ indian_lands <- read_sf(shapefile_path)
 plot(indian_lands)
 ```
 
+</details>
+
     Warning: plotting the first 9 out of 23 attributes; use max.plot = 23 to plot
     all
 
-![](bilingualism_files/figure-commonmark/unnamed-chunk-90-1.png)
+![](bilingualism_files/figure-commonmark/unnamed-chunk-79-1.png)
 
-Python: In Python, we’ll use the ‘geopandas’ and ‘pandas’ libraries to
-read the Shapefile and process the data.
+#### Python
+
+In Python, we’ll use the ‘geopandas’ and ‘pandas’ libraries to read the
+Shapefile and process the data.
 
 Python code:
+
+<details>
+<summary>Show the Python code</summary>
 
 ``` python
 import geopandas as gpd
@@ -3388,6 +3475,8 @@ state_counts = indian_lands.groupby("STATE").size().reset_index(name="count")
 
 print(state_counts)
 ```
+
+</details>
 
 Both R and Python codes download the dataset and read the Shapefile
 using the respective packages. They then group the data by the ‘STATE’
