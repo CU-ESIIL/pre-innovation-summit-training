@@ -228,133 +228,119 @@ Open Data are a critical aspect of open science. There are three key attributes 
 
 ??? Tip "FAIR & CARE Principles"
 
-    [Wilkinson et al. (2016)](https://doi.org/10.1038/sdata.2016.18){target=_blank} established the guidelines to improve the Findability, Accessibility, Interoperability, and Reuse (FAIR) of digital assets for research. 
+    **FAIR Principles**
 
-    [Go-FAIR website](https://www.go-fair.org/fair-principles/){target=_blank}
+    In 2016, the [FAIR Guiding Principles](https://www.nature.com/articles/sdata201618) for scientific data management and stewardship were
+    published in Scientific Data. Read it.
 
-    [Carroll et al. (2020)](http://doi.org/10.5334/dsj-2020-043){target=_blank} established the CARE Principles for Indigenous Data Governance. [full document :fontawesome-solid-file-pdf:](https://static1.squarespace.com/static/5d3799de845604000199cd24/t/5da9f4479ecab221ce848fb2/1571419335217/CARE+Principles_One+Pagers+FINAL_Oct_17_2019.pdf){target=_blank}
-    
-    [Indigenous Data Sovereignty Networks](https://indigenousdatalab.org/networks/){target=_blank}
----
+    *Findable*
 
-## FAIR Data
+    -   F1. (meta)data are assigned a globally unique and persistent identifier
+    -   F2. data are described with rich metadata (defined by R1 below)
+    -   F3. metadata clearly and explicitly include the identifier of the data it describes
+    -   F4. (meta)data are registered or indexed in a searchable resource
 
-!!! Info "Learning Objectives"
-        -   Recall the meaning of FAIR
-        -   Understand why FAIR is a collection of principles (rather than rules)
-        -   Use self-assessments to evaluate the FAIRness of your data
+    *Accessible*
 
-### FAIR Principles
+    -   A1. (meta)data are retrievable by their identifier using a
+        standardized communications protocol
+    -   A1.1 the protocol is open, free, and universally implementable
+    -   A1.2 the protocol allows for an authentication and authorization
+        procedure, where necessary
+    -   A2. metadata are accessible, even when the data are no longer
+        available
 
-In 2016, the [FAIR Guiding Principles](https://www.nature.com/articles/sdata201618) for scientific data management and stewardship were
-published in Scientific Data. Read it.
+    *Interoperable*
 
-**Findable**
+    -   I1. (meta)data use a formal, accessible, shared, and broadly
+        applicable language for knowledge representation.
+    -   I2. (meta)data use vocabularies that follow FAIR principles
+    -   I3. (meta)data include qualified references to other (meta)data
 
--   F1. (meta)data are assigned a globally unique and persistent identifier
--   F2. data are described with rich metadata (defined by R1 below)
--   F3. metadata clearly and explicitly include the identifier of the data it describes
--   F4. (meta)data are registered or indexed in a searchable resource
+    *Reusable*
 
-**Accessible**
+    -   R1. meta(data) are richly described with a plurality of accurate
+        and relevant attributes
+    -   R1.1. (meta)data are released with a clear and accessible data
+        usage license
+    -   R1.2. (meta)data are associated with detailed provenance
+    -   R1.3. (meta)data meet domain-relevant community standard
 
--   A1. (meta)data are retrievable by their identifier using a
-    standardized communications protocol
--   A1.1 the protocol is open, free, and universally implementable
--   A1.2 the protocol allows for an authentication and authorization
-    procedure, where necessary
--   A2. metadata are accessible, even when the data are no longer
-    available
+    !!! Tip "Open vs. Public vs. FAIR"
 
-**Interoperable**
+            FAIR does not demand that data be open: See one definition of open:
+            http://opendefinition.org/
 
--   I1. (meta)data use a formal, accessible, shared, and broadly
-    applicable language for knowledge representation.
--   I2. (meta)data use vocabularies that follow FAIR principles
--   I3. (meta)data include qualified references to other (meta)data
+    !!! Question "Why Principles?"
 
-**Reusable**
+            FAIR is a collection of principles. Ultimately, different
+            communities within different scientific disciplines must work to
+            interpret and implement these principles. Because technologies
+            change quickly, focusing on the desired end result allows FAIR to be
+            applied to a variety of situations now and in the foreseeable
+            future.
 
--   R1. meta(data) are richly described with a plurality of accurate
-    and relevant attributes
--   R1.1. (meta)data are released with a clear and accessible data
-    usage license
--   R1.2. (meta)data are associated with detailed provenance
--   R1.3. (meta)data meet domain-relevant community standard
+    **CARE Principles**
 
-!!! Tip "Open vs. Public vs. FAIR"
+    The [CARE Principles](https://www.gida-global.org/care) for Indigenous Data Governance were drafted at the International Data Week and Research Data Alliance Plenary co-hosted event "Indigenous Data Sovereignty Principles for the Governance of Indigenous Data Workshop," 8 November 2018, Gaborone, Botswana.
 
-        FAIR does not demand that data be open: See one definition of open:
-        http://opendefinition.org/
+    *Collective Benefit*
 
-!!! Question "Why Principles?"
+    -   C1. For inclusive development and innovation
+    -   C2. For improved governance and citizen engagement
+    -   C3. For equitable outcomes
 
-        FAIR is a collection of principles. Ultimately, different
-        communities within different scientific disciplines must work to
-        interpret and implement these principles. Because technologies
-        change quickly, focusing on the desired end result allows FAIR to be
-        applied to a variety of situations now and in the foreseeable
-        future.
+    **Authority to Control*
 
-### CARE Principles
+    -   A1. Recognizing rights and interests
+    -   A2. Data for governance
+    -   A3. Governance of data
 
-The [CARE Principles](https://www.gida-global.org/care) for Indigenous Data Governance were drafted at the International Data Week and Research Data Alliance Plenary co-hosted event "Indigenous Data Sovereignty Principles for the Governance of Indigenous Data Workshop," 8 November 2018, Gaborone, Botswana.
+    *Responsibility*
 
-**Collective Benefit**
+    -   R1. For positive relationships
+    -   R2. For expanding capability and capacity
+    -   R3. For Indigenous languages and worldviews
 
--   C1. For inclusive development and innovation
--   C2. For improved governance and citizen engagement
--   C3. For equitable outcomes
+    *Ethics*
 
-**Authority to Control**
+    -   E1. For minimizing harm and maximizing benefit
+    -   E2. For justice
+    -   E3. For future use
 
--   A1. Recognizing rights and interests
--   A2. Data for governance
--   A3. Governance of data
+    **FAIR - TLC**
 
-**Responsibility**
+    *Traceable, Licensed, and Connected*
 
--   R1. For positive relationships
--   R2. For expanding capability and capacity
--   R3. For Indigenous languages and worldviews
+    -   The need for metrics: https://zenodo.org/record/203295#.XkrzTxNKjzI
 
-**Ethics**
+    **How to get to FAIR?**
 
--   E1. For minimizing harm and maximizing benefit
--   E2. For justice
--   E3. For future use
+    This is a question that only you can answer, that is because it depends
+    on (among other things)
 
-### FAIR - TLC
+    1.  Your scientific discipline: Your datatypes and existing standards
+        for what constitutes acceptable data management will vary.
+    2.  The extent to which your scientific community has implemented
+        FAIR: Some disciplines have significant guidelines on FAIR, while
+        others have not addressed the subject in any concerted way.
+    3.  Your level of technical skills: Some approaches to implementing
+        FAIR may require technical skills you may not yet feel comfortable
+        with.
 
-**Traceable, Licensed, and Connected**
+    While a lot is up to you, the first step is to evaluate how FAIR you
+    think your data are:
 
--   The need for metrics: https://zenodo.org/record/203295#.XkrzTxNKjzI
-
-### How to get to FAIR?
-
-This is a question that only you can answer, that is because it depends
-on (among other things)
-
-1.  Your scientific discipline: Your datatypes and existing standards
-    for what constitutes acceptable data management will vary.
-2.  The extent to which your scientific community has implemented
-    FAIR: Some disciplines have significant guidelines on FAIR, while
-    others have not addressed the subject in any concerted way.
-3.  Your level of technical skills: Some approaches to implementing
-    FAIR may require technical skills you may not yet feel comfortable
-    with.
-
-While a lot is up to you, the first step is to evaluate how FAIR you
-think your data are:
-
-??? Question "Exercise"
+    ??? Question "Exercise"
         Thinking about a dataset you work with, complete the ARDC [FAIR assessment](https://ardc.edu.au/resource/fair-data-self-assessment-tool/).
 
+    ??? Note "Resources"
 
-### References and Resources
-
-<https://www.nature.com/articles/sdata201618>
-
+        - [The FAIR Guiding Principles for scientific data management and stewardship](<https://www.nature.com/articles/sdata201618>)
+        - [Wilkinson et al. (2016)](https://doi.org/10.1038/sdata.2016.18){target=_blank} established the guidelines to improve the Findability, Accessibility, Interoperability, and Reuse (FAIR) of digital assets for research. 
+        - [Go-FAIR website](https://www.go-fair.org/fair-principles/){target=_blank}
+        - [Carroll et al. (2020)](http://doi.org/10.5334/dsj-2020-043){target=_blank} established the CARE Principles for Indigenous Data Governance. [full document :fontawesome-solid-file-pdf:](https://static1.squarespace.com/static/5d3799de845604000199cd24/t/5da9f4479ecab221ce848fb2/1571419335217/CARE+Principles_One+Pagers+FINAL_Oct_17_2019.pdf){target=_blank}
+        - [Indigenous Data Sovereignty Networks](https://indigenousdatalab.org/networks/){target=_blank}
 
 ??? Tip "LOD Cloud"
     
@@ -481,7 +467,7 @@ The use of version control systems like [GitHub](https://github.com/search?q=ope
 
 #### :material-pillar: Open Source Software
 
-[![](https://upload.wikimedia.org/wikipedia/commons/4/42/Opensource.svg){width=240}](https://opensource.org/){target=_blank}
+[![oss](https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Open_Source_Initiative.svg/1024px-Open_Source_Initiative.svg.png){width=240}](https://opensource.org/){target=_blank}
 
 ??? Quote "Definitions"
 
@@ -492,6 +478,16 @@ The use of version control systems like [GitHub](https://github.com/search?q=ope
     [:material-wikipedia: Wikipedia definition](https://en.wikipedia.org/wiki/Open-source_software){target=_blank}
 
 [Awesome list](https://tyson-swetnam.github.io/awesome-open-science/software/){target=_blank}
+
+??? Tip "Liceses"
+
+    ??? Quote "Definitions"
+        Licensing is a crucial aspect of Open Science, as it helps define the terms under which research outputs, such as data, software, publications, and other digital resources, can be accessed, used, shared, and reused by others. Licensing enables the dissemination of knowledge, fosters collaboration, and ensures that research outputs are properly attributed and protected.
+
+    In the context of Open Science, the most commonly used licese models are the [:material-creative-commons: Creative Commons Licences](https://creativecommons.org/licenses/) and the [:material-open-source-initiative: Open Source Initiative Licenses](https://opensource.org/licenses/). In summary:
+
+    - **Creative Commons** licenses allow content creators to retain certain rights while granting others the freedom to use and distribute their work under specific conditions, including work outside of science.
+    - **Open Science Initiative** licenses specifically focus on licensing scientific research outputs, including data, software, publications, and related materials. It is tailored to meet the unique requirements and challenges of the scientific community, taking into account FAIR and CARE priciples.
 
 ### *WHY* do Open Science?
 
@@ -510,7 +506,6 @@ A paper from [Bartling & Friesike (2014)](https://doi.org/10.1007/978-3-319-0002
 4.  **Public school**: primarily concerned with societal impact of scholarly work, focusing on engagement with broader public via citizen science, understandable scientific communication, and less formal communication
 
 5.  **Measurement school**: primarily concerned with the existing focus on journal publications as a means of measuring scholarly output, and focused on developing alternative measurements of scientific impact
-
 
 <figure markdown>
   <a href="https://library.oapen.org/bitstream/handle/20.500.12657/28008/1001989.pdf" target="blank" rel="fecher_friesike">![fecher_friesike](../assets/five_schools.png){ width="700" } </a>
@@ -991,7 +986,7 @@ A big first step on the road to reproducibility is **repeatability**. In the con
 
 In many ways, this is the biggest hurdle to reproducibility, as it often requires the biggest leap in skills. You can think of repeatability in a few ways.
 
-#### Software Management
+### Software Management
 
 Have you ever tried to run a script, only to realize you had updated a package without knowing, and now the script doesn't work? 
 
