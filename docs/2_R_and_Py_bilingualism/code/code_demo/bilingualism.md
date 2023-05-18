@@ -35,6 +35,138 @@ will help you become bilingual in R and Python.
 
 ## How to get help
 
+If you know how to get help with one programming language, it’s not too
+different in a different one.
+
+### Offline in your coding environment
+
+In both R and Python, you can print out the documentation for any
+function or object using the `help()` function. For example:
+
+``` r
+help(print)
+```
+
+``` python
+help(print)
+```
+
+    Help on built-in function print in module builtins:
+
+    print(...)
+        print(value, ..., sep=' ', end='\n', file=sys.stdout, flush=False)
+        
+        Prints the values to a stream, or to sys.stdout by default.
+        Optional keyword arguments:
+        file:  a file-like object (stream); defaults to the current sys.stdout.
+        sep:   string inserted between values, default a space.
+        end:   string appended after the last value, default a newline.
+        flush: whether to forcibly flush the stream.
+
+### Official documentation pages
+
+There are also some great documentation of Python, R, and third party
+libraries on the internet. You can find the same information about
+parameters, attributes, returns, and methods that you get by running
+`help()`, online. We also recommend checking out the associated **user
+guides** and **plot gallerys**!
+
+Here are some of our favorite documentation pages. First, manuals for
+the programming languages:
+
+- [Python manual](https://docs.python.org/3.10/)
+
+- [The R manuals](https://rstudio.github.io/r-manuals/), formatted for
+  the web
+
+> Note that if you are **citing** a program language, it is conventional
+> to cite the manual for the version you used unless the authors specify
+> otherwise.
+
+Some of our favorite Python libraries for Earth Data Science:
+
+- [xarray labeled multidimensional
+  arrays](https://docs.xarray.dev/en/stable/) and [rioxarray arrays with
+  coordinates](https://corteva.github.io/rioxarray/stable/)
+
+- [pandas data frames: tabular data and
+  databases](https://pandas.pydata.org/docs/) and [geopandas data frames
+  with coordinates](https://geopandas.org/en/stable/)
+
+- [Seaborn data visualization](https://seaborn.pydata.org/)
+
+Some of our favorite R libraries for Earth Data Science:
+
+- [tidyverse collection of libraries for data
+  science](https://www.tidyverse.org/)
+
+- [ggplot2 data visualization (technically part of tidyverse but often
+  used on its own)](https://ggplot2.tidyverse.org/) and [cowplot figure
+  layout](https://cran.r-project.org/web/packages/cowplot/vignettes/introduction.html)
+
+We recommend checking out official documentation before heading to sites
+like CodeAcademy or GeeksForGeeks that summarize documentation. They are
+often missing key details (but can have examples if you are having
+trouble finding those)
+
+### Books
+
+There are many many books out there on how to learn both R and Python!
+We have heard from many learners who had success with the [O’Reill
+books](https://www.oreilly.com/products/books-videos.html). In
+particular, you can check out the following freely available books for
+download or reading on the web:
+
+- [Think Python: How to Think Like a Computer
+  Scientist](https://greenteapress.com/wp/think-python-2e/) by Dr. Allen
+  Downey - This book is especially targeted at developing bilingualism,
+  even though it is a Python book. It originally was published as Think
+  Java, and then:
+
+  <div>
+
+  > “Jeff Elkner, a high school teacher in Virginia, adopted my book and
+  > translated it into Python. He sent me a copy of his translation, and
+  > I had the unusual experience of learning Python by reading my own
+  > book.”
+
+  </div>
+
+- [R for Data Science](https://r4ds.had.co.nz/) by Hadley Wickham
+  focuses on tidyverse-style R but covers a lot of the intricacies of
+  the language as well.
+
+### Message boards
+
+Finally, there are lots of sites out there where you can post and answer
+questions, or read other peoples’ questions and answers. Some of our
+favorites:
+
+- [StackOverflow](https://stackoverflow.com/)
+
+- [GitHub](https://github.com/) Issues pages for the project in question
+
+- Or you can search and see what comes up - there are other good but
+  more obscure sources out there like Google groups pages
+
+### ChatGPT
+
+We used ChatGPT to write the first version of this document because it’s
+pretty good at coding. Some things you can try:
+
+- Paste some code and ask ChatGPT what it does
+
+- Paste some code and ask ChatGPT to find bugs in it
+
+- Ask ChatGPT to write you code that does what you want
+
+- Ask ChatGPT to translate from R to Python or vice versa
+
+While there’s no guarantee, we’ve gotten plenty of working answers out,
+with minimal changes needed. ChatGPT can be loaded as an extension to
+many development environments like VSCode, although you may hit a pay
+wall.
+
 ## Packages: No need to write it from scratch
 
 One thing Python and R have in common is they are extendable using
@@ -231,24 +363,111 @@ options(java.parameters = "-Xmx5G")
 
 library(readr)
 library(r5r)
+```
+
+    Please make sure you have already allocated some memory to Java by running:
+      options(java.parameters = '-Xmx2G').
+    You should replace '2G' by the amount of memory you'll require. Currently, Java memory is set to -Xmx5G
+
+``` r
 library(sf)
+```
+
+    Linking to GEOS 3.11.0, GDAL 3.5.3, PROJ 9.1.0; sf_use_s2() is TRUE
+
+``` r
 library(data.table)
 library(ggplot2)
 library(interp)
 library(dplyr)
+```
+
+
+    Attaching package: 'dplyr'
+
+    The following objects are masked from 'package:data.table':
+
+        between, first, last
+
+    The following objects are masked from 'package:stats':
+
+        filter, lag
+
+    The following objects are masked from 'package:base':
+
+        intersect, setdiff, setequal, union
+
+``` r
 library(osmdata)
+```
+
+    Data (c) OpenStreetMap contributors, ODbL 1.0. https://www.openstreetmap.org/copyright
+
+``` r
 library(ggthemes)
 library(sf)
 library(data.table)
 library(ggplot2)
 library(akima)
+```
+
+
+    Attaching package: 'akima'
+
+    The following objects are masked from 'package:interp':
+
+        aspline, bicubic, bicubic.grid, bilinear, bilinear.grid,
+        franke.data, franke.fn, interp, interp2xyz, interpp
+
+``` r
 library(dplyr)
 library(raster)
+```
+
+    Loading required package: sp
+
+
+    Attaching package: 'raster'
+
+    The following object is masked from 'package:dplyr':
+
+        select
+
+``` r
 library(osmdata)
 library(mapview)
 library(cowplot)
+```
+
+
+    Attaching package: 'cowplot'
+
+    The following object is masked from 'package:ggthemes':
+
+        theme_map
+
+``` r
 library(here)
+```
+
+    here() starts at /Users/elsa/04-workshops/pre-innovation-summit-training
+
+``` r
 library(testthat)
+```
+
+
+    Attaching package: 'testthat'
+
+    The following object is masked from 'package:dplyr':
+
+        matches
+
+    The following objects are masked from 'package:readr':
+
+        edition_get, local_edition
+
+``` r
 library(reticulate)
 Sys.setenv(
   RETICULATE_PYTHON=path.expand(
@@ -269,7 +488,6 @@ import geopandas
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import r5py
 import requests
 import rioxarray as rxr
 ```
@@ -839,7 +1057,7 @@ ggplot(penguins_df, aes(x = bill_length_mm, y = body_mass_g, color=species)) +
 
     Warning: Removed 2 rows containing missing values (`geom_point()`).
 
-![](bilingualism_files/figure-commonmark/unnamed-chunk-36-1.png)
+![](bilingualism_files/figure-commonmark/unnamed-chunk-38-1.png)
 
 Python seaborn.objects code:
 
@@ -866,7 +1084,7 @@ Python seaborn.objects code:
     The savefig.jpeg_quality rcparam was deprecated in Matplotlib 3.3 and will be removed two minor releases later.
     /Users/elsa/Library/Caches/org.R-project.R/R/renv/cache/v5/R-4.3/x86_64-apple-darwin20/reticulate/1.28/86c441bf33e1d608db773cb94b848458/reticulate/python/rpytools/call.py:10: UserWarning: There are no gridspecs with layoutgrids. Possibly did not call parent GridSpec with the "figure" keyword
 
-![](bilingualism_files/figure-commonmark/unnamed-chunk-37-1.png)
+![](bilingualism_files/figure-commonmark/unnamed-chunk-39-1.png)
 
 > **GOTCHA ALERT:** In Python, you will usually need to put `.show()` or
 > something similar at the end of your code to see your plot. Otherwise
@@ -891,11 +1109,11 @@ from plotnine import ggplot, aes, geom_point, labs, theme, ggtitle
 )
 ```
 
-    <ggplot: (8790968204743)>
+    <ggplot: (8762036318199)>
 
     /Users/elsa/opt/miniconda3/envs/earth-analytics-python/lib/python3.8/site-packages/plotnine/layer.py:401: PlotnineWarning: geom_point : Removed 2 rows containing missing values.
 
-![](bilingualism_files/figure-commonmark/unnamed-chunk-38-1.png)
+![](bilingualism_files/figure-commonmark/unnamed-chunk-40-1.png)
 
 > **GOTCHA ALERT:** If you are used to `ggplot2` and are using
 > `plotnine`, there are a few things to be aware of. One is that
@@ -1057,6 +1275,16 @@ and try writing the workflow above. If you need help, you can look at
 the code in the more familiar language, or check out our version in the
 less familiar.
 
+Your code:
+
+``` r
+# Your R code here
+```
+
+``` python
+# Your Python code here
+```
+
 R code:
 
 <details>
@@ -1082,7 +1310,7 @@ iris %>%
 
 </details>
 
-![](bilingualism_files/figure-commonmark/unnamed-chunk-43-1.png)
+![](bilingualism_files/figure-commonmark/unnamed-chunk-47-1.png)
 
 Python code:
 
@@ -1112,9 +1340,7 @@ plt.show()
 
 </details>
 
-![](bilingualism_files/figure-commonmark/unnamed-chunk-44-1.png)
-
-Your code:
+![](bilingualism_files/figure-commonmark/unnamed-chunk-48-1.png)
 
 ## Linear regression
 
@@ -1443,7 +1669,7 @@ faithful %>%
 
     `geom_smooth()` using formula = 'y ~ x'
 
-![](bilingualism_files/figure-commonmark/unnamed-chunk-47-1.png)
+![](bilingualism_files/figure-commonmark/unnamed-chunk-49-3.png)
 
 Python code:
 
@@ -1469,8 +1695,8 @@ print(model.summary())
     Dep. Variable:                waiting   R-squared:                       0.811
     Model:                            OLS   Adj. R-squared:                  0.811
     Method:                 Least Squares   F-statistic:                     1162.
-    Date:                Thu, 11 May 2023   Prob (F-statistic):          8.13e-100
-    Time:                        11:27:24   Log-Likelihood:                -868.38
+    Date:                Thu, 18 May 2023   Prob (F-statistic):          8.13e-100
+    Time:                        00:09:34   Log-Likelihood:                -868.38
     No. Observations:                 272   AIC:                             1741.
     Df Residuals:                     270   BIC:                             1748.
     Df Model:                           1                                         
@@ -1507,7 +1733,7 @@ print(model.summary())
     /Users/elsa/opt/miniconda3/envs/earth-analytics-python/lib/python3.8/_collections_abc.py:832: MatplotlibDeprecationWarning: 
     The savefig.jpeg_quality rcparam was deprecated in Matplotlib 3.3 and will be removed two minor releases later.
 
-![](bilingualism_files/figure-commonmark/unnamed-chunk-48-1.png)
+![](bilingualism_files/figure-commonmark/unnamed-chunk-50-3.png)
 
 In both cases, we generate some sample data with a linear relationship
 between x and y, and then perform a simple linear regression to estimate
@@ -1554,8 +1780,12 @@ print(paste("Accuracy:", accuracy))
 Python code:
 
 ``` python
-from sklearn.ensemble import RandomForestClassifier
+import pandas as pd
+import seaborn.objects as so
 from sklearn.datasets import load_iris
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.inspection import permutation_importance
+from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import train_test_split
 
 # Load the "iris" dataset
@@ -1566,23 +1796,71 @@ X_train, X_test, y_train, y_test = train_test_split(
     iris.data, iris.target, test_size=0.3, random_state=123)
 
 # Build a random forest model
-rf_model = RandomForestClassifier(n_estimators=500, random_state=123)
+rf_model = RandomForestClassifier(
+    n_estimators=500, random_state=123, oob_score=True)
 rf_model.fit(X_train, y_train)
 
 # Make predictions on the testing set
 ```
 
-    RandomForestClassifier(n_estimators=500, random_state=123)
+    RandomForestClassifier(n_estimators=500, oob_score=True, random_state=123)
 
 ``` python
 predictions = rf_model.predict(X_test)
 
-# Calculate accuracy of the model
+# OOB score
+print('OOB score: ', rf_model.oob_score_)
+
+# Accuracy on test data
+```
+
+    OOB score:  0.9428571428571428
+
+``` python
 accuracy = sum(predictions == y_test) / len(y_test)
 print("Accuracy:", accuracy)
+
+# Confusion Matrix
 ```
 
     Accuracy: 0.9555555555555556
+
+``` python
+print(confusion_matrix(y_test, predictions))
+
+# Plot feature permutation importances
+```
+
+    [[18  0  0]
+     [ 0 10  0]
+     [ 0  2 15]]
+
+``` python
+importances = permutation_importance(
+    rf_model, X_test, y_test, 
+    n_repeats=10, random_state=123)
+(
+    so.Plot(
+        pd.DataFrame(
+            {
+                'importance': importances.importances_mean, 
+                'feature': iris.feature_names
+            }
+        ),
+        x='feature',
+        y='importance')
+    .add(so.Bar())
+    .label(x='', y='Permutation Importance')
+    .show()
+)
+```
+
+    /Users/elsa/opt/miniconda3/envs/earth-analytics-python/lib/python3.8/_collections_abc.py:832: MatplotlibDeprecationWarning: 
+    The savefig.jpeg_quality rcparam was deprecated in Matplotlib 3.3 and will be removed two minor releases later.
+    /Users/elsa/opt/miniconda3/envs/earth-analytics-python/lib/python3.8/_collections_abc.py:832: MatplotlibDeprecationWarning: 
+    The savefig.jpeg_quality rcparam was deprecated in Matplotlib 3.3 and will be removed two minor releases later.
+
+![](bilingualism_files/figure-commonmark/unnamed-chunk-52-5.png)
 
 In both cases, we load the iris dataset and split it into training and
 testing sets. We then build a random forest model using the training
@@ -1611,7 +1889,7 @@ R Code:
 library(osmdata)
 library(tmap)
 
-# Define the map location and zoom level
+# Define the map bounding box
 bbox <- c(left = -0.16, bottom = 51.49, right = -0.13, top = 51.51)
 
 # Get the OpenStreetMap data
@@ -1624,7 +1902,7 @@ tm_shape(osm_data$osm_lines) +
   tm_lines()
 ```
 
-![](bilingualism_files/figure-commonmark/unnamed-chunk-51-1.png)
+![](bilingualism_files/figure-commonmark/unnamed-chunk-53-7.png)
 
 Python code:
 
@@ -1632,31 +1910,48 @@ Python code:
 # Load the "osmnx" package for mapping
 import osmnx as ox
 
-# Define the map location and zoom level
-bbox = (51.49, -0.16, 51.51, -0.13)
+# Define the map bounding box
+bbox = {'south': 51.49, 'west': -0.16, 'north': 51.51, 'east': -0.13}
 
 # Get the OpenStreetMap data
-osm_data = ox.graph_from_bbox(north=bbox[2], south=bbox[0], east=bbox[3], west=bbox[1], network_type='all')
+osm_graph = ox.graph_from_bbox(**bbox)
 
 # Plot the map using osmnx
-ox.plot_graph(osm_data)
+ox.plot_graph(osm_graph, node_size=0)
 ```
 
     (<Figure size 800x800 with 0 Axes>, <AxesSubplot:>)
 
-![](bilingualism_files/figure-commonmark/unnamed-chunk-52-1.png)
+![](bilingualism_files/figure-commonmark/unnamed-chunk-54-7.png)
 
-In both cases, we define the map location and zoom level, retrieve the
+In both cases, we define the map bounding box, retrieve the
 OpenStreetMap data using the specified bounding box, and plot the map.
 
 The main differences between the two approaches are:
 
-Package names and syntax: In R, we use the osmdata package and its
-syntax to download and process the OpenStreetMap data, while in Python,
-we use the osmnx package and its syntax. Mapping libraries: In R, we use
-the tmap package to create a static map of the OpenStreetMap data, while
-in Python, we use the built-in ox.plot_graph function from the osmnx
-package to plot the map.
+- Package names and syntax: In R, we use the osmdata package and its
+  syntax to download and process the OpenStreetMap data, while in
+  Python, we use the osmnx package and its syntax. We also could have
+  access the OSM API directly, but these packages make it convenient to
+  get boundaries and roads with only a few lines of code.
+
+- Mapping libraries: In R, we use the tmap package to create a static
+  map of the OpenStreetMap data, while in Python, we use the built-in
+  ox.plot_graph function from the osmnx package to plot the map.
+
+- In both Python and R, we define the bounding box as new type of object
+  (for this notebook). In R, we use a named vector; in Python, we use a
+  dictionary. There are some (very) subtle differences between the
+  implementation of these objects, but for now we can treat them as the
+  same. Using **named** formats for data like named vectors,
+  dictionaries, and dataframes help us to write clean and readable code.
+  For example, in this case each coordinate could be either latitude or
+  longitude and the names help distinguish that.
+
+> **GOTCHA ALERT**: In Python, asterisks are not only used for
+> multiplication like in R. As in the code above, we can use a single
+> asterisk before a list to **unpack** it (provide each element
+> separately), or a double asterisk to **unpack** a dictionary.
 
 ## CNN on Raster data
 
@@ -1727,14 +2022,13 @@ for (i in numbers) {
     [1] 5
 
 In this example, the for loop iterates over each element in the numbers
-vector, assigning the current element to the variable i. The print(i)
-statement is then executed for each iteration, outputting the value of
-
-i\.
+vector, assigning the current element to the variable `i`. The
+`print(i)` function is then executed for each iteration, outputting the
+value of `i`.
 
 Here is the equivalent example in Python:
 
-Python code
+Python code:
 
 ``` python
 # Create a list of numbers
@@ -1742,7 +2036,7 @@ numbers = [1, 2, 3, 4, 5]
 
 # Use a for loop to print out each number in the list
 for i in numbers:
-  print(i)
+    print(i)
 ```
 
     1
@@ -1751,13 +2045,22 @@ for i in numbers:
     4
     5
 
-In Python, the for loop iterates over each element in the numbers list,
-assigning the current element to the variable i. The print(i) statement
-is then executed for each iteration, outputting the value of i.
-
 Both languages also support nested for loops, which can be used to
 perform iterations over multiple dimensions, such as looping through a
 2D array.
+
+> **GOTCHA ALERT**: In both R and Python, the **looping variable** (in
+> this case `i`) is created by the `for` loop, which is why you can use
+> it even though you didn’t define it. However, `i` is not deleted after
+> the `for` loop! Be careful about using **looping variables** with the
+> same name as other variables in your code, because they can write over
+> each other - we recommend not reusing the same variable within the
+> same notebook as you get started.
+
+> **GOTCHA ALERT**: In both Python and R, `for` loops are not generally
+> the most efficient way of dealing with large arrays. Instead, use
+> built-in **vectorized** functions in R and the `numpy` package in
+> Python to take advantage of optimized linear algebra libraries.
 
 ## Functions
 
@@ -1767,6 +2070,8 @@ take input, perform a specific task, and return output.
 R Code:
 
 ``` r
+library(roxygen2)
+
 # Define a function that takes two arguments and returns their sum
 sum_r <- function(a, b) {
   return(a + b)
@@ -1801,44 +2106,80 @@ curly braces, while in Python it is indented.
 There are a few differences in the syntax and functionality between the
 two approaches:
 
-Function arguments: In R, function arguments are separated by commas,
-while in Python they are enclosed in parentheses. The syntax for
-specifying default arguments and variable-length argument lists can also
-differ between the two languages. Return statement: In R, we use the
-return keyword to specify the return value of a function, while in
-Python, we simply use the return statement. Function names: Function
-names in R and Python can differ significantly. In the example above, we
-used the sum_r() function in R and the sum_py() function in Python to
-calculate the sum of two numbers.
+- Function arguments: In R, function arguments are separated by commas,
+  while in Python they are enclosed in parentheses. The syntax for
+  specifying default arguments and variable-length argument lists can
+  also differ between the two languages.
+
+- Return: In R, `return()` is a function that needs parentheses. In
+  Python, it is a keyword, and so no parenthesed are used. This type of
+  syntax in Python is called a **statement**.
+
+- Function names: In R there is a convention of using dots `.` instead
+  of underscores in function and variable names. This is impossible in
+  Python because of the nature of the dot `.` special character in
+  Python.
 
 ## Parallel
 
 Parallel computing is a technique used to execute multiple computational
-tasks simultaneously, which can significantly reduce the time required
-to complete a task. Both R and Python have built-in support for parallel
-computing, although the approaches are slightly different. In this
-answer, we will compare and contrast the parallel computing capabilities
-of R and Python, and provide working examples in code.
+tasks simultaneously, which can significantly reduce the time or memory
+required to complete a task. In earth science, we are more often limited
+by memory than processing capability (CPUs) because we tend to perform
+simple operations on lots of spatial data, and parallel computing can
+help split up a problem so it **takes longer but runs with less
+memory**. However, cloud infrastructure with GPUs that are designed for
+images and ample memory could change the balance there.
 
-Parallel computing in R In R, there are several packages that support
-parallel computing, such as parallel, foreach, and doParallel. The
-parallel package provides basic functionality for parallel computing,
-while foreach and doParallel provide higher-level abstractions that make
-it easier to write parallel code.
+In general, when we talk about parallel computing, we mean something
+called **embarrassingly parallel** problems. Essentially, that means
+that we can split up our data into roughly equal chunks, perform our
+operation on all the chunks (which should take roughly the same amount
+of time), and then recombine – all without the parallel tasks needing to
+communicate with each other. There are tools, such as the [Message
+Passing Interface (openmpi](https://www.open-mpi.org/)) that can be used
+with either programming language for more complex parallelization tasks.
 
-Here is an example of using the foreach package to execute a loop in
-parallel:
+> **GOTCHA ALERT**: It’s a common misconception that parallelizing code
+> can magically speed up code. In reality, using code that takes
+> advantage of (blazingly fast) basic linear algebra libraries can speed
+> up code more than parallelizing a (much) slower method. In addition,
+> creating parallel tasks requires some **overhead** - time to split up
+> data and start the processes. Be prepared to experiment with the
+> number and types of tasks if you truly want to optimize your code for
+> a particular system. On the other hand - often you can just find a
+> bigger computer, especially if you make friends with the Cyverse folks
+> ;)
+
+Both R and Python have built-in support for parallel computing. In this
+answer, we will introduce you to some options in each language.
+
+### Parallel computing in R
+
+In R, there are several packages that support parallel computing, such
+as parallel, foreach, and doParallel. The parallel package provides
+basic functionality for parallel computing, while foreach and doParallel
+provide higher-level abstractions that make it easier to write parallel
+code.
+
+Here is an example of using the `foreach` and `doParallel` packages to
+execute a loop in parallel. Notice that there are two steps here -
+setting up the cluster with certain parameters (in this case we ask for
+4 tasks), and then running a `for` loop substitute that takes advantage
+of the cluster.:
 
 R code:
 
 ``` r
 library(foreach)
 library(doParallel)
+```
 
-# Set up a parallel backend with 4 workers
-cl <- makeCluster(4)
-registerDoParallel(cl)
+    Loading required package: iterators
 
+    Loading required package: parallel
+
+``` r
 # Define a function to apply in parallel
 myfunc <- function(x) {
   # some computation here
@@ -1846,7 +2187,28 @@ myfunc <- function(x) {
 }
 
 # Generate some data
-mydata <- 1:1000
+mydata <- 1:100
+
+# Apply the function in series
+single_start <- Sys.time()
+result = c()
+for (i in mydata) {
+  #Sys.sleep(.1)
+  append(result, i)
+}
+
+# Calculate rough wall time
+single_time <- Sys.time() - single_start
+
+# Time vectorized
+vector_start <- Sys.time()
+result = lapply(mydata, myfunc)
+vector_time <- Sys.time() - single_start
+
+cluster_start <- Sys.time()
+# Set up a parallel backend with 4 workers
+cl <- makeCluster(4)
+registerDoParallel(cl)
 
 # Apply the function to the data in parallel
 result <- foreach(i = mydata) %dopar% {
@@ -1855,16 +2217,53 @@ result <- foreach(i = mydata) %dopar% {
 
 # Stop the cluster
 stopCluster(cl)
+
+# Calculate rough wall time
+cluster_time <- Sys.time() - cluster_start
+
+print(paste('Time without cluster: ', single_time))
 ```
 
-In this example, we use the makeCluster() function to set up a cluster
-with 4 workers, and the registerDoParallel() function to register the
-cluster as the parallel backend for foreach. We then define a function
-myfunc() that takes an input x and returns x^2. We generate some data
-mydata and use foreach to apply myfunc() to each element of mydata in
-parallel, using the %dopar% operator.
+    [1] "Time without cluster:  0.00683379173278809"
 
-R Tidyverse parallel
+``` r
+print(paste('Time vectorized: ', vector_time))
+```
+
+    [1] "Time vectorized:  0.0131227970123291"
+
+``` r
+print(paste('Time with cluster: ', cluster_time))
+```
+
+    [1] "Time with cluster:  0.346697807312012"
+
+Oops! Our parallel version takes **more** time. Let’s try making our
+function take longer, to simulate what happens in a more complex
+situation. Uncomment the `Sys.sleep(.1)` line in `myfunc` above and run
+again. In this case, the vectorized version is slightly slower that the
+`for` loop, but that is probably not universally true!
+
+> **GOTCHA ALERT**: This `foreach` method creates a **new task for every
+> number**. Go ahead and try increasing to 100000 numbers. That’s not a
+> very efficient way to work with large lists because of the overhead
+> required to make each process. We’d rather use a technique that would
+> split the numbers into larger **chunks**.
+
+In this example, we:
+
+1.  use the makeCluster() function to set up a cluster with 4 workers
+2.  registerDoParallel() function to register the cluster as the
+    parallel backend for foreach
+3.  define a function myfunc() that takes an input x and returns x^2.
+4.  generate some data
+5.  use foreach to apply myfunc() to each element of mydata in parallel,
+    using the %dopar% operator to tell R to use the cluster we set up
+    earlier.
+6.  Close the cluster - this prevents the code from continuing to use
+    unnecessary overhead
+
+### R Tidyverse parallel
 
 In R Tidyverse, we can use the furrr package for parallel computing.
 Here’s an example of using furrr to parallelize a map function:
@@ -1879,9 +2278,13 @@ library(furrr)
 numbers <- 1:10
 
 # Use the future_map function from furrr to parallelize the map function
+start <- Sys.time()
 plan(multisession)
 squares <- future_map(numbers, function(x) x^2)
+print(paste('Run time: ', Sys.time() - start))
 ```
+
+    [1] "Run time:  4.24300909042358"
 
 In this example, we first load the Tidyverse and furrr libraries. We
 then generate a list of numbers from 1 to 10. We then use the plan
@@ -1890,10 +2293,25 @@ will use multiple CPU cores to execute the code. Finally, we use the
 future_map function from furrr to apply the function x^2 to each number
 in the list in parallel.
 
-Parallel computing in Python In Python, the standard library includes
-the multiprocessing module, which provides basic support for parallel
-computing. Additionally, there are several third-party packages that
-provide higher-level abstractions, such as joblib and dask.
+### Parallel computing in Python
+
+In Python, the standard library includes the `multiprocessing` module
+and the `threading` module, which provides basic support for parallel
+computing. By convention, these modules have identical classes like
+`Pool` below which are imported individually. This allows you to switch
+between **threading** (sharing memory resources) and **multiprocessing**
+(pre-allocated memory resources) without needing to change your code.
+This choice is beyond the scope of this workshop, but in both directions
+this can be a cause of differences in performance.
+
+> **GOTCHA ALERT**: Python can give you more control over your
+> multitasking. That also means you have more power to mess things up.
+> One infamous problem you can run into is called the GIL or Global
+> Interpreter Lock. This happens when multiple threads try to run code
+> at the same time (processes don’t have this constraint) and Python
+> won’t let them. This is not a problem when your code is
+> memory-limited, but can definitely be a problem with CPU-limited code.
+> You can also run into problems with file access and the GIL.
 
 Here is an example of using the multiprocessing module to execute a loop
 in parallel:
@@ -1901,20 +2319,38 @@ in parallel:
 Python code:
 
 ``` python
-def square(x):
-    return x**2
-  
+import time
 from multiprocessing import Pool
 
 # Generate a list of numbers
-numbers = list(range(1, 11))
+numbers = list(range(1, 1000001))
+
+# Use a for loop
+for_start = time.time()
+
+squares = []
+for n in numbers:
+    squares.append(n**2)
+    
+print('Run time with for loop: {}'.format(time.time() - for_start))
 
 # Use the map function and a pool of workers to parallelize the square function
-with Pool() as pool:
-    squares = pool.map(square, numbers)
-    
-print(squares)
 ```
+
+    Run time with for loop: 0.2819862365722656
+
+``` python
+start = time.time()
+with Pool(4) as pool:
+    squares = pool.apply_async(pow, numbers, {'exp': 2})
+    
+print('Run time with Pool: {}'.format(time.time() - start))
+```
+
+    Run time with Pool: 0.16815876960754395
+
+Like R, if we used fewer numbers we don’t necessarily see and advantage
+to parallelizing.
 
 In this example, we define a function myfunc() that takes an input x and
 returns x^2. We generate some data mydata and use the Pool class from
@@ -1922,17 +2358,19 @@ the multiprocessing module to set up a pool of 4 workers. We then use
 the map() method of the Pool class to apply myfunc() to each element of
 mydata in parallel.
 
-Comparison and contrast Both R and Python have built-in support for
-parallel computing, with similar basic functionality for creating and
-managing parallel processes. However, the higher-level abstractions
-differ between the two languages. In R, the foreach package provides a
-high-level interface that makes it easy to write parallel code, while in
-Python, the multiprocessing module provides a basic interface that can
-be extended using third-party packages like joblib and dask.
+> **GOTCHA ALERT**: When multiprocessing in Python, you sometimes can’t
+> use your own function unless you have imported it from another file.
+> Go figure.
 
-Additionally, Python has better support for distributed computing using
-frameworks like Apache Spark, while R has better support for
-shared-memory parallelism using tools like data.table and ff.
+Another option in Python is the `dask` library. `dask` is a
+sophisticated library for working with larger-than-memory datasets on a
+variety of different types of systems from personal computers to
+high-performance clusters, and is (some of us believe) by itself a great
+reason to use Python if certain types of multiprocessing are needed. We
+don’t have an example here because `dask` is designed to work with
+objects like `pandas` `DataFrames` and `xarray` `DataArrays`. You can
+check out a range of examples on the [dask documentation
+page](https://docs.dask.org/en/stable/).
 
 ## Data wrangling
 
@@ -2741,7 +3179,7 @@ grade_counts <- philly_geojson %>%
 plot(grade_counts)
 ```
 
-![](bilingualism_files/figure-commonmark/unnamed-chunk-84-1.png)
+![](bilingualism_files/figure-commonmark/unnamed-chunk-86-1.png)
 
 Python: In Python, we’ll use the ‘geopandas’ library to read and process
 the GeoJSON data.
@@ -2914,7 +3352,7 @@ plot(indian_lands)
     Warning: plotting the first 9 out of 23 attributes; use max.plot = 23 to plot
     all
 
-![](bilingualism_files/figure-commonmark/unnamed-chunk-88-1.png)
+![](bilingualism_files/figure-commonmark/unnamed-chunk-90-1.png)
 
 Python: In Python, we’ll use the ‘geopandas’ and ‘pandas’ libraries to
 read the Shapefile and process the data.

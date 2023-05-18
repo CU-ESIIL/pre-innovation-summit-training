@@ -33,3 +33,4 @@ httr
 jsonlite
 lidR
 pdftools
+roxygen2

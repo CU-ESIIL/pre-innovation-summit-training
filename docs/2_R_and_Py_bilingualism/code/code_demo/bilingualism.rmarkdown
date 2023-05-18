@@ -6,6 +6,7 @@ editor_options:
     wrap: 72
 ---
 
+
 Welcome to the R and Python bilingualism reference guide! If you're
 fluent in one of these languages but hesitant to learn the other, you're
 in the right place. The good news is that there are many similarities
@@ -48,6 +49,7 @@ different in a different one.
 In both R and Python, you can print out the documentation for any
 function or object using the `help()` function. For example:
 
+
 ```{r}
 help(print)
 ```
@@ -55,6 +57,7 @@ help(print)
 ```{python}
 help(print)
 ```
+
 
 ### Official documentation pages
 
@@ -177,10 +180,12 @@ download and install R packages with the install.packages() function:
 
 R code:
 
+
 ```{r, eval=FALSE, cache=TRUE}
 # Install the dplyr package from CRAN
 install.packages("dplyr")
 ```
+
 
 Installing Python packages can be trickier than installing R packages.
 Python libraries are stored and managed in a few different repositories
@@ -202,12 +207,14 @@ specifying the `conda-forge` channel, as below:
 
 bash code to install Python packages:
 
+
 ```{bash, eval=FALSE, cache=TRUE}
 # First install mamba with conda if needed
 conda install -c conda-forge mamba
 # Install the pandas package from Anaconda
 mamba install -c conda-forge pandas
 ```
+
 
 It is common to install all the packages you need at once to keep from
 boxing yourself into a corner with incompatible version numbers, or to
@@ -218,6 +225,7 @@ on JetStream2. However, if you want to run this code on your own
 computer, you can go ahead and install the R and Python environments as
 follows, provided that you have renv and mamba installed:
 
+
 ```{r, eval=F}
 renv::install()
 ```
@@ -226,8 +234,10 @@ renv::install()
 mamba env create -f environment.yml
 ```
 
+
 For the Python environment to work within an RMarkdown file, you may
 need to run the following code in R:
+
 
 ```{r}
 library(reticulate)
@@ -237,26 +247,31 @@ Sys.setenv(
 use_condaenv('earth-analytics-python')
 ```
 
+
 ### Loading libraries in R and Python
 
 In R, libraries can be loaded using the library() function:
 
 R code:
 
+
 ```{r, eval=FALSE, cache=TRUE}
 # Load the dplyr library
 library(dplyr)
 ```
+
 
 In Python, libraries can be loaded using the import statement. Here's an
 example:
 
 Python code:
 
+
 ```{python, eval=FALSE, cache=TRUE}
 # Load the pandas library
 import pandas as pd
 ```
+
 
 Note that the package or library must be installed from the respective
 repository before it can be loaded. Also, make sure you have the correct
@@ -288,26 +303,32 @@ Python.
 You only need to install packages once, but you need to mount those
 packages with the library() function each time you open R.
 
+
 ```{r, cache=TRUE}
 library(reticulate)
 ```
+
 
 Now, let's create a Python list and assign it to a variable py_list:
 
 R code:
 
+
 ```{python, cache=TRUE, eval=FALSE}
 py_list = [1, 2, 3]
 ```
+
 
 We can now print out the py_list variable in Python using the
 py_run_string() function:
 
 R code:
 
+
 ```{r, cache=TRUE, eval=FALSE}
 py_run_string("print(py_list)")
 ```
+
 
 This will output `[1, 2, 3]` in the Python console.
 
@@ -315,9 +336,11 @@ Now, let's create an R vector and assign it to a variable r_vec:
 
 R code:
 
+
 ```{r, cache=TRUE}
 r_vec <- c(4, 5, 6)
 ```
+
 
 > Notice that in Python we use `=` to assign variables, while in R we
 > use `<-`. Actually, we could use either one in R, but here we're
@@ -331,17 +354,21 @@ access Python variables:
 
 R code:
 
+
 ```{r, eval=FALSE, cache=TRUE}
 print(py$py_list)
 print(py)
 ```
 
+
 This will output \[1, 2, 3\] in the R console. Conversely, we can get
 the R variable `r_vec` in Python:
+
 
 ```{python, eval=F, cache=T}
 print(r.r_vec)
 ```
+
 
 > There's that dot `.` again - in this case it is getting the r_vec
 > variable from within the "R interface object" `r` similarly to how the
@@ -352,6 +379,7 @@ print(r.r_vec)
 In both R and Python, it is suggested to do all your library/package
 imports at the top of your file. This makes it easier for others to run
 or copy your code.
+
 
 ```{r}
 options(java.parameters = "-Xmx5G")
@@ -404,6 +432,7 @@ import xarray as xr
 from plotnine import ggplot, aes, geom_point, labs, ggtitle
 ```
 
+
 R and Python are two popular programming languages used for data
 analysis, statistics, and machine learning. Although they share some
 similarities, there are some fundamental differences between them.
@@ -413,6 +442,7 @@ differences:
 ::: columns
 ::: {.column width="50%"}
 R Code:
+
 
 ```{r, cache=TRUE}
 # Create a vector of numbers from 1 to 10
@@ -424,10 +454,12 @@ mean_x <- mean(x)
 # Print the result
 print(mean_x)
 ```
+
 :::
 
 ::: {.column width="50%"}
 Python Code:
+
 
 ```{python, cache=TRUE}
 import numpy as np
@@ -441,6 +473,7 @@ mean_x = x_arr.mean()
 # Print the result
 print(mean_x)
 ```
+
 :::
 :::
 
@@ -483,6 +516,7 @@ is how to add line breaks in long strings
 ::: {.column width="50%"}
 R Code:
 
+
 ```{r cache=T}
 library(readr)
 
@@ -494,10 +528,12 @@ penguins_url <- paste0(
 penguins_df <- read_csv(penguins_url)
 penguins_df
 ```
+
 :::
 
 ::: {.column width="50%"}
 Python code:
+
 
 ```{python}
 import pandas as pd
@@ -511,6 +547,7 @@ penguins_url = (
 penguins_df = pd.read_csv(penguins_url)
 penguins_df
 ```
+
 :::
 :::
 
@@ -526,6 +563,7 @@ build a **relative** file path (one that doesn't start with something
 like a `/` on Unix systems or `C://` on Windows systems) the working
 directory will be where your code looks for that path:
 
+
 ```{r}
 print(getwd())
 ```
@@ -535,6 +573,7 @@ import os
 
 os.getcwd()
 ```
+
 
 Next, let's make a cross-platform file path to a data directory in your
 home folder and set that as your new working directory. Despite the use
@@ -547,6 +586,7 @@ home directory is.
 > directory. Another option is putting a configuration file with the
 > data path in the home directory. Keeping the data in your project
 > directory is also an option.
+
 
 ```{r}
 data_dir <- file.path(path.expand('~'), 'esiil-summit', 'r_and_py')
@@ -565,6 +605,7 @@ data_dir = os.path.join(pathlib.Path.home(), 'esiil-summit', 'r_and_py')
 os.makedirs(data_dir, exist_ok=True)
 print(data_dir)
 ```
+
 
 You should see your username in both paths.
 
@@ -586,6 +627,7 @@ Parameter notes:
 Finally, let's practice copying the data files included in this lesson
 to the reproducible data directory:
 
+
 ```{r}
 project_data_dir <- file.path('..', '..', 'data')
 data_dir <- file.path(path.expand('~'), 'esiil-summit', 'r_and_py')
@@ -602,6 +644,7 @@ data_dir = os.path.join(pathlib.Path.home(), 'esiil-summit', 'r_and_py')
 shutil.move(project_data_dir, data_dir)
 ```
 
+
 > Note that Python will not replace an existing directory, so you mush
 > do only one of these operations (or delete the files)
 
@@ -609,6 +652,7 @@ shutil.move(project_data_dir, data_dir)
 
 You can also load data from comma-separated value (`.csv`) and other
 tabular text files.
+
 
 ```{r}
 library(readr)
@@ -629,12 +673,14 @@ penguins_df = pd.read_csv(penguins_csv_path)
 penguins_df
 ```
 
+
 Let's save that data so if we like we can work offline (and avoid
 hitting the server too many times). You can also save your own results
 or processed data this way.
 
 > Notice that in R this is a **function** and in Python it is a
 > **method** of our `pd.DataFrame` object.
+
 
 ```{r}
 library(readr)
@@ -657,6 +703,7 @@ iris_py_csv_path = os.path.join(data_dir, "iris_py.csv")
 iris_df.to_csv(iris_py_csv_path, index=False)
 ```
 
+
 > **GOTCHA ALERT**: The pandas `pd.DataFrame.to_csv()` method is not
 > *quite* symmetrical with `pd.read_csv()`. This is because pandas
 > `DataFrame`s have an **index**, or row identifier, and you need to
@@ -668,6 +715,7 @@ iris_df.to_csv(iris_py_csv_path, index=False)
 
 You can also load data from comma-separated value (`.csv`) and other
 tabular text files.
+
 
 ```{r}
 library(readr)
@@ -689,6 +737,7 @@ penguins_df = pd.read_csv(penguins_csv_path)
 penguins_df
 ```
 
+
 ### Serialize data
 
 In both Python and R, you can also **serialize** objects so they can be
@@ -701,6 +750,7 @@ other programming languages).
 
 R Code:
 
+
 ```{r}
 penguins_rds_path = file.path(data_dir, "penguins.rds")
 
@@ -708,7 +758,9 @@ penguins_rds_path = file.path(data_dir, "penguins.rds")
 saveRDS(penguins_df, file=penguins_rds_path)
 ```
 
+
 Python code:
+
 
 ```{python}
 import os
@@ -719,11 +771,13 @@ penguins_pickle_path = os.path.join(data_dir, "penguins.pickle")
 penguins_df.to_pickle(penguins_pickle_path)
 ```
 
+
 Go ahead and take a look at those files to see what they look like! One
 way to do so is by using a terminal and the command
 `head /path/to/penguins/file`.
 
 ### Load serialized data
+
 
 ```{r, cache=TRUE}
 penguins_rds_path = file.path(data_dir, "penguins.rds")
@@ -733,10 +787,12 @@ penguins_from_serial_df <- readRDS(penguins_rds_path)
 penguins_from_serial_df
 ```
 
+
 In R, there are a number of slightly different functions for serializing
 data. For example, you can check out base R `save()` and `load()`
 functions as well if you need to save multiple objects (or a whole
 environment) at once.
+
 
 ```{python, cache=T}
 import pandas as pd
@@ -748,6 +804,7 @@ penguins_from_serial_df = pd.read_pickle(penguins_pickle_path)
 penguins_from_serial_df
 ```
 
+
 You can also use the `pickle` library to pickle objects in Python. In
 this case, the `pd.DataFrame` method for pickling takes care of some of
 the details for us (as long as we're working only with `pandas`
@@ -756,6 +813,7 @@ objects).
 ## Data Plots
 
 R Code:
+
 
 ```{r, cache=TRUE}
 # Plot the penguin data
@@ -768,7 +826,9 @@ ggplot(penguins_df, aes(x = bill_length_mm, y = body_mass_g, color=species)) +
   ggtitle('Penguin Characteristics by Species')
 ```
 
+
 Python seaborn.objects code:
+
 
 ```{python, cache=TRUE}
 # Make a scatter plot with the penguin data
@@ -787,6 +847,7 @@ Python seaborn.objects code:
 )
 ```
 
+
 > **GOTCHA ALERT:** In Python, you will usually need to put `.show()` or
 > something similar at the end of your code to see your plot. Otherwise
 > you may see something like:
@@ -794,6 +855,7 @@ Python seaborn.objects code:
 > ```         
 > <seaborn._core.plot.Plot object at 0x7f81493e4070>
 > ```
+
 
 ```{python}
 from plotnine import ggplot, aes, geom_point, labs, theme, ggtitle
@@ -811,6 +873,7 @@ from plotnine import ggplot, aes, geom_point, labs, theme, ggtitle
     + ggtitle('Penguin Characteristics by Species')
 )
 ```
+
 
 > **GOTCHA ALERT:** If you are used to `ggplot2` and are using
 > `plotnine`, there are a few things to be aware of. One is that
@@ -877,6 +940,7 @@ the left) and making it the first argument in the next function/method.
 
 R code without pipes:
 
+
 ```{r, cache=TRUE}
 library(dplyr)
 
@@ -887,7 +951,9 @@ df <- data.frame(x = c(1,2,3), y = c(4,5,6))
 summarize(mutate(df, z = x + y), sum_z = sum(z))
 ```
 
+
 R code with piping:
+
 
 ```{r, cache=TRUE}
 library(dplyr)
@@ -903,7 +969,9 @@ df %>%
   summarize(sum_z = sum(z))
 ```
 
+
 Python code without chaining:
+
 
 ```{python, cache=TRUE}
 import pandas as pd
@@ -918,7 +986,9 @@ df_with_sum = df.assign(z = df.x + df.y)
 df_with_sum.agg(sum_z = ('z', 'sum'))
 ```
 
+
 Python code with chaining:
+
 
 ```{python, cache=TRUE}
 import pandas as pd
@@ -934,6 +1004,7 @@ df = pd.DataFrame({'x': [1,2,3], 'y': [4,5,6]})
     .agg(sum_z = ('z', 'sum'))
 )
 ```
+
 
 As we can see, the syntax for piping is slightly different between R and
 Python, but the concept remains the same. Piping can make our code more
@@ -964,6 +1035,7 @@ less familiar.
 
 Your code:
 
+
 ```{r}
 # Your R code here
 ```
@@ -972,7 +1044,9 @@ Your code:
 # Your Python code here
 ```
 
+
 R code:
+
 
 ```{r, cache=TRUE}
 #| code-fold: true
@@ -994,7 +1068,9 @@ iris %>%
        y = "Mean Petal Length")
 ```
 
+
 Python code:
+
 
 ```{python}
 #| code-fold: true
@@ -1019,9 +1095,11 @@ iris_df = sns.load_dataset('iris')
 plt.show()
 ```
 
+
 ## Linear regression
 
 R Code:
+
 
 ```{r, cache=TRUE}
 # Load the "ggplot2" package for plotting
@@ -1047,7 +1125,9 @@ faithful %>%
   labs(x = 'Eruption Duration (min.)', y = 'Waiting Time to Next Eruption (min.)')
 ```
 
+
 Python code:
+
 
 ```{python}
 
@@ -1075,6 +1155,7 @@ print(model.summary())
 )
 ```
 
+
 In both cases, we generate some sample data with a linear relationship
 between x and y, and then perform a simple linear regression to estimate
 the slope and intercept of the line. We then plot the data and
@@ -1090,6 +1171,7 @@ two approaches:
 ## Random Forest
 
 R Code:
+
 
 ```{r, cache=TRUE}
 # Load the "randomForest" package
@@ -1115,7 +1197,9 @@ accuracy <- sum(predictions == test_data$Species) / nrow(test_data)
 print(paste("Accuracy:", accuracy))
 ```
 
+
 Python code:
+
 
 ```{python}
 import pandas as pd
@@ -1171,6 +1255,7 @@ importances = permutation_importance(
 )
 ```
 
+
 In both cases, we load the iris dataset and split it into training and
 testing sets. We then build a random forest model using the training
 data and evaluate its accuracy on the testing data.
@@ -1193,6 +1278,7 @@ two approaches:
 
 R Code:
 
+
 ```{r, cache=TRUE}
 # Load the "osmdata" package for mapping
 library(osmdata)
@@ -1211,7 +1297,9 @@ tm_shape(osm_data$osm_lines) +
   tm_lines()
 ```
 
+
 Python code:
+
 
 ```{python, cache=TRUE}
 # Load the "osmnx" package for mapping
@@ -1226,6 +1314,7 @@ osm_graph = ox.graph_from_bbox(**bbox)
 # Plot the map using osmnx
 ox.plot_graph(osm_graph, node_size=0)
 ```
+
 
 In both cases, we define the map bounding box, retrieve the
 OpenStreetMap data using the specified bounding box, and plot the map.
@@ -1259,6 +1348,7 @@ The main differences between the two approaches are:
 ## CNN on Raster data
 
 R Code:
+
 
 ```{r, eval=FALSE, cache=TRUE}
 # Load the "keras" package for building the CNN
@@ -1306,11 +1396,13 @@ plot(history)
 
 ```
 
+
 ## for loops
 
 Here is an example of a for loop in R:
 
 R code
+
 
 ```{r, cache=TRUE}
 # Create a vector of numbers
@@ -1322,6 +1414,7 @@ for (i in numbers) {
 }
 ```
 
+
 In this example, the for loop iterates over each element in the numbers
 vector, assigning the current element to the variable `i`. The
 `print(i)` function is then executed for each iteration, outputting the
@@ -1331,6 +1424,7 @@ Here is the equivalent example in Python:
 
 Python code:
 
+
 ```{python, cache=TRUE}
 # Create a list of numbers
 numbers = [1, 2, 3, 4, 5]
@@ -1339,6 +1433,7 @@ numbers = [1, 2, 3, 4, 5]
 for i in numbers:
     print(i)
 ```
+
 
 Both languages also support nested for loops, which can be used to
 perform iterations over multiple dimensions, such as looping through a
@@ -1364,6 +1459,7 @@ take input, perform a specific task, and return output.
 
 R Code:
 
+
 ```{r, cache=TRUE}
 library(roxygen2)
 
@@ -1377,7 +1473,9 @@ result_r <- sum_r(3, 5)
 print(result_r)
 ```
 
+
 Python code:
+
 
 ```{python, cache=TRUE}
 # Define a function that takes two arguments and returns their sum
@@ -1388,6 +1486,7 @@ def sum_py(a, b):
 result_py = sum_py(3, 5)
 print(result_py)
 ```
+
 
 In both cases, we define a function that takes two arguments and returns
 their sum. In R, we use the function keyword to define a function, while
@@ -1461,6 +1560,7 @@ of the cluster.:
 
 R code:
 
+
 ```{r, time_it=T}
 library(foreach)
 library(doParallel)
@@ -1511,6 +1611,7 @@ print(paste('Time vectorized: ', vector_time))
 print(paste('Time with cluster: ', cluster_time))
 ```
 
+
 Oops! Our parallel version takes **more** time. Let's try making our
 function take longer, to simulate what happens in a more complex
 situation. Uncomment the `Sys.sleep(.1)` line in `myfunc` above and run
@@ -1543,6 +1644,7 @@ Here's an example of using furrr to parallelize a map function:
 
 R Tidy code:
 
+
 ```{r, cache=TRUE}
 library(tidyverse)
 library(furrr)
@@ -1556,6 +1658,7 @@ plan(multisession)
 squares <- future_map(numbers, function(x) x^2)
 print(paste('Run time: ', Sys.time() - start))
 ```
+
 
 In this example, we first load the Tidyverse and furrr libraries. We
 then generate a list of numbers from 1 to 10. We then use the plan
@@ -1589,6 +1692,7 @@ in parallel:
 
 Python code:
 
+
 ```{python}
 import time
 from multiprocessing import Pool
@@ -1612,6 +1716,7 @@ with Pool(4) as pool:
     
 print('Run time with Pool: {}'.format(time.time() - start))
 ```
+
 
 Like R, if we used fewer numbers we don't necessarily see and advantage
 to parallelizing.
@@ -1655,6 +1760,7 @@ data frame:
 
 R code
 
+
 ```{r, cache=TRUE}
 library(dplyr)
 
@@ -1671,6 +1777,7 @@ mtcars %>%
   summarize(mean_hp = mean(hp),
             mean_kmpl = mean(kmpl))
 ```
+
 
 In this example, we first filter the mtcars data frame to only include
 cars with more than 100 horsepower. We then use mutate to create a new
@@ -1697,6 +1804,7 @@ OpenWeatherMap API:
 
 Python code:
 
+
 ```{python, cache=TRUE, eval=FALSE}
 import requests
 
@@ -1708,6 +1816,7 @@ data = response.json()
 
 print(data)
 ```
+
 
 This code retrieves the current weather data for London from the
 OpenWeatherMap API. We first construct the API URL with the location and
@@ -1723,6 +1832,7 @@ in R:
 
 R code:
 
+
 ```{r, eval=FALSE}
 library(httr)
 
@@ -1735,6 +1845,7 @@ data <- content(response, 'text')
 print(data)
 ```
 
+
 This code is similar to the Python code above. We first load the httr
 library, then construct the API URL and use the GET() function to make a
 request to the API. We then extract the data from the response using the
@@ -1744,6 +1855,7 @@ Retrieving Data from an API in R Tidyverse In R Tidyverse, we can use
 the httr and jsonlite packages to retrieve and process data from an API.
 
 R code:
+
 
 ```{r, cache=TRUE}
 # Load required packages
@@ -1766,6 +1878,7 @@ json <- fromJSON(content)
 df <- as.data.frame(json)
 ```
 
+
 In the above example, we use the GET() function from the httr package to
 retrieve data from an API endpoint, and the content() function to
 extract the content of the response. We then use the fromJSON() function
@@ -1777,6 +1890,7 @@ library to retrieve data from an API, and the json library to process
 the JSON data.
 
 Python code:
+
 
 ```{python, cache=TRUE}
 
@@ -1799,6 +1913,7 @@ json_data = json.loads(content)
 # Convert JSON to a list of dictionaries
 data = [dict(row) for row in json_data]
 ```
+
 
 In the above example, we use the get() function from the requests
 library to retrieve data from an API endpoint, and the content attribute
@@ -1831,6 +1946,7 @@ California:
 
 R code:
 
+
 ```{r, cache=TRUE, eval=FALSE}
 library(tidycensus)
 library(tidyverse)
@@ -1850,6 +1966,7 @@ ca_pop <- get_acs(
 # View the result
 ca_pop
 ```
+
 
 R Tidy:
 
@@ -1859,6 +1976,7 @@ the state of California using pipes and dplyr functions:
 
 R tidy code:
 
+
 ```{r, cache=TRUE, eval=FALSE}
 library(tidycensus)
 library(tidyverse)
@@ -1879,6 +1997,7 @@ ca_pop <- get_acs(
 ca_pop
 ```
 
+
 Python:
 
 To retrieve census data in Python, we can use the census library. Here's
@@ -1886,6 +2005,7 @@ an example of how to retrieve the total population for the state of
 California:
 
 Python code:
+
 
 ```{python, cache=TRUE, eval=FALSE}
 from census import Census
@@ -1911,6 +2031,7 @@ ca_pop_df = ca_pop_df[["total_population"]]
 ca_pop_df
 ```
 
+
 ## Lidar data
 
 To find Lidar data in R and Python, you typically need to start by
@@ -1929,6 +2050,7 @@ following code downloads and reads Lidar data for a specific area:
 
 R code:
 
+
 ```{r, cache=TRUE}
 library(lidR)
 
@@ -1940,6 +2062,7 @@ lidar <- readLAS(LASfile)
 plot(lidar)
 ```
 
+
 Python:
 
 Identify sources of Lidar data: The USGS 3DEP program provides access to
@@ -1950,6 +2073,7 @@ to download and read Lidar data in the LAS format. For example, the
 following code downloads and reads Lidar data for a specific area:
 
 Python code:
+
 
 ```{r, eval=FALSE}
 py_install("requests")
@@ -1978,6 +2102,7 @@ lidar = read(lasfile)
 laspy.plot.plot(lidar)
 ```
 
+
 ## Data for black lives
 
 Data for Black Lives (<https://d4bl.org/>) is a movement that uses data
@@ -1996,6 +2121,7 @@ R: In R, we'll use the 'readr' and 'dplyr' packages to read, process,
 and analyze the dataset.
 
 R code:
+
 
 ```{r, eval=FALSE}
 # Install and load necessary libraries
@@ -2018,10 +2144,12 @@ data %>%
   arrange(desc(mean_cases_total))
 ```
 
+
 Python: In Python, we'll use the 'pandas' library to read, process, and
 analyze the dataset.
 
 Python code:
+
 
 ```{python, cache=TRUE, eval=FALSE}
 import pandas as pd
@@ -2038,6 +2166,7 @@ print(data.head())
 mean_cases_total = data.groupby("state")["cases_total"].mean().sort_values(ascending=False)
 print(mean_cases_total)
 ```
+
 
 In conclusion, both R and Python provide powerful libraries and tools
 for downloading, processing, and analyzing datasets, such as those found
@@ -2058,11 +2187,14 @@ each party.
 R: In R, we'll use the 'httr' and 'jsonlite' packages to fetch and
 process data from the ProPublica Congress API.
 
+
 ```{r, include=FALSE}
 api_key <- "hdNmDKoE3FFdqa09iy2yFpRq7hYOyKwq8enO2T5M"
 ```
 
+
 R code:
+
 
 ```{r, cache=TRUE}
 # load necessary libraries
@@ -2090,10 +2222,12 @@ if (http_status(response)$category == "Success") {
 }
 ```
 
+
 Python: In Python, we'll use the 'requests' library to fetch data from
 the ProPublica Congress API and 'pandas' library to process the data.
 
 python code:
+
 
 ```{python, cache=TRUE, eval=FALSE}
 # Install necessary libraries
@@ -2121,6 +2255,7 @@ else:
     print(f"Error: {response.status_code}")
 ```
 
+
 In conclusion, both R and Python offer efficient ways to fetch and
 process data from APIs like the ProPublica Congress API. The 'httr' and
 'jsonlite' libraries in R provide a straightforward way to make HTTP
@@ -2141,6 +2276,7 @@ R: In R, we'll use the 'httr' and 'jsonlite' packages to fetch and
 process data from the Nonprofit Explorer API.
 
 R code:
+
 
 ```{r, cache=TRUE}
 # Install and load necessary libraries
@@ -2164,10 +2300,12 @@ if (http_status(response)$category == "Success") {
 }
 ```
 
+
 Python: In Python, we'll use the 'requests' library to fetch data from
 the Nonprofit Explorer API and 'pandas' library to process the data.
 
 Python code:
+
 
 ```{python, cache=TRUE}
 # Install necessary libraries
@@ -2190,6 +2328,7 @@ else:
     print(f"Error: {response.status_code}")
 ```
 
+
 In conclusion, both R and Python offer efficient ways to fetch and
 process data from APIs like the Nonprofit Explorer API. The 'httr' and
 'jsonlite' libraries in R provide a straightforward way to make HTTP
@@ -2211,6 +2350,7 @@ R: In R, we'll use the 'httr' and 'jsonlite' packages to fetch and
 process data from the Campaign Finance API.
 
 R code:
+
 
 ```{r, cache=TRUE}
 # Install and load necessary libraries
@@ -2235,10 +2375,12 @@ if (http_status(response)$category == "Success") {
 }
 ```
 
+
 Python: In Python, we'll use the 'requests' library to fetch data from
 the Campaign Finance API and 'pandas' library to process the data.
 
 Python code:
+
 
 ```{python, cache=TRUE}
 # Install necessary libraries
@@ -2262,6 +2404,7 @@ if response.status_code == 200:
 else:
     print(f"Error: {response.status_code}")
 ```
+
 
 In conclusion, both R and Python offer efficient ways to fetch and
 process data from APIs like the Campaign Finance API. The 'httr' and
@@ -2292,6 +2435,7 @@ GeoJSON data.
 
 R code:
 
+
 ```{r, cache=TRUE}
 # Install and load necessary libraries
 library(sf)
@@ -2309,10 +2453,12 @@ grade_counts <- philly_geojson %>%
 plot(grade_counts)
 ```
 
+
 Python: In Python, we'll use the 'geopandas' library to read and process
 the GeoJSON data.
 
 Python code:
+
 
 ```{python, cache=TRUE}
 # Install necessary libraries
@@ -2328,6 +2474,7 @@ philly_geojson = gpd.read_file(url)
 grade_counts = philly_geojson["holc_grade"].value_counts()
 print(grade_counts)
 ```
+
 
 In conclusion, both R and Python offer efficient ways to download and
 process historic redlining data in the form of GeoJSON files. The 'sf'
@@ -2351,6 +2498,7 @@ R: In R, we'll use the 'pdftools' package to extract text from the PDF
 and the 'stringr' package to process the text data.
 
 R code:
+
 
 ```{r, cache=TRUE}
 # Install and load necessary libraries
@@ -2394,10 +2542,12 @@ state_counts <- tribe_data %>%
 print(state_counts)
 ```
 
+
 Python: In Python, we'll use the 'PyPDF2' library to extract text from
 the PDF and the 're' module to process the text data.
 
 Python code:
+
 
 ```{python, cache=TRUE, eval=FALSE}
 # Install necessary libraries
@@ -2424,6 +2574,7 @@ state_counts = Counter(tribe_states)
 print(state_counts)
 ```
 
+
 In conclusion, both R and Python offer efficient ways to download and
 process the list of Indian Entities Recognized and Eligible To Receive
 Services from the BIA. The 'pdftools' package in R provides a simple way
@@ -2443,6 +2594,7 @@ R: In R, we'll use the 'sf' package to read the Shapefile and the
 'dplyr' package to process the data.
 
 R code:
+
 
 ```{r, cache=TRUE}
 # Install and load necessary libraries
@@ -2468,10 +2620,12 @@ indian_lands <- read_sf(shapefile_path)
 plot(indian_lands)
 ```
 
+
 Python: In Python, we'll use the 'geopandas' and 'pandas' libraries to
 read the Shapefile and process the data.
 
 Python code:
+
 
 ```{python, cache=TRUE, eval=FALSE}
 import geopandas as gpd
@@ -2503,6 +2657,8 @@ state_counts = indian_lands.groupby("STATE").size().reset_index(name="count")
 print(state_counts)
 ```
 
+
 Both R and Python codes download the dataset and read the Shapefile
 using the respective packages. They then group the data by the 'STATE'
 attribute and calculate the count of Indian lands per state.
+
