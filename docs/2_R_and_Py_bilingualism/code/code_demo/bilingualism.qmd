@@ -405,8 +405,6 @@ mean_x = x_arr.mean()
 print(mean_x)
 ```
 
-::: :::
-
 In this example, we can see that there are several differences between R
 and Python:
 
@@ -1031,6 +1029,7 @@ Python code:
 #| code-summary: "Show the Python code"
 import matplotlib.pyplot as plt
 import seaborn as sns
+import seaborn.objects as so
 import statsmodels.formula.api as smf
 
 faithful_df = sns.load_dataset('geyser')

@@ -414,8 +414,6 @@ print(mean_x)
 
     5.0
 
-::: :::
-
 In this example, we can see that there are several differences between R
 and Python:
 
@@ -1086,11 +1084,11 @@ from plotnine import ggplot, aes, geom_point, labs, theme, ggtitle
 
 </details>
 
-    <ggplot: (8780013024901)>
+    <ggplot: (8778956226557)>
 
     /Users/elsa/opt/miniconda3/envs/earth-analytics-python/lib/python3.8/site-packages/plotnine/layer.py:401: PlotnineWarning: geom_point : Removed 2 rows containing missing values.
 
-![](bilingualism_files/figure-commonmark/unnamed-chunk-38-3.png)
+![](bilingualism_files/figure-commonmark/unnamed-chunk-38-1.png)
 
 > **GOTCHA ALERT:** If you are used to `ggplot2` and are using
 > `plotnine`, there are a few things to be aware of. One is that
@@ -1307,7 +1305,7 @@ plt.show()
 
 </details>
 
-![](bilingualism_files/figure-commonmark/unnamed-chunk-44-1.png)
+![](bilingualism_files/figure-commonmark/unnamed-chunk-44-3.png)
 
 ## Linear regression
 
@@ -1661,6 +1659,7 @@ Python code:
 ``` python
 import matplotlib.pyplot as plt
 import seaborn as sns
+import seaborn.objects as so
 import statsmodels.formula.api as smf
 
 faithful_df = sns.load_dataset('geyser')
@@ -1682,7 +1681,7 @@ print(model.summary())
     Model:                            OLS   Adj. R-squared:                  0.811
     Method:                 Least Squares   F-statistic:                     1162.
     Date:                Thu, 18 May 2023   Prob (F-statistic):          8.13e-100
-    Time:                        11:54:21   Log-Likelihood:                -868.38
+    Time:                        12:06:55   Log-Likelihood:                -868.38
     No. Observations:                 272   AIC:                             1741.
     Df Residuals:                     270   BIC:                             1748.
     Df Model:                           1                                         
@@ -1724,7 +1723,7 @@ print(model.summary())
     /Users/elsa/opt/miniconda3/envs/earth-analytics-python/lib/python3.8/_collections_abc.py:832: MatplotlibDeprecationWarning: 
     The savefig.jpeg_quality rcparam was deprecated in Matplotlib 3.3 and will be removed two minor releases later.
 
-![](bilingualism_files/figure-commonmark/unnamed-chunk-46-1.png)
+![](bilingualism_files/figure-commonmark/unnamed-chunk-46-5.png)
 
 In both cases, we generate some sample data with a linear relationship
 between x and y, and then perform a simple linear regression to estimate
@@ -1881,7 +1880,7 @@ importances = permutation_importance(
     /Users/elsa/opt/miniconda3/envs/earth-analytics-python/lib/python3.8/_collections_abc.py:832: MatplotlibDeprecationWarning: 
     The savefig.jpeg_quality rcparam was deprecated in Matplotlib 3.3 and will be removed two minor releases later.
 
-![](bilingualism_files/figure-commonmark/unnamed-chunk-48-1.png)
+![](bilingualism_files/figure-commonmark/unnamed-chunk-48-7.png)
 
 In both cases, we load the iris dataset and split it into training and
 testing sets. We then build a random forest model using the training
@@ -2179,7 +2178,18 @@ R code:
 ``` r
 library(foreach)
 library(doParallel)
+```
 
+</details>
+
+    Loading required package: iterators
+
+    Loading required package: parallel
+
+<details>
+<summary>Show the R code</summary>
+
+``` r
 # Define a function to apply in parallel
 myfunc <- function(x) {
   # some computation here
@@ -2226,7 +2236,7 @@ print(paste('Time without cluster: ', single_time))
 
 </details>
 
-    [1] "Time without cluster:  0.00456714630126953"
+    [1] "Time without cluster:  0.014976978302002"
 
 <details>
 <summary>Show the R code</summary>
@@ -2237,7 +2247,7 @@ print(paste('Time vectorized: ', vector_time))
 
 </details>
 
-    [1] "Time vectorized:  0.00887298583984375"
+    [1] "Time vectorized:  0.0239660739898682"
 
 <details>
 <summary>Show the R code</summary>
@@ -2248,7 +2258,7 @@ print(paste('Time with cluster: ', cluster_time))
 
 </details>
 
-    [1] "Time with cluster:  0.305880069732666"
+    [1] "Time with cluster:  0.632711172103882"
 
 Oops! Our parallel version takes **more** time. Let’s try making our
 function take longer, to simulate what happens in a more complex
@@ -2359,7 +2369,7 @@ print('Run time with for loop: {}'.format(time.time() - for_start))
 
 </details>
 
-    Run time with for loop: 0.22587966918945312
+    Run time with for loop: 0.4019489288330078
 
 <details>
 <summary>Show the Python code</summary>
@@ -2374,7 +2384,7 @@ print('Run time with Pool: {}'.format(time.time() - start))
 
 </details>
 
-    Run time with Pool: 0.14451074600219727
+    Run time with Pool: 0.2741971015930176
 
 Like R, if we used fewer numbers we don’t necessarily see and advantage
 to parallelizing.
@@ -2441,7 +2451,25 @@ R code
 
 ``` r
 library(dplyr)
+```
 
+</details>
+
+
+    Attaching package: 'dplyr'
+
+    The following objects are masked from 'package:stats':
+
+        filter, lag
+
+    The following objects are masked from 'package:base':
+
+        intersect, setdiff, setequal, union
+
+<details>
+<summary>Show the R code</summary>
+
+``` r
 # Load data
 data(mtcars)
 
