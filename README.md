@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/618256578.svg)](https://zenodo.org/doi/10.5281/zenodo.11167872)
+
 [![pages-build-deployment](https://github.com/CU-ESIIL/pre-innovation-summit-training/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/CU-ESIIL/pre-innovation-summit-training/actions/workflows/pages/pages-build-deployment)
 
 ![header](docs/assets/pre-summit-training-header.png)
