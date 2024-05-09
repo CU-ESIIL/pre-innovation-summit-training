@@ -1,0 +1,1879 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for May 2023 ESIIL Innovation Summit">
+      
+      
+        <meta name="author" content="ESIIL Education and CI">
+      
+      
+        <link rel="canonical" href="https://cu-esiil.github.io/pre-innovation-summit-training/2_R_and_Py_bilingualism/code/outline/outline/">
+      
+      
+        <link rel="prev" href="../../../../1_Collaboration_on_Cloud/jetstream2_lesson/jetstream2_lesson/">
+      
+      
+        <link rel="next" href="../../code_demo/bilingualism/">
+      
+      
+      <link rel="icon" href="../../../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.18">
+    
+    
+      
+        <title>Overview - Innovation Summit 2023</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.66ac8b77.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Open Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#overview-of-r-and-python" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Innovation Summit 2023" class="md-header__button md-logo" aria-label="Innovation Summit 2023" data-md-component="logo">
+      
+  <img src="../../../../assets/ESIIL_logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Innovation Summit 2023
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Overview
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: white)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/cu-esiil/pre-innovation-summit-training" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    pre-innovation-summit-training
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../1_Collaboration_on_Cloud/collaboration/" class="md-tabs__link">
+          
+  
+    
+  
+  Collaboration on Cloud
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+    
+  
+  R and Python Bilingualism
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../3_Tools_for_reproducible_and_open_science/openscience/" class="md-tabs__link">
+          
+  
+    
+  
+  Reproducible and Open Science
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Innovation Summit 2023" class="md-nav__button md-logo" aria-label="Innovation Summit 2023" data-md-component="logo">
+      
+  <img src="../../../../assets/ESIIL_logo.png" alt="logo">
+
+    </a>
+    Innovation Summit 2023
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/cu-esiil/pre-innovation-summit-training" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    pre-innovation-summit-training
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Collaboration on Cloud
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Collaboration on Cloud
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../1_Collaboration_on_Cloud/collaboration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Collaboration on Cloud
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../1_Collaboration_on_Cloud/github_lesson/github_lesson/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Github essentials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../1_Collaboration_on_Cloud/jetstream2_lesson/jetstream2_lesson/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jetstream2 Intro
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    R and Python Bilingualism
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            R and Python Bilingualism
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#i-introduction-5-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      I. Introduction (5 minutes)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="I. Introduction (5 minutes)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-brief-overview-of-r-and-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. Brief overview of R and Python:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-importance-of-being-bilingual-in-r-and-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. Importance of being bilingual in R and Python:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-course-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      C. Course objectives:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ii-language-basics-10-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      II. Language Basics (10 minutes)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="II. Language Basics (10 minutes)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-r" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. R
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A. R">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-rstudio-and-r-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. RStudio and R environment:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-r-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. R syntax:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. Python
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="B. Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-python-environment-eg-jupyter-notebook-ides" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Python environment (e.g., Jupyter Notebook, IDEs):
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-python-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Python syntax:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iii-data-structures-10-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      III. Data Structures (10 minutes)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="III. Data Structures (10 minutes)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-r_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. R
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A. R">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Vectors:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Matrices:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Lists:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-data-frames" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Data frames:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-python_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. Python
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="B. Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Lists:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-tuples" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Tuples:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Sets:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-dictionaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Dictionaries:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-pandas-dataframe" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. pandas DataFrame:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iv-data-manipulation-15-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      IV. Data Manipulation (15 minutes)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IV. Data Manipulation (15 minutes)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-r_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. R
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A. R">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-base-r-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Base R functions:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-dplyr-and-the-tidyverse" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. dplyr and the tidyverse:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-python_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. Python
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="B. Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-built-in-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Built-in functions:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-pandas-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. pandas library:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v-data-visualization-10-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      V. Data Visualization (10 minutes)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="V. Data Visualization (10 minutes)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-r_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. R
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A. R">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-base-r-plotting" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Base R plotting:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-ggplot2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. ggplot2:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-python_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. Python
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="B. Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-matplotlib" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. matplotlib:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-seaborn" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. seaborn:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vi-conclusions-and-recommendations-5-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      VI. Conclusions and Recommendations (5 minutes)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="VI. Conclusions and Recommendations (5 minutes)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-similarities-between-r-and-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. Similarities between R and Python
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A. Similarities between R and Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-both-are-high-level-programming-languages" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Both are high-level programming languages:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-both-support-vectorized-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Both support vectorized operations:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-both-have-strong-data-manipulation-and-visualization-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Both have strong data manipulation and visualization capabilities:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vi-similarities-and-differences-10-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      VI. Similarities and Differences (10 minutes)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="VI. Similarities and Differences (10 minutes)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#b-differences-between-r-and-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. Differences between R and Python
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="B. Differences between R and Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-syntax-and-language-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Syntax and language structure:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-r-is-more-focused-on-statistical-analysis-while-python-is-a-general-purpose-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. R is more focused on statistical analysis, while Python is a general-purpose language:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-r-has-a-more-comprehensive-set-of-statistical-packages-while-python-has-more-diverse-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. R has a more comprehensive set of statistical packages, while Python has more diverse libraries:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-recommendations-for-learning-both-languages" class="md-nav__link">
+    <span class="md-ellipsis">
+      C. Recommendations for learning both languages
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="C. Recommendations for learning both languages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-focus-on-learning-the-core-concepts-and-structures-in-both-languages" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Focus on learning the core concepts and structures in both languages:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-practice-using-both-languages-in-different-contexts" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Practice using both languages in different contexts:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-engage-with-online-resources-and-communities-for-both-r-and-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Engage with online resources and communities for both R and Python:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vii-qa-and-resources-5-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      VII. Q&amp;A and Resources (5 minutes)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="VII. Q&A and Resources (5 minutes)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-address-any-questions-from-participants" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. Address any questions from participants
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-share-resources-for-further-learning-and-exploration" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. Share resources for further learning and exploration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../code_demo/bilingualism/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Code examples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Reproducible and Open Science
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Reproducible and Open Science
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../3_Tools_for_reproducible_and_open_science/openscience/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tools for Reproducible and Open Science
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="overview-of-r-and-python">Overview of R and Python<a class="headerlink" href="#overview-of-r-and-python" title="Permanent link">&para;</a></h1>
+<h2 id="i-introduction-5-minutes">I. Introduction (5 minutes)<a class="headerlink" href="#i-introduction-5-minutes" title="Permanent link">&para;</a></h2>
+<h3 id="a-brief-overview-of-r-and-python">A. Brief overview of R and Python:<a class="headerlink" href="#a-brief-overview-of-r-and-python" title="Permanent link">&para;</a></h3>
+<p>R is a programming language and software environment for statistical
+computing and graphics, commonly used by statisticians, data scientists,
+and researchers. It provides a wide range of statistical and graphical
+techniques and is highly extensible. Python, on the other hand, is a
+versatile, high-level programming language that has a strong focus on
+readability and simplicity. It is widely used for various applications,
+including web development, automation, and scientific computing, making
+it a popular choice for data analysis as well.</p>
+<h3 id="b-importance-of-being-bilingual-in-r-and-python">B. Importance of being bilingual in R and Python:<a class="headerlink" href="#b-importance-of-being-bilingual-in-r-and-python" title="Permanent link">&para;</a></h3>
+<p>Becoming proficient in both R and Python offers several advantages.
+First, it broadens your skill set, making you more marketable and
+versatile in the job market. Second, it allows you to choose the most
+appropriate language for a given task, leveraging the strengths of each
+language. For instance, you might use R for advanced statistical
+modeling, while Python might be your go-to for machine learning or
+integrating with web services. Finally, bilingualism helps you to
+collaborate more effectively with colleagues who may prefer one language
+over the other, enhancing teamwork and productivity.</p>
+<h3 id="c-course-objectives">C. Course objectives:<a class="headerlink" href="#c-course-objectives" title="Permanent link">&para;</a></h3>
+<p>The goal of this one-hour course is to introduce the essential
+similarities and differences between R and Python, focusing on data
+structures, data manipulation, and data visualization. By the end of the
+course, participants should have a basic understanding of how to perform
+common data analysis tasks in both languages, as well as an appreciation
+for the unique strengths of each language. The course aims to provide a
+foundation for further exploration and learning in both R and Python.</p>
+<h2 id="ii-language-basics-10-minutes">II. Language Basics (10 minutes)<a class="headerlink" href="#ii-language-basics-10-minutes" title="Permanent link">&para;</a></h2>
+<h3 id="a-r">A. R<a class="headerlink" href="#a-r" title="Permanent link">&para;</a></h3>
+<h4 id="1-rstudio-and-r-environment">1. RStudio and R environment:<a class="headerlink" href="#1-rstudio-and-r-environment" title="Permanent link">&para;</a></h4>
+<p>RStudio is an integrated development environment (IDE) for R that
+provides a user-friendly interface and a comprehensive set of tools for
+coding, debugging, and visualization. The R environment is an
+interactive programming platform that allows you to write and execute R
+code, manage packages, and explore data structures. RStudio is a popular
+choice among R users, as it simplifies many tasks and improves overall
+workflow.</p>
+<p>R code:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Example of R code</span>
+<span class="w">     </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">5</span><span class="p">)</span>
+<span class="w">     </span><span class="n">y</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">2</span>
+<span class="w">     </span><span class="nf">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[1]  2  4  6  8 10
+</code></pre></div>
+<h4 id="2-r-syntax">2. R syntax:<a class="headerlink" href="#2-r-syntax" title="Permanent link">&para;</a></h4>
+<p>R syntax is characterized by its use of assignment operators (e.g.,
+<code>&lt;-</code>), functions, and control structures (e.g., <code>if</code>, <code>for</code>, <code>while</code>). R
+is case-sensitive, and comments are denoted by the pound sign (<code>#</code>). One
+notable feature of R syntax is its preference for the use of vectors and
+vectorized operations, which can lead to concise and efficient code.</p>
+<p>R code:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Example of R syntax</span>
+<span class="w">     </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">seq</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">10</span><span class="p">)</span>
+<span class="w">     </span><span class="n">y</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">x</span><span class="o">^</span><span class="m">2</span>
+<span class="w">     </span><span class="nf">if </span><span class="p">(</span><span class="nf">mean</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">20</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">       </span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;Mean is greater than 20&quot;</span><span class="p">)</span>
+<span class="w">     </span><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[1] &quot;Mean is greater than 20&quot;
+</code></pre></div>
+<h3 id="b-python">B. Python<a class="headerlink" href="#b-python" title="Permanent link">&para;</a></h3>
+<h4 id="1-python-environment-eg-jupyter-notebook-ides">1. Python environment (e.g., Jupyter Notebook, IDEs):<a class="headerlink" href="#1-python-environment-eg-jupyter-notebook-ides" title="Permanent link">&para;</a></h4>
+<p>Python can be run in various environments, such as Jupyter Notebook, a
+browser-based interactive computing platform that allows you to write,
+run, and share code, as well as create rich-text documents with embedded
+code, equations, and visualizations. Other popular Python IDEs include
+Visual Studio Code, PyCharm, and Spyder, which offer syntax
+highlighting, code completion, and debugging features.</p>
+<p>R code:</p>
+<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="c1"># Example of R code</span>
+<span class="w">     </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">5</span><span class="p">)</span>
+<span class="w">     </span><span class="n">y</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">2</span>
+<span class="w">     </span><span class="nf">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[1]  2  4  6  8 10
+</code></pre></div>
+<h4 id="2-python-syntax">2. Python syntax:<a class="headerlink" href="#2-python-syntax" title="Permanent link">&para;</a></h4>
+<p>Python syntax is designed to be readable and concise, using indentation
+to denote code blocks instead of curly braces or keywords. Python is
+case-sensitive, and comments are denoted by the hash sign (<code>#</code>). Like R,
+Python supports vectorized operations, especially when using libraries
+like NumPy or pandas.</p>
+<p>Python code:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Example of Python code</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[2, 4, 6, 8, 10]
+</code></pre></div>
+<p>Python syntax is designed to be readable and concise, using indentation
+to denote code blocks instead of curly braces or keywords. Python is
+case-sensitive, and comments are denoted by the hash sign (<code>#</code>). Like R,
+Python supports vectorized operations, especially when using libraries
+like NumPy or pandas.</p>
+<p>Python code:</p>
+<div class="highlight"><pre><span></span><code> <span class="c1"># Example of Python syntax</span>
+<span class="n">x</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">))</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
+<span class="k">if</span> <span class="nb">sum</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mean is greater than 20&quot;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Mean is greater than 20
+</code></pre></div>
+<h2 id="iii-data-structures-10-minutes">III. Data Structures (10 minutes)<a class="headerlink" href="#iii-data-structures-10-minutes" title="Permanent link">&para;</a></h2>
+<h3 id="a-r_1">A. R<a class="headerlink" href="#a-r_1" title="Permanent link">&para;</a></h3>
+<h4 id="1-vectors">1. Vectors:<a class="headerlink" href="#1-vectors" title="Permanent link">&para;</a></h4>
+<p>Vectors are one-dimensional arrays that can store elements of the same
+data type (e.g., numeric, character, logical). They are the most basic
+data structure in R and are used extensively in R programming. Vectors
+can be created using the c() function.</p>
+<p>R code:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Example of creating a numeric vector in R</span>
+<span class="n">num_vector</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">5</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="2-matrices">2. Matrices:<a class="headerlink" href="#2-matrices" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code> Matrices are two-dimensional arrays that can store elements of the same data type. They are useful for performing linear algebra operations and can be created using the `matrix()` function.
+</code></pre></div>
+<p>R code:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Example of creating a matrix in R</span>
+<span class="n">mat</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">matrix</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">9</span><span class="p">,</span><span class="w"> </span><span class="n">nrow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="n">ncol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="3-lists">3. Lists:<a class="headerlink" href="#3-lists" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code> Lists are ordered collections that can store elements of different data types, including other lists. They are similar to Python&#39;s lists but can contain heterogeneous data. Lists can be created using the `list()` function.
+</code></pre></div>
+<p>R code:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Example of creating a list in R</span>
+<span class="n">my_list</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="s">&quot;apple&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">42</span><span class="p">,</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">),</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="4-data-frames">4. Data frames:<a class="headerlink" href="#4-data-frames" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code> Data frames are tabular data structures that can store elements of different data types in columns. They are similar to Python&#39;s pandas DataFrame and can be created using the `data.frame()` function.
+</code></pre></div>
+<p>R code:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Example of creating a data frame in R</span>
+<span class="n">df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Alice&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Bob&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Carol&quot;</span><span class="p">),</span>
+<span class="w">        </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">25</span><span class="p">,</span><span class="w"> </span><span class="m">30</span><span class="p">,</span><span class="w"> </span><span class="m">35</span><span class="p">),</span><span class="w"> </span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">162</span><span class="p">,</span><span class="w"> </span><span class="m">175</span><span class="p">,</span><span class="w"> </span><span class="m">168</span><span class="p">))</span>
+</code></pre></div>
+<h3 id="b-python_1">B. Python<a class="headerlink" href="#b-python_1" title="Permanent link">&para;</a></h3>
+<h4 id="1-lists">1. Lists:<a class="headerlink" href="#1-lists" title="Permanent link">&para;</a></h4>
+<p>Lists are ordered, mutable collections that can store elements of
+different data types. They are similar to R’s lists and can be created
+using square brackets [].</p>
+<p>Python code:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Example of creating a list in Python</span>
+<span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="kc">True</span><span class="p">]</span>
+</code></pre></div>
+<h4 id="2-tuples">2. Tuples:<a class="headerlink" href="#2-tuples" title="Permanent link">&para;</a></h4>
+<p>Tuples are ordered, immutable collections that can store elements of
+different data types. They are similar to Python’s lists but cannot be
+modified after creation. Tuples can be created using parentheses <code>()</code>.</p>
+<p>Python code:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Example of creating a tuple in Python</span>
+<span class="n">my_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="3-sets">3. Sets:<a class="headerlink" href="#3-sets" title="Permanent link">&para;</a></h4>
+<p>Sets are unordered collections of unique elements. They can store
+elements of different data types but do not maintain their order. Sets
+can be created using the <code>set()</code> function or curly braces <code>{}</code>.</p>
+<p>Python code:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Example of creating a set in Python</span>
+<span class="n">my_set</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
+</code></pre></div>
+<h4 id="4-dictionaries">4. Dictionaries:<a class="headerlink" href="#4-dictionaries" title="Permanent link">&para;</a></h4>
+<p>Dictionaries are unordered collections of key-value pairs. They are
+similar to R’s named lists and can store elements of different data
+types. Dictionaries can be created using curly braces <code>{}</code> with
+key-value pairs separated by colons</p>
+<p>Python code:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Example of creating a dictionary in Python</span>
+<span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="s2">&quot;height&quot;</span><span class="p">:</span> <span class="mi">162</span><span class="p">}</span>
+</code></pre></div>
+<h4 id="5-pandas-dataframe">5. pandas DataFrame:<a class="headerlink" href="#5-pandas-dataframe" title="Permanent link">&para;</a></h4>
+<p>pandas DataFrames are two-dimensional, mutable, and heterogeneous
+tabular data structures with labeled axes (rows and columns). They are
+similar to R’s data frames and are widely used for data manipulation and
+analysis in Python. pandas DataFrames can be created by importing data
+from various sources like CSV files, SQL databases, or even from Python
+dictionaries or lists.</p>
+<p>Python code:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Example of creating a pandas DataFrame in Python</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="s1">&#39;Carol&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">],</span>
+        <span class="s1">&#39;height&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">162</span><span class="p">,</span> <span class="mi">175</span><span class="p">,</span> <span class="mi">168</span><span class="p">]}</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="iv-data-manipulation-15-minutes">IV. Data Manipulation (15 minutes)<a class="headerlink" href="#iv-data-manipulation-15-minutes" title="Permanent link">&para;</a></h2>
+<h3 id="a-r_2">A. R<a class="headerlink" href="#a-r_2" title="Permanent link">&para;</a></h3>
+<h4 id="1-base-r-functions">1. Base R functions:<a class="headerlink" href="#1-base-r-functions" title="Permanent link">&para;</a></h4>
+<p>Base R functions provide essential tools for data manipulation, such as
+subsetting, reshaping, and sorting data. These functions allow you to
+perform various data manipulation tasks, including filtering rows or
+columns, merging and joining data frames, and aggregating data. Some
+commonly used base R functions for data manipulation include subset(),
+merge(), aggregate(), and order().</p>
+<p>R code:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Example of filtering rows using base R functions</span>
+<span class="n">df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Alice&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Bob&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Carol&quot;</span><span class="p">,</span><span class="w">        </span><span class="s">&quot;David&quot;</span><span class="p">),</span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">25</span><span class="p">,</span><span class="w"> </span><span class="m">30</span><span class="p">,</span><span class="w"> </span><span class="m">35</span><span class="p">,</span><span class="w"> </span><span class="m">28</span><span class="p">),</span><span class="w"> </span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">162</span><span class="p">,</span><span class="w"> </span><span class="m">175</span><span class="p">,</span><span class="w">   </span><span class="m">168</span><span class="p">,</span><span class="w"> </span><span class="m">172</span><span class="p">))</span>
+
+<span class="c1"># Filter rows where age is greater than 27</span>
+<span class="n">filtered_df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">$</span><span class="n">age</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">27</span><span class="p">,</span><span class="w"> </span><span class="p">]</span>
+</code></pre></div>
+<h4 id="2-dplyr-and-the-tidyverse">2. dplyr and the tidyverse:<a class="headerlink" href="#2-dplyr-and-the-tidyverse" title="Permanent link">&para;</a></h4>
+<p>dplyr is a popular R package for data manipulation that is part of the
+tidyverse, a collection of R packages designed for data science. dplyr
+provides a set of intuitive and easy-to-read functions for data
+manipulation, such as <code>filter()</code>, <code>select()</code>, <code>mutate()</code>, <code>summarise()</code>,
+and <code>group_by()</code>. dplyr functions can be chained together using the pipe
+operator (<code>%&gt;%</code>) to create a more readable and efficient workflow.</p>
+<p>R code:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Example of filtering rows using dplyr</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+
+<span class="n">df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Alice&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Bob&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Carol&quot;</span><span class="p">,</span><span class="w">        </span><span class="s">&quot;David&quot;</span><span class="p">),</span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">25</span><span class="p">,</span><span class="w"> </span><span class="m">30</span><span class="p">,</span><span class="w"> </span><span class="m">35</span><span class="p">,</span><span class="w"> </span><span class="m">28</span><span class="p">),</span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">162</span><span class="p">,</span><span class="w"> </span><span class="m">175</span><span class="p">,</span><span class="w">   </span><span class="m">168</span><span class="p">,</span><span class="w"> </span><span class="m">172</span><span class="p">))</span>
+
+<span class="c1"># Filter rows where age is greater than 27</span>
+<span class="n">filtered_df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">df</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="nf">filter</span><span class="p">(</span><span class="n">age</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">27</span><span class="p">)</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">filtered_df</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>   name age height
+1   Bob  30    175
+2 Carol  35    168
+3 David  28    172
+</code></pre></div>
+<h3 id="b-python_2">B. Python<a class="headerlink" href="#b-python_2" title="Permanent link">&para;</a></h3>
+<h4 id="1-built-in-functions">1. Built-in functions:<a class="headerlink" href="#1-built-in-functions" title="Permanent link">&para;</a></h4>
+<p>Python has built-in functions that allow for basic data manipulation,
+such as filtering, sorting, and aggregating data. However, these
+functions are less flexible and less efficient when compared to
+specialized libraries like pandas. Some commonly used built-in functions
+for data manipulation include filter(), map(), and sorted().</p>
+<p>Python code:</p>
+<div class="highlight"><pre><span></span><code> ```python
+ # Example of filtering a list using a built-in function
+ data = [{&quot;name&quot;: &quot;Alice&quot;, &quot;age&quot;: 25, &quot;height&quot;: 162},
+         {&quot;name&quot;: &quot;Bob&quot;, &quot;age&quot;: 30, &quot;height&quot;: 175},
+         {&quot;name&quot;: &quot;Carol&quot;, &quot;age&quot;: 35, &quot;height&quot;: 168},
+         {&quot;name&quot;: &quot;David&quot;, &quot;age&quot;: 28, &quot;height&quot;: 172}]
+
+ # Filter items where age is greater than 27
+ filtered_data = list(filter(lambda x: x[&quot;age&quot;] &gt; 27, data))
+ ```
+</code></pre></div>
+<h4 id="2-pandas-library">2. pandas library:<a class="headerlink" href="#2-pandas-library" title="Permanent link">&para;</a></h4>
+<p>The pandas library is a powerful and flexible data manipulation tool in
+Python. It provides various functions for cleaning, transforming, and
+analyzing data in a DataFrame format, making it easy to work with
+structured data. Some common pandas functions for data manipulation
+include <code>loc[]</code>, <code>iloc[]</code>, <code>query()</code>, <code>merge()</code>, <code>groupby()</code>, and
+<code>agg()</code>.</p>
+<p>Python code:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Example of filtering rows using pandas</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="s1">&#39;Carol&#39;</span><span class="p">,</span> <span class="s1">&#39;David&#39;</span><span class="p">],</span>
+             <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">28</span><span class="p">],</span>
+             <span class="s1">&#39;height&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">162</span><span class="p">,</span> <span class="mi">175</span><span class="p">,</span> <span class="mi">168</span><span class="p">,</span> <span class="mi">172</span><span class="p">]}</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># Filter rows where age is greater than 27</span>
+<span class="n">filtered_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">27</span><span class="p">]</span>
+</code></pre></div>
+<h2 id="v-data-visualization-10-minutes">V. Data Visualization (10 minutes)<a class="headerlink" href="#v-data-visualization-10-minutes" title="Permanent link">&para;</a></h2>
+<h3 id="a-r_3">A. R<a class="headerlink" href="#a-r_3" title="Permanent link">&para;</a></h3>
+<h4 id="1-base-r-plotting">1. Base R plotting:<a class="headerlink" href="#1-base-r-plotting" title="Permanent link">&para;</a></h4>
+<p>Base R provides built-in plotting functions that enable users to create
+simple visualizations directly from data structures like vectors and
+data frames. These functions include plot(), hist(), boxplot(), and
+barplot(). While base R plotting can create a wide range of
+visualizations, the syntax and customization options may be less
+intuitive compared to more specialized libraries like ggplot2.</p>
+<p>R code:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Example of a scatter plot using base R plotting</span>
+<span class="n">df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">rnorm</span><span class="p">(</span><span class="m">50</span><span class="p">),</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">rnorm</span><span class="p">(</span><span class="m">50</span><span class="p">))</span>
+
+<span class="nf">plot</span><span class="p">(</span><span class="n">df</span><span class="o">$</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">df</span><span class="o">$</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">main</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Scatter Plot&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">xlab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;X-axis&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ylab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Y-axis&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;blue&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="" src="outline_files/figure-gfm/unnamed-chunk-19-1.png" /></p>
+<h4 id="2-ggplot2">2. ggplot2:<a class="headerlink" href="#2-ggplot2" title="Permanent link">&para;</a></h4>
+<p>ggplot2 is a popular R package for data visualization and is part of the
+tidyverse. It implements the “Grammar of Graphics” concept, which allows
+users to create complex and customizable visualizations using a
+consistent and intuitive syntax. With ggplot2, users can create a wide
+range of visualizations, including scatter plots, bar charts,
+histograms, and more, using functions like <code>ggplot()</code>, <code>geom_point()</code>,
+<code>geom_bar()</code>, and <code>geom_histogram()</code>.</p>
+<p>R code:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Example of a scatter plot using ggplot2</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+
+<span class="n">df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">rnorm</span><span class="p">(</span><span class="m">50</span><span class="p">),</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">rnorm</span><span class="p">(</span><span class="m">50</span><span class="p">))</span>
+
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="nf">geom_point</span><span class="p">(</span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;blue&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="nf">ggtitle</span><span class="p">(</span><span class="s">&quot;Scatter Plot&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="nf">xlab</span><span class="p">(</span><span class="s">&quot;X-axis&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="nf">ylab</span><span class="p">(</span><span class="s">&quot;Y-axis&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="" src="outline_files/figure-gfm/unnamed-chunk-20-1.png" /></p>
+<h3 id="b-python_3">B. Python<a class="headerlink" href="#b-python_3" title="Permanent link">&para;</a></h3>
+<h4 id="1-matplotlib">1. matplotlib:<a class="headerlink" href="#1-matplotlib" title="Permanent link">&para;</a></h4>
+<p>matplotlib is a widely-used data visualization library in Python that
+provides a comprehensive set of tools for creating static, animated, and
+interactive visualizations. It is inspired by MATLAB’s plotting system
+and offers a simple and flexible interface for creating a wide range of
+visualizations, such as line plots, scatter plots, bar plots, and
+histograms. Some commonly used matplotlib functions include plot(),
+scatter(), bar(), and hist().</p>
+<p>Python code:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Example of a scatter plot using matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">)]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Scatter Plot&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;X-axis&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Y-axis&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+<p><img src="outline_files/figure-gfm/unnamed-chunk-21-1.png"
+width="672" /></p>
+<h4 id="2-seaborn">2. seaborn:<a class="headerlink" href="#2-seaborn" title="Permanent link">&para;</a></h4>
+<p>seaborn is a Python data visualization library based on matplotlib that
+provides a high-level interface for creating informative and attractive
+statistical graphics. It comes with several built-in themes and color
+palettes to make it easy to create aesthetically pleasing and consistent
+visualizations. seaborn offers functions for a wide range of
+visualizations, such as scatter plots, line plots, bar plots, and box
+plots, using functions like <code>scatterplot()</code>, <code>lineplot()</code>, <code>barplot()</code>,
+and <code>boxplot()</code>.</p>
+<p>Python code:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Example of a scatter plot using seaborn</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">)],</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">)]})</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Scatter Plot&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;X-axis&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Y-axis&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+<p><img src="outline_files/figure-gfm/unnamed-chunk-22-3.png"
+width="672" /></p>
+<h2 id="vi-conclusions-and-recommendations-5-minutes">VI. Conclusions and Recommendations (5 minutes)<a class="headerlink" href="#vi-conclusions-and-recommendations-5-minutes" title="Permanent link">&para;</a></h2>
+<h3 id="a-similarities-between-r-and-python">A. Similarities between R and Python<a class="headerlink" href="#a-similarities-between-r-and-python" title="Permanent link">&para;</a></h3>
+<h4 id="1-both-are-high-level-programming-languages">1. Both are high-level programming languages:<a class="headerlink" href="#1-both-are-high-level-programming-languages" title="Permanent link">&para;</a></h4>
+<p>R and Python are both high-level programming languages, meaning they
+provide a layer of abstraction that simplifies the programming process.
+This allows users to focus on solving problems or implementing
+algorithms without worrying about low-level details such as memory
+management or hardware interaction. Both languages are also interpreted,
+so code is executed directly without the need for compilation.</p>
+<h4 id="2-both-support-vectorized-operations">2. Both support vectorized operations:<a class="headerlink" href="#2-both-support-vectorized-operations" title="Permanent link">&para;</a></h4>
+<p>R and Python both offer support for vectorized operations, which enable
+users to perform element-wise operations on arrays or other data
+structures without the need for explicit loops. This feature leads to
+more concise and readable code and can also improve performance. For
+example, in R, you can add two vectors element-wise using the <code>+</code>
+operator, while in Python, you can use the NumPy library to perform
+similar operations.</p>
+<h4 id="3-both-have-strong-data-manipulation-and-visualization-capabilities">3. Both have strong data manipulation and visualization capabilities:<a class="headerlink" href="#3-both-have-strong-data-manipulation-and-visualization-capabilities" title="Permanent link">&para;</a></h4>
+<p>R and Python are both widely used in data science due to their strong
+data manipulation and visualization capabilities. R is known for its
+packages such as dplyr and ggplot2, while Python has powerful libraries
+like pandas, matplotlib, and seaborn. These tools allow users to
+efficiently clean, analyze, and visualize data, making it easier to
+extract insights and make data-driven decisions. For example, in R, you
+can use dplyr to filter a data frame and ggplot2 to create a scatter
+plot, while in Python, you can use pandas to filter a DataFrame and
+seaborn to create a scatter plot. capabilities</p>
+<h2 id="vi-similarities-and-differences-10-minutes">VI. Similarities and Differences (10 minutes)<a class="headerlink" href="#vi-similarities-and-differences-10-minutes" title="Permanent link">&para;</a></h2>
+<h3 id="b-differences-between-r-and-python">B. Differences between R and Python<a class="headerlink" href="#b-differences-between-r-and-python" title="Permanent link">&para;</a></h3>
+<h4 id="1-syntax-and-language-structure">1. Syntax and language structure:<a class="headerlink" href="#1-syntax-and-language-structure" title="Permanent link">&para;</a></h4>
+<p>R and Python have different syntax and language structures, which can be
+a challenge for those learning both languages. R uses \&lt;- for
+assignment, while Python uses =. R’s syntax is also more functional,
+whereas Python is more object-oriented. Familiarizing oneself with the
+syntax and structure of each language is essential for working
+efficiently in both.</p>
+<h4 id="2-r-is-more-focused-on-statistical-analysis-while-python-is-a-general-purpose-language">2. R is more focused on statistical analysis, while Python is a general-purpose language:<a class="headerlink" href="#2-r-is-more-focused-on-statistical-analysis-while-python-is-a-general-purpose-language" title="Permanent link">&para;</a></h4>
+<p>R was specifically designed for statistical analysis and data
+manipulation, while Python is a general-purpose programming language
+that can be used for various applications, including data science, web
+development, and software development. As a result, R has more built-in
+statistical functions and a more comprehensive set of packages for data
+analysis, while Python offers a broader range of functionality and
+libraries for other purposes.</p>
+<h4 id="3-r-has-a-more-comprehensive-set-of-statistical-packages-while-python-has-more-diverse-libraries">3. R has a more comprehensive set of statistical packages, while Python has more diverse libraries:<a class="headerlink" href="#3-r-has-a-more-comprehensive-set-of-statistical-packages-while-python-has-more-diverse-libraries" title="Permanent link">&para;</a></h4>
+<p>Although both R and Python offer a rich ecosystem of libraries and
+packages, R has a more comprehensive set of statistical packages, which
+makes it the preferred choice for many statisticians and data analysts.
+On the other hand, Python has a more diverse set of libraries, making it
+suitable for a wide range of applications, including machine learning,
+computer vision, and natural language processing.</p>
+<h3 id="c-recommendations-for-learning-both-languages">C. Recommendations for learning both languages<a class="headerlink" href="#c-recommendations-for-learning-both-languages" title="Permanent link">&para;</a></h3>
+<h4 id="1-focus-on-learning-the-core-concepts-and-structures-in-both-languages">1. Focus on learning the core concepts and structures in both languages:<a class="headerlink" href="#1-focus-on-learning-the-core-concepts-and-structures-in-both-languages" title="Permanent link">&para;</a></h4>
+<p>To become proficient in both R and Python, focus on understanding the
+core concepts and structures of each language. This includes learning
+the basic syntax, data structures, and built-in functions. By mastering
+these fundamentals, you’ll be better equipped to apply your knowledge to
+various data science tasks.</p>
+<h4 id="2-practice-using-both-languages-in-different-contexts">2. Practice using both languages in different contexts:<a class="headerlink" href="#2-practice-using-both-languages-in-different-contexts" title="Permanent link">&para;</a></h4>
+<p>One of the best ways to become proficient in both R and Python is to
+practice using them in different contexts. This might include working on
+data manipulation, data visualization, statistical analysis, or machine
+learning tasks. By applying both languages to a variety of problems,
+you’ll gain a deeper understanding of their strengths and weaknesses,
+which will help you decide when to use each language.</p>
+<h4 id="3-engage-with-online-resources-and-communities-for-both-r-and-python">3. Engage with online resources and communities for both R and Python:<a class="headerlink" href="#3-engage-with-online-resources-and-communities-for-both-r-and-python" title="Permanent link">&para;</a></h4>
+<p>There are numerous online resources and communities available for
+learning both R and Python. Engage with these resources, such as
+tutorials, blogs, forums, and online courses, to further your
+understanding of both languages. Additionally, participating in the R
+and Python communities can provide valuable insights, as well as
+opportunities for networking and collaboration.</p>
+<h2 id="vii-qa-and-resources-5-minutes">VII. Q&amp;A and Resources (5 minutes)<a class="headerlink" href="#vii-qa-and-resources-5-minutes" title="Permanent link">&para;</a></h2>
+<h3 id="a-address-any-questions-from-participants">A. Address any questions from participants<a class="headerlink" href="#a-address-any-questions-from-participants" title="Permanent link">&para;</a></h3>
+<h3 id="b-share-resources-for-further-learning-and-exploration">B. Share resources for further learning and exploration<a class="headerlink" href="#b-share-resources-for-further-learning-and-exploration" title="Permanent link">&para;</a></h3>
+<p>Python Resources:</p>
+<ol>
+<li>Earth Data Science (<a href="https://www.earthdatascience.org">https://www.earthdatascience.org</a>) - Offers a
+    wide range of tutorials and resources on Python for Earth data
+    science, covering topics such as data manipulation, visualization,
+    and geospatial analysis.</li>
+<li>Real Python (<a href="https://realpython.com">https://realpython.com</a>) - Provides a comprehensive
+    collection of tutorials, articles, and guides on various aspects of
+    Python programming, suitable for beginners and experienced
+    developers alike.</li>
+<li>Python.org (<a href="https://docs.python.org/3/tutorial/index.html">https://docs.python.org/3/tutorial/index.html</a>) - The
+    official Python documentation, featuring an extensive tutorial
+    covering the basics of the language.</li>
+<li>DataCamp
+    (<a href="https://www.datacamp.com/courses/intro-to-python-for-data-science">https://www.datacamp.com/courses/intro-to-python-for-data-science</a>) -
+    Offers an introductory course on Python for data science, covering
+    topics like data manipulation and visualization using libraries like
+    NumPy, pandas, and matplotlib.</li>
+<li>Kaggle (<a href="https://www.kaggle.com/learn/python">https://www.kaggle.com/learn/python</a>) - Provides a free
+    Python course that covers fundamental programming concepts, with a
+    focus on data science applications.</li>
+</ol>
+<p>R Resources:</p>
+<ol>
+<li>R for Data Science (<a href="https://r4ds.had.co.nz">https://r4ds.had.co.nz</a>) - A free online book by
+    Hadley Wickham and Garrett Grolemund, covering the essentials of
+    data science using R, including data manipulation, visualization,
+    and modeling with the tidyverse.</li>
+<li>DataCamp (<a href="https://www.datacamp.com/courses/free-introduction-to-r">https://www.datacamp.com/courses/free-introduction-to-r</a>) -
+    Offers a free introductory course on R, covering the basics of the
+    language, data structures, and data manipulation.</li>
+<li>R-bloggers (<a href="https://www.r-bloggers.com">https://www.r-bloggers.com</a>) - A blog aggregator that
+    features articles and tutorials on R from various authors, covering
+    a wide range of topics and applications.</li>
+<li>The R Project for Statistical Computing
+    (<a href="https://www.r-project.org">https://www.r-project.org</a>) - The official website of the R
+    programming language, featuring documentation, resources, and a list
+    of recommended books.</li>
+<li>RStudio Community (<a href="https://community.rstudio.com">https://community.rstudio.com</a>) - An online forum
+    where users can ask questions, share knowledge, and engage with the
+    R community.</li>
+</ol>
+<p>By exploring these resources, you’ll gain a deeper understanding of R
+and Python and enhance your skills in data science and programming.</p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
+    </span>
+    2024-05-09
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023 University of Colorado Boulder
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/cu-esiil/" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.top", "toc.integrate", "toc.follow", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.3220b9d7.min.js"></script>
+      
+    
+  </body>
+</html>

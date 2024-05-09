@@ -1,0 +1,1537 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for May 2023 ESIIL Innovation Summit">
+      
+      
+        <meta name="author" content="ESIIL Education and CI">
+      
+      
+        <link rel="canonical" href="https://cu-esiil.github.io/pre-innovation-summit-training/1_Collaboration_on_Cloud/github_lesson/github_lesson/">
+      
+      
+        <link rel="prev" href="../../collaboration/">
+      
+      
+        <link rel="next" href="../../jetstream2_lesson/jetstream2_lesson/">
+      
+      
+      <link rel="icon" href="../../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.18">
+    
+    
+      
+        <title>Github essentials - Innovation Summit 2023</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.66ac8b77.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Open Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#github-essentials" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Innovation Summit 2023" class="md-header__button md-logo" aria-label="Innovation Summit 2023" data-md-component="logo">
+      
+  <img src="../../../assets/ESIIL_logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Innovation Summit 2023
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Github essentials
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: white)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/cu-esiil/pre-innovation-summit-training" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    pre-innovation-summit-training
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../collaboration/" class="md-tabs__link">
+          
+  
+    
+  
+  Collaboration on Cloud
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../2_R_and_Py_bilingualism/code/outline/outline/" class="md-tabs__link">
+          
+  
+    
+  
+  R and Python Bilingualism
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../3_Tools_for_reproducible_and_open_science/openscience/" class="md-tabs__link">
+          
+  
+    
+  
+  Reproducible and Open Science
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Innovation Summit 2023" class="md-nav__button md-logo" aria-label="Innovation Summit 2023" data-md-component="logo">
+      
+  <img src="../../../assets/ESIIL_logo.png" alt="logo">
+
+    </a>
+    Innovation Summit 2023
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/cu-esiil/pre-innovation-summit-training" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    pre-innovation-summit-training
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Collaboration on Cloud
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Collaboration on Cloud
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../collaboration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Collaboration on Cloud
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Github essentials
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Github essentials
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#i-introduction-2-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      I. Introduction (2 minutes)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="I. Introduction (2 minutes)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-brief-overview-of-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. Brief overview of GitHub:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-introduce-github-desktop-and-jupyterhub-github-widget" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. Introduce GitHub Desktop and JupyterHub GitHub widget:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="B. Introduce GitHub Desktop and JupyterHub GitHub widget:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-download-github-desktop" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Download GitHub Desktop
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Download GitHub Desktop">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-download-github-desktop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Download GitHub Desktop
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-install-github-desktop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Install GitHub Desktop
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-set-up-github-desktop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Set up GitHub Desktop
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-download-github-for-jupyterhub-cloud-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Download GitHub for JupyterHub cloud service
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-accessing-jupyterhub-on-the-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Accessing JupyterHub on the cloud
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-launch-a-new-jupyter-notebook-or-open-an-existing-one" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Launch a new Jupyter Notebook or open an existing one
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-install-and-enable-the-jupyterlab-git-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Install and enable the JupyterLab Git extension
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-create-a-new-ssh-keypair-and-add-it-your-github-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Create a new ssh keypair and add it your GitHub Account
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-using-the-jupyterhub-github-widget" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 5: Using the JupyterHub GitHub widget
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-github-in-rstudio" class="md-nav__link">
+    <span class="md-ellipsis">
+      C. GitHub in Rstudio:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="C. GitHub in Rstudio:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-install-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Install Git
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-configure-rstudio-to-work-with-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Configure RStudio to work with Git
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-create-or-open-an-rstudio-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Create or open an RStudio project
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-link-your-rstudio-project-to-a-github-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Link your RStudio project to a GitHub repository
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ii-github-basics-4-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      II. GitHub Basics (4 minutes)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="II. GitHub Basics (4 minutes)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. Repository:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-fork-and-clone" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. Fork and Clone:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      C. Branches:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-replace-master-with-main" class="md-nav__link">
+    <span class="md-ellipsis">
+      D. Replace ‘master’ with ‘main’:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iii-collaboration-and-version-control-5-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      III. Collaboration and Version Control (5 minutes)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="III. Collaboration and Version Control (5 minutes)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-commits" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. Commits:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-push" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. Push:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-pull-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      C. Pull Requests:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-merging-and-resolving-conflicts" class="md-nav__link">
+    <span class="md-ellipsis">
+      D. Merging and Resolving Conflicts:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iv-additional-features-2-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      IV. Additional Features (2 minutes)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IV. Additional Features (2 minutes)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-issues-and-project-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. Issues and Project Management:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-github-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. GitHub Pages:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v-conclusion-2-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      V. Conclusion (2 minutes)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="V. Conclusion (2 minutes)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-recap-of-the-essentials-of-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. Recap of the essentials of GitHub:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-encourage-further-exploration-and-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. Encourage further exploration and learning:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-share-resources-for-learning-more-about-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      C. Share resources for learning more about GitHub:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v-conclusion-2-minutes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      V. Conclusion (2 minutes)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="V. Conclusion (2 minutes)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-recap-of-the-essentials-of-github_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. Recap of the essentials of GitHub:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-encourage-further-exploration-and-learning_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. Encourage further exploration and learning:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-share-resources-for-learning-more-about-github_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      C. Share resources for learning more about GitHub:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jetstream2_lesson/jetstream2_lesson/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jetstream2 Intro
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    R and Python Bilingualism
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            R and Python Bilingualism
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2_R_and_Py_bilingualism/code/outline/outline/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2_R_and_Py_bilingualism/code/code_demo/bilingualism/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Code examples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Reproducible and Open Science
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Reproducible and Open Science
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3_Tools_for_reproducible_and_open_science/openscience/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tools for Reproducible and Open Science
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="github-essentials">Github essentials<a class="headerlink" href="#github-essentials" title="Permanent link">&para;</a></h1>
+<h2 id="i-introduction-2-minutes">I. Introduction (2 minutes)<a class="headerlink" href="#i-introduction-2-minutes" title="Permanent link">&para;</a></h2>
+<h3 id="a-brief-overview-of-github">A. Brief overview of GitHub:<a class="headerlink" href="#a-brief-overview-of-github" title="Permanent link">&para;</a></h3>
+<p>GitHub is a web-based platform that provides version control and
+collaboration features using Git, a distributed version control system.
+It enables developers to work together on projects, track changes to
+code, and efficiently manage different versions of the project. GitHub
+is widely used in the software development industry and is an essential
+tool for collaborative projects and maintaining code quality.</p>
+<h3 id="b-introduce-github-desktop-and-jupyterhub-github-widget">B. Introduce GitHub Desktop and JupyterHub GitHub widget:<a class="headerlink" href="#b-introduce-github-desktop-and-jupyterhub-github-widget" title="Permanent link">&para;</a></h3>
+<p>GitHub Desktop is a graphical user interface (GUI) application that
+simplifies working with Git and GitHub by providing a more visual and
+intuitive way to manage repositories, branches, commits, and other Git
+features. JupyterHub GitHub widget, on the other hand, is a built-in
+widget that integrates Git and GitHub functionality directly into
+Jupyter notebooks, allowing users to perform version control and
+collaboration tasks within the Jupyter environment. Both tools help
+streamline the process of working with GitHub and make it more
+accessible to users with varying levels of experience with Git and
+version control.</p>
+<h4 id="1-download-github-desktop">1. Download GitHub Desktop<a class="headerlink" href="#1-download-github-desktop" title="Permanent link">&para;</a></h4>
+<h5 id="step-1-download-github-desktop">Step 1: Download GitHub Desktop<a class="headerlink" href="#step-1-download-github-desktop" title="Permanent link">&para;</a></h5>
+<p>Go to the GitHub Desktop download page: <a href="https://desktop.github.com/">https://desktop.github.com/</a></p>
+<p>Click on the “Download for Windows” or “Download for macOS” button,
+depending on your operating system. The download should start
+automatically.</p>
+<h5 id="step-2-install-github-desktop">Step 2: Install GitHub Desktop<a class="headerlink" href="#step-2-install-github-desktop" title="Permanent link">&para;</a></h5>
+<p>For Windows:</p>
+<p>Locate the downloaded installer file (usually in the Downloads folder)
+and double-click on it to run the installer.</p>
+<p>Follow the installation instructions that appear on the screen,
+accepting the default settings or customizing them as desired.</p>
+<p>Once the installation is complete, GitHub Desktop will launch
+automatically. For macOS:</p>
+<p>Locate the downloaded .zip file (usually in the Downloads folder) and
+double-click on it to extract the GitHub Desktop application.</p>
+<p>Drag the extracted “GitHub Desktop” application into the “Applications”
+folder.</p>
+<p>Open the “Applications” folder and double-click on “GitHub Desktop” to
+launch the application.</p>
+<h5 id="step-3-set-up-github-desktop">Step 3: Set up GitHub Desktop<a class="headerlink" href="#step-3-set-up-github-desktop" title="Permanent link">&para;</a></h5>
+<p>When GitHub Desktop launches for the first time, you will be prompted to
+sign in with your GitHub account. If you don’t have one, you can create
+one at <a href="https://github.com/join">https://github.com/join</a>.</p>
+<p>Enter your GitHub username (or email) and password, and click on “Sign
+in.”</p>
+<p>You will then be prompted to configure Git. Enter your name and email
+address, which will be used for your commit messages. Click “Continue”
+when you’re done. Choose whether you want to submit usage data to help
+improve GitHub Desktop. Click “Finish” to complete the setup.</p>
+<p>Now, you have successfully installed and set up GitHub Desktop. You can
+start using it to clone repositories, make changes, commit, and sync
+with the remote repositories on GitHub.</p>
+<h4 id="1-download-github-for-jupyterhub-cloud-service">1. Download GitHub for JupyterHub cloud service<a class="headerlink" href="#1-download-github-for-jupyterhub-cloud-service" title="Permanent link">&para;</a></h4>
+<h3 id="step-1-accessing-jupyterhub-on-the-cloud">Step 1: Accessing JupyterHub on the cloud<a class="headerlink" href="#step-1-accessing-jupyterhub-on-the-cloud" title="Permanent link">&para;</a></h3>
+<p>Visit the JupyterHub cloud service you want to use (e.g., Binder, Google
+Colab, or a custom JupyterHub deployment provided by your organization).</p>
+<p>Sign in with your credentials or authenticate using a third-party
+service if required.</p>
+<h3 id="step-2-launch-a-new-jupyter-notebook-or-open-an-existing-one">Step 2: Launch a new Jupyter Notebook or open an existing one<a class="headerlink" href="#step-2-launch-a-new-jupyter-notebook-or-open-an-existing-one" title="Permanent link">&para;</a></h3>
+<p>Click on the “New” button (usually located in the top right corner) and
+select “Python” to create a new Jupyter Notebook or open an existing one
+from the file browser.</p>
+<p>Once the notebook is open, you will see the Jupyter Notebook interface
+with the familiar cells for writing and executing code.</p>
+<h3 id="step-3-install-and-enable-the-jupyterlab-git-extension">Step 3: Install and enable the JupyterLab Git extension<a class="headerlink" href="#step-3-install-and-enable-the-jupyterlab-git-extension" title="Permanent link">&para;</a></h3>
+<p>In your Jupyter Notebook, create a new code cell and run the following
+command to install the JupyterLab Git extension:</p>
+<p>!pip install jupyterlab-git</p>
+<p>Restart the Jupyter Notebook server for the changes to take effect.</p>
+<h3 id="step-4-create-a-new-ssh-keypair-and-add-it-your-github-account">Step 4: Create a new ssh keypair and add it your GitHub Account<a class="headerlink" href="#step-4-create-a-new-ssh-keypair-and-add-it-your-github-account" title="Permanent link">&para;</a></h3>
+<p>In order to authenticate to GitHub so that you can perform write operations like pushes, you must first create a private / public keypair.
+To do so, you will first need to make a clone of the innovation-summit-utils repository. The URL for this repository is <a href="https://github.com/CU-ESIIL/innovation-summit-utils.git">https://github.com/CU-ESIIL/innovation-summit-utils.git</a> </p>
+<p>In the Jupyter Notebook interface, you should now see a Git icon on the
+left sidebar. Click on it to open the GitHub widget.</p>
+<p>To clone a repository, click on the “+” icon in the GitHub widget and
+enter the repository URL. This will clone the repository into your
+JupyterHub workspace. </p>
+<p>Once the repository is cloned, navigate inside it and click on the configure_github_ssh.ipynb file to open it. Once it is open,
+execute the first cell of notebook. It will first prompt you for your GitHub username and email. The cell should output some text, the last line of which is your ssh keypair public key.
+It will look something like: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP7qv33+PZN/8uu+0rMRx2/YzQXMRHsWBKayUa6UOISJ jovyan@c0a330638f25<br />
+Go ahead and copy this last line now. </p>
+<p>Next, log on to your GitHub and go to your account settings. In the menu on the left side, under 'Access' you should see a "SSH and GPG keys" option, select this. From there, click the green "New SSH key" button. Give your key a title and then paste the output that you copied earlier in to the "Key" box. Click "Add SSH key" to finish adding the key. </p>
+<p>From now on, make sure to choose the SSH URI instead of the HTTPS URI when cloning repositories from GitHub. You will now be able to push to repositories that you have write access to from the JupyterHub.</p>
+<h3 id="step-5-using-the-jupyterhub-github-widget">Step 5: Using the JupyterHub GitHub widget<a class="headerlink" href="#step-5-using-the-jupyterhub-github-widget" title="Permanent link">&para;</a></h3>
+<p>You can now navigate through cloned
+repositories, make changes, and use the GitHub widget to stage, commit,
+and push your changes back to the remote repository.</p>
+<p>To create and manage branches, use the branch icon in the GitHub widget.
+You can create new branches, switch between branches, and merge branches
+using this interface.</p>
+<p>To sync your local repository with the remote repository, use the “Pull”
+and “Push” buttons in the GitHub widget.</p>
+<p>Now, you know how to access and use the JupyterHub GitHub widget running
+on the cloud. This allows you to work with Git and GitHub directly from
+your Jupyter Notebook interface, streamlining your workflow and making
+collaboration easier.</p>
+<h3 id="c-github-in-rstudio">C. GitHub in Rstudio:<a class="headerlink" href="#c-github-in-rstudio" title="Permanent link">&para;</a></h3>
+<p>Integrating GitHub with RStudio allows users to manage their Git
+repositories and collaborate on projects directly within the RStudio
+environment. It offers similar functionality to GitHub Desktop but
+caters specifically to R users working within RStudio. By configuring
+RStudio to work with Git, creating or opening RStudio projects, and
+linking projects to GitHub repositories, users can enjoy a seamless
+workflow for version control and collaboration. RStudio’s Git pane
+enables users to stage, commit, and push changes to remote repositories,
+as well as manage branches and sync local repositories with remote ones,
+providing a comprehensive solution for R developers working with GitHub.</p>
+<h4 id="step-1-install-git">Step 1: Install Git<a class="headerlink" href="#step-1-install-git" title="Permanent link">&para;</a></h4>
+<p>Before integrating GitHub with RStudio, you need to have Git installed
+on your computer. Visit the official Git website (<a href="https://git-scm.com/">https://git-scm.com/</a>)
+to download and install the latest version of Git for your operating
+system.</p>
+<h4 id="step-2-configure-rstudio-to-work-with-git">Step 2: Configure RStudio to work with Git<a class="headerlink" href="#step-2-configure-rstudio-to-work-with-git" title="Permanent link">&para;</a></h4>
+<p>Open RStudio.</p>
+<p>Go to “Tools” &gt; “Global Options” in the top menu. In the “Global
+Options” window, click on the “Git/SVN” tab.</p>
+<p>Check that the “Git executable” field is pointing to the correct
+location of the installed Git. If not, click “Browse” and navigate to
+the location of the Git executable file (usually found in the “bin”
+folder of the Git installation directory).</p>
+<p>Click “OK” to save the changes.</p>
+<h4 id="step-3-create-or-open-an-rstudio-project">Step 3: Create or open an RStudio project<a class="headerlink" href="#step-3-create-or-open-an-rstudio-project" title="Permanent link">&para;</a></h4>
+<p>To create a new RStudio project, go to “File” &gt; “New Project” in the
+top menu. You can either create a new directory or choose an existing
+one for your project.</p>
+<p>To open an existing RStudio project, go to “File” &gt; “Open Project” and
+navigate to the project’s “.Rproj” file.</p>
+<h4 id="step-4-link-your-rstudio-project-to-a-github-repository">Step 4: Link your RStudio project to a GitHub repository<a class="headerlink" href="#step-4-link-your-rstudio-project-to-a-github-repository" title="Permanent link">&para;</a></h4>
+<p>In the RStudio project, go to the “Tools” menu and select “Version
+Control” &gt; “Project Setup.”</p>
+<p>In the “Project Setup” window, select “Git” as the version control
+system and click “OK.”</p>
+<p>A new “.git” folder will be created in your project directory,
+initializing it as a Git repository. Commit any changes you have made so
+far by clicking on the “Commit” button in the “Git” pane in RStudio.</p>
+<p>To link your local repository to a remote GitHub repository, go to your
+GitHub account and create a new repository.</p>
+<p>Copy the remote repository’s URL (e.g.,
+“<a href="https://github.com/username/repository.git">https://github.com/username/repository.git</a>”).</p>
+<p>In RStudio, open the “Shell” by going to “Tools” &gt; “Shell.”</p>
+<p>In the shell, run the following command to add the remote repository:</p>
+<p>git remote add origin <a href="https://github.com/username/repository.git">https://github.com/username/repository.git</a></p>
+<p>Replace the URL with the one you copied from your GitHub repository.</p>
+<p>Push your changes to the remote repository by running the following
+command in the shell:</p>
+<p>git push -u origin master</p>
+<p>Now, your RStudio project is linked to a GitHub repository. You can use
+the “Git” pane in RStudio to stage, commit, and push changes to the
+remote repository, as well as manage branches and sync your local
+repository with the remote one.</p>
+<p>By integrating GitHub with RStudio, you can streamline your workflow,
+collaborate more effectively with your team, and manage your Git
+repositories directly from the RStudio interface.</p>
+<h2 id="ii-github-basics-4-minutes">II. GitHub Basics (4 minutes)<a class="headerlink" href="#ii-github-basics-4-minutes" title="Permanent link">&para;</a></h2>
+<h3 id="a-repository">A. Repository:<a class="headerlink" href="#a-repository" title="Permanent link">&para;</a></h3>
+<p>A repository, often abbreviated as “repo,” is the fundamental building
+block of GitHub. It is a storage space for your project files, including
+the code, documentation, and other related resources. Each repository
+also contains the complete history of all changes made to the project
+files, which is crucial for effective version control. Repositories can
+be public, allowing anyone to access and contribute, or private,
+restricting access to specific collaborators.</p>
+<h3 id="b-fork-and-clone">B. Fork and Clone:<a class="headerlink" href="#b-fork-and-clone" title="Permanent link">&para;</a></h3>
+<p>Forking and cloning are two essential operations for working with
+repositories on GitHub. Forking creates a personal copy of someone
+else’s repository under your GitHub account, enabling you to make
+changes to the project without affecting the original repo. Cloning, on
+the other hand, is the process of downloading a remote repository to
+your local machine for offline development. In GitHub Desktop, you can
+clone a repository by selecting “Clone a repository from the Internet”
+and entering the repository URL. In JupyterHub GitHub widget, you can
+clone a repository by entering the repo URL in the “Clone Repository”
+section of the widget.</p>
+<h3 id="c-branches">C. Branches:<a class="headerlink" href="#c-branches" title="Permanent link">&para;</a></h3>
+<p>Branches are a critical aspect of Git version control, as they allow you
+to create multiple parallel versions of your project within a single
+repository. This is particularly useful when working on new features or
+bug fixes, as it prevents changes from interfering with the main (or
+“master”) branch until they are ready to be merged. Creating a new
+branch in GitHub Desktop can be done by clicking the “Current Branch”
+dropdown and selecting “New Branch.” In JupyterHub GitHub widget, you
+can create a new branch by clicking the “New Branch” button in the
+“Branches” section of the widget.</p>
+<h3 id="d-replace-master-with-main">D. Replace ‘master’ with ‘main’:<a class="headerlink" href="#d-replace-master-with-main" title="Permanent link">&para;</a></h3>
+<p>In recent years, there has been a growing awareness of the importance of
+inclusive language in technology. One such example is the use of the
+term “master” in the context of the default branch in a GitHub
+repository. The term “master” has historical connections to the
+“master/slave” file structure, which evokes an unsavory colonial past
+associated with slavery. In light of this, many developers and
+organizations have begun to replace the term “master” with more neutral
+terms, such as “main.” We encourage you to follow this practice and
+change the default branch name in your repositories from “master” to
+“main” or another suitable alternative. This small change can help
+promote a more inclusive and welcoming environment within the technology
+community.</p>
+<h2 id="iii-collaboration-and-version-control-5-minutes">III. Collaboration and Version Control (5 minutes)<a class="headerlink" href="#iii-collaboration-and-version-control-5-minutes" title="Permanent link">&para;</a></h2>
+<h3 id="a-commits">A. Commits:<a class="headerlink" href="#a-commits" title="Permanent link">&para;</a></h3>
+<p>Commits are snapshots of your project’s changes at a specific point in
+time, serving as the fundamental building blocks of Git’s version
+control system. Commits make it possible to track changes, revert to
+previous versions, and collaborate with others. In GitHub Desktop, you
+can make a commit by staging the changes you want to include, adding a
+descriptive commit message, and clicking “Commit to [branch_name].” In
+JupyterHub GitHub widget, you can create a commit by selecting the files
+with changes, entering a commit message, and clicking the “Commit”
+button.</p>
+<h3 id="b-push">B. Push:<a class="headerlink" href="#b-push" title="Permanent link">&para;</a></h3>
+<p>In GitHub, “push” is a fundamental operation in the version control
+process that transfers commits from your local repository to a remote
+repository, such as the one hosted on GitHub. When you push changes, you
+synchronize the remote repository with the latest updates made to your
+local repository, making those changes accessible to other collaborators
+working on the same project. This operation ensures that the remote
+repository reflects the most recent state of your work and allows your
+team members to stay up to date with your changes. Pushing is an
+essential step in distributed version control systems like Git, as it
+promotes efficient collaboration among multiple contributors and
+provides a centralized location for tracking the project’s history and
+progress.</p>
+<p>In GitHub, the concepts of “commit” and “push” represent two distinct
+steps in the version control process. A “commit” is the action of saving
+changes to your local repository. When you commit changes, you create a
+snapshot of your work, accompanied by a unique identifier and an
+optional descriptive message. Commits allow you to track the progress of
+your work over time and make it easy to revert to a previous state if
+necessary. On the other hand, “push” is the action of transferring your
+local commits to a remote repository, such as the one hosted on GitHub.
+Pushing makes your changes accessible to others collaborating on the
+same project and ensures that the remote repository stays up to date
+with your local repository. In summary, committing saves changes
+locally, while pushing synchronizes those changes with a remote
+repository, allowing for seamless collaboration among multiple
+contributors.</p>
+<h3 id="c-pull-requests">C. Pull Requests:<a class="headerlink" href="#c-pull-requests" title="Permanent link">&para;</a></h3>
+<p>Pull requests are a collaboration feature on GitHub that enables
+developers to propose changes to a repository, discuss those changes,
+and ultimately merge them into the main branch. To create a pull
+request, you must first push your changes to a branch on your fork of
+the repository. Then, using either GitHub Desktop or JupyterHub GitHub
+widget, you can navigate to the original repository, click the “Pull
+Request” tab, and create a new pull request. After the pull request is
+reviewed and approved, it can be merged into the main branch.</p>
+<h3 id="d-merging-and-resolving-conflicts">D. Merging and Resolving Conflicts:<a class="headerlink" href="#d-merging-and-resolving-conflicts" title="Permanent link">&para;</a></h3>
+<p>Merging is the process of combining changes from one branch into
+another. This is typically done when a feature or bugfix has been
+completed and is ready to be integrated into the main branch. Conflicts
+can arise during the merging process if the same lines of code have been
+modified in both branches. To resolve conflicts, you must manually
+review the changes and decide which version to keep. In GitHub Desktop,
+you can merge branches by selecting the target branch and choosing
+“Merge into Current Branch.” Conflicts will be highlighted, and you can
+edit the files to resolve them before committing the changes. In
+JupyterHub GitHub widget, you can merge branches by selecting the target
+branch in the “Branches” section and clicking the “Merge” button. If
+conflicts occur, the widget will prompt you to resolve them before
+completing the merge.</p>
+<h2 id="iv-additional-features-2-minutes">IV. Additional Features (2 minutes)<a class="headerlink" href="#iv-additional-features-2-minutes" title="Permanent link">&para;</a></h2>
+<h3 id="a-issues-and-project-management">A. Issues and Project Management:<a class="headerlink" href="#a-issues-and-project-management" title="Permanent link">&para;</a></h3>
+<p>Issues are a powerful feature in GitHub that allows developers to track
+and manage bugs, enhancements, and other tasks within a project. Issues
+can be assigned to collaborators, labeled for easy organization, and
+linked to specific commits or pull requests. They provide a centralized
+location for discussing and addressing project-related concerns,
+fostering collaboration and transparent communication among team
+members. Using issues effectively can significantly improve the overall
+management and organization of your projects.</p>
+<h3 id="b-github-pages">B. GitHub Pages:<a class="headerlink" href="#b-github-pages" title="Permanent link">&para;</a></h3>
+<p>GitHub Pages is a service offered by GitHub that allows you to host
+static websites directly from a repository. By creating a new branch
+named “gh-pages” in your repository and adding the necessary files
+(HTML, CSS, JavaScript, etc.), GitHub will automatically build and
+deploy your website to a publicly accessible URL. This is particularly
+useful for showcasing project documentation, creating personal
+portfolios, or hosting project demos. With GitHub Pages, you can take
+advantage of the version control and collaboration features of GitHub
+while easily sharing your work with others.</p>
+<h2 id="v-conclusion-2-minutes">V. Conclusion (2 minutes)<a class="headerlink" href="#v-conclusion-2-minutes" title="Permanent link">&para;</a></h2>
+<h3 id="a-recap-of-the-essentials-of-github">A. Recap of the essentials of GitHub:<a class="headerlink" href="#a-recap-of-the-essentials-of-github" title="Permanent link">&para;</a></h3>
+<p>In this brief introduction, we have covered the essentials of GitHub,
+including the basics of repositories, forking, cloning, branching,
+commits, pull requests, merging, and resolving conflicts. We have also
+discussed additional features like issues for project management and
+GitHub Pages for hosting websites directly from a repository.</p>
+<h3 id="b-encourage-further-exploration-and-learning">B. Encourage further exploration and learning:<a class="headerlink" href="#b-encourage-further-exploration-and-learning" title="Permanent link">&para;</a></h3>
+<p>While this introduction provides a solid foundation for understanding
+and using GitHub, there is still much more to learn and explore. As you
+continue to use GitHub in your projects, you will discover new features
+and workflows that can enhance your productivity and collaboration. We
+encourage you to dive deeper into the platform and experiment with
+different tools and techniques.</p>
+<h3 id="c-share-resources-for-learning-more-about-github">C. Share resources for learning more about GitHub:<a class="headerlink" href="#c-share-resources-for-learning-more-about-github" title="Permanent link">&para;</a></h3>
+<p>There are many resources available for learning more about GitHub and
+expanding your skills. Some popular resources include GitHub Guides
+(<a href="https://guides.github.com/">https://guides.github.com/</a>), which offers a collection of tutorials and
+best practices, the official GitHub documentation
+(<a href="https://docs.github.com/">https://docs.github.com/</a>), and various online tutorials and courses. By
+engaging with these resources and participating in the GitHub community,
+you can further develop your understanding of the platform and become a
+more proficient user.</p>
+<h2 id="v-conclusion-2-minutes_1">V. Conclusion (2 minutes)<a class="headerlink" href="#v-conclusion-2-minutes_1" title="Permanent link">&para;</a></h2>
+<h3 id="a-recap-of-the-essentials-of-github_1">A. Recap of the essentials of GitHub:<a class="headerlink" href="#a-recap-of-the-essentials-of-github_1" title="Permanent link">&para;</a></h3>
+<p>In this brief introduction, we have covered the essentials of GitHub,
+including the basics of repositories, forking, cloning, branching,
+commits, pull requests, merging, and resolving conflicts. We have also
+discussed additional features like issues for project management and
+GitHub Pages for hosting websites directly from a repository.</p>
+<h3 id="b-encourage-further-exploration-and-learning_1">B. Encourage further exploration and learning:<a class="headerlink" href="#b-encourage-further-exploration-and-learning_1" title="Permanent link">&para;</a></h3>
+<p>While this introduction provides a solid foundation for understanding
+and using GitHub, there is still much more to learn and explore. As you
+continue to use GitHub in your projects, you will discover new features
+and workflows that can enhance your productivity and collaboration. We
+encourage you to dive deeper into the platform and experiment with
+different tools and techniques.</p>
+<h3 id="c-share-resources-for-learning-more-about-github_1">C. Share resources for learning more about GitHub:<a class="headerlink" href="#c-share-resources-for-learning-more-about-github_1" title="Permanent link">&para;</a></h3>
+<p>There are many resources available for learning more about GitHub and
+expanding your skills. Some popular resources include GitHub Guides
+(<a href="https://guides.github.com/">https://guides.github.com/</a>), which offers a collection of tutorials and
+best practices, the official GitHub documentation
+(<a href="https://docs.github.com/">https://docs.github.com/</a>), and various online tutorials and courses. By
+engaging with these resources and participating in the GitHub community,
+you can further develop your understanding of the platform and become a
+more proficient user.</p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
+    </span>
+    2024-05-09
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023 University of Colorado Boulder
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/cu-esiil/" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.top", "toc.integrate", "toc.follow", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.3220b9d7.min.js"></script>
+      
+    
+  </body>
+</html>
